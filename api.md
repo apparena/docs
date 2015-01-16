@@ -2,16 +2,20 @@
 
 ## API Endpoint ##
 
-All API URLs listed in this documentation are relative to https://mandrillapp.com/api/1.0/. For example, the /users/ping API call is reachable at https://mandrillapp.com/api/1.0/users/ping.json.
+All API URLs listed in this documentation are relative to https://v2.app-arena.com/api/1/.
 
 ## RESTful ##
 
 The App-Arena API is a RESTful API. All requests can be made using one of the following HTTP verbs:
 
-* **GET**       - Read information
-* **PUT**      - Update an entity
-* **POST**      - Creates a new entity in a collection
-* **DELETE**    - Deletes an antity
+
+| HTTP verb | Usage                                         | Resource type      |
+|-----------|-----------------------------------------------|--------------------|
+| GET       | Request a single entity or a whole collection | entity, collection |
+| POST      | Creates a new entity in a collection          | collection         |
+| PUT       | Updates an entity                             | entity             |
+| DELETE    | Deletes an entity                             | entity             |
+
 
 All methods are accessed via: https://v2.app-arena.com/api/1/SOME-METHOD
 
