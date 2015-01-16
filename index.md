@@ -4,7 +4,7 @@
 
 ## Getting started - App-Developer
 
-If you want create [Templates](glossary#Templates) of your apps and offer your customers a Self-Service Content-Management-System to create and configure app instances, then get started by reading our [API documentation](api). 
+If you want create [Templates](glossary#Templates) of your apps and offer your customers a Self-Service Content-Management-System to create and configure app [Instances](glossary#Instances), then get started by reading our [API documentation](api). 
 
 ## Getting started - Integrator
 
