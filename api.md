@@ -6,22 +6,26 @@ All API URLs listed in this documentation are relative to https://v2.app-arena.c
 
 ## HTTP Verbs ##
 
-The App-Arena API is a RESTful API. All requests can be made using one of the following HTTP verbs:
+The App-Arena API is a RESTful API. All requests can be made using one of the following HTTP verbs
 
-### GET ### 
+### GET ###
 `entity`, `collection`
+
 Request a single entity or a whole collection
 
 ### POST ###
 `collection`
+
 Creates a new entity in a collection
 
 ### PUT ###
 `entity`
+
 Updates an entity
 
 ### DELETE ###
 `entity`
+
 Deletes an entity
 
 
