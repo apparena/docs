@@ -20,7 +20,53 @@ Send a POST request to create a new company. Do not forget to add your [API key]
       "subdomain"	:"company_subdomain"
     }
 
+An example response would look like this:
+
+    {
+        "id": 17,
+        "name": "New App-Arena customer 1421685371",
+        "parent_id": 1,
+        "subdomain": "company_subdomain",
+        "timestamp": 1421685366,
+        "_links": {
+            "self": {
+                "href": "http:\/\/v2.app-arena.com\/api\/v1\/companies\/17"
+            }
+        }
+    }
+
+A new *company_id* (in the example response the company_id is 17) has been generated... You should have it in mind for the following request...
+
 ### Create a new user
+
+So now you got a new company set up. So now it's time to create the first user for this company. Send a POST request including your [API key](api_key) to create a user. 
+
+**Note:** If you are using our [POSTman collection](postman) you can just send the next request to create a user without replacing the `:company_id` in the request, as the `POST /companies` request adds a company_id environment variable in its <a href="https://www.getpostman.com/docs/jetpacks_writing_tests" target="_blank">POSTman test</a>.
+    
+    POST /api/v1/companies/17/ HTTP/1.1
+    Host: v2.app-arena.com
+    Content-Type: application/json
+    Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
+
+    {
+      "name"		:"New company name",
+      "subdomain"	:"company_subdomain"
+    }
+
+An example response would look like this:
+
+    {
+        "id": 17,
+        "name": "New App-Arena customer 1421685371",
+        "parent_id": 1,
+        "subdomain": "company_subdomain",
+        "timestamp": 1421685366,
+        "_links": {
+            "self": {
+                "href": "http:\/\/v2.app-arena.com\/api\/v1\/companies\/17"
+            }
+        }
+    }
 
 
 ### Create a new instance using the companies initial API key
