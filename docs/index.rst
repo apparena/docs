@@ -28,7 +28,6 @@ Integrator Documentation
 
 ..   business/index
 
-
 .. _dev-docs:
 
 Developer Documentation
