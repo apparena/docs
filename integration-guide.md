@@ -16,8 +16,8 @@ Send a POST request to create a new company. Do not forget to add your [API key]
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
     {
-      "name"		:"New company name",
-      "subdomain"	:"company_subdomain"
+      "name"		:"Big star cooperation",
+      "subdomain"	:"big_star_corp"
     }
 
 An example response would look like this:
@@ -39,19 +39,22 @@ A new *company_id* (in the example response the company_id is 17) has been gener
 
 ### Create a new user for this customer
 
-So now you got a new company set up. So now it's time to create the first user for this company. Send a POST request including your [API key](api_key) to create a user. 
+So now you've got a new company set up. So now it's time to create the first user for this company. Send a POST request including your [API key](api_key) to create a user. 
 
 **Note:** If you are using our [POSTman collection](postman) you can just send the next request to create a user without replacing the `:company_id` in the request, as the `POST /companies` request adds a company_id environment variable in its <a href="https://www.getpostman.com/docs/jetpacks_writing_tests" target="_blank">POSTman test</a>.
     
-    POST /api/v1/companies/17/ HTTP/1.1
+    POST /api/v1/companies/17/users HTTP/1.1
     Host: v2.app-arena.com
     Content-Type: application/json
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
     {
-      "name"		:"New company name",
-      "subdomain"	:"company_subdomain",
-      "role"        : ["user", "admin"]
+        "username":	"dhasselhoff",
+        "email":	"david@hasselhoff.com",
+        "name":	    "David Hasselhoff",
+        "password":	"iSetGermanyFree!",
+        "roles":	[ "user", "admin" ],
+        "lang_tag":	"en_US"
     }
 
 An example response would look like this:
@@ -60,5 +63,42 @@ An example response would look like this:
 
 ### Create a new instance for this customer
 
-Ok, so an empty account is boring... Give your customer some apps they are impressed of. :-) To create
+Ok, so an empty account is boring... Give your customer some apps they are impressed of. :-) Let's create a `photo contest demo` (template_id 728)
+    
+    POST /api/v1/instances HTTP/1.1
+    Host: v2.app-arena.com
+    Content-Type: application/json
+    Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
+    {
+        "template_id": 728,
+        "name":"My customers new photo contest demo",
+        "description": "The description of my new instance.",
+        "lang_tag":"en_US"
+    }
+
+An example response would look like this:
+
+    TODO
+
+### You're done :-) - Tell your customer about it!
+
+Great! Now let's send your customer all necessary information, so that he can start using and configuring his app:
+
+    Dear David,
+    
+    we've setup a new photo-contest demo app for you. You can access your app here:
+    
+    App-Url: https://www.fotowettbewerb.co/?i_id=1234
+    
+    If you want to change the content of your app just visit the configuration wizard interface and login using your access data:
+    
+    Wizard-Url: https://manager.app-arena.com/instances/....
+    Username:   dhasselhoff
+    Password:   iSetGermanyFree
+    
+    Thanks a lot,
+    Your App-Support Team
+    
+
+    

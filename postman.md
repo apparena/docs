@@ -1,6 +1,6 @@
 # Working with POSTman
 
-Postman is an easy to use Google Chrome extension, which enables you to send HTTP-Request to a server. As we are running all our API tests using [POSTman](https://getpostman.com), we prepared a collection for you, so that you can **examples of all available requests** of the App-Manager API.
+Postman is an easy to use Google Chrome extension, which enables you to send HTTP-Request to a server. As we are running all our API tests using [POSTman](https://getpostman.com), we prepared a collection of requests for you, so that you have **examples of all available requests** of the App-Manager API.
 
 ## 1. Import the environment
 
