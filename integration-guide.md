@@ -61,7 +61,7 @@ An example response would look like this:
     TODO
 
 # Szenario 2: Create a new instance for a customer
-----------------------
+------------------------
 Ok, so an empty account is boring... Give your customer some apps they are impressed of. :-) Let's create a `photo contest demo` (template_id 728)
     
     POST /api/v1/instances HTTP/1.1
