@@ -1,7 +1,12 @@
-Welcome to Read The Docs
-========================
+Welcome to App-Arena Developer documentation
+============================================
 
-`Read the Docs`_ hosts documentation for the open source community.
+`App-Arena.com`_ provides an infrastructure to manage and scale web-apps.
+Developers can publish and sell own web-apps through our sales channels. Sales partners can integrate our Web-App-CMS
+ in their third-party software solutions and sell all published apps of the platform under their name and brand.
+
+
+
 We support Sphinx_ docs written with reStructuredText_ and Markdown_ docs written with Mkdocs_.
 We pull your code from your Subversion_, Bazaar_, Git_, and Mercurial_ repositories.
 Then we build documentation and host it for you.
@@ -9,7 +14,7 @@ Think of it as *Continuous Documentation*.
 
 The code is open source, and `available on github`_.
 
-.. _Read the docs: http://readthedocs.org/
+.. _App-Arena.com: http://www.app-arena.com/
 .. _Sphinx: http://sphinx.pocoo.org/
 .. _reStructuredText: http://sphinx.pocoo.org/rest.html
 .. _Markdown: http://daringfireball.net/projects/markdown/syntax
@@ -20,17 +25,20 @@ The code is open source, and `available on github`_.
 .. _Mercurial: http://mercurial.selenic.com/
 .. _available on github: http://github.com/rtfd/readthedocs.org
 
-The main documentation for the site is organized into a couple sections:
 
-* :ref:`site-docs`
-* :ref:`feature-docs`
-* :ref:`about-docs`
+..
+    The main documentation for the site is organized into a couple sections:
 
-Information about development is also available:
+    * :ref:`site-docs`
+    * :ref:`feature-docs`
+    * :ref:`about-docs`
 
-* :ref:`dev-docs`
-* :ref:`design-docs`
-* :ref:`ops-docs`
+..
+    Information about development is also available:
+
+    * :ref:`dev-docs`
+    * :ref:`design-docs`
+    * :ref:`ops-docs`
 
 .. _site-docs:
 
