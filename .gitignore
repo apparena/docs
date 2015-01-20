@@ -24,6 +24,7 @@ media/static
 node_modules
 readthedocs/rtd_tests/builds
 readthedocs/rtd_tests/tests/builds
+templates/*
 user_builds
 user_uploads
 prod_artifacts

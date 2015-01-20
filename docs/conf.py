@@ -18,8 +18,8 @@ extensions = [
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
-project = u'Read The Docs'
-copyright = u'2010, Eric Holscher, Charlie Leifer, Bobby Grace'
+project = u'App-Arena API'
+copyright = u'2015, App-Arena.com'
 version = '1.0'
 release = '1.0'
 exclude_patterns = ['_build']
@@ -34,12 +34,12 @@ intersphinx_mapping = {
 #html_static_path = ['_static']
 htmlhelp_basename = 'ReadTheDocsdoc'
 latex_documents = [
-    ('index', 'ReadTheDocs.tex', u'Read The Docs Documentation',
-     u'Eric Holscher, Charlie Leifer, Bobby Grace', 'manual'),
+    ('index', 'ReadTheDocs.tex', u'App-Arena.com App-Manager API Documentation',
+     u'App-Arena.com | Sebastian Buckpesch', 'manual'),
 ]
 man_pages = [
-    ('index', 'read-the-docs', u'Read The Docs Documentation',
-     [u'Eric Holscher, Charlie Leifer, Bobby Grace'], 1)
+    ('index', 'read-the-docs', u'App-Arena.com App-Manager API Documentation',
+     [u'App-Arena.com | Sebastian Buckpesch'], 1)
 ]
 
 exclude_patterns = [

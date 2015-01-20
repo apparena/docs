@@ -5,83 +5,29 @@ Welcome to App-Arena Developer documentation
 Developers can publish and sell own web-apps through our sales channels. Sales partners can integrate our Web-App-CMS
  in their third-party software solutions and sell all published apps of the platform under their name and brand.
 
-
-
-We support Sphinx_ docs written with reStructuredText_ and Markdown_ docs written with Mkdocs_.
-We pull your code from your Subversion_, Bazaar_, Git_, and Mercurial_ repositories.
-Then we build documentation and host it for you.
-Think of it as *Continuous Documentation*.
-
-The code is open source, and `available on github`_.
+The code of this documentation is open source, and `available on github`_. We appreciate every contribution to make
+this documentation better.
 
 .. _App-Arena.com: http://www.app-arena.com/
-.. _Sphinx: http://sphinx.pocoo.org/
-.. _reStructuredText: http://sphinx.pocoo.org/rest.html
-.. _Markdown: http://daringfireball.net/projects/markdown/syntax
-.. _Mkdocs: http://www.mkdocs.org/
-.. _Subversion: http://subversion.tigris.org/
-.. _Bazaar: http://bazaar.canonical.com/
-.. _Git: http://git-scm.com/
-.. _Mercurial: http://mercurial.selenic.com/
-.. _available on github: http://github.com/rtfd/readthedocs.org
+.. _available on github: https://github.com/apparena/docs
 
 
 ..
     The main documentation for the site is organized into a couple sections:
 
-    * :ref:`site-docs`
-    * :ref:`feature-docs`
-    * :ref:`about-docs`
+    * :ref:`integrator-docs`
+    * :ref:`developer-docs`
 
-..
-    Information about development is also available:
+.. _integrator-docs:
 
-    * :ref:`dev-docs`
-    * :ref:`design-docs`
-    * :ref:`ops-docs`
-
-.. _site-docs:
-
-User Documentation
-------------------
+Integrator Documentation
+------------------------
 
 .. toctree::
     :maxdepth: 2
 
-    getting_started
-    versions
-    builds
-    features
-    support
-    faq
+..   business/index
 
-.. _feature-docs:
-
-Features
-~~~~~~~~
-
-.. toctree::
-    :maxdepth: 2
-
-    webhooks
-    badges
-    alternate_domains
-    localization
-    vcs
-    canonical
-    redirects
-    single_version
-    privacy
-
-.. _business-docs:
-
-Business Documentation
-----------------------
-
-.. toctree::
-    :maxdepth: 2
-
-   business/index
 
 .. _dev-docs:
 
@@ -100,39 +46,3 @@ Developer Documentation
     i18n
     api
     api/index
-
-.. _design-docs:
-
-Designer Documentation
-----------------------
-
-.. toctree::
-    :maxdepth: 2
-
-    design
-    theme
-
-.. _about-docs:
-
-About Read the Docs
--------------------
-
-.. toctree::
-    :maxdepth: 2
-
-    open-source-philosophy
-    sponsors
-    talks
-
-
-.. Things that need more love before getting upgraded to the above list.
-
-.. _ops-docs:
-
-Operations Documentation
-------------------------
-
-.. toctree::
-    :maxdepth: 2
-
-    rtfd
