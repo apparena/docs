@@ -4,7 +4,7 @@ Before you can integrate App-Arena to your systems backend, you have to generate
 
 To make it easy here are some examples for an integration. All requests are available in a [POSTman collection](postman).
 
-# Szenario 1: Create a new customer
+## Szenario 1: Create a new customer
 Each user is part of a company. So before creating a user you need to create a company or assign the user to an existing company by submitting the **company_id** in your POST request.
 
 ### Create a new customer (company)
@@ -38,6 +38,7 @@ An example response would look like this:
 A new *company_id* (in the example response the company_id is 17) has been generated... You should have it in mind for the following request...
 
 ### Create a new user for this customer
+
 So now you've got a new company set up. So now it's time to create the first user for this company. Send a POST request including your [API key](api_key) to create a user. 
 
 **Note:** If you are using our [POSTman collection](postman) you can just send the next request to create a user without replacing the `:company_id` in the request, as the `POST /companies` request adds a company_id environment variable in its <a href="https://www.getpostman.com/docs/jetpacks_writing_tests" target="_blank">POSTman test</a>.
@@ -60,8 +61,8 @@ An example response would look like this:
 
     TODO
 
-# Szenario 2: Create a new instance for a customer
-------------------------
+## Szenario 2: Create a new instance for a customer
+
 Ok, so an empty account is boring... Give your customer some apps they are impressed of. :-) Let's create a `photo contest demo` (template_id 728)
     
     POST /api/v1/instances HTTP/1.1
