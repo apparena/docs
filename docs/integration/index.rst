@@ -2,9 +2,9 @@ Integration guide
 =================
 
 .. note:: Before you can integrate App-Arena to your systems backend, you have to generate an API key.
-          Once you got it, you can start requesting our `API <api/index.html>`_.
+          Once you got it, you can start requesting our `API <../api/index.html>`_.
 
-To make it easy here are some examples for an integration. All requests are available in a `POSTman <postman.html>`_.
+To make it easy here are some examples for an integration. All requests are available in a `POSTman <../postman.html>`_.
 
 Szenario 1: Create a new customer
 ------------------------------------
@@ -15,7 +15,7 @@ a company or assign the user to an existing company by submitting the **company_
 Create a new customer (company)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Send a POST request to create a new company. Do not forget to add your [API key](api_key) to the request,
+Send a POST request to create a new company. Do not forget to add your `API Key <../api/apikey.html>`_ to the request,
 as it is not possible to send POST requests without authentication.
 
 Header
