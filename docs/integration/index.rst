@@ -16,23 +16,29 @@ Create a new customer (company)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Send a POST request to create a new company. Do not forget to add your [API key](api_key) to the request,
-as it is not possible to send POST requests without authentication.::
+as it is not possible to send POST requests without authentication.
 
-Header ::
+Header
+^^^^^^
+::
 
     POST /api/v1/companies HTTP/1.1
     Host: v2.app-arena.com
     Content-Type: application/json
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
-Parameters ::
+Parameters
+^^^^^^^^^^
+::
 
     {
       "name"		:"Big star cooperation",
       "subdomain"	:"big_star_corp"
     }
 
-Example response ::
+Example response
+^^^^^^^^^^^^^^^^
+::
 
     {
         "id":           17,
