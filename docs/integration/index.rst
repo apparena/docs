@@ -127,10 +127,7 @@ Great! Now let's send your customer all necessary information, so that he can st
 
     Wizard-Url: https://manager.app-arena.com/instances/....
     Username:   dhasselhoff
-    Password:   iSetGermanyFree
+    Password:   iSetGermanyFree!
 
     Thanks a lot,
     Your App-Support Team
-
-
-

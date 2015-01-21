@@ -12,6 +12,7 @@ Import an environment
 ---------------------
 
 #. Download one of our environment files
+
     - `POSTman Production environment`_
     - `POSTman Stage environment`_
 
@@ -19,9 +20,6 @@ Import an environment
 
 .. image:: https://app-manager.s3.amazonaws.com/api/tutorials/POSTman-add-environment-1.png
 .. image:: https://app-manager.s3.amazonaws.com/api/tutorials/POSTman-add-environment-2.png
-
-![Manage environments](https://app-manager.s3.amazonaws.com/api/tutorials/POSTman-add-environment-1.png)
-![Import environment file](https://app-manager.s3.amazonaws.com/api/tutorials/POSTman-add-environment-2.png)
 
 .. _POSTman Production environment: https://app-manager.s3.amazonaws.com/api/tutorials/App-Manager-Production.postman_environment
 .. _POSTman Stage environment: https://app-manager.s3.amazonaws.com/api/tutorials/App-Manager-Stage.postman_environment
@@ -47,4 +45,4 @@ Adding an API key
 -----------------
 
 As you might noticed, you do not have permissions to send all of the requests in the collection.
-To submit even restricted requests you need to add an [API key](api_key).
+To submit even restricted requests you need to add an `API Key <api/apikey.html>`_.
