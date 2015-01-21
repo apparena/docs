@@ -13,8 +13,7 @@ this documentation better.
 .. _available on github: https://github.com/apparena/docs
 
 
-..
-    The main documentation for the site is organized into a couple sections:
+The main documentation for the site is organized into a couple sections:
 
     * :ref:`integrator-docs`
     * :ref:`dev-docs`
@@ -42,6 +41,6 @@ If you want to integrate the App-Manager to your system and you want to sell app
 please get started with one of the following topics:
 
 .. toctree::
-:maxdepth: 2
+    :maxdepth: 2
 
-        integration/index
+    integration/index
