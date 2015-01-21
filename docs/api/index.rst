@@ -27,12 +27,25 @@ The App-Arena API is a RESTful API. All requests can be made using one of the fo
 Passing Request Data
 --------------------
 
-Request data is passed to the API by POSTing JSON objects to the API endpoints with the appropriate parameters. The documentation for each API call will contain more detail on the parameters accepted by the call.
+Request data is passed to the API by POSTing JSON objects to the API endpoints with the appropriate parameters.
+The documentation for each API call will contain more detail on the parameters accepted by the call.
 
 Response Formats
 ----------------
 
-We respond using HTTP Status Codes so that you can see immediately if you request was successful or an error occured. A complete list of HTTP response formats you can find here: [HTTP-Statuscodes](http://de.wikipedia.org/wiki/HTTP-Statuscode "Title")
+We respond using HTTP Status Codes so that you can see immediately if you request was successful or an error occured.
+A complete list of HTTP response formats you can find here: HTTP-Statuscodes_
 
-For successful calls the `GET` and `PUT` methods will return HTTP-Status code **200 (OK)**, the `POST` request will return **201
-(CREATED)** and the `DELETE` request will return **204 (NO CONTENT)**.
+.. _HTTP-Statuscodes: http://de.wikipedia.org/wiki/HTTP-Statuscode
+
++------------+------------------------------+
+|            |    HTTP-Response on Success  |
++============+==============================+
+| GET        |    200 (OK)                  |
++------------+------------------------------+
+| POST       |    201 (Created)             |
++------------+------------------------------+
+| PUT        |    200 (OK)                  |
++------------+------------------------------+
+| DELETE     |    204 (No content)          |
++------------+------------------------------+

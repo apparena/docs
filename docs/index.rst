@@ -15,8 +15,8 @@ this documentation better.
 
 The main documentation for the site is organized into a couple sections:
 
-    * :ref:`integrator-docs`
     * :ref:`dev-docs`
+    * :ref:`integrator-docs`
 
 .. _dev-docs:
 
