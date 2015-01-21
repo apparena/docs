@@ -18,8 +18,7 @@ Create a new customer (company)
 Send a POST request to create a new company. Do not forget to add your [API key](api_key) to the request,
 as it is not possible to send POST requests without authentication.
 
-Header
-^^^^^^
+**Header**
 ::
 
     POST /api/v1/companies HTTP/1.1
@@ -27,8 +26,7 @@ Header
     Content-Type: application/json
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
-Parameters
-^^^^^^^^^^
+**Parameters**
 ::
 
     {
@@ -79,7 +77,7 @@ Header
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
 Parameters
-^^^^^^^^^^
+""""""""""
 ::
 
     {
@@ -92,7 +90,7 @@ Parameters
     }
 
 Example response
-^^^^^^^^^^^^^^^^
+****************
 ::
 
     TODO
