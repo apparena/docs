@@ -69,31 +69,18 @@ Send a POST request including your [API key](api_key) to create a user.
 .. _POSTman tests: https://www.getpostman.com/docs/jetpacks_writing_tests
 
 
-.. http:method:: GET /api/v1/user/{id}/
-
-   :arg id: A User id.
-
-.. http:response:: Retrieve a single User
-
-   .. sourcecode:: js
-
-      {
-          "first_name": "",
-          "id": "1",
-          "last_login": "2010-10-28T13:38:13.022687",
-          "last_name": "",
-          "resource_uri": "/api/v1/user/1/",
-          "username": "testuser"
-      }
-
+Header
+^^^^^^
 ::
-
-
 
     POST /api/v1/companies/17/users HTTP/1.1
     Host: v2.app-arena.com
     Content-Type: application/json
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
+
+Parameters
+^^^^^^^^^^
+::
 
     {
         "username":  "dhasselhoff",
@@ -104,8 +91,9 @@ Send a POST request including your [API key](api_key) to create a user.
         "lang_tag":  "en_US"
     }
 
-
-An example response would look like this: ::
+Example response
+^^^^^^^^^^^^^^^^
+::
 
     TODO
 
