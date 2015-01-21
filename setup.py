@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='readthedocs',
+    name='app-arena',
     version="1.0",
     description='App-Arena App-Manager API',
     #long_description=readme,

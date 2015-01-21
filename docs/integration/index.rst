@@ -2,9 +2,9 @@ Integration guide
 =================
 
 .. note:: Before you can integrate App-Arena to your systems backend, you have to generate an API key.
-          Once you got it, you can start requesting our `API <api/index>`_.
+          Once you got it, you can start requesting our `API <api/index.html>`_.
 
-To make it easy here are some examples for an integration. All requests are available in a `POSTman <postman>`_.
+To make it easy here are some examples for an integration. All requests are available in a `POSTman <postman.html>`_.
 
 Szenario 1: Create a new customer
 ------------------------------------
@@ -27,6 +27,32 @@ as it is not possible to send POST requests without authentication.::
       "name"		:"Big star cooperation",
       "subdomain"	:"big_star_corp"
     }
+
+
+.. http:method:: GET /api/v1/version/
+
+.. http:response:: Retrieve a list of Versions.
+
+   .. sourcecode:: js
+
+      {
+          "meta": {
+              "limit": 20,
+              "next": "/api/v1/version/?limit=20&offset=20",
+              "offset": 0,
+              "previous": null,
+              "total_count": 16437
+          },
+          "objects": [VERSIONS]
+      }
+
+
+   :data integer limit: Number of Versions returned.
+       :data string next: URI for next set of Versions.
+       :data integer offset: Current offset used for pagination.
+       :data string previous: URI for previous set of Versions.
+       :data integer total_count: Total number of Versions.
+       :data array objects: Array of `Version`_ objects.
 
 An example response would look like this ::
 
