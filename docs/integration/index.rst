@@ -73,9 +73,12 @@ Send a POST request including your [API key](api_key) to create a user.
         "lang_tag":	"en_US"
     }
 
-An example response would look like this:
+
+An example response would look like this: ::
 
     TODO
+
+
 
 Szenario 2: Create a new instance for a customer
 ------------------------------------------------
