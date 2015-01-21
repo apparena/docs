@@ -1,70 +1,50 @@
-.. _designing-read-the-docs: 
+Working with POSTman
+====================
 
-Designing Read the Docs
-=======================
+Postman is an easy to use Google Chrome extension, which enables you to send HTTP-Request to a server.
+As we are running all our API tests using POSTman_,
+we prepared a collection of requests for you, so that you have **examples of all available requests**
+of the App-Manager API.
 
-So you're thinking of contributing some of your
-time and design skills to Read the Docs? That's
-**awesome**. This document will lead you through
-a few features available to ease the process of
-working with Read the Doc's CSS and static assets.
+.. _POSTman: https://getpostman.com
 
-To start, you should follow the :ref:`installing-read-the-docs` instructions
-to get a working copy of the Read the Docs repository locally.
+Import an environment
+---------------------
 
-Style Catalog
--------------
+#. Download one of our environment files
+    - `POSTman Production environment`_
+    - `POSTman Stage environment`_
 
-Once you have RTD running locally, you can open ``http://localhost:8000/style-catalog/``
-for a quick overview of the currently available styles.
+#. Import the environment-file
 
-.. image:: /img/headers.png
+.. image:: https://app-manager.s3.amazonaws.com/api/tutorials/POSTman-add-environment-1.png
+.. image:: https://app-manager.s3.amazonaws.com/api/tutorials/POSTman-add-environment-2.png
 
-This way you can quickly get started writing HTML -- or if you're
-modifying existing styles you can get a quick idea of how things
-will change site-wide.
-   
-Typekit Fonts
--------------
+![Manage environments](https://app-manager.s3.amazonaws.com/api/tutorials/POSTman-add-environment-1.png)
+![Import environment file](https://app-manager.s3.amazonaws.com/api/tutorials/POSTman-add-environment-2.png)
 
-RTD uses `FF Meta`_ via TypeKit to render most display and body text.
+.. _POSTman Production environment: https://app-manager.s3.amazonaws.com/api/tutorials/App-Manager-Production.postman_environment
+.. _POSTman Stage environment: https://app-manager.s3.amazonaws.com/api/tutorials/App-Manager-Stage.postman_environment
 
-To make this work locally, you can register a free TypeKit account and
-create a site profile for ``localhost:8000`` that includes the linked font.
+Import the collection
+---------------------
 
-.. _FF Meta: https://typekit.com/fonts/ff-meta-web-pro
+Click the import button on the top right cornor and import one of our collection urls
 
-Readthedocs.org Changes
+- Complete API Request list: https://www.getpostman.com/collections/1c02a557a932d3f7aa64
+
+.. image:: https://app-manager.s3.amazonaws.com/api/tutorials/POSTman-import-collection-1.png
+
+Send your first request
 -----------------------
 
-Styles for the primary RTD site are located in ``media/css`` directory.
+So select the currently imported environment in the top-navigation, select one of the imported requests and hit the
+SEND-Button.
 
-These styles only affect the primary site -- **not** any of the generated
-documentation using the default RTD style.
+.. image:: https://app-manager.s3.amazonaws.com/api/tutorials/POSTman-send-request-1.png
 
-Sphinx Template Changes
------------------------
+Adding an API key
+-----------------
 
-Styles for generated documentation are located in ``readthedocs/templates/sphinx/_static/rtd.css``
-
-Of note, projects will retain the version of that file they were last built with -- so if you're
-editing that file and not seeing any changes to your local built documentation, you need to rebuild
-your example project.
-
-Contributing
-------------
-
-Contributions should follow the :ref:`contributing-to-read-the-docs` guidelines where applicable -- ideally you'll
-create a pull request against the `Read the Docs Github project`_ from your forked repo and include
-a brief description of what you added / removed / changed, as well as an attached image (you can just
-take a screenshot and drop it into the PR creation form) of the effects of your changes.
-
-There's not a hard browser range, but your design changes should work reasonably well across all major
-browsers, IE8+ -- that's not to say it needs to be pixel-perfect in older browsers! Just avoid
-making changes that render older browsers utterly unusable (or provide a sane fallback).
-
-.. _Read the Docs Github project: https://github.com/rtfd/readthedocs.org/pulls
-
-
-
-
+As you might noticed, you do not have permissions to send all of the requests in the collection.
+To submit even restricted requests you need to add an [API key](api_key).

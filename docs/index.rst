@@ -22,9 +22,13 @@ this documentation better.
 Integrator Documentation
 ------------------------
 
+If you want to integrate the App-Manager to your system and you want to sell apps on your website,
+please get started with one of the following topics:
+
 .. toctree::
     :maxdepth: 2
 
+    api/index
     integration/index
 ..   business/index
 
@@ -33,8 +37,12 @@ Integrator Documentation
 Developer Documentation
 -----------------------
 
+If you want to develop apps, then start with one of these topics:
+
 .. toctree::
     :maxdepth: 2
 
+    api/index
+    api/apikey
     postman
 

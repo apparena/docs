@@ -1,5 +1,5 @@
-App-Arena Integration guide
-===========================
+Integration guide
+=================
 
 .. note:: Before you can integrate App-Arena to your systems backend, you have to generate an API key.
           Once you got it, you can start requesting our :doc:`api`.
@@ -15,7 +15,8 @@ a company or assign the user to an existing company by submitting the **company_
 Create a new customer (company)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Send a POST request to create a new company. Do not forget to add your [API key](api_key) to the request, as it is not possible to send POST requests without authentication.
+Send a POST request to create a new company. Do not forget to add your [API key](api_key) to the request,
+as it is not possible to send POST requests without authentication.::
 
     POST /api/v1/companies HTTP/1.1
     Host: v2.app-arena.com
@@ -27,7 +28,7 @@ Send a POST request to create a new company. Do not forget to add your [API key]
       "subdomain"	:"big_star_corp"
     }
 
-An example response would look like this:
+An example response would look like this ::
 
     {
         "id": 17,
