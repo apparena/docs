@@ -7,7 +7,7 @@ Integration guide
 To make it easy here are some examples for an integration. All requests are available in a `POSTman <../postman.html>`_.
 
 Szenario 1: Create a new customer
-------------------------------------
+---------------------------------
 
 Each user is part of a company. So before creating a user you need to create
 a company or assign the user to an existing company by submitting the **company_id** in your POST request.
@@ -18,27 +18,21 @@ Create a new customer (company)
 Send a POST request to create a new company. Do not forget to add your `API Key <../api/apikey.html>`_ to the request,
 as it is not possible to send POST requests without authentication.
 
-Header
-******
-::
+**Header** ::
 
     POST /api/v1/companies HTTP/1.1
     Host: v2.app-arena.com
     Content-Type: application/json
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
-Parameters
-**********
-::
+**Parameters** ::
 
     {
       "name"		:"Big star cooperation",
       "subdomain"	:"big_star_corp"
     }
 
-Example response
-****************
-::
+**Example response** ::
 
     {
         "id":           17,
@@ -69,18 +63,14 @@ Send a POST request including your [API key](api_key) to create a user.
 .. _POSTman tests: https://www.getpostman.com/docs/jetpacks_writing_tests
 
 
-Header
-******
-::
+**Header** ::
 
     POST /api/v1/companies/17/users HTTP/1.1
     Host: v2.app-arena.com
     Content-Type: application/json
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
-Parameters
-**********
-::
+**Parameters** ::
 
     {
         "username":  "dhasselhoff",
@@ -91,12 +81,9 @@ Parameters
         "lang_tag":  "en_US"
     }
 
-Example response
-****************
-::
+**Example response** ::
 
     TODO
-
 
 
 Szenario 2: Create a new instance for a customer
@@ -105,18 +92,14 @@ Szenario 2: Create a new instance for a customer
 Ok, so an empty account is boring... Give your customer some apps they are impressed of. :-)
 Let's create a ``photo contest demo`` (template_id 728)
 
-Header
-******
-::
+**Header** ::
 
     POST /api/v1/instances HTTP/1.1
     Host: v2.app-arena.com
     Content-Type: application/json
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
-Parameters
-**********
-::
+**Parameters** ::
 
     {
         "template_id": 728,
@@ -127,9 +110,7 @@ Parameters
 
 An example response would look like this:
 
-Example response
-****************
-::
+**Example response** ::
 
 You're done :-) - Tell your customer about it!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,3 +131,6 @@ Great! Now let's send your customer all necessary information, so that he can st
 
     Thanks a lot,
     Your App-Support Team
+
+
+
