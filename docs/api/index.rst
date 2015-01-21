@@ -4,7 +4,7 @@ Working with the API
 API Endpoint
 ------------
 
-All API URLs listed in this documentation are relative to https://v2.app-arena.com/api/1/.
+All API URLs listed in this documentation are relative to ``https://v2.app-arena.com/api/v1/``.
 
 HTTP Verbs
 ----------
