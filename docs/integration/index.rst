@@ -18,7 +18,8 @@ Create a new customer (company)
 Send a POST request to create a new company. Do not forget to add your [API key](api_key) to the request,
 as it is not possible to send POST requests without authentication.
 
-**Header**
+Header
+******
 ::
 
     POST /api/v1/companies HTTP/1.1
@@ -26,7 +27,8 @@ as it is not possible to send POST requests without authentication.
     Content-Type: application/json
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
-**Parameters**
+Parameters
+**********
 ::
 
     {
@@ -35,7 +37,7 @@ as it is not possible to send POST requests without authentication.
     }
 
 Example response
-^^^^^^^^^^^^^^^^
+****************
 ::
 
     {
@@ -68,7 +70,7 @@ Send a POST request including your [API key](api_key) to create a user.
 
 
 Header
-^^^^^^
+******
 ::
 
     POST /api/v1/companies/17/users HTTP/1.1
@@ -77,7 +79,7 @@ Header
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
 Parameters
-""""""""""
+**********
 ::
 
     {
@@ -101,12 +103,20 @@ Szenario 2: Create a new instance for a customer
 ------------------------------------------------
 
 Ok, so an empty account is boring... Give your customer some apps they are impressed of. :-)
-Let's create a ``photo contest demo`` (template_id 728) ::
+Let's create a ``photo contest demo`` (template_id 728)
+
+Header
+******
+::
 
     POST /api/v1/instances HTTP/1.1
     Host: v2.app-arena.com
     Content-Type: application/json
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
+
+Parameters
+**********
+::
 
     {
         "template_id": 728,
@@ -117,14 +127,14 @@ Let's create a ``photo contest demo`` (template_id 728) ::
 
 An example response would look like this:
 
-    TODO
+Example response
+****************
+::
 
 You're done :-) - Tell your customer about it!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Great! Now let's send your customer all necessary information, so that he can start using and configuring his app:
-
-::
+Great! Now let's send your customer all necessary information, so that he can start using and configuring his app: ::
 
     Dear David,
 
