@@ -66,12 +66,12 @@ Send a POST request including your [API key](api_key) to create a user.
     Authorization: Basic c2J1Y2twZXNjaDphcGlrZXk=
 
     {
-        "username":	"dhasselhoff",
-        "email":	"david@hasselhoff.com",
-        "name":	    "David Hasselhoff",
-        "password":	"iSetGermanyFree!",
-        "roles":	[ "user", "admin" ],
-        "lang_tag":	"en_US"
+        "username":  "dhasselhoff",
+        "email":     "david@hasselhoff.com",
+        "name":      "David Hasselhoff",
+        "password":  "iSetGermanyFree!",
+        "roles":     [ "user", "admin" ],
+        "lang_tag":  "en_US"
     }
 
 
