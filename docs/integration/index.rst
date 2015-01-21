@@ -52,10 +52,9 @@ Create a new user for this customer
 So now you've got a new company set up. So now it's time to create the first user for this company.
 Send a POST request including your [API key](api_key) to create a user.
 
-.. note:: If you are using our `POSTman collection <postman.html#import-the-collection>`_ you can just send
-          the next request to create a user
-          without replacing the ``:company_id`` in the request, as the ``POST /companies`` request adds a company_id
-          environment variable in its `POSTman tests`_.
+.. note:: If you are using our `POSTman collection <../postman.html#import-the-collection>`_ you can just send
+          the next request to create a user without replacing the ``:company_id`` in the request,
+          as the ``POST /companies`` request adds a company_id environment variable in its `POSTman tests`_.
 
 .. _POSTman tests: https://www.getpostman.com/docs/jetpacks_writing_tests
 
