@@ -27,7 +27,7 @@ Import an environment
 Import the collection
 ---------------------
 
-Click the import button on the top right cornor and import one of our collection urls
+Click the import button on the top left cornor and import one of our collections using 'Download from link'
 
 - Complete API Request list: https://www.getpostman.com/collections/1c02a557a932d3f7aa64
 
