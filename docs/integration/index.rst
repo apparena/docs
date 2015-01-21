@@ -2,9 +2,9 @@ Integration guide
 =================
 
 .. note:: Before you can integrate App-Arena to your systems backend, you have to generate an API key.
-          Once you got it, you can start requesting our :doc:`api`.
+          Once you got it, you can start requesting our `API <api/index>`_.
 
-To make it easy here are some examples for an integration. All requests are available in a :doc:`postman`.
+To make it easy here are some examples for an integration. All requests are available in a `POSTman <postman>`_.
 
 Szenario 1: Create a new customer
 ------------------------------------
