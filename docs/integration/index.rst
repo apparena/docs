@@ -7,7 +7,7 @@ Integration guide
 
 To make it easy here are some examples for an integration. All requests are available in a `POSTman <../postman.html>`_.
 
-Szenario 1: Create a new customer
+Scenario 1: Create a new customer
 ---------------------------------
 
 Each user is part of a company. So before creating a user you need to create
