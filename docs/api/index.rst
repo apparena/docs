@@ -1,6 +1,10 @@
 Working with the API
 ====================
 
+.. note:: Test all available requests in our API-Explorer_.
+
+.. _API-Explorer: http://v2.app-arena.com/apigility/swagger/API-v1
+
 API Endpoint
 ------------
 
