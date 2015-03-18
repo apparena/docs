@@ -25,7 +25,7 @@ Tools
 
     `API-Explorer`_ - Quick overview of all available requests and interactive testing
 
-.. _API-Explorer: https://v2.app-arena.com/api/v1/
+.. _API-Explorer: v2-stage.app-arena.com/apigility/swagger/API-v1
 
 
 .. _dev-docs:
