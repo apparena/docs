@@ -12,6 +12,7 @@ this documentation better.
 .. _App-Arena.com: http://www.app-arena.com/
 .. _available on github: https://github.com/apparena/docs
 
+
 The main documentation for the site is organized into a couple sections:
 
     * :ref:`tools`
@@ -21,7 +22,7 @@ The main documentation for the site is organized into a couple sections:
 .. _tools:
 
 Tools
------
+~~~~~
 
     `API-Explorer`_ - Quick overview of all available requests and interactive testing
 
