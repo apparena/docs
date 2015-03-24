@@ -40,6 +40,7 @@ If you want to develop apps, then start with one of these topics:
     :maxdepth: 2
 
     api/001-index
+    api/090-instances
     api/130-models
     postman
 
