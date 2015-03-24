@@ -43,7 +43,7 @@ If you want to develop apps, then start with one of these topics:
     api/030-companies
     api/090-instances
     api/130-models
-    api/130-templates
+    api/200-templates
     postman
 
 .. _integrator-docs:
