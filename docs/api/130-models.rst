@@ -58,29 +58,29 @@ API - Models calls
 
 .. http:response:: Newly created model object
 
-.. sourcecode:: js
+    .. sourcecode:: js
 
-    {
-        "app_domain": "",
-        "base_url": "https:\/\/www.url-to-your-app.com\/appsubfolder\/",
-        "created_at": "2015-03-24",
-        "description": "Using this app you will superpower your skills.",
-        "fb_app_id": "",
-        "fb_app_namespace": "",
-        "fb_app_secret": "",
-        "fb_canvas_url": "",
-        "id": 312,
-        "lang_tag": "de_DE",
-        "name": "My shiny new app",
-        "secret": "fd0691803888c9171abfde4ec8d00747",
-        "validity": "",
-        "timestamp": 1427207187,
-        "_links": {
-            "self": {
-                "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/312"
+        {
+            "app_domain": "",
+            "base_url": "https:\/\/www.url-to-your-app.com\/appsubfolder\/",
+            "created_at": "2015-03-24",
+            "description": "Using this app you will superpower your skills.",
+            "fb_app_id": "",
+            "fb_app_namespace": "",
+            "fb_app_secret": "",
+            "fb_canvas_url": "",
+            "id": 312,
+            "lang_tag": "de_DE",
+            "name": "My shiny new app",
+            "secret": "fd0691803888c9171abfde4ec8d00747",
+            "validity": "",
+            "timestamp": 1427207187,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/312"
+                }
             }
         }
-    }
 
 
 /models/:model_id
