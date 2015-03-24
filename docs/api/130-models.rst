@@ -12,7 +12,7 @@ Retrieve a list of models.
 
 .. http:method:: GET /api/v1/models
 
-** Example response JSON **
+**Example response JSON**
 
 .. sourcecode:: js
 
@@ -50,7 +50,7 @@ Retrieve a list of models.
 
 Retrieve basic information of a single model.
 
-** Example response JSON **
+**Example response JSON**
 
 .. http:response::
 
@@ -142,7 +142,7 @@ Retrieve basic information of a single model.
 
 Retrieves a paginated list of config values of a model
 
-** Example response JSON **
+**Example response JSON**
 
 .. http:response::
 
