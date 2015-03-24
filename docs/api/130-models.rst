@@ -1,15 +1,18 @@
-API: Models calls
-=================
+API - Models calls
+==================
 
-.. note:: Test these requests in our API-Explorer_.
+.. Tip:: Test all of those requests in our API-Explorer_.
 
 .. _API-Explorer: https://v2.app-arena.com/apigility/swagger/API-v1#!/model
 
 /models
 -------
+
+Retrieve a list of models.
+
 .. http:method:: GET /api/v1/models
 
-.. http:response:: Retrieve a list of models.
+** Example response JSON **
 
 .. sourcecode:: js
 
@@ -40,11 +43,16 @@ API: Models calls
 
 /models/:id
 -----------
+
 .. http:method:: GET /api/v1/models/{id}
 
    :arg id: ID of the model.
 
-.. http:response:: Retrieve basic information of a single model.
+Retrieve basic information of a single model.
+
+** Example response JSON **
+
+.. http:response::
 
    .. sourcecode:: js
 
@@ -84,17 +92,91 @@ API: Models calls
 /models/:id/configs
 -------------------
 
-.. note:: data_* parameters are different for each config type. The following table will list these parameters.
+.. note:: ``data_*`` parameters are different for each config type. The following table will list all parameters
+          for all config types.
+
++---------------+-----------------------------------+-------------------------------------------------------+
+| Config-Type   | Attribute                         | Description                                           |
++===============+===================================+=======================================================+
+| checkbox      | ``string`` data_caption_off       | Caption for the 'Off'-value                           |
+|               | ``string`` data_caption_on        | Caption for the 'On'-value                            |
+|               | ``string`` data_label             | Label for the checkbox                                |
++---------------+-----------------------------------+-------------------------------------------------------+
+| color         | -                                 | -                                                     |
++---------------+-----------------------------------+-------------------------------------------------------+
+| css           | ``enum`` data_compiler            | [css | less] Compiler to process the value with       |
++---------------+-----------------------------------+-------------------------------------------------------+
+| date          | -                                 | -                                                     |
++---------------+-----------------------------------+-------------------------------------------------------+
+| image         | ``string`` data_alt               | HTML image alt attribute                              |
+|               | ``string`` data_title             | HTML image title attribute                            |
+|               | ``int`` data_height               | Forced image height (when set, image will be cropped) |
+|               | ``int`` data_min_height           | Minimal allowed height value for this image           |
+|               | ``int`` data_max_height           | Max. allowed height value for this image              |
+|               | ``int`` data_width                | Forced image width (when set, image will be cropped)  |
+|               | ``int`` data_min_width            | Minimal allowed width value for this image            |
+|               | ``int`` data_max_width            | Max. allowed width value for this image               |
+|               | ``array`` data_format             | [jpg | png | gif ] Array of accepted image formats    |
+|               | ``bool`` data_nullable            | Image value can be NULL or not                        |
++---------------+-----------------------------------+-------------------------------------------------------+
+| text          | ``string`` data_type              | HTML5 input data type                                 |
+|               | ``string`` data_placeholder       | HTML5 placeholder attribute                           |
+|               | ``string`` data_pattern           | RegExp for input validation. Defines an input mask    |
+|               | ``int`` data_min                  | Minimum value (validation for data_type "number")     |
+|               | ``int`` data_max                  | Maximum value (validation for data_type "number")     |
+|               | ``int`` data_min_length           | Min. number of characters                             |
+|               | ``int`` data_max_length           | Max. number of characters                             |
++---------------+-----------------------------------+-------------------------------------------------------+
+| textarea      | ``enum`` data_editor              | [wysiwyg, code, none] Rendered frontend editor        |
+|               | ``bool`` data_code_view           | Code view allowed in the frontend                     |
++---------------+-----------------------------------+-------------------------------------------------------+
+| select        | -                                 | -                                                     |
++---------------+-----------------------------------+-------------------------------------------------------+
+| multiselect   | -                                 | -                                                     |
++---------------+-----------------------------------+-------------------------------------------------------+
 
 
-+------------+--------------------------+-------------------------------------------------------+
-| Config-Type   |    Attribute             |   Description                                         |
-+===============+==========================+=======================================================+
-| GET        |    Entity, Collection    |   Request a single entity or a whole collection       |
-+------------+--------------------------+-------------------------------------------------------+
-| POST       |    Collection            |   Creates a new entity in a collection                |
-+------------+--------------------------+-------------------------------------------------------+
-| PUT        |    Entity                |   Updates an entity                                   |
-+------------+--------------------------+-------------------------------------------------------+
-| DELETE     |    Entity                |   Deletes an entity                                   |
-+------------+--------------------------+-------------------------------------------------------+
+.. http:method:: GET /api/v1/models/{id}/configs
+
+   :arg id: ID of the model.
+
+Retrieves a paginated list of config values of a model
+
+** Example response JSON **
+
+.. http:response::
+
+   .. sourcecode:: js
+
+        {
+           "app_domain":"your-domain.com",
+           "base_url":"https:\/\/www.your-domain.com\/myappsubfolder\/",
+           "created_at":"2015-03-05",
+           "description":"Get new super-powers using this cool web-app.",
+           "fb_app_id":"1234567890123456",
+           "fb_app_secret":"1234567890123456789012345612345678901234567890",
+           "id":310,
+           "lang_tag":"de_DE",
+           "name":"My Super-Power App",
+           "secret":"12345678901234567890123456",
+           "validity":"90",
+           "_links":{
+              "self":{
+                 "href":"https:\/\/v2.app-arena.com\/api\/v1\/models\/310"
+              }
+           }
+        }
+
+
+   :data string app_domain: Date of Build.
+   :data string base_url: Error from Sphinx build process.
+   :data string created_at: Build id.
+   :data string description: Description for the model
+   :data string fb_app_id: Facebook app id
+   :data string fb_app_secret: Facebook App, used to install apps to the clients fanpages
+   :data string id: ID of the model
+   :data string lang_tag: Default language of for new instances
+   :data string name: Name of the model
+   :data string secret: Model secret, which is needed to generate a signature (e.g. Client-Browser HTTP requests to the API)
+   :data int validity: How many days a new instance of this model will be available until it expires
+
