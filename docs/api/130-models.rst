@@ -204,13 +204,13 @@ API - Models calls
 
 
    :data string app_domain: Date of Build.
-       :data string base_url: Error from Sphinx build process.
-       :data string created_at: Build id.
-       :data string description: Description for the model
-       :data string fb_app_id: Facebook app id
-       :data string fb_app_secret: Facebook App, used to install apps to the clients fanpages
-       :data string id: ID of the model
-       :data string lang_tag: Default language of for new instances
-       :data string name: Name of the model
-       :data string secret: Model secret, which is needed to generate a signature (e.g. Client-Browser HTTP requests to the API)
-       :data int validity: How many days a new instance of this model will be available until it expires
+   :data string base_url: Error from Sphinx build process.
+   :data string created_at: Build id.
+   :data string description: Description for the model
+   :data string fb_app_id: Facebook app id
+   :data string fb_app_secret: Facebook App, used to install apps to the clients fanpages
+   :data string id: ID of the model
+   :data string lang_tag: Default language of for new instances
+   :data string name: Name of the model
+   :data string secret: Model secret, which is needed to generate a signature (e.g. Client-Browser HTTP requests to the API)
+   :data int validity: How many days a new instance of this model will be available until it expires
