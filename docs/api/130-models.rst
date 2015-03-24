@@ -55,6 +55,11 @@ API - Models calls
         "base_url":       "https://www.url-to-your-app.com/appsubfolder/"
     }
 
+   :data string name: (Required) Name of the model.
+   :data string description: (Optional) Description of the model.
+   :data string base_url: (Optional) Public Url path to your app
+
+
 **Example response JSON**
 
 .. http:response:: Newly created model object
