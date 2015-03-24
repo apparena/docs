@@ -10,8 +10,6 @@ API - Models calls
 
 .. http:method:: GET /api/v1/models
 
-**Example response JSON**
-
 .. http:response:: Retrieve a list of models.
 
 .. sourcecode:: js
@@ -43,8 +41,6 @@ API - Models calls
 
 .. http:method:: POST /api/v1/models
 
-**Example request JSON**
-
 .. http:response:: Create a new model
 
     .. sourcecode:: js
@@ -59,8 +55,6 @@ API - Models calls
     :data string description: (Optional) Description of the model.
     :data string base_url: (Optional) Public Url path to your app
 
-
-**Example response JSON**
 
 .. http:response:: Newly created model object
 
@@ -96,8 +90,6 @@ API - Models calls
 .. http:method:: GET /api/v1/models/{model_id}
 
    :arg model_id: ID of the model.
-
-**Example response JSON**
 
 .. http:response:: Retrieve basic information of a single model.
 
@@ -186,8 +178,6 @@ API - Models calls
 .. http:method:: GET /api/v1/models/{model_id}/configs
 
    :arg model_id: ID of the model.
-
-**Example response JSON**
 
 .. http:response:: Retrieves a paginated list of config values of a model
 
