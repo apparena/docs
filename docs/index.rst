@@ -1,5 +1,5 @@
-Welcome to App-Arena Developer documentation
-============================================
+App-Arena Developer documentation
+=================================
 
 `App-Arena.com`_ provides an infrastructure to manage and scale web-apps.
 Developers can publish and sell own web-apps through our sales channels.
@@ -25,27 +25,27 @@ Tools
 
     `API-Explorer`_ - Quick overview of all available requests and interactive testing
 
-.. _API-Explorer: v2-stage.app-arena.com/apigility/swagger/API-v1
+.. _API-Explorer: https://v2.app-arena.com/apigility/swagger/API-v1
 
 
 .. _dev-docs:
 
-Developer Documentation
-~~~~~~~~~~~~~~~~~~~~~~~
+App Developer
+~~~~~~~~~~~~~
 
 If you want to develop apps, then start with one of these topics:
 
 .. toctree::
     :maxdepth: 2
 
-    api/index
-    api/apikey
+    api/001-index
+    api/130-models
     postman
 
 .. _integrator-docs:
 
-Integrator Documentation
-~~~~~~~~~~~~~~~~~~~~~~~~
+Integrator
+~~~~~~~~~~
 
 If you want to integrate the App-Manager to your system and you want to sell apps on your website,
 please get started with one of the following topics:

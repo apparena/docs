@@ -1,9 +1,21 @@
-Working with the API
-====================
+API - Getting started
+=====================
 
 .. note:: Test all available requests in our API-Explorer_.
 
 .. _API-Explorer: http://v2.app-arena.com/apigility/swagger/API-v1
+
+API key
+-------
+
+To request restricted information from the API, you need to add an API key to your request header::
+
+    GET /api/v1/models HTTP/1.1
+    Host: v2.app-arena.com
+    Authorization: Basic YOURAPIKEY
+
+If you do not have access to the developer section yet, please drop us an email to s.buckpesch at app-arena.com
+with your contact data and will we get in touch with you and sent you an API key.
 
 API Endpoint
 ------------
