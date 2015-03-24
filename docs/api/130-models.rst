@@ -134,7 +134,7 @@ API - Models calls
           for all config types.
 
 +---------------+-----------------------------------+---------------------------------------------------------+
-| Config-Type   | Attribute                         | Description                                             |
+| Config-Type   | Parameter                         | Description                                             |
 +===============+===================================+=========================================================+
 | checkbox      | - ``string`` data_caption_off     | - Caption for the 'Off'-value                           |
 |               | - ``string`` data_caption_on      | - Caption for the 'On'-value                            |
