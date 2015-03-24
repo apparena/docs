@@ -8,9 +8,9 @@ API - Models calls
 /models
 -------
 
-Retrieve a list of models.
-
 .. http:method:: GET /api/v1/models
+
+Retrieve a list of models.
 
 **Example response JSON**
 
@@ -41,12 +41,12 @@ Retrieve a list of models.
        "total_items":176
     }
 
-/models/:id
------------
+/models/:model_id
+-----------------
 
 .. http:method:: GET /api/v1/models/{id}
 
-   :arg id: ID of the model.
+   :arg model_id: ID of the model.
 
 Retrieve basic information of a single model.
 
@@ -89,8 +89,8 @@ Retrieve basic information of a single model.
    :data int validity: How many days a new instance of this model will be available until it expires
 
 
-/models/:id/configs
--------------------
+/models/:model_id/configs
+-------------------------
 
 .. note:: ``data_*`` parameters are different for each config type. The following table will list all parameters
           for all config types.
@@ -136,9 +136,14 @@ Retrieve basic information of a single model.
 +---------------+-----------------------------------+---------------------------------------------------------+
 
 
-.. http:method:: GET /api/v1/models/{id}/configs
+.. http:method:: GET /api/v1/models/{model_id}/configs
 
-   :arg id: ID of the model.
+   :arg model_id: ID of the model.
+   :arg config_id: Identifier of the config value.
+   :arg name: Name of the config value.
+   :arg description: Description of the config value.
+   :arg type: Config value type. Possible values: ``checkbox``, ``color``, ``css``, ``date``, ``image``, ``text``,
+              ``textarea``, ``select``, ``multiselect``
 
 Retrieves a paginated list of config values of a model
 
