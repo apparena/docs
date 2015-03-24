@@ -12,32 +12,32 @@ API - Models calls
 
 .. http:response:: Retrieve a list of models.
 
-.. sourcecode:: js
+    .. sourcecode:: js
 
-    {
-       "_links":{ ... },
-       "_embedded":{
-          "data":[
-             {  ... },
-             {
-                "base_url":"https:\/\/dev.iconsultants.eu\/git\/Photopuzzle-App\/",
-                "description":"A Picture Puzzle Application in which the user have to find the right picture part in the full image.",
-                "id":42,
-                "lang_tag":"de_DE",
-                "name":"*BETA* Picture puzzle",
-                "_links":{
-                   "self":{
-                      "href":"https:\/\/v2.app-arena.com\/api\/v1\/models\/42"
-                   }
-                }
-             },
-             {  ... },
-          ]
-       },
-       "page_count":8,
-       "page_size":25,
-       "total_items":176
-    }
+        {
+           "_links":{ ... },
+           "_embedded":{
+              "data":[
+                 {  ... },
+                 {
+                    "base_url":"https:\/\/dev.iconsultants.eu\/git\/Photopuzzle-App\/",
+                    "description":"A Picture Puzzle Application in which the user have to find the right picture part in the full image.",
+                    "id":42,
+                    "lang_tag":"de_DE",
+                    "name":"*BETA* Picture puzzle",
+                    "_links":{
+                       "self":{
+                          "href":"https:\/\/v2.app-arena.com\/api\/v1\/models\/42"
+                       }
+                    }
+                 },
+                 {  ... },
+              ]
+           },
+           "page_count":8,
+           "page_size":25,
+           "total_items":176
+        }
 
 .. http:method:: POST /api/v1/models
 
@@ -81,7 +81,6 @@ API - Models calls
             }
         }
     }
-
 
 
 /models/:model_id
