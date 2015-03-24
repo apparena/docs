@@ -213,3 +213,34 @@ API - Models calls
    :data string name: Name of the model
    :data string secret: Model secret, which is needed to generate a signature (e.g. Client-Browser HTTP requests to the API)
    :data int validity: How many days a new instance of this model will be available until it expires
+
+
+
+/models/{model_id}/configs/{config_id}
+--------------------------------------
+
+Documentation will follow soon...
+
+
+/models/{model_id}/languages
+----------------------------
+
+Documentation will follow soon...
+
+
+/models/{model_id}/languages/{lang_tag}
+---------------------------------------
+
+Documentation will follow soon...
+
+
+/models/{model_id}/languages/{lang_tag}/translations
+----------------------------------------------------
+
+Documentation will follow soon...
+
+
+/models/{model_id}/templates
+----------------------------
+
+Documentation will follow soon...
