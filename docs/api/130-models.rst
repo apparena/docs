@@ -45,19 +45,19 @@ API - Models calls
 
 **Example request JSON**
 
-.. http:request:: Create a new model
+.. http:response:: Create a new model
 
-.. sourcecode:: js
+    .. sourcecode:: js
 
-    {
-        "name":           "My shiny new app",
-        "description":    "Using this app you will superpower your skills.",
-        "base_url":       "https://www.url-to-your-app.com/appsubfolder/"
-    }
+        {
+            "name":           "My shiny new app",
+            "description":    "Using this app you will superpower your skills.",
+            "base_url":       "https://www.url-to-your-app.com/appsubfolder/"
+        }
 
-   :data string name: (Required) Name of the model.
-   :data string description: (Optional) Description of the model.
-   :data string base_url: (Optional) Public Url path to your app
+    :data string name: (Required) Name of the model.
+    :data string description: (Optional) Description of the model.
+    :data string base_url: (Optional) Public Url path to your app
 
 
 **Example response JSON**
@@ -67,29 +67,28 @@ API - Models calls
 .. sourcecode:: js
 
     {
-       "_links":{ ... },
-       "_embedded":{
-          "data":[
-             {  ... },
-             {
-                "base_url":"https:\/\/dev.iconsultants.eu\/git\/Photopuzzle-App\/",
-                "description":"A Picture Puzzle Application in which the user have to find the right picture part in the full image.",
-                "id":42,
-                "lang_tag":"de_DE",
-                "name":"*BETA* Picture puzzle",
-                "_links":{
-                   "self":{
-                      "href":"https:\/\/v2.app-arena.com\/api\/v1\/models\/42"
-                   }
-                }
-             },
-             {  ... },
-          ]
-       },
-       "page_count":8,
-       "page_size":25,
-       "total_items":176
+        "app_domain": "",
+        "base_url": "https:\/\/www.url-to-your-app.com\/appsubfolder\/",
+        "created_at": "2015-03-24",
+        "description": "Using this app you will superpower your skills.",
+        "fb_app_id": "",
+        "fb_app_namespace": "",
+        "fb_app_secret": "",
+        "fb_canvas_url": "",
+        "id": 312,
+        "lang_tag": "de_DE",
+        "name": "My shiny new app",
+        "secret": "fd0691803888c9171abfde4ec8d00747",
+        "validity": "",
+        "timestamp": 1427207187,
+        "_links": {
+            "self": {
+                "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/312"
+            }
+        }
     }
+
+
 
 /models/:model_id
 -----------------
