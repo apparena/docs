@@ -41,10 +41,69 @@ Retrieve a list of models.
        "total_items":176
     }
 
+.. http:method:: POST /api/v1/models
+
+Create a new model
+
+**Example request JSON**
+
+.. sourcecode:: js
+
+    {
+        "name":           "My shiny new app",
+        "description":    "Using this app you will superpower your skills.",
+        "base_url":       "https://www.url-to-your-app.com/appsubfolder/"
+    }
+
+
++-----------------------------+---------------------+---------------------------------------------------------+
+| Parameters                                                                                                  |
++=============================+=====================+=========================================================+
+| Name                                   | Default       | Description                                        |
++=============================+=====================+=========================================================+
+| (Required ``string``) name             |               |                                                    |
++-----------------------------+---------------------+---------------------------------------------------------+
+| color         |                                   |                                                         |
++-----------------------------+---------------------+---------------------------------------------------------+
+| css           | - ``enum`` data_compiler          | - [css | less] Compiler to process the value with       |
++-----------------------------+---------------------+---------------------------------------------------------+
+| date          |                                   |                                                         |
++-----------------------------+---------------------+---------------------------------------------------------+
+
+
+**Example response JSON**
+
+.. sourcecode:: js
+
+    {
+       "_links":{ ... },
+       "_embedded":{
+          "data":[
+             {  ... },
+             {
+                "base_url":"https:\/\/dev.iconsultants.eu\/git\/Photopuzzle-App\/",
+                "description":"A Picture Puzzle Application in which the user have to find the right picture part in the full image.",
+                "id":42,
+                "lang_tag":"de_DE",
+                "name":"*BETA* Picture puzzle",
+                "_links":{
+                   "self":{
+                      "href":"https:\/\/v2.app-arena.com\/api\/v1\/models\/42"
+                   }
+                }
+             },
+             {  ... },
+          ]
+       },
+       "page_count":8,
+       "page_size":25,
+       "total_items":176
+    }
+
 /models/:model_id
 -----------------
 
-.. http:method:: GET /api/v1/models/{id}
+.. http:method:: GET /api/v1/models/{model_id}
 
    :arg model_id: ID of the model.
 
@@ -139,11 +198,6 @@ Retrieve basic information of a single model.
 .. http:method:: GET /api/v1/models/{model_id}/configs
 
    :arg model_id: ID of the model.
-   :arg config_id: Identifier of the config value.
-   :arg name: Name of the config value.
-   :arg description: Description of the config value.
-   :arg type: Config value type. Possible values: ``checkbox``, ``color``, ``css``, ``date``, ``image``, ``text``,
-              ``textarea``, ``select``, ``multiselect``
 
 Retrieves a paginated list of config values of a model
 
@@ -171,7 +225,6 @@ Retrieves a paginated list of config values of a model
               }
            }
         }
-
 
    :data string app_domain: Date of Build.
    :data string base_url: Error from Sphinx build process.
