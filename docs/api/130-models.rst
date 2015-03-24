@@ -10,9 +10,9 @@ API - Models calls
 
 .. http:method:: GET /api/v1/models
 
-Retrieve a list of models.
-
 **Example response JSON**
+
+.. http:response:: Retrieve a list of models.
 
 .. sourcecode:: js
 
@@ -43,9 +43,9 @@ Retrieve a list of models.
 
 .. http:method:: POST /api/v1/models
 
-Create a new model
-
 **Example request JSON**
+
+.. http:request:: Create a new model
 
 .. sourcecode:: js
 
@@ -55,23 +55,9 @@ Create a new model
         "base_url":       "https://www.url-to-your-app.com/appsubfolder/"
     }
 
-
-+-----------------------------+---------------------+---------------------------------------------------------+
-| Parameters                                                                                                  |
-+=============================+=====================+=========================================================+
-| Name                                   | Default       | Description                                        |
-+=============================+=====================+=========================================================+
-| (Required ``string``) name             |               |                                                    |
-+-----------------------------+---------------------+---------------------------------------------------------+
-| color         |                                   |                                                         |
-+-----------------------------+---------------------+---------------------------------------------------------+
-| css           | - ``enum`` data_compiler          | - [css | less] Compiler to process the value with       |
-+-----------------------------+---------------------+---------------------------------------------------------+
-| date          |                                   |                                                         |
-+-----------------------------+---------------------+---------------------------------------------------------+
-
-
 **Example response JSON**
+
+.. http:response:: Newly created model object
 
 .. sourcecode:: js
 
@@ -107,11 +93,9 @@ Create a new model
 
    :arg model_id: ID of the model.
 
-Retrieve basic information of a single model.
-
 **Example response JSON**
 
-.. http:response::
+.. http:response:: Retrieve basic information of a single model.
 
    .. sourcecode:: js
 
@@ -199,11 +183,9 @@ Retrieve basic information of a single model.
 
    :arg model_id: ID of the model.
 
-Retrieves a paginated list of config values of a model
-
 **Example response JSON**
 
-.. http:response::
+.. http:response:: Retrieves a paginated list of config values of a model
 
    .. sourcecode:: js
 
@@ -226,15 +208,15 @@ Retrieves a paginated list of config values of a model
            }
         }
 
-   :data string app_domain: Date of Build.
-   :data string base_url: Error from Sphinx build process.
-   :data string created_at: Build id.
-   :data string description: Description for the model
-   :data string fb_app_id: Facebook app id
-   :data string fb_app_secret: Facebook App, used to install apps to the clients fanpages
-   :data string id: ID of the model
-   :data string lang_tag: Default language of for new instances
-   :data string name: Name of the model
-   :data string secret: Model secret, which is needed to generate a signature (e.g. Client-Browser HTTP requests to the API)
-   :data int validity: How many days a new instance of this model will be available until it expires
 
+   :data string app_domain: Date of Build.
+       :data string base_url: Error from Sphinx build process.
+       :data string created_at: Build id.
+       :data string description: Description for the model
+       :data string fb_app_id: Facebook app id
+       :data string fb_app_secret: Facebook App, used to install apps to the clients fanpages
+       :data string id: ID of the model
+       :data string lang_tag: Default language of for new instances
+       :data string name: Name of the model
+       :data string secret: Model secret, which is needed to generate a signature (e.g. Client-Browser HTTP requests to the API)
+       :data int validity: How many days a new instance of this model will be available until it expires
