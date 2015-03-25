@@ -55,7 +55,7 @@ API - Instances calls
             "total_items": 9270
         }
 
-        For parameter documentation see :ref:`instance_object`
+    For parameter documentation see :ref:`instance_object`
 
 .. http:method:: POST /api/v1/instances
 
@@ -123,7 +123,7 @@ API - Instances calls
 
 .. http:response:: Retrieve basic information of a single instance.
 
-   .. sourcecode:: js
+    .. sourcecode:: js
 
         {
             "active": 1,
