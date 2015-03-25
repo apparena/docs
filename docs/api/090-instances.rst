@@ -112,7 +112,7 @@ API - Instances calls
     For parameter documentation see :ref:`instance_object`
 
 
-.. _instance_object:
+
 
 /instances/{i_id}
 -----------------
@@ -142,6 +142,7 @@ API - Instances calls
             }
         }
 
+.. _instance_object:
 
     :data bool active: TODO
     :data string base_url: TODO
@@ -179,7 +180,7 @@ API - Instances calls
             }
         }
 
-
+For parameter documentation see :ref:`instance_object`
 
 
 
