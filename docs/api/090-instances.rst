@@ -154,6 +154,34 @@ API - Instances calls
     :data int timestamp: TODO
 
 
+.. http:method:: PUT /api/v1/instances/{instance_id}
+
+   :arg instance_id: ID of the instance.
+
+.. http:response:: Retrieve basic information of a single instance.
+
+    .. sourcecode:: js
+
+        {
+            "active": 1,
+            "base_url": "https:\/\/adventskranz.onlineapp.co\/",
+            "description": "The description of my new instance.",
+            "id": 9627,
+            "lang_tag": "en_US",
+            "m_id": 299,
+            "name": "This is my new instance name. It's changed!",
+            "template_id": 780,
+            "timestamp": 1427297181,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2-stage.app-arena.com\/api\/v1\/instances\/9627"
+                }
+            }
+        }
+
+
+
+
 
 
 /instances/{i_id}/configs
