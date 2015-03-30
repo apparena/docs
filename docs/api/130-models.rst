@@ -127,6 +127,16 @@ API - Models calls
    :data int validity: How many days a new instance of this model will be available until it expires
 
 
+.. http:method:: PUT /api/v1/models/{model_id}
+
+Documentation will follow soon...
+
+
+.. http:method:: DELETE /api/v1/models/{model_id}
+
+Documentation will follow soon...
+
+
 /models/:model_id/configs
 -------------------------
 
