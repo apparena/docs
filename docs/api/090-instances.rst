@@ -159,7 +159,7 @@ API - Instances calls
 
    :arg instance_id: ID of the instance.
 
-.. http:response:: Retrieve basic information of a single instance.
+.. http:response:: Update basic information of a single instance.
 
     .. sourcecode:: js
 
