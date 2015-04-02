@@ -164,7 +164,7 @@ API - Instances calls
 
    :arg instance_id: ID of the instance.
 
-.. http:response:: Example request body to rename the instance and reset the expiration date
+.. http:response:: Example request body
 
     .. sourcecode:: js
 
