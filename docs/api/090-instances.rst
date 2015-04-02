@@ -143,23 +143,40 @@ API - Instances calls
         }
 
 
-
-    :data bool active: TODO
-    :data string base_url: TODO
+    :data bool active: Is this instance active or not (can it be used by the client)
+    :data string base_url: Public URI to access the instance
     :data string description: Description for the instance
+    :data string expiration_date: Until which date the instance can be used. Format: YYYY-MM-DD
+    :data string fb_app_id: Facebook App ID used for this instance,
+    :data string fb_app_namespace: Facebook App namespace used for this instance
+    :data string fb_page_id: Facebook Fanpage ID the instance is installed on
+    :data string fb_page_name: Facebook Fanpage Name the instance is installed on
+    :data string fb_page_url: Facebook Fanpage Url the instance is installed on
     :data int id: ID of the instance
     :data string lang_tag: language of for new instances
-    :data int m_id: TODO
+    :data int m_id: ID of the app model of the instance
     :data string name: Name of the instance
-    :data int template_id: TODO
-    :data int timestamp: TODO
+    :data int template_id: ID of the template of this instance
+    :data int timestamp: Creation/Update time on the server
 
 
 .. http:method:: PUT /api/v1/instances/{instance_id}
 
    :arg instance_id: ID of the instance.
 
-.. http:response:: Update basic information of a single instance.
+.. http:response:: Example request body to rename the instance and reset the expiration date
+
+    .. sourcecode:: js
+
+        {
+            "name": "This is my new instance name. It's changed!",
+            "expiration_date": "2015-12-24"
+        }
+
+For parameter documentation see :ref:`instance_object`
+
+
+.. http:response:: Example response body
 
     .. sourcecode:: js
 
@@ -167,22 +184,26 @@ API - Instances calls
             "active": 1,
             "base_url": "https:\/\/adventskranz.onlineapp.co\/",
             "description": "The description of my new instance.",
-            "id": 9627,
+            "expiration_date": "2015-05-15",
+            "fb_app_id": "725444547534506",
+            "fb_app_namespace": "advents-kranz",
+            "fb_page_id": "",
+            "fb_page_name": "",
+            "fb_page_url": "https:\/\/www.facebook.com\/",
+            "id": 9759,
             "lang_tag": "en_US",
             "m_id": 299,
             "name": "This is my new instance name. It's changed!",
             "template_id": 780,
-            "timestamp": 1427297181,
+            "timestamp": 1427960768,
             "_links": {
-                "self": {
-                    "href": "https:\/\/v2-stage.app-arena.com\/api\/v1\/instances\/9627"
+            "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9759"
                 }
             }
         }
 
 For parameter documentation see :ref:`instance_object`
-
-
 
 
 /instances/{i_id}/configs
