@@ -184,7 +184,7 @@ For parameter documentation see :ref:`instance_object`
             "active": 1,
             "base_url": "https:\/\/adventskranz.onlineapp.co\/",
             "description": "The description of my new instance.",
-            "expiration_date": "2015-05-15",
+            "expiration_date": "2015-12-24",
             "fb_app_id": "725444547534506",
             "fb_app_namespace": "advents-kranz",
             "fb_page_id": "",
