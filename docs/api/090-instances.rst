@@ -441,7 +441,19 @@ Documentation will follow soon...
 /instances/{i_id}/languages/{lang_tag}
 --------------------------------------
 
-Documentation will follow soon...
+.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(textarea)
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "is_activated":0
+        }
+
+
 
 
 /instances/{i_id}/languages/{lang_tag}/translations
