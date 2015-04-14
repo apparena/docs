@@ -230,25 +230,268 @@ Documentation will follow soon...
 /models/{model_id}/configs/{config_id}
 --------------------------------------
 
-Documentation will follow soon...
+.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(checkbox)
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":               "Updated Name of Checkbox",
+            "value":              false,
+            "description":        "Updated description of my checkbox",
+            "data_caption_off":   "Updated Custom Off",
+            "data_caption_on":    "Updated Custom On",
+            "data_label":         "Updated Optional label"
+        }
+
+:data string name: (Optional) Name of the config value
+:data bool value: (Optional) Value for the config element
+:data string description: (Optional) Description for the config value
+:data string data_caption_off: (Optional) Caption for the 'Off'-value
+:data string data_caption_on: (Optional) Caption for the 'On'-value
+:data string data_label: (Optional) Label for the checkbox
+
+.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(color)
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":               "Updated Name of color",
+            "value":              #FFFFFF,
+            "description":        "Updated description of my color",
+        }
+
+:data string name: (Optional) Name of the config value
+:data bool value: (Optional) Value for the config element
+:data string description: (Optional) Description for the config value
+
+.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(css)
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":"Updated Name of my CSS config",
+            "value":"body { text-align:center; color:red; } h1.h1, h2, h3 { font-size: 30px; }",
+            "description":"Updated The description of my config value.",
+            "data_compiler":"css"
+        }
+
+:data string name: (Optional) Name of the config value
+:data bool value: (Optional) Value for the config element
+:data string description: (Optional) Description for the config value
+:data object meta_data: (Optional) Meta data for the config field
+
+.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(data) DEPRECATED
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":               "Updated Name of my date",
+            "value":              1911-02-22,
+            "description":        "Updated Enter a valid date",
+        }
+
+:data string name: (Optional) Name of the config value
+:data bool value: (Optional) Value for the config element
+:data string description: (Optional) Description for the config value
+
+.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(image)
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":"Updated Name of my image config value",
+            "value":null,
+            "description":"Updated The description of my config value.",
+            "data_alt": "Updated Service Flatrate promotion image",
+            "data_title": "Updated Save 25% in may on our service flatrate",
+            "data_max_height":2000,
+            "data_max_width":2000,
+            "data_min_height":200,
+            "data_min_width":200,
+            "data_height":600,
+            "data_width":1000,
+            "data_format":["jpg"],
+            "data_nullable":true
+        }
+
+:data string name: (Optional) Name of the config value
+:data string value: (Optional) Value for the config element
+:data string description: (Optional) Description for the config value
+:data object meta_data: (Optional) Meta data for the config field
+
+.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(text)
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":"Updated Name of my config value",
+            "value":"updated@email.com",
+            "description":"Updated Enter a valid Email (max. 22 lowercase characters or numbers, no whitespaces, @).",
+            "data_type":"email",
+            "data_placeholder":"Updated Enter email here",
+            "data_pattern":"[a-zA-Z0-9@]{22}"
+        }
+
+:data string name: (Optional) Name of the config value
+:data string value: (Optional) Value for the config element
+:data string description: (Optional) Description for the config value
+:data object meta_data: (Optional) Meta data for the config field
+
+.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(textarea)
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":"Updated Name of my config value",
+            "value":"<h1>Updated This is my default HTML content</h1>",
+            "description":"Updated The description of my config value.",
+            "data_editor":"code"
+        }
+
+:data string name: (Optional) Name of the config value
+:data string value: (Optional) Value for the config element
+:data string description: (Optional) Description for the config value
+:data object meta_data: (Optional) Meta data for the config field
+
+.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(select)
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":"Updated Name of my config value",
+            "description":"The description of my config value.",
+            "source":[
+                {
+                    "value": "updated_value_id_1",
+                    "text": "Updated Text for value 1"
+                },
+                {
+                    "value": "updated_value_id_2",
+                    "text": "Updated Text for value 2"
+                },
+                {
+                    "value": "value_id_3",
+                    "text": "Updated Text for value 3"
+                }
+            ],
+            "value":"updated_value_id_1"
+        }
+
+:data string name: (Optional) Name of the config value
+:data string value: (Optional) Value for the config element
+:data string description: (Optional) Description for the config value
+:data array source: (Optional) All available options of the select config value
+
+.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(select)
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":"Updated Name of my config value",
+            "description":"Updated The description of my config value.",
+            "source":[
+                {
+                    "value": "updated_value_id_1",
+                    "text": "Updated Text for value 1"
+                },
+                {
+                    "value": "value_id_2",
+                    "text": "Updated Text for value 2"
+                },
+                {
+                    "value": "updated_value_id_3",
+                    "text": "Updated Text for value 3"
+                }
+            ],
+            "value":[ "updated_value_id_3", "updated_value_id_1" ]
+        }
+
+:data string name: (Optional) Name of the config value
+:data array value: (Optional) All values which should be selected by default
+:data string description: (Optional) Description for the config value
+:data array source: (Optional) All available options of the select config value
+
 
 
 /models/{model_id}/languages
 ----------------------------
 
-Documentation will follow soon...
+.. http:method:: POST /api/v1/models/{model_id}/languages
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "lang_tag":"fr_FR"
+        }
+
+:data enum lang_tag: (Required) Language tag of the language to add to the model
+:data is_activated: (Optional) If the new language is activated immediately
+
 
 
 /models/{model_id}/languages/{lang_tag}
 ---------------------------------------
 
-Documentation will follow soon...
+.. http:method:: PUT /api/v1/models/{model_id}/languages/{lang_tag}
 
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "is_activated":1
+        }
+
+:data boolean is_activated: (Required) If the new language is activated immediately
 
 /models/{model_id}/languages/{lang_tag}/translations
 ----------------------------------------------------
 
-Documentation will follow soon...
+.. http:method:: POST /api/v1/models/{model_id}/languages/{lang_tag}/translations
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "translation_id":"test_translation",
+            "value":"Il mio test translations!"
+        }
+
+:data string translation_id: (Required) Translation ID
+:data string value: (Required) Translation
 
 
 /models/{model_id}/templates
