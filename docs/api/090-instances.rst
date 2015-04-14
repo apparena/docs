@@ -117,9 +117,9 @@ API - Instances calls
 /instances/{i_id}
 -----------------
 
-.. http:method:: GET /api/v1/instances/{instance_id}
+.. http:method:: GET /api/v1/instances/{i_id}
 
-   :arg instance_id: ID of the instance.
+   :arg i_id: ID of the instance.
 
 .. http:response:: Retrieve basic information of a single instance.
 
@@ -155,9 +155,9 @@ API - Instances calls
     :data int timestamp: TODO
 
 
-.. http:method:: PUT /api/v1/instances/{instance_id}
+.. http:method:: PUT /api/v1/instances/{i_id}
 
-   :arg instance_id: ID of the instance.
+       :arg i_id: ID of the instance.
 
 .. http:response:: Retrieve basic information of a single instance.
 
@@ -180,7 +180,13 @@ API - Instances calls
             }
         }
 
-For parameter documentation see :ref:`instance_object`
+    For parameter documentation see :ref:`instance_object`
+
+.. http:method:: DELETE /api/v1/instances/{i_id}
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Retrieve basic information of a single instance.
 
 
 
