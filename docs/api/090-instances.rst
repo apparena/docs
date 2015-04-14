@@ -238,6 +238,24 @@ Documentation will follow soon...
             "data_label":         "Updated Optional label"
         }
 
+.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(color)
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":       "Updated Name of Color",
+            "value":      "#EEEEEE",
+            "description":"Updated The description of my color"
+        }
+
+:data string name: (Optional)
+:data string value: (Optional)
+:data string description: (Optional) Description for the instance
+
 
 /instances/{i_id}/languages
 ---------------------------
