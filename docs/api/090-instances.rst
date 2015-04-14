@@ -256,6 +256,181 @@ Documentation will follow soon...
 :data string value: (Optional)
 :data string description: (Optional) Description for the instance
 
+.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(css)
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":           "Updated Name of my CSS config",
+            "value":          "body { text-align:center; text-color:red; } h1.h1, h2, h3 { font-size: 30px; }",
+            "description":    "Updated The description of my config value.",
+            "data_compiler":  "css"
+        }
+
+:data string name: (Optional)
+:data string value: (Optional)
+:data string description: (Optional) Description for the instance
+:data object data_compiler: (Optional)
+
+.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(date) DEPRECATED
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":       "Updated Name of my date",
+            "value":      "1911-02-22",
+            "description":"Updated Enter a valid date"
+        }
+
+:data string name: (Optional)
+:data string value: (Optional)
+:data string description: (Optional) Description for the instance
+
+.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(image)
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":           "Updated Name of my image config value",
+            "value":          "https://app-manager.s3.amazonaws.com/apps/models/3/0/4/0/de_DE/AppArena_Logo_aufblau_1426686667_0.png",
+            "description":    "Updated The description of my config value.",
+            "data_alt":       "Updated Service Flatrate promotion image",
+            "data_title":     "Updated Save 25% in may on our service flatrate",
+            "data_max_height":2000,
+            "data_max_width": 2000,
+            "data_min_height":200,
+            "data_min_width" :200,
+            "data_height":    600,
+            "data_width":     1000,
+            "data_format":    ["jpg"],
+            "data_nullable":  true
+        }
+
+:data string name: (Optional)
+:data string value: (Optional)
+:data string description: (Optional) Description for the instance
+:data object meta_data: (Optional)
+
+.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(multiselect)
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":"Updated Name of my config value",
+            "description":"Updated The description of my config value.",
+            "source":[
+                {
+                    "value": "updated_value_id_1",
+                    "text": "Updated Text for value 1"
+                },
+                {
+                    "value": "value_id_2",
+                    "text": "Updated Text for value 2"
+                },
+                {
+                    "value": "updated_value_id_3",
+                    "text": "Updated Text for value 3"
+                }
+            ],
+            "value":[ "page" ]
+        }
+
+:data string name: (Optional)
+:data array value: (Optional)
+:data string description: (Optional) Description for the instance
+:data array source: (Optional)
+
+.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(select)
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":"Updated Name of my config value",
+            "description":"The description of my config value.",
+            "source":[
+                {
+                    "value": "ubuntu",
+                    "text": "New Ubuntu text"
+                },
+                {
+                    "value": "updated_value_id_2",
+                    "text": "Updated Text for value 2"
+                },
+                {
+                    "value": "value_id_3",
+                    "text": "Updated Text for value 3"
+                }
+            ],
+            "value":"ubuntu"
+        }
+
+:data string name: (Optional)
+:data string value: (Optional)
+:data string description: (Optional) Description for the instance
+:data array source: (Optional)
+
+.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(text)
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":"Updated Name of my config value",
+            "value":"updated@email.com",
+            "description":"Updated Enter a valid Email (max. 22 lowercase characters or numbers, no whitespaces, @).",
+            "data_type":"email",
+            "data_placeholder":"Updated Enter email here",
+            "data_pattern":"[a-zA-Z0-9@]{22}"
+        }
+
+:data string name: (Optional)
+:data string value: (Optional)
+:data string description: (Optional) Description for the instance
+:data object meta_data: (Optional)
+
+.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(textarea)
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":       "Updated Name of my config value",
+            "value":      "<h1>Updated This is my default HTML content</h1>",
+            "description":"Updated The description of my config value.",
+            "data_editor":"code"
+        }
+
+:data string name: (Optional)
+:data string value: (Optional)
+:data string description: (Optional) Description for the instance
+:data object meta_data: (Optional)
+
 
 /instances/{i_id}/languages
 ---------------------------
