@@ -221,7 +221,22 @@ Documentation will follow soon...
 /instances/{i_id}/configs/{config_id}
 -------------------------------------
 
-Documentation will follow soon...
+.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":               "Updated Name of Checkbox",
+            "value":              false,
+            "description":        "Updated description of my checkbox",
+            "data_caption_off":   "Updated Custom Off",
+            "data_caption_on":    "Updated Custom On",
+            "data_label":         "Updated Optional label"
+        }
 
 
 /instances/{i_id}/languages
