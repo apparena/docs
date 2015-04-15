@@ -17,10 +17,10 @@ API - Companies calls
 
         {
             "name"		:"New App-Arena customer. {{$timestamp}}",
-            "subdomain"	:"apparena_customer_{{$timestamp}}",
-            "address1"	:"My street 1",
-            "address2"	:"My street 2",
-            "zip"			:"12345",
+            "subdomain"	    :"apparena_customer_{{$timestamp}}",
+            "address1"	    :"My street 1",
+            "address2"	    :"My street 2",
+            "zip"		:"12345",
             "city"		:"My city",
             "country"		:"DE",
             "logo"		:"https://app-manager.s3.amazonaws.com/apps/models/3/0/4/0/de_DE/AppArena_Logo_aufweiss300x80_1413369016_0.png",
