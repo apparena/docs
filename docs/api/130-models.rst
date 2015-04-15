@@ -717,7 +717,7 @@ Documentation will follow soon...
     :data string description: (Optional) Description for the config value
     :data array source: (Optional) All available options of the select config value
 
-.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(select)
+.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(multiselect)
 
 
 .. http:response:: Example request body
