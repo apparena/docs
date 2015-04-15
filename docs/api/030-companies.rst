@@ -97,15 +97,15 @@ API - Companies calls
         {
             "name"        :"Updated New Company Name _{{$timestamp}}",
             "subdomain"   :"updated_my_subdomain_{{$timestamp}}",
-            "address1"	:"Updated My street 1",
-            "address2"	:"Updated My street 2",
-            "zip"		    :"11112345",
-            "city"		:"Updated My city",
-            "country"	    :"AT",
-            "logo"		:"https://app-manager.s3.amazonaws.com/apps/models/3/0/4/0/de_DE/AppArena_Logo_aufweiss300x80_1413369016_0.png",
-            "color1"	    :"#111111",
-            "color2"	    :"#222222",
-            "font"		:"verdana"
+            "address1"	    :"Updated My street 1",
+            "address2"	    :"Updated My street 2",
+            "zip"		   :"11112345",
+            "city"	:"Updated My city",
+            "country"	   :"AT",
+            "logo"	:"https://app-manager.s3.amazonaws.com/apps/models/3/0/4/0/de_DE/AppArena_Logo_aufweiss300x80_1413369016_0.png",
+            "color1"	   :"#111111",
+            "color2"	   :"#222222",
+            "font"	:"verdana"
         }
 
     :data string name: (Required) Name of the company
