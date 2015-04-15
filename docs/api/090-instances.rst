@@ -563,8 +563,8 @@ For parameter documentation see :ref:`instance_object`
             "description":"Updated The description of my color"
         }
 
-    :data string name: (Optional)
-    :data string value: (Optional)
+    :data string name: (Optional) Name for the config value
+    :data string value: (Optional) Default value for the config element
     :data string description: (Optional) Description for the instance
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(css)
@@ -582,10 +582,10 @@ For parameter documentation see :ref:`instance_object`
             "data_compiler":  "css"
         }
 
-    :data string name: (Optional)
-    :data string value: (Optional)
+    :data string name: (Optional) Name for the config value
+    :data string value: (Optional) Default value for the config element
     :data string description: (Optional) Description for the instance
-    :data object data_compiler: (Optional)
+    :data object data_compiler: (Optional) Which compiler should be used to generate CSS?
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(date) DEPRECATED
 
@@ -601,8 +601,8 @@ For parameter documentation see :ref:`instance_object`
             "description":"Updated Enter a valid date"
         }
 
-    :data string name: (Optional)
-    :data string value: (Optional)
+    :data string name: (Optional) Name for the config value
+    :data string value: (Optional) value for the config element
     :data string description: (Optional) Description for the instance
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(image)
@@ -629,10 +629,10 @@ For parameter documentation see :ref:`instance_object`
             "data_nullable":  true
         }
 
-    :data string name: (Optional)
-    :data string value: (Optional)
+    :data string name: (Optional) Name for the config value
+    :data string value: (Optional) value for the config element
     :data string description: (Optional) Description for the instance
-    :data object meta_data: (Optional)
+    :data object meta_data: (Optional) Meta data for the config field
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(multiselect)
 
@@ -662,10 +662,10 @@ For parameter documentation see :ref:`instance_object`
             "value":[ "page" ]
         }
 
-    :data string name: (Optional)
-    :data array value: (Optional)
+    :data string name: (Optional) Name for the config value
+    :data array value: (Optional) All values which should be selected by defaul
     :data string description: (Optional) Description for the instance
-    :data array source: (Optional)
+    :data array source: (Optional) All available options of the select config value
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(select)
 
@@ -695,10 +695,10 @@ For parameter documentation see :ref:`instance_object`
             "value":"ubuntu"
         }
 
-    :data string name: (Optional)
-    :data string value: (Optional)
+    :data string name: (Optional) Name for the config value
+    :data string value: (Optional) Default value for the config element
     :data string description: (Optional) Description for the instance
-    :data array source: (Optional)
+    :data array source: (Optional) All available options of the select config value
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(text)
 
@@ -717,10 +717,17 @@ For parameter documentation see :ref:`instance_object`
             "data_pattern":"[a-zA-Z0-9@]{22}"
         }
 
-    :data string name: (Optional)
-    :data string value: (Optional)
-    :data string description: (Optional) Description for the instance
-    :data object meta_data: (Optional)
+    :data string name: (Optional) Name of the config value
+    :data string value: (Optional) value for the config element
+    :data string description: (Optional) Description for the config value
+    :data object meta_data: (Optional) Meta data for the config field
+    :data enum type: (Optional) "text", "email", "number", "url", "tel", "date" | Data schema for the text field. Default is text
+    :data string placeholder: (Optional) Input field placeholder
+    :data integer min: (Optional) Minimum value (validation for type "number")
+    :data integer max: (Optional) Maximum value (validation for type "number")
+    :data integer max_lenght: (Optional) Maximum value (validation for type "text")
+    :data integer min_lenght: (Optional) Minimum value (validation for type "text")
+    :data string pattern: (Optional) Regular expression for input validation defines an input mask
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(textarea)
 
@@ -737,10 +744,12 @@ For parameter documentation see :ref:`instance_object`
             "data_editor":"code"
         }
 
-    :data string name: (Optional)
-    :data string value: (Optional)
-    :data string description: (Optional) Description for the instance
-    :data object meta_data: (Optional)
+    :data string name: (Optional) Name of the config value
+    :data string value: (Optional) Default value for the config element
+    :data string description: (Optional) Description for the config value
+    :data object meta_data: (Optional) Meta data for the config field
+    :data enum editor: (Optional) Which editor should be shown to the user?
+
 
 
 /instances/{i_id}/languages
@@ -872,4 +881,20 @@ For parameter documentation see :ref:`instance_object`
             }
         }
 
+/instances/{i_id}/languages/:lang_tag/translation/:translation_id
+-----------------------------------------------------------------
 
+
+.. http:method:: GET /api/v1/instances/{i_id}/languages/:lang_tag/translation/:translation_id
+
+       :arg i_id: ID of the translation.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "value":"UPDATED Il mio test translation!"
+        }
+
+    :data string value: (Required) Translation
