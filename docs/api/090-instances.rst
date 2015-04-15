@@ -61,7 +61,7 @@ API - Instances calls
             }
         }
 
-    For parameter documentation see :ref:`instance_object`
+For parameter documentation see :ref:`instance_object`
 
 
 .. _instance_object:
@@ -113,7 +113,7 @@ API - Instances calls
             "total_items": 9270
         }
 
-    For parameter documentation see :ref:`instance_object`
+For parameter documentation see :ref:`instance_object`
 
 
 
@@ -396,6 +396,140 @@ For parameter documentation see :ref:`instance_object`
                 }
             }
         }
+
+.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(multiselect)
+
+    :arg model_id: ID of the config.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "Geben Sie hier an, welche Art von Inhalten Sie hinter dem Türchen anzeigen möchten. Die jeweiligen Inhalte legen Sie innerhalb der nächsten Schritte fest. Weitere Infos siehe Konfigurationsleitfaden.",
+            "id": "door_1_pages_activated",
+            "instance_id": 9849,
+            "lang_tag": "de_DE",
+            "name": "Inhalte des Türchens",
+            "source": [
+                {
+                    "value": "none",
+                    "text": "Keine Seite"
+                },
+                {
+                    "value": "page",
+                    "text": "Inhaltsseite"
+                },
+                {
+                    "value": "quiz",
+                    "text": "Quiz-Seite"
+                }
+            ],
+            "template_id": 780,
+            "type": "multiselect",
+            "value": [
+                "page",
+                "quiz"
+            ],
+            "timestamp": 1429105338,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9849\/configs\/door_1_pages_activated"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(select)
+
+    :arg model_id: ID of the config.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "Wählen Sie eine der vordefinierten Schriftarten aus oder legen Sie per CSS eine eigene Schriftart fest. Weitere Infos siehe Grafikleitfaden.",
+            "id": "app_font_body",
+            "instance_id": 9849,
+            "lang_tag": "de_DE",
+            "name": "Schriftart für Textkörper",
+            "source": [
+                {  ... },
+                {
+                    "value": "arial",
+                    "text": "Arial"
+                },
+                {
+                    "value": "delius-Swash",
+                    "text": "Delius Swash Caps"
+                }
+                {  ... },
+            ],
+            "template_id": 780,
+            "type": "select",
+            "value": "source-sans-pro",
+            "timestamp": 1429105490,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9849\/configs\/app_font_body"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(text)
+
+    :arg model_id: ID of the config.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "Die E-Mail-Adresse des Ansprechpartners wird nicht veröffentlicht oder an Dritte weitergegeben. Beispiel: maxmustermann@unternehmensname.com.",
+            "format": "text",
+            "id": "admin_mails",
+            "instance_id": 9849,
+            "lang_tag": "de_DE",
+            "maxlength": "",
+            "name": "E-Mail-Adresse des Ansprechpartners (nicht öffentlich sichtbar)",
+            "placeholder": "",
+            "template_id": 780,
+            "type": "text",
+            "value": "",
+            "timestamp": 1429105669,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9849\/configs\/admin_mails"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(textarea)
+
+    :arg model_id: ID of the config.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "<p>Erklärung, die ein Admin bestätigen muss, bevor er die Teilnehmer-Daten des Wettbewerbs exportieren darf.\ \ <\/p>",
+            "id": "admin_export_terms",
+            "instance_id": 9849,
+            "lang_tag": "de_DE",
+            "name": "[Erklärung zur Datenverwendung beim Export]",
+            "template_id": 780,
+            "type": "textarea",
+            "value": "<h3>Erklärung zur vertraulichen Datenverwendung<\/h3>Hiermit bestätige ich, dass die durch diese Facebook Applikation erhobenen Daten ausschließlich zur Durchführung dieses Wettbewerbs verwendet werden. Zudem bestätige ich die Daten nach Ablauf der Werbeaktion zu löschen. Die iConsultants GmbH wird von jeglicher Haftung, die durch den Missbrauch der zur Verfügung gestellten Daten entsteht, befreit.",
+            "timestamp": 1429105717,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9849\/configs\/admin_export_terms"
+                }
+            }
+        }
+
+
 
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}
