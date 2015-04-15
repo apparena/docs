@@ -215,11 +215,11 @@ Documentation will follow soon...
 
 .. http:method:: POST /api/v1/models/{model_id}/configs(checkbox)
 
-   :arg model_id: ID of the model.
+    :arg model_id: ID of the model.
 
 .. http:response:: Retrieves a paginated list of config values of a model
 
-   .. sourcecode:: js
+    .. sourcecode:: js
 
         {
             "config_id":  "config_checkbox_{{$timestamp}}",
