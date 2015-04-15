@@ -217,6 +217,8 @@ For parameter documentation see :ref:`instance_object`
 /instances/{i_id}/configs
 -------------------------
 
+
+
 .. http:method:: GET /api/v1/instances/{i_id}/configs
 
 
