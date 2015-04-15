@@ -17,9 +17,9 @@ API - Companies calls
 
         {
             "name"		:"New App-Arena customer. {{$timestamp}}",
-            "subdomain"	    :"apparena_customer_{{$timestamp}}",
-            "address1"	    :"My street 1",
-            "address2"	    :"My street 2",
+            "subdomain"	        :"apparena_customer_{{$timestamp}}",
+            "address1"	        :"My street 1",
+            "address2"	        :"My street 2",
             "zip"		:"12345",
             "city"		:"My city",
             "country"		:"DE",
