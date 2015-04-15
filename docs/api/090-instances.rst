@@ -217,7 +217,47 @@ For parameter documentation see :ref:`instance_object`
 /instances/{i_id}/configs
 -------------------------
 
-Documentation will follow soon...
+.. http:method:: GET /api/v1/instances/{i_id}/configs
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/configs?page=1"
+                },
+                "first": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/configs"
+                },
+                "last": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/configs?page=11"
+                },
+                "next": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/configs?page=2"
+                }
+            },
+            "_embedded": {
+                "data": [
+                    {
+                        "description": "Show debug information for this instance?",
+                        "id": "admin_debug_mode",
+                        "lang_tag": "de_DE",
+                        "name": "[Show debug information]",
+                        "template_id": 0,
+                        "type": "checkbox",
+                        "value": 0,
+                        "_links": {
+                            "self": {
+                                "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/configs\/admin_debug_mode"
+                            }
+                        }
+                    },
+                }
+            }
+        }
 
 
 /instances/{i_id}/configs/{config_id}
@@ -437,9 +477,69 @@ Documentation will follow soon...
 /instances/{i_id}/languages
 ---------------------------
 
-Documentation will follow soon...
+.. http:method:: GET /api/v1/instances/{i_id}/languages
 
 
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/languages?page=1"
+                },
+                "first": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/languages"
+                },
+                "last": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/languages?page=1"
+                }
+            },
+            "_embedded": {
+                "data": [
+                    {
+                        "lang_id": 409,
+                        "name": "German (Germany)",
+                        "is_activated": 1,
+                        "lang_tag": "de_DE"
+                    },
+                    {
+                        "lang_id": 410,
+                        "name": "English (United States)",
+                        "is_activated": 0,
+                        "lang_tag": "en_US"
+                    },
+                    {
+                        "lang_id": 413,
+                        "name": "French (France)",
+                        "is_activated": 0,
+                        "lang_tag": "fr_FR"
+                    },
+                    {
+                        "lang_id": 488,
+                        "name": "German (Austria)",
+                        "is_activated": 0,
+                        "lang_tag": "de_AT"
+                    },
+                    {
+                        "lang_id": 490,
+                        "name": "Italian (Italy)",
+                        "is_activated": 0,
+                        "lang_tag": "it_IT"
+                    },
+                    {
+                        "lang_id": 524,
+                        "name": "Spanish (Spain)",
+                        "is_activated": 0,
+                        "lang_tag": "es_ES"
+                    }
+                ]
+            },
+            "page_count": 1,
+            "page_size": 25,
+            "total_items": 6
+        }
 /instances/{i_id}/languages/{lang_tag}
 --------------------------------------
 
@@ -461,10 +561,46 @@ Documentation will follow soon...
 /instances/{i_id}/languages/{lang_tag}/translations
 ---------------------------------------------------
 
-Documentation will follow soon...
+.. http:method:: GET /api/v1/instances/{i_id}/languages/{lang_tag}/translations
+
+       :arg i_id: ID of the instance.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/languages\/en_US\/translations?page=1"
+                },
+                "first": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/languages\/en_US\/translations"
+                },
+                "last": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/languages\/en_US\/translations?page=19"
+                },
+                "next": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9847\/languages\/en_US\/translations?page=2"
+                }
+            },
+            "_embedded": {
+            "data": [
+                {  ... },
+                {
+                    "translation_id": "vote",
+                    "value": "Abstimmen"
+                },
+                {
+                    "translation_id": "please_enter_custom_field",
+                    "value": "Bitte geben Sie einen Wert für %s an."
+                },
+                {
+                    "translation_id": "select_video",
+                    "value": "Video auswählen"
+                },
+                {  ... },
+            }
+        }
 
 
-/instances/{i_id}/templates
----------------------------
-
-Documentation will follow soon...

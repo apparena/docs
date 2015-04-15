@@ -63,6 +63,7 @@ API - Companies calls
         },
         "_embedded": {
             "data": [
+                {  ... },
                 {
                     "id": 1,
                     "name": "iConsultants GmbH",
@@ -81,11 +82,39 @@ API - Companies calls
                         }
                     }
                 }
+                {  ... },
             ]
         }
 
 /companies/{company_id}
 -----------------------
+
+.. http:method:: GET /api/v1/companies/{company_id}
+
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "id": 363,
+            "name": "New App-Arena customer. 1429097807",
+            "subdomain": "apparena_customer_1429097807",
+            "address1": "My street 1",
+            "address2": "My street 2",
+            "zip": "12345",
+            "city": "My city",
+            "country": "DE",
+            "logo": "https:\/\/app-manager.s3.amazonaws.com\/apps\/models\/3\/0\/4\/0\/de_DE\/AppArena_Logo_aufweiss300x80_1413369016_0.png",
+            "color1": "#478AB8",
+            "color2": "#2D343D",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/companies\/363"
+                }
+            }
+        }
+
 
 .. http:method:: PUT /api/v1/companies/{company_id}
 
@@ -167,12 +196,6 @@ API - Companies calls
             "page_size": 25,
             "total_items": 0
         }
-
-
-/companies/{company_id}/templates
----------------------------------
-
-Documentation will follow soon...
 
 
 /companies/{company_id}/users

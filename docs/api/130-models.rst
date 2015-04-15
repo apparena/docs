@@ -541,6 +541,248 @@ Documentation will follow soon...
 /models/{model_id}/configs/{config_id}
 --------------------------------------
 
+.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(checkbox)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "The description of my checkbox",
+            "id": "config_checkbox_1429099711",
+            "lang_tag": "de_DE",
+            "meta_data": [ ],
+            "name": "Name of Checkbox",
+            "type": "checkbox",
+            "value": 1,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/configs\/config_checkbox_1429099711"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(color)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "The description of my color",
+            "id": "config_color_1429099923",
+            "lang_tag": "de_DE",
+            "meta_data": [ ],
+            "name": "Name of color",
+            "type": "color",
+            "value": 1,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/configs\/config_color_1429099923"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(css)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "The description of my config value.",
+            "id": "config_css_1429099927",
+            "lang_tag": "de_DE",
+            "meta_data": [ ],
+            "name": "Name of my CSS config",
+            "type": "css",
+            "value": "body { text-align:center; } h1.h1, h2, h3 { font-size: 30px; }",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/configs\/config_css_1429099927"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(date)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "Updated Enter a valid date",
+            "id": "config_date_1429099929",
+            "lang_tag": "de_DE",
+            "meta_data": [ ],
+            "name": "Updated Name of my date",
+            "type": "date",
+            "value": "2011-11-11",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/configs\/config_date_1429099929"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(image)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "The description of my config value.",
+            "id": "config_image_1429099933",
+            "lang_tag": "de_DE",
+            "meta_data": {
+                "tag": "<img src="https:\/\/www.app-arena.com\/media\/wysiwyg\/serviceflatrate.png" \/>"
+            },
+            "name": "Name of my image config value",
+            "type": "image",
+            "value": "https:\/\/www.app-arena.com\/media\/wysiwyg\/serviceflatrate.png",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/configs\/config_image_1429099933"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(text)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "Enter a valid Username (max. 12 lowercase characters or numbers, no whitespaces).",
+            "id": "config_text_1429099936",
+            "lang_tag": "de_DE",
+            "meta_data": [ ],
+            "name": "Name of my config value",
+            "type": "text",
+            "value": "my_username",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/configs\/config_text_1429099936"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(textarea)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "The description of my config value.",
+            "id": "config_textarea_1429099939",
+            "lang_tag": "de_DE",
+            "meta_data": [ ],
+            "name": "Name of my config value",
+            "type": "textarea",
+            "value": "<h1>This is my default HTML content<\/h1>",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/configs\/config_textarea_1429099939"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(select)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "The description of my config value.",
+            "id": "config_select_1429099941",
+            "lang_tag": "de_DE",
+            "meta_data": [ ],
+            "name": "Name of my config value",
+            "source": [
+                {
+                    "value": "value_id_1",
+                    "text": "Text for value 1"
+                },
+                {
+                    "value": "value_id_2",
+                    "text": "Text for value 2"
+                },
+                {
+                    "value": "value_id_3",
+                    "text": "Text for value 3"
+                }
+            ],
+            "type": "select",
+            "value": "value_id_2",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/configs\/config_select_1429099941"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(multiselect)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "The description of my config value.",
+            "id": "config_multiselect_1429099943",
+            "lang_tag": "de_DE",
+            "meta_data": [ ],
+            "name": "Name of my config value",
+            "source": [
+                {
+                    "value": "value_id_1",
+                    "text": "Text for value 1"
+                },
+                {
+                    "value": "value_id_2",
+                    "text": "Text for value 2"
+                },
+                {
+                    "value": "value_id_3",
+                    "text": "Text for value 3"
+                }
+            ],
+            "type": "multiselect",
+            "value": [
+                "value_id_2",
+                "value_id_3"
+            ],
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/configs\/config_multiselect_1429099943"
+                }
+            }
+        }
+
+
+
 .. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(checkbox)
 
 
@@ -768,6 +1010,40 @@ Documentation will follow soon...
     :data enum lang_tag: (Required) Language tag of the language to add to the model
     :data is_activated: (Optional) If the new language is activated immediately
 
+.. http:method:: GET /api/v1/models/{model_id}/languages
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/languages?page=1"
+                },
+                "first": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/languages"
+                },
+                "last": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/languages?page=1"
+                }
+            },
+            "_embedded": {
+                "data": [
+                    {
+                        "lang_id": 528,
+                        "name": "de",
+                        "is_activated": 1,
+                        "lang_tag": "de_DE"
+                    }
+                ]
+            },
+            "page_count": 1,
+            "page_size": 25,
+            "total_items": 1
+        }
 
 
 /models/{model_id}/languages/{lang_tag}
@@ -804,8 +1080,26 @@ Documentation will follow soon...
     :data string translation_id: (Required) Translation ID
     :data string value: (Required) Translation
 
+.. http:method:: GET /api/v1/models/{model_id}/languages/translations:lang_tag/t
 
-/models/{model_id}/templates
-----------------------------
+    :arg model_id: ID of the model.
 
-Documentation will follow soon...
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/316\/languages\/%7B%7Blang_tag%7D%7D\/translations"
+                }
+            },
+            "_embedded": {
+                "data": [ ]
+            },
+            "page_count": 0,
+            "page_size": 25,
+            "total_items": 0
+        }
+
+
