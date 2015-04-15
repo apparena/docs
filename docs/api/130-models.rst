@@ -242,8 +242,259 @@ Documentation will follow soon...
     :data string data_caption_on: (Optional) Caption for the 'On'-value
     :data string data_label: (Optional) Label for the checkbox
 
+.. http:method:: POST /api/v1/models/{model_id}/configs(color)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieves a paginated list of config values of a model
+
+    .. sourcecode:: js
+
+        {
+            "config_id":      "config_color_{{$timestamp}}",
+            "type":           "color",
+            "name":           "Name of Color",
+            "value":          "#335566",
+            "description":    "The description of my color"
+        }
 
 
+    :data string config_id: (Required) Identifier for the new config value
+    :data enum type: (Required) Type of the config element
+    :data string name: (Required) Name for the config value
+    :data string value: (Required) Default value for the config element
+    :data string description: (Optional) Description for the config value
+
+.. http:method:: POST /api/v1/models/{model_id}/configs(css)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieves a paginated list of config values of a model
+
+    .. sourcecode:: js
+
+        {
+            "config_id":      "config_css_{{$timestamp}}",
+            "type":           "css",
+            "name":           "Name of my CSS config",
+            "value":          "body { text-align:center; } h1.h1, h2, h3 { font-size: 30px; }",
+            "description":    "The description of my config value.",
+            "data_compiler":  "less"
+        }
+
+
+    :data string config_id: (Required) Identifier for the new config value
+    :data enum type: (Required) Type of the config element
+    :data string name: (Required) Name for the config value
+    :data string value: (Required) Default value for the config element
+    :data string description: (Optional) Description for the config value
+    :data object meta_data: (Optional) Meta data for the config field
+    :data enum data_compiler: (Optional) Which compiler should be used to generate CSS
+
+.. http:method:: POST /api/v1/models/{model_id}/configs(date) DEPRECATED
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieves a paginated list of config values of a model
+
+    .. sourcecode:: js
+
+        {
+            "config_id":      "config_date_{{$timestamp}}",
+            "name":           "Updated Name of my date",
+            "type":           "date",
+            "value":          "2011-11-11",
+            "description":    "Updated Enter a valid date"
+        }
+
+
+    :data string name: (Required) Name for the config value
+    :data string value: (Required) Default value for the config element
+    :data string description: (Optional) Description for the config value
+
+.. http:method:: POST /api/v1/models/{model_id}/configs(image)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieves a paginated list of config values of a model
+
+    .. sourcecode:: js
+
+        {
+            "config_id":          "config_image_{{$timestamp}}",
+            "type":               "image",
+            "name":               "Name of my image config value",
+            "value":              "https://www.app-arena.com/media/wysiwyg/serviceflatrate.png",
+            "description":        "The description of my config value.",
+            "data_alt":           "Service Flatrate promotion image",
+            "data_title":         "Save 25% in may on our service flatrate",
+            "data_max_height":    1000,
+            "data_max_width":     1000,
+            "data_min_height":    100,
+            "data_min_width":     100,
+            "data_height":        300,
+            "data_width":         500,
+            "data_format":        ["jpg","png","gif"],
+            "data_nullable":      false
+        }
+
+
+    :data string config_id: (Required) Identifier for the new config value
+    :data enum type: (Required) Type of the config element
+    :data string name: (Required) Name for the config value
+    :data string value: (Required) Default value for the config element
+    :data string description: (Optional) Description for the config value
+    :data object meta_data: (Optional) Meta data for the config field
+    :data string data_tag: (Optional) complete HTML5 image tag including all available attributes
+    :data string data_alt: (Optional) Alternative tag for the image (used for blind people surfing the web)
+    :data string data_title: (Optional) Title of the image (normally appears, when the user hovers with the mouse cursor over the image)
+    :data object data_size: (Optional) JSON object containing optional image size restriction for the image
+    :data integer data_max_height: (Optional) Maximal height of the image, that will be accepted
+    :data integer data_max_width: (Optional) Maximal width of the image, that will be accepted
+    :data integer data_min_height: (Optional) Minimum height of the image, that will be accepted
+    :data integer data_min_width: (Optional) Minimum width of the image, that will be accepted
+    :data integer data_height: (Optional) Exact height of the image, that will be accepted
+    :data integer data_width: (Optional) Exact width of the image, that will be accepted
+    :data array data_format: (Optional) Title of the image (normally appears, when the user hovers with the mouse cursor over the image)
+    :data bool data_nullable: (Optional) can the image url be empty
+
+.. http:method:: POST /api/v1/models/{model_id}/configs(text)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieves a paginated list of config values of a model
+
+    .. sourcecode:: js
+
+        {
+            "config_id":          "config_text_{{$timestamp}}",
+            "type":               "text",
+            "name":               "Name of my config value",
+            "value":              "my_username",
+            "description":        "Enter a valid Username (max. 12 lowercase characters or numbers, no whitespaces).",
+            "data_type":          "text",
+            "data_placeholder":   "Enter username here",
+            "data_pattern":       "[a-z0-9]{12}"
+        }
+
+
+    :data string config_id: (Required) Identifier for the new config value
+    :data enum type: (Required) Type of the config element
+    :data string name: (Required) Name for the config value
+    :data string value: (Required) Default value for the config element
+    :data string description: (Optional) Description for the config value
+    :data object meta_data: (Optional) Meta data for the config field
+    :data enum data_type: (Optional) "text", "email", "number", "url", "tel", "date" | Data schema for the text field. Default is text
+    :data string data_placeholder: (Optional) Input field placeholder
+    :data integer data_min: (Optional) Minimum value (validation for type "number")
+    :data integer data_max: (Optional) Maximum value (validation for type "number")
+    :data integer data_max_lenght: (Optional) Maximum value (validation for type "text")
+    :data integer data_min_lenght: (Optional) Minimum value (validation for type "text")
+    :data string data_pattern: (Optional) Regular expression for input validation defines an input mask
+
+.. http:method:: POST /api/v1/models/{model_id}/configs(textarea)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieves a paginated list of config values of a model
+
+    .. sourcecode:: js
+
+        {
+            "config_id":"config_textarea_{{$timestamp}}",
+            "type":"textarea",
+            "name":"Name of my config value",
+            "value":"<h1>This is my default HTML content</h1>",
+            "description":"The description of my config value.",
+            "data_editor":"wysiwyg",
+            "data_code_view":false
+        }
+
+
+    :data string config_id: (Required) Identifier for the new config value
+    :data enum type: (Required) Type of the config element
+    :data string name: (Required) Name for the config value
+    :data string value: (Required) Default value for the config element
+    :data string description: (Optional) Description for the config value
+    :data object meta_data: (Optional) Meta data for the config field
+    :data enum editor: (Optional) "wysiwyg", "code", "none" | Which editor should be shown to the user?
+    :data bool code_view: (Optional) Is the code-view button available in the wysiwyg-editor?
+
+.. http:method:: POST /api/v1/models/{model_id}/configs(select)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieves a paginated list of config values of a model
+
+    .. sourcecode:: js
+
+        {
+            "config_id":"config_select_{{$timestamp}}",
+            "type":"select",
+            "name":"Name of my config value",
+            "description":"The description of my config value.",
+            "source":[
+                {
+                    "value": "value_id_1",
+                    "text": "Text for value 1"
+                },
+                {
+                    "value": "value_id_2",
+                    "text": "Text for value 2"
+                },
+                {
+                    "value": "value_id_3",
+                    "text": "Text for value 3"
+                }
+            ],
+            "value":"value_id_2"
+        }
+
+
+    :data string config_id: (Required) Identifier for the new config value
+    :data enum type: (Required) Type of the config element
+    :data string name: (Required) Name for the config value
+    :data string value: (Required) Default value for the config element
+    :data string description: (Optional) Description for the config value
+    :data array source: (Required) All available options of the config element
+
+.. http:method:: POST /api/v1/models/{model_id}/configs(multiselect)
+
+    :arg model_id: ID of the model.
+
+.. http:response:: Retrieves a paginated list of config values of a model
+
+    .. sourcecode:: js
+
+        {
+            "config_id":"config_multiselect_{{$timestamp}}",
+            "type":"multiselect",
+            "name":"Name of my config value",
+            "description":"The description of my config value.",
+            "source":[
+                {
+                    "value": "value_id_1",
+                    "text": "Text for value 1"
+                },
+                {
+                    "value": "value_id_2",
+                    "text": "Text for value 2"
+                },
+                {
+                    "value": "value_id_3",
+                    "text": "Text for value 3"
+                }
+            ],
+            "value":[ "value_id_2", "value_id_3" ]
+        }
+
+
+    :data string config_id: (Required) Identifier for the new config value
+    :data enum type: (Required) Type of the config element
+    :data string name: (Required) Name for the config value
+    :data array value: (Optional) Default value for the config element
+    :data string description: (Optional) Description for the config value
+    :data array source: (Required) All available options of the config element
 
 .. http:method:: GET /api/v1/models/{model_id}/configs
 
