@@ -22,20 +22,21 @@ API - Instances calls
         }
 
     :data int company_id:  (Optional) Company_id of the company the instance should be created for
-        :data string description: (Optional) Description of the instance.
-        :data enum lang_tag:  (Optional) ["sq_AL", "ar_DZ", "ar_BH", "ar_EG", "ar_IQ", "ar_JO", "ar_KW", "ar_LB", "ar_LY",
-            "ar_MA", "ar_OM", "ar_QA", "ar_SA", "ar_SD", "ar_SY", "ar_TN", "ar_AE", "ar_YE", "be_BY", "bg_BG", "ca_ES",
-            "zh_CN", "zh_HK", "zh_SG", "hr_HR", "cs_CZ", "da_DK", "nl_BE", "nl_NL", "en_AU", "en_CA", "en_IN", "en_IE",
-            "en_MT", "en_NZ", "en_PH", "en_SG", "en_ZA", "en_GB", "en_US", "et_EE", "fi_FI", "fr_BE", "fr_CA", "fr_FR",
-            "fr_LU", "fr_CH", "de_AT", "de_DE", "de_LU", "de_CH", "el_CY", "el_GR", "iw_IL", "hi_IN", "hu_HU", "is_IS",
-            "in_ID", "ga_IE", "it_IT", "it_CH", "ja_JP", "ja_JP", "ko_KR", "lv_LV", "lt_LT", "mk_MK", "ms_MY", "mt_MT",
-            "no_NO", "no_NO", "pl_PL", "pt_BR", "pt_PT", "ro_RO", "ru_RU", "sr_BA", "sr_ME", "sr_CS", "sr_RS", "sk_SK",
-            "sl_SI", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC", "es_SV", "es_GT", "es_HN", "es_MX",
-            "es_NI", "es_PA", "es_PY", "es_PE", "es_PR", "es_ES", "es_US", "es_UY", "es_VE", "sv_SE", "th_TH", "th_TH",
-            "tr_TR", "uk_UA", "vi_VN"] Default language for the instance
-        :data string name: (Required) Name of the instance.
-        :data int template_id: (Required) Template ID the instance should be created of
-        :data enum template_type:  (Optional) [ "instance" | "template" ] The entity the instance should be generated of
+    :data string description: (Optional) Description of the instance.
+    :data enum lang_tag:  (Optional) ["sq_AL", "ar_DZ", "ar_BH", "ar_EG", "ar_IQ", "ar_JO", "ar_KW", "ar_LB", "ar_LY",
+                        "ar_MA", "ar_OM", "ar_QA", "ar_SA", "ar_SD", "ar_SY", "ar_TN", "ar_AE", "ar_YE", "be_BY",
+                        "bg_BG", "ca_ES","zh_CN", "zh_HK", "zh_SG", "hr_HR", "cs_CZ", "da_DK", "nl_BE", "nl_NL",
+                        "en_AU", "en_CA", "en_IN", "en_IE","en_MT", "en_NZ", "en_PH", "en_SG", "en_ZA", "en_GB",
+                        "en_US", "et_EE", "fi_FI", "fr_BE", "fr_CA", "fr_FR","fr_LU", "fr_CH", "de_AT", "de_DE",
+                        "de_LU", "de_CH", "el_CY", "el_GR", "iw_IL", "hi_IN", "hu_HU", "is_IS","in_ID", "ga_IE",
+                        "it_IT", "it_CH", "ja_JP", "ja_JP", "ko_KR", "lv_LV", "lt_LT", "mk_MK", "ms_MY", "mt_MT",
+                        "no_NO", "no_NO", "pl_PL", "pt_BR", "pt_PT", "ro_RO", "ru_RU", "sr_BA", "sr_ME", "sr_CS",
+                        "sr_RS", "sk_SK","sl_SI", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC",
+                        "es_SV", "es_GT", "es_HN", "es_MX","es_NI", "es_PA", "es_PY", "es_PE", "es_PR", "es_ES",
+                        "es_US", "es_UY", "es_VE", "sv_SE", "th_TH", "th_TH","tr_TR", "uk_UA", "vi_VN"]
+    :data string name: (Required) Name of the instance.
+    :data int template_id: (Required) Template ID the instance should be created of
+    :data enum template_type:  (Optional) [ "instance" | "template" ] The entity the instance should be generated of
 
 
 
@@ -264,6 +265,138 @@ For parameter documentation see :ref:`instance_object`
 
 /instances/{i_id}/configs/{config_id}
 -------------------------------------
+
+.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(checkbox)
+
+    :arg model_id: ID of the config.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "Zusätzliche Loginabfrage für Export und löschen der Userdaten, inklusive Log-Eintrag der angemeldeten Person. Funktioniert nur mit App-Internen Logins, nicht mit Social-Connects!",
+            "id": "activate_admin_secure_login",
+            "instance_id": 9849,
+            "lang_tag": "de_DE",
+            "name": "[Admin Sicherheitslogin aktivieren]",
+            "template_id": 780,
+            "type": "checkbox",
+            "value": 0,
+            "timestamp": 1429104304,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9849\/configs\/activate_admin_secure_login"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(color)
+
+    :arg model_id: ID of the config.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "Die Hintergrundfarbe betrifft alle Seiten der App, inklusive Footer. Empfehlung: Wählen Sie eine helle, neutrale Farbe (z.B. weiß). Weitere Infos siehe Grafikleitfaden.",
+            "id": "app_color_1",
+            "instance_id": 9849,
+            "lang_tag": "de_DE",
+            "name": "Hintergrundfarbe",
+            "template_id": 780,
+            "type": "color",
+            "value": "#ffffff",
+            "timestamp": 1429104762,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9849\/configs\/app_color_1"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(css)
+
+    :arg model_id: ID of the config.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "compiler": "less",
+            "description": "Diese CSS Konfiguration wird vom Entwickler erstellt und enthält die wichtigsten CSS Formatierungen der App.",
+            "id": "css_app",
+            "instance_id": 9849,
+            "lang_tag": "de_DE",
+            "name": "CSS der Applikation",
+            "src": "https:\/\/www.app-arena.com\/uploads\/apps\/model\/299\/0\/de_DE\/css\/css_app.css",
+            "template_id": 780,
+            "type": "css",
+            "value": "\/* \ \ Here you find the complete styling of the application.
+            "timestamp": 1429104816,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9849\/configs\/css_app"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(date)
+
+    :arg model_id: ID of the config.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "Nutzer können ab 0.01 Uhr des von Ihnen festgelegten Datums teilnehmen.",
+            "id": "door_11_validity_period_start",
+            "instance_id": 9849,
+            "lang_tag": "de_DE",
+            "name": "Startdatum für die Teilnahme",
+            "template_id": 780,
+            "type": "date",
+            "value": "2014-12-11",
+            "timestamp": 1429105031,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9849\/configs\/door_11_validity_period_start"
+                }
+            }
+        }
+
+.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(image)
+
+    :arg model_id: ID of the config.
+
+.. http:response:: Retrieve basic information of a single model.
+
+    .. sourcecode:: js
+
+        {
+            "description": "Das Unternehmenslogo wird auf der Header-Grafik abgebildet. Alternativ können Sie das Logo in Ihre Grafiken integrieren und die automatische Ansicht des Logos in dem Punkt "Header” deaktivieren. Empfohlene Größe: 180 x 180 px. Weitere Infos siehe Grafikleitfaden.",
+            "height": "",
+            "id": "app_logo",
+            "instance_id": 9849,
+            "lang_tag": "de_DE",
+            "name": "Unternehmenslogo",
+            "size": "",
+            "src": "https:\/\/app-manager.s3.amazonaws.com\/apps\/models\/2\/9\/9\/0\/de_DE\/01_01_logo_1411631048_0.png",
+            "template_id": 780,
+            "type": "image",
+            "value": "https:\/\/app-manager.s3.amazonaws.com\/apps\/models\/2\/9\/9\/0\/de_DE\/01_01_logo_1411631048_0.png",
+            "width": "",
+            "timestamp": 1429105088,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9849\/configs\/app_logo"
+                }
+            }
+        }
+
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}
 

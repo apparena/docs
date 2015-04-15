@@ -1080,7 +1080,7 @@ Documentation will follow soon...
     :data string translation_id: (Required) Translation ID
     :data string value: (Required) Translation
 
-.. http:method:: GET /api/v1/models/{model_id}/languages/translations:lang_tag/t
+.. http:method:: GET /api/v1/models/{model_id}/languages/translations:lang_tag/
 
     :arg model_id: ID of the model.
 
