@@ -213,6 +213,37 @@ Documentation will follow soon...
 | multiselect   |                                   |                                                         |
 +---------------+-----------------------------------+---------------------------------------------------------+
 
+.. http:method:: POST /api/v1/models/{model_id}/configs(checkbox)
+
+   :arg model_id: ID of the model.
+
+.. http:response:: Retrieves a paginated list of config values of a model
+
+   .. sourcecode:: js
+
+        {
+            "config_id":  "config_checkbox_{{$timestamp}}",
+            "type":       "checkbox",
+            "name":       "Name of Checkbox",
+            "value":      true,
+            "description":"The description of my checkbox",
+            "data_caption_off":"Custom Off",
+            "data_caption_on":"Custom On",
+            "data_label":"Optional label"
+        }
+
+
+    :data string config_id: (Required) Identifier for the new config value
+    :data enum type: (Required) Type of the config element
+    :data string name: (Required) Name for the config value
+    :data bool value: (Required) Default value for the config element
+    :data string description: (Optional) Description for the config value
+    :data string data_caption_off: (Optional) Caption for the 'Off'-value
+    :data string data_caption_on: (Optional) Caption for the 'On'-value
+    :data string data_label: (Optional) Label for the checkbox
+
+
+
 
 .. http:method:: GET /api/v1/models/{model_id}/configs
 
