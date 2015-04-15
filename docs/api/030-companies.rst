@@ -29,18 +29,18 @@ API - Companies calls
             "font"		:"helvetica-neue"
         }
 
-:data string name: (Required) Name of the company
-:data integer parent_id: (Optional) ID of the company whos customer the newly created company should be like
-:data string subdomain: (Required) Subdomain for all apps the company will create
-:data string address1: (Optional) Address field 1, e.g. Street 1
-:data string address2: (Optional) Address field 2, e.g. Street 2
-:data string zip: (Optional) Zip code
-:data string city: (Optional) City
-:data string country: (Optional) Two letter country code http://en.wikipedia.org/wiki/ISO3166-1alpha-2
-:data string logo: (Optional) Url to the company logo
-:data string color1: (Optional) Primary company color
-:data string color2: (Optional) Secondary company color
-:data string font: (Optional) Company font name
+    :data string name: (Required) Name of the company
+    :data integer parent_id: (Optional) ID of the company whos customer the newly created company should be like
+    :data string subdomain: (Required) Subdomain for all apps the company will create
+    :data string address1: (Optional) Address field 1, e.g. Street 1
+    :data string address2: (Optional) Address field 2, e.g. Street 2
+    :data string zip: (Optional) Zip code
+    :data string city: (Optional) City
+    :data string country: (Optional) Two letter country code http://en.wikipedia.org/wiki/ISO3166-1alpha-2
+    :data string logo: (Optional) Url to the company logo
+    :data string color1: (Optional) Primary company color
+    :data string color2: (Optional) Secondary company color
+    :data string font: (Optional) Company font name
 
 .. http:method:: GET /api/v1/companies
 
@@ -108,10 +108,10 @@ API - Companies calls
             "font"		:"verdana"
         }
 
-:data string name: (Required) Name of the company
-:data string subdomain: (Optional) Subdomain for all apps the company will create
-:data object address: (Optional) Company billing address
-:data object corporate_identity: (Optional) Corporate Identity configuration for faster app setup (values will be used as default settings, when creating apps)
+    :data string name: (Required) Name of the company
+    :data string subdomain: (Optional) Subdomain for all apps the company will create
+    :data object address: (Optional) Company billing address
+    :data object corporate_identity: (Optional) Corporate Identity configuration for faster app setup (values will be used as default settings, when creating apps)
 
 .. http:method:: DELETE /api/v1/companies/{company_id}
 

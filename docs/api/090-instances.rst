@@ -252,9 +252,9 @@ Documentation will follow soon...
             "description":"Updated The description of my color"
         }
 
-:data string name: (Optional)
-:data string value: (Optional)
-:data string description: (Optional) Description for the instance
+    :data string name: (Optional)
+    :data string value: (Optional)
+    :data string description: (Optional) Description for the instance
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(css)
 
@@ -271,10 +271,10 @@ Documentation will follow soon...
             "data_compiler":  "css"
         }
 
-:data string name: (Optional)
-:data string value: (Optional)
-:data string description: (Optional) Description for the instance
-:data object data_compiler: (Optional)
+    :data string name: (Optional)
+    :data string value: (Optional)
+    :data string description: (Optional) Description for the instance
+    :data object data_compiler: (Optional)
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(date) DEPRECATED
 
@@ -290,9 +290,9 @@ Documentation will follow soon...
             "description":"Updated Enter a valid date"
         }
 
-:data string name: (Optional)
-:data string value: (Optional)
-:data string description: (Optional) Description for the instance
+    :data string name: (Optional)
+    :data string value: (Optional)
+    :data string description: (Optional) Description for the instance
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(image)
 
@@ -318,10 +318,10 @@ Documentation will follow soon...
             "data_nullable":  true
         }
 
-:data string name: (Optional)
-:data string value: (Optional)
-:data string description: (Optional) Description for the instance
-:data object meta_data: (Optional)
+    :data string name: (Optional)
+    :data string value: (Optional)
+    :data string description: (Optional) Description for the instance
+    :data object meta_data: (Optional)
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(multiselect)
 
@@ -351,10 +351,10 @@ Documentation will follow soon...
             "value":[ "page" ]
         }
 
-:data string name: (Optional)
-:data array value: (Optional)
-:data string description: (Optional) Description for the instance
-:data array source: (Optional)
+    :data string name: (Optional)
+    :data array value: (Optional)
+    :data string description: (Optional) Description for the instance
+    :data array source: (Optional)
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(select)
 
@@ -384,10 +384,10 @@ Documentation will follow soon...
             "value":"ubuntu"
         }
 
-:data string name: (Optional)
-:data string value: (Optional)
-:data string description: (Optional) Description for the instance
-:data array source: (Optional)
+    :data string name: (Optional)
+    :data string value: (Optional)
+    :data string description: (Optional) Description for the instance
+    :data array source: (Optional)
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(text)
 
@@ -406,10 +406,10 @@ Documentation will follow soon...
             "data_pattern":"[a-zA-Z0-9@]{22}"
         }
 
-:data string name: (Optional)
-:data string value: (Optional)
-:data string description: (Optional) Description for the instance
-:data object meta_data: (Optional)
+    :data string name: (Optional)
+    :data string value: (Optional)
+    :data string description: (Optional) Description for the instance
+    :data object meta_data: (Optional)
 
 .. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(textarea)
 
@@ -426,10 +426,10 @@ Documentation will follow soon...
             "data_editor":"code"
         }
 
-:data string name: (Optional)
-:data string value: (Optional)
-:data string description: (Optional) Description for the instance
-:data object meta_data: (Optional)
+    :data string name: (Optional)
+    :data string value: (Optional)
+    :data string description: (Optional) Description for the instance
+    :data object meta_data: (Optional)
 
 
 /instances/{i_id}/languages
