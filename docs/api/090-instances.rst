@@ -754,6 +754,8 @@ For parameter documentation see :ref:`instance_object`
 
        :arg i_id: ID of the instance.
 
+.. http:response:: Example request body
+
 for parameter documentation see :ref:`delete_codes`
 
 
