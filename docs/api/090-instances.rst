@@ -218,8 +218,6 @@ For parameter documentation see :ref:`instance_object`
 
 .. http:method:: DELETE /api/v1/instances/:i_id
 
-       :arg i_id: ID of the instance.
-
 `Successful DELETE requests will return HTTP-Status code 204. <../api/001-index.html#codes>`_
 
 
@@ -760,8 +758,6 @@ For parameter documentation see :ref:`instance_object`
     :data enum editor: (Optional) Which editor should be shown to the user?
 
 .. http:method:: DELETE /api/v1/instances/:i_id/configs/:config_id
-
-       :arg i_id: ID of the instance.
 
 `Successful DELETE requests will return HTTP-Status code 204. <../api/001-index.html#codes>`_
 

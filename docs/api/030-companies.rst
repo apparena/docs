@@ -158,8 +158,6 @@ API - Companies calls
 
 .. http:method:: DELETE /api/v1/companies/:company_id
 
-       :arg i_id: ID of the company.
-
 `Successful DELETE requests will return HTTP-Status code 204. <../api/001-index.html#codes>`_
 
 /companies/:company_id/customers
