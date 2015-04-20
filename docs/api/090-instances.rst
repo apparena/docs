@@ -123,10 +123,10 @@ For parameter documentation see :ref:`instance_object`
 
 
 
-/instances/{i_id}
------------------
+/instances/:i_id
+----------------
 
-.. http:method:: GET /api/v1/instances/{i_id}
+.. http:method:: GET /api/v1/instances/:i_id
 
    :arg i_id: ID of the instance.
 
@@ -169,7 +169,7 @@ For parameter documentation see :ref:`instance_object`
     :data int timestamp: Creation/Update time on the server
 
 
-.. http:method:: PUT /api/v1/instances/{i_id}
+.. http:method:: PUT /api/v1/instances/:i_id
 
        :arg i_id: ID of the instance.
 
@@ -214,7 +214,7 @@ For parameter documentation see :ref:`instance_object`
 
     For parameter documentation see :ref:`instance_object`
 
-.. http:method:: DELETE /api/v1/instances/{i_id}
+.. http:method:: DELETE /api/v1/instances/:i_id
 
        :arg i_id: ID of the instance.
 
@@ -222,12 +222,12 @@ For parameter documentation see :ref:`instance_object`
 
 
 
-/instances/{i_id}/configs
--------------------------
+/instances/:i_id/configs
+------------------------
 
 
 
-.. http:method:: GET /api/v1/instances/{i_id}/configs
+.. http:method:: GET /api/v1/instances/:i_id/configs
 
 
 .. http:response:: Example request body
@@ -270,10 +270,10 @@ For parameter documentation see :ref:`instance_object`
         }
 
 
-/instances/{i_id}/configs/{config_id}
--------------------------------------
+/instances/:i_id/configs/:config_id
+-----------------------------------
 
-.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(checkbox)
+.. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(checkbox)
 
     :arg model_id: ID of the config.
 
@@ -298,7 +298,7 @@ For parameter documentation see :ref:`instance_object`
             }
         }
 
-.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(color)
+.. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(color)
 
     :arg model_id: ID of the config.
 
@@ -323,7 +323,7 @@ For parameter documentation see :ref:`instance_object`
             }
         }
 
-.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(css)
+.. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(css)
 
     :arg model_id: ID of the config.
 
@@ -350,7 +350,7 @@ For parameter documentation see :ref:`instance_object`
             }
         }
 
-.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(date)
+.. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(date)
 
     :arg model_id: ID of the config.
 
@@ -375,7 +375,7 @@ For parameter documentation see :ref:`instance_object`
             }
         }
 
-.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(image)
+.. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(image)
 
     :arg model_id: ID of the config.
 
@@ -404,7 +404,7 @@ For parameter documentation see :ref:`instance_object`
             }
         }
 
-.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(multiselect)
+.. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(multiselect)
 
     :arg model_id: ID of the config.
 
@@ -446,7 +446,7 @@ For parameter documentation see :ref:`instance_object`
             }
         }
 
-.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(select)
+.. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(select)
 
     :arg model_id: ID of the config.
 
@@ -483,7 +483,7 @@ For parameter documentation see :ref:`instance_object`
             }
         }
 
-.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(text)
+.. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(text)
 
     :arg model_id: ID of the config.
 
@@ -511,7 +511,7 @@ For parameter documentation see :ref:`instance_object`
             }
         }
 
-.. http:method:: GET /api/v1/instances/{i_id}/configs/{config_id}(textarea)
+.. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(textarea)
 
     :arg model_id: ID of the config.
 
@@ -539,7 +539,7 @@ For parameter documentation see :ref:`instance_object`
 
 
 
-.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}
+.. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id
 
        :arg i_id: ID of the instance.
 
@@ -556,7 +556,7 @@ For parameter documentation see :ref:`instance_object`
             "data_label":         "Updated Optional label"
         }
 
-.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(color)
+.. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(color)
 
        :arg i_id: ID of the instance.
 
@@ -574,7 +574,7 @@ For parameter documentation see :ref:`instance_object`
     :data string value: (Optional) Default value for the config element
     :data string description: (Optional) Description for the instance
 
-.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(css)
+.. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(css)
 
        :arg i_id: ID of the instance.
 
@@ -594,7 +594,7 @@ For parameter documentation see :ref:`instance_object`
     :data string description: (Optional) Description for the instance
     :data object data_compiler: (Optional) Which compiler should be used to generate CSS?
 
-.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(date) DEPRECATED
+.. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(date) DEPRECATED
 
        :arg i_id: ID of the instance.
 
@@ -612,7 +612,7 @@ For parameter documentation see :ref:`instance_object`
     :data string value: (Optional) value for the config element
     :data string description: (Optional) Description for the instance
 
-.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(image)
+.. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(image)
 
        :arg i_id: ID of the instance.
 
@@ -641,7 +641,7 @@ For parameter documentation see :ref:`instance_object`
     :data string description: (Optional) Description for the instance
     :data object meta_data: (Optional) Meta data for the config field
 
-.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(multiselect)
+.. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(multiselect)
 
        :arg i_id: ID of the instance.
 
@@ -674,7 +674,7 @@ For parameter documentation see :ref:`instance_object`
     :data string description: (Optional) Description for the instance
     :data array source: (Optional) All available options of the select config value
 
-.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(select)
+.. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(select)
 
        :arg i_id: ID of the instance.
 
@@ -707,7 +707,7 @@ For parameter documentation see :ref:`instance_object`
     :data string description: (Optional) Description for the instance
     :data array source: (Optional) All available options of the select config value
 
-.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(text)
+.. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(text)
 
        :arg i_id: ID of the instance.
 
@@ -736,7 +736,7 @@ For parameter documentation see :ref:`instance_object`
     :data integer min_lenght: (Optional) Minimum value (validation for type "text")
     :data string pattern: (Optional) Regular expression for input validation defines an input mask
 
-.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(textarea)
+.. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(textarea)
 
        :arg i_id: ID of the instance.
 
@@ -757,7 +757,7 @@ For parameter documentation see :ref:`instance_object`
     :data object meta_data: (Optional) Meta data for the config field
     :data enum editor: (Optional) Which editor should be shown to the user?
 
-.. http:method:: DELETE /api/v1/instances/{i_id}/configs/{config_id}
+.. http:method:: DELETE /api/v1/instances/:i_id/configs/:config_id
 
        :arg i_id: ID of the instance.
 
@@ -769,10 +769,10 @@ For parameter documentation see :ref:`instance_object`
 
 
 
-/instances/{i_id}/languages
----------------------------
+/instances/:i_id/languages
+--------------------------
 
-.. http:method:: GET /api/v1/instances/{i_id}/languages
+.. http:method:: GET /api/v1/instances/:i_id/languages
 
 
 .. http:response:: Example request body
@@ -835,10 +835,10 @@ For parameter documentation see :ref:`instance_object`
             "page_size": 25,
             "total_items": 6
         }
-/instances/{i_id}/languages/{lang_tag}
---------------------------------------
+/instances/:i_id/languages/:lang_tag
+------------------------------------
 
-.. http:method:: PUT /api/v1/instances/{i_id}/configs/{config_id}(textarea)
+.. http:method:: PUT /api/v1/instances/:i_id/languages/:lang_tag
 
        :arg i_id: ID of the instance.
 
@@ -853,10 +853,10 @@ For parameter documentation see :ref:`instance_object`
 
 
 
-/instances/{i_id}/languages/{lang_tag}/translations
----------------------------------------------------
+/instances/:i_id/languages/:lang_tag/translations
+-------------------------------------------------
 
-.. http:method:: GET /api/v1/instances/{i_id}/languages/{lang_tag}/translations
+.. http:method:: GET /api/v1/instances/:i_id/languages/:lang_tag/translations
 
        :arg i_id: ID of the instance.
 
