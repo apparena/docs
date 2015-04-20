@@ -754,7 +754,7 @@ For parameter documentation see :ref:`instance_object`
 
        :arg i_id: ID of the instance.
 
-`delete codes <../api/001-index.html#codes>`_
+        `delete codes <../api/001-index.html#codes>`_
 
 
 

@@ -164,7 +164,9 @@ API - Models calls
 
 .. http:method:: DELETE /api/v1/models/{model_id}
 
-Documentation will follow soon...
+       :arg i_id: ID of the instance.
+
+            `delete codes <../api/001-index.html#codes>`_
 
 
 /models/:model_id/configs
@@ -991,6 +993,12 @@ Documentation will follow soon...
     :data string description: (Optional) Description for the config value
     :data array source: (Optional) All available options of the select config value
 
+.. http:method:: DELETE /api/v1/models/{model_id}/configs/{config_id}
+
+       :arg i_id: ID of the instance.
+
+        `delete codes <../api/001-index.html#codes>`_
+
 
 
 /models/{model_id}/languages
@@ -1062,6 +1070,12 @@ Documentation will follow soon...
 
     :data boolean is_activated: (Required) If the new language is activated immediately
 
+.. http:method:: DELETE /api/v1/models/{model_id}/languages/{lang_tag}
+
+       :arg i_id: ID of the instance.
+
+        `delete codes <../api/001-index.html#codes>`_
+
 /models/{model_id}/languages/{lang_tag}/translations
 ----------------------------------------------------
 
@@ -1120,3 +1134,10 @@ Documentation will follow soon...
         }
 
     :data string value: (Required) Translation
+
+
+.. http:method:: DELETE /api/v1/models/{model_id}/languages/{lang_tag}
+
+       :arg i_id: ID of the instance.
+
+        `delete codes <../api/001-index.html#codes>`_
