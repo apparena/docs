@@ -86,6 +86,8 @@ API - Companies calls
             ]
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
+
 /companies/:company_id
 ----------------------
 
