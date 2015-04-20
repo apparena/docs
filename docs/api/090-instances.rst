@@ -212,7 +212,8 @@ For parameter documentation see :ref:`instance_object`
 
        :arg i_id: ID of the instance.
 
-.. http:response:: Retrieve basic information of a single instance.
+        `delete codes <../api/001-index.html#codes>`_
+
 
 
 /instances/{i_id}/configs

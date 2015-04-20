@@ -144,9 +144,9 @@ API - Companies calls
 
 .. http:method:: DELETE /api/v1/companies/{company_id}
 
-       :arg i_id: ID of the instance.
+       :arg i_id: ID of the company.
 
-.. http:response:: Retrieve basic information of a single instance.
+        `delete codes <../api/001-index.html#codes>`_
 
 /companies/{company_id}/customers
 ---------------------------------
@@ -221,3 +221,6 @@ API - Companies calls
             "page_size": 25,
             "total_items": 0
         }
+
+
+
