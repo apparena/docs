@@ -220,7 +220,7 @@ For parameter documentation see :ref:`instance_object`
 
        :arg i_id: ID of the instance.
 
-        `Successful DELETE requests will return HTTP-Status code 204. <../api/001-index.html#codes>`_
+`Successful DELETE requests will return HTTP-Status code 204. <../api/001-index.html#codes>`_
 
 
 
@@ -763,7 +763,7 @@ For parameter documentation see :ref:`instance_object`
 
        :arg i_id: ID of the instance.
 
-        `Successful DELETE requests will return HTTP-Status code 204. <../api/001-index.html#codes>`_
+`Successful DELETE requests will return HTTP-Status code 204. <../api/001-index.html#codes>`_
 
 
 
