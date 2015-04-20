@@ -86,10 +86,10 @@ API - Companies calls
             ]
         }
 
-/companies/{company_id}
------------------------
+/companies/:company_id
+----------------------
 
-.. http:method:: GET /api/v1/companies/{company_id}
+.. http:method:: GET /api/v1/companies/:company_id
 
 
 .. http:response:: Example request body
@@ -116,7 +116,7 @@ API - Companies calls
         }
 
 
-.. http:method:: PUT /api/v1/companies/{company_id}
+.. http:method:: PUT /api/v1/companies/:company_id
 
 
 .. http:response:: Example request body
@@ -142,16 +142,16 @@ API - Companies calls
     :data object address: (Optional) Company billing address
     :data object corporate_identity: (Optional) Corporate Identity configuration for faster app setup (values will be used as default settings, when creating apps)
 
-.. http:method:: DELETE /api/v1/companies/{company_id}
+.. http:method:: DELETE /api/v1/companies/:company_id
 
        :arg i_id: ID of the company.
 
         `delete codes <../api/001-index.html#codes>`_
 
-/companies/{company_id}/customers
----------------------------------
+/companies/:company_id/customers
+--------------------------------
 
-.. http:method:: GET /api/v1/companies/{company_id}/customers
+.. http:method:: GET /api/v1/companies/:company_id/customers
 
 
 .. http:response:: Example request body
@@ -161,7 +161,7 @@ API - Companies calls
         {
             "_links": {
                 "self": {
-                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/companies\/%7B%7Bcompany_id%7D%7D\/customers"
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/companies\/383\/customers"
                 }
             },
             "_embedded": {
@@ -173,10 +173,10 @@ API - Companies calls
         }
 
 
-/companies/{company_id}/instances
----------------------------------
+/companies/:company_id/instances
+--------------------------------
 
-.. http:method:: GET /api/v1/companies/{company_id}/instances
+.. http:method:: GET /api/v1/companies/:company_id/instances
 
 
 .. http:response:: Example request body
@@ -186,7 +186,7 @@ API - Companies calls
         {
             "_links": {
                 "self": {
-                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/companies\/%7B%7Bcompany_id%7D%7D\/instances"
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/companies\/383\/instances"
                 }
             },
             "_embedded": {
@@ -198,10 +198,10 @@ API - Companies calls
         }
 
 
-/companies/{company_id}/users
------------------------------
+/companies/:company_id/users
+----------------------------
 
-.. http:method:: GET /api/v1/companies/{company_id}/users
+.. http:method:: GET /api/v1/companies/:company_id/users
 
 
 .. http:response:: Example request body
@@ -211,7 +211,7 @@ API - Companies calls
         {
             "_links": {
                 "self": {
-                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/companies\/%7B%7Bcompany_id%7D%7D\/users"
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/companies\/383\/users"
                 }
             },
             "_embedded": {

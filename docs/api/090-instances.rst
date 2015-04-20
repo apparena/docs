@@ -15,10 +15,10 @@ API - Instances calls
     .. sourcecode:: js
 
         {
-            "description": "Description of my Magento Instance",
-            "name":"Instance from Magento SKU {{$timestamp}}",
-            "template_id": "10-10-10101-1",
-            "template_type": "magento"
+            "template_id":    780,
+            "name":           "New Instance {{$timestamp}}",
+            "description":    "The description of my new instance.",
+            "lang_tag":       "en_US"
         }
 
     :data int company_id:  (Optional) Company_id of the company the instance should be created for
@@ -48,15 +48,21 @@ API - Instances calls
             "active": 1,
             "base_url": "https:\/\/adventskranz.onlineapp.co\/",
             "description": "The description of my new instance.",
-            "id": 9627,
+            "expiration_date": "2015-04-27",
+            "fb_app_id": "725444547534506",
+            "fb_app_namespace": "advents-kranz",
+            "fb_page_id": null,
+            "fb_page_name": null,
+            "fb_page_url": "",
+            "id": 9865,
             "lang_tag": "en_US",
             "m_id": 299,
-            "name": "New Instance 1427295997",
+            "name": "New Instance 1429522046",
             "template_id": 780,
-            "timestamp": 1427296018,
+            "timestamp": 1429522082,
             "_links": {
                 "self": {
-                    "href": "https:\/\/v2-stage.app-arena.com\/api\/v1\/instances\/9627"
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9865"
                 }
             }
         }
