@@ -750,6 +750,14 @@ For parameter documentation see :ref:`instance_object`
     :data object meta_data: (Optional) Meta data for the config field
     :data enum editor: (Optional) Which editor should be shown to the user?
 
+.. http:method:: DELETE /api/v1/instances/{i_id}/configs/{config_id}
+
+       :arg i_id: ID of the instance.
+
+for parameter documentation see :ref:`delete_codes`
+
+
+
 
 
 /instances/{i_id}/languages
