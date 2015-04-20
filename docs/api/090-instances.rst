@@ -756,7 +756,7 @@ For parameter documentation see :ref:`instance_object`
 
 .. http:response:: Example request body
 
-for parameter documentation see :ref:`delete_codes`
+        for parameter documentation see :ref:`delete_codes`
 
 
 
