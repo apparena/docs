@@ -160,7 +160,7 @@ API - Companies calls
 
        :arg i_id: ID of the company.
 
-        `delete codes <../api/001-index.html#codes>`_
+        `Successful DELETE requests will return HTTP-Status code 204.<../api/001-index.html#codes>`_
 
 /companies/:company_id/customers
 --------------------------------

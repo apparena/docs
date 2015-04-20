@@ -166,7 +166,7 @@ API - Models calls
 
        :arg i_id: ID of the instance.
 
-            `delete codes <../api/001-index.html#codes>`_
+            `Successful DELETE requests will return HTTP-Status code 204.<../api/001-index.html#codes>`_
 
 
 /models/:model_id/configs
@@ -997,7 +997,7 @@ API - Models calls
 
        :arg i_id: ID of the instance.
 
-        `delete codes <../api/001-index.html#codes>`_
+        `Successful DELETE requests will return HTTP-Status code 204.<../api/001-index.html#codes>`_
 
 
 
@@ -1074,7 +1074,7 @@ API - Models calls
 
        :arg i_id: ID of the instance.
 
-        `delete codes <../api/001-index.html#codes>`_
+        `Successful DELETE requests will return HTTP-Status code 204.<../api/001-index.html#codes>`_
 
 /models/:model_id/languages/:lang_tag/translations
 --------------------------------------------------
@@ -1140,4 +1140,4 @@ API - Models calls
 
        :arg i_id: ID of the instance.
 
-        `delete codes <../api/001-index.html#codes>`_
+        `Successful DELETE requests will return HTTP-Status code 204.<../api/001-index.html#codes>`_
