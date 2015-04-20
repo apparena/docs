@@ -754,7 +754,7 @@ For parameter documentation see :ref:`instance_object`
 
        :arg i_id: ID of the instance.
 
-<a href=001-index.rst>delete_codes</a>
+`delete codes <../api/001-index.html#codes>`_
 
 
 
@@ -895,7 +895,7 @@ For parameter documentation see :ref:`instance_object`
 -----------------------------------------------------------------
 
 
-.. http:method:: GET /api/v1/instances/{i_id}/languages/:lang_tag/translation/:translation_id
+.. http:method:: PUT /api/v1/instances/{i_id}/languages/:lang_tag/translation/:translation_id
 
        :arg i_id: ID of the translation.
 

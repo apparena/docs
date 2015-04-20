@@ -25,7 +25,7 @@ All API URLs listed in this documentation are relative to ``https://v2.app-arena
 HTTP Verbs
 ----------
 
-.. _instance_object:
+.. _codes:
 
 The App-Arena API is a RESTful API. All requests can be made using one of the following HTTP verbs
 

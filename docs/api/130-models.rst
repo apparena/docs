@@ -1103,3 +1103,20 @@ Documentation will follow soon...
         }
 
 
+/models/{model_id}/languages/{lang_tag}/translations/:translation_id
+--------------------------------------------------------------------
+
+
+.. http:method:: PUT /models/{model_id}/languages/{lang_tag}/translations/:translation_id
+
+       :arg i_id: ID of the translation.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "value":"UPDATED Il mio test translation!"
+        }
+
+    :data string value: (Required) Translation
