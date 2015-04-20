@@ -21,7 +21,12 @@ API - Instances calls
             "lang_tag":       "en_US"
         }
 
+
+
+    :data string name: (Required) Name of the instance
+    :data integer template_id: (Required) Template ID the instance should be created of
     :data int company_id:  (Optional) Company_id of the company the instance should be created for
+    :data enum template_type: (Optional) The entity the instance should be generated of
     :data string description: (Optional) Description of the instance.
     :data enum lang_tag:  (Optional) ["sq_AL", "ar_DZ", "ar_BH", "ar_EG", "ar_IQ", "ar_JO", "ar_KW", "ar_LB", "ar_LY",
                         "ar_MA", "ar_OM", "ar_QA", "ar_SA", "ar_SD", "ar_SY", "ar_TN", "ar_AE", "ar_YE", "be_BY",
@@ -34,9 +39,6 @@ API - Instances calls
                         "sr_RS", "sk_SK","sl_SI", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC",
                         "es_SV", "es_GT", "es_HN", "es_MX","es_NI", "es_PA", "es_PY", "es_PE", "es_PR", "es_ES",
                         "es_US", "es_UY", "es_VE", "sv_SE", "th_TH", "th_TH","tr_TR", "uk_UA", "vi_VN"]
-    :data string name: (Required) Name of the instance.
-    :data int template_id: (Required) Template ID the instance should be created of
-    :data enum template_type:  (Optional) [ "instance" | "template" ] The entity the instance should be generated of
 
 
 

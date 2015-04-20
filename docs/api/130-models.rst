@@ -21,8 +21,8 @@ API - Models calls
         }
 
     :data string name: (Required) Name of the model.
-        :data string description: (Optional) Description of the model.
-        :data string base_url: (Optional) Public Url path to your app
+    :data string description: (Optional) Description of the model.
+    :data string base_url: (Optional) Public Url path to your app
 
 
 .. http:response:: Newly created model object
@@ -86,7 +86,7 @@ API - Models calls
 /models/:model_id
 -----------------
 
-.. http:method:: GET /api/v1/models/{model_id}
+.. http:method:: GET /api/v1/models/:model_id
 
    :arg model_id: ID of the model.
 
@@ -128,7 +128,7 @@ API - Models calls
 
 
 
-.. http:method:: PUT /api/v1/models/{model_id}
+.. http:method:: PUT /api/v1/models/:model_id
 
     :arg model_id: ID of the model.
 
@@ -215,7 +215,7 @@ API - Models calls
 | multiselect   |                                   |                                                         |
 +---------------+-----------------------------------+---------------------------------------------------------+
 
-.. http:method:: POST /api/v1/models/{model_id}/configs(checkbox)
+.. http:method:: POST /api/v1/models/:model_id/configs(checkbox)
 
     :arg model_id: ID of the model.
 
@@ -244,7 +244,7 @@ API - Models calls
     :data string data_caption_on: (Optional) Caption for the 'On'-value
     :data string data_label: (Optional) Label for the checkbox
 
-.. http:method:: POST /api/v1/models/{model_id}/configs(color)
+.. http:method:: POST /api/v1/models/:model_id/configs(color)
 
     :arg model_id: ID of the model.
 
@@ -267,7 +267,7 @@ API - Models calls
     :data string value: (Required) Default value for the config element
     :data string description: (Optional) Description for the config value
 
-.. http:method:: POST /api/v1/models/{model_id}/configs(css)
+.. http:method:: POST /api/v1/models/:model_id/configs(css)
 
     :arg model_id: ID of the model.
 
@@ -293,7 +293,7 @@ API - Models calls
     :data object meta_data: (Optional) Meta data for the config field
     :data enum data_compiler: (Optional) Which compiler should be used to generate CSS
 
-.. http:method:: POST /api/v1/models/{model_id}/configs(date) DEPRECATED
+.. http:method:: POST /api/v1/models/:model_id/configs(date) DEPRECATED
 
     :arg model_id: ID of the model.
 
@@ -314,7 +314,7 @@ API - Models calls
     :data string value: (Required) Default value for the config element
     :data string description: (Optional) Description for the config value
 
-.. http:method:: POST /api/v1/models/{model_id}/configs(image)
+.. http:method:: POST /api/v1/models/:model_id/configs(image)
 
     :arg model_id: ID of the model.
 
@@ -360,7 +360,7 @@ API - Models calls
     :data array data_format: (Optional) Title of the image (normally appears, when the user hovers with the mouse cursor over the image)
     :data bool data_nullable: (Optional) can the image url be empty
 
-.. http:method:: POST /api/v1/models/{model_id}/configs(text)
+.. http:method:: POST /api/v1/models/:model_id/configs(text)
 
     :arg model_id: ID of the model.
 
@@ -394,7 +394,7 @@ API - Models calls
     :data integer data_min_lenght: (Optional) Minimum value (validation for type "text")
     :data string data_pattern: (Optional) Regular expression for input validation defines an input mask
 
-.. http:method:: POST /api/v1/models/{model_id}/configs(textarea)
+.. http:method:: POST /api/v1/models/:model_id/configs(textarea)
 
     :arg model_id: ID of the model.
 
@@ -422,7 +422,7 @@ API - Models calls
     :data enum editor: (Optional) "wysiwyg", "code", "none" | Which editor should be shown to the user?
     :data bool code_view: (Optional) Is the code-view button available in the wysiwyg-editor?
 
-.. http:method:: POST /api/v1/models/{model_id}/configs(select)
+.. http:method:: POST /api/v1/models/:model_id/configs(select)
 
     :arg model_id: ID of the model.
 
@@ -460,7 +460,7 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data array source: (Required) All available options of the config element
 
-.. http:method:: POST /api/v1/models/{model_id}/configs(multiselect)
+.. http:method:: POST /api/v1/models/:model_id/configs(multiselect)
 
     :arg model_id: ID of the model.
 
@@ -498,7 +498,7 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data array source: (Required) All available options of the config element
 
-.. http:method:: GET /api/v1/models/{model_id}/configs
+.. http:method:: GET /api/v1/models/:model_id/configs
 
    :arg model_id: ID of the model.
 
@@ -543,7 +543,7 @@ API - Models calls
 /models/{model_id}/configs/{config_id}
 --------------------------------------
 
-.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(checkbox)
+.. http:method:: GET /api/v1/models/:model_id/configs/:config_id(checkbox)
 
     :arg model_id: ID of the model.
 
@@ -566,7 +566,7 @@ API - Models calls
             }
         }
 
-.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(color)
+.. http:method:: GET /api/v1/models/:model_id/configs/:config_id(color)
 
     :arg model_id: ID of the model.
 
@@ -589,7 +589,7 @@ API - Models calls
             }
         }
 
-.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(css)
+.. http:method:: GET /api/v1/models/:model_id/configs/:config_id(css)
 
     :arg model_id: ID of the model.
 
@@ -612,7 +612,7 @@ API - Models calls
             }
         }
 
-.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(date)
+.. http:method:: GET /api/v1/models/:model_id/configs/:config_id(date)
 
     :arg model_id: ID of the model.
 
@@ -635,7 +635,7 @@ API - Models calls
             }
         }
 
-.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(image)
+.. http:method:: GET /api/v1/models/:model_id/configs/:config_id(image)
 
     :arg model_id: ID of the model.
 
@@ -660,7 +660,7 @@ API - Models calls
             }
         }
 
-.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(text)
+.. http:method:: GET /api/v1/models/:model_id/configs/:config_id(text)
 
     :arg model_id: ID of the model.
 
@@ -683,7 +683,7 @@ API - Models calls
             }
         }
 
-.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(textarea)
+.. http:method:: GET /api/v1/models/:model_id/configs/:config_id(textarea)
 
     :arg model_id: ID of the model.
 
@@ -706,7 +706,7 @@ API - Models calls
             }
         }
 
-.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(select)
+.. http:method:: GET /api/v1/models/:model_id/configs/:config_id(select)
 
     :arg model_id: ID of the model.
 
@@ -743,7 +743,7 @@ API - Models calls
             }
         }
 
-.. http:method:: GET /api/v1/models/{model_id}/configs/{config_id}(multiselect)
+.. http:method:: GET /api/v1/models/:model_id/configs/:config_id(multiselect)
 
     :arg model_id: ID of the model.
 
@@ -785,7 +785,7 @@ API - Models calls
 
 
 
-.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(checkbox)
+.. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(checkbox)
 
 
 .. http:response:: Example request body
@@ -808,7 +808,7 @@ API - Models calls
     :data string data_caption_on: (Optional) Caption for the 'On'-value
     :data string data_label: (Optional) Label for the checkbox
 
-.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(color)
+.. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(color)
 
 
 .. http:response:: Example request body
@@ -825,7 +825,7 @@ API - Models calls
     :data bool value: (Optional) Value for the config element
     :data string description: (Optional) Description for the config value
 
-.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(css)
+.. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(css)
 
 
 .. http:response:: Example request body
@@ -844,7 +844,7 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data object meta_data: (Optional) Meta data for the config field
 
-.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(data) DEPRECATED
+.. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(data) DEPRECATED
 
 
 .. http:response:: Example request body
@@ -861,7 +861,7 @@ API - Models calls
     :data bool value: (Optional) Value for the config element
     :data string description: (Optional) Description for the config value
 
-.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(image)
+.. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(image)
 
 
 .. http:response:: Example request body
@@ -889,7 +889,7 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data object meta_data: (Optional) Meta data for the config field
 
-.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(text)
+.. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(text)
 
 
 .. http:response:: Example request body
@@ -910,7 +910,7 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data object meta_data: (Optional) Meta data for the config field
 
-.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(textarea)
+.. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(textarea)
 
 
 .. http:response:: Example request body
@@ -929,7 +929,7 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data object meta_data: (Optional) Meta data for the config field
 
-.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(select)
+.. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(select)
 
 
 .. http:response:: Example request body
@@ -961,7 +961,7 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data array source: (Optional) All available options of the select config value
 
-.. http:method:: PUT /api/v1/models/{model_id}/configs/{config_id}(multiselect)
+.. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(multiselect)
 
 
 .. http:response:: Example request body
@@ -993,7 +993,7 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data array source: (Optional) All available options of the select config value
 
-.. http:method:: DELETE /api/v1/models/{model_id}/configs/{config_id}
+.. http:method:: DELETE /api/v1/models/:model_id/configs/:config_id
 
        :arg i_id: ID of the instance.
 
@@ -1001,10 +1001,10 @@ API - Models calls
 
 
 
-/models/{model_id}/languages
-----------------------------
+/models/:model_id/languages
+---------------------------
 
-.. http:method:: POST /api/v1/models/{model_id}/languages
+.. http:method:: POST /api/v1/models/:model_id/languages
 
 
 .. http:response:: Example request body
@@ -1018,7 +1018,7 @@ API - Models calls
     :data enum lang_tag: (Required) Language tag of the language to add to the model
     :data is_activated: (Optional) If the new language is activated immediately
 
-.. http:method:: GET /api/v1/models/{model_id}/languages
+.. http:method:: GET /api/v1/models/:model_id/languages
 
     :arg model_id: ID of the model.
 
@@ -1054,10 +1054,10 @@ API - Models calls
         }
 
 
-/models/{model_id}/languages/{lang_tag}
----------------------------------------
+/models/:model_id/languages/:lang_tag
+-------------------------------------
 
-.. http:method:: PUT /api/v1/models/{model_id}/languages/{lang_tag}
+.. http:method:: PUT /api/v1/models/:model_id/languages/:lang_tag
 
 
 .. http:response:: Example request body
@@ -1070,16 +1070,16 @@ API - Models calls
 
     :data boolean is_activated: (Required) If the new language is activated immediately
 
-.. http:method:: DELETE /api/v1/models/{model_id}/languages/{lang_tag}
+.. http:method:: DELETE /api/v1/models/:model_id/languages/:lang_tag
 
        :arg i_id: ID of the instance.
 
         `delete codes <../api/001-index.html#codes>`_
 
-/models/{model_id}/languages/{lang_tag}/translations
-----------------------------------------------------
+/models/:model_id/languages/:lang_tag/translations
+--------------------------------------------------
 
-.. http:method:: POST /api/v1/models/{model_id}/languages/{lang_tag}/translations
+.. http:method:: POST /api/v1/models/:model_id/languages/:lang_tag/translations
 
 
 .. http:response:: Example request body
@@ -1094,7 +1094,7 @@ API - Models calls
     :data string translation_id: (Required) Translation ID
     :data string value: (Required) Translation
 
-.. http:method:: GET /api/v1/models/{model_id}/languages/translations:lang_tag/
+.. http:method:: GET /api/v1/models/:model_id/languages/translations:lang_tag/
 
     :arg model_id: ID of the model.
 
@@ -1117,11 +1117,11 @@ API - Models calls
         }
 
 
-/models/{model_id}/languages/{lang_tag}/translations/:translation_id
---------------------------------------------------------------------
+/models/:model_id/languages/:lang_tag/translations/:translation_id
+------------------------------------------------------------------
 
 
-.. http:method:: PUT /models/{model_id}/languages/{lang_tag}/translations/:translation_id
+.. http:method:: PUT /models/:model_id/languages/:lang_tag/translations/:translation_id
 
        :arg i_id: ID of the translation.
 
@@ -1136,7 +1136,7 @@ API - Models calls
     :data string value: (Required) Translation
 
 
-.. http:method:: DELETE /api/v1/models/{model_id}/languages/{lang_tag}
+.. http:method:: DELETE /models/:model_id/languages/:lang_tag
 
        :arg i_id: ID of the instance.
 
