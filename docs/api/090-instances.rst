@@ -754,9 +754,9 @@ For parameter documentation see :ref:`instance_object`
 
        :arg i_id: ID of the instance.
 
-.. http:response:: Example request body
+<a href=001-index.rst>delete_codes</a>
 
-        for parameter documentation see :ref:`delete_codes`
+
 
 
 
