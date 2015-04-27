@@ -571,6 +571,8 @@ For parameter documentation see :ref:`instance_object`
             "data_label":         "Updated Optional label"
         }
 
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
+
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(color)
 
        :arg i_id: ID of the instance.
@@ -659,6 +661,8 @@ For parameter documentation see :ref:`instance_object`
     :data string value: (Optional) value for the config element
     :data string description: (Optional) Description for the instance
     :data object meta_data: (Optional) Meta data for the config field
+
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(multiselect)
 
@@ -758,6 +762,8 @@ For parameter documentation see :ref:`instance_object`
     :data integer min_lenght: (Optional) Minimum value (validation for type "text")
     :data string pattern: (Optional) Regular expression for input validation defines an input mask
 
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
+
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(textarea)
 
        :arg i_id: ID of the instance.
@@ -779,6 +785,8 @@ For parameter documentation see :ref:`instance_object`
     :data string description: (Optional) Description for the config value
     :data object meta_data: (Optional) Meta data for the config field
     :data enum editor: (Optional) Which editor should be shown to the user?
+
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
 .. http:method:: DELETE /api/v1/instances/:i_id/configs/:config_id
 

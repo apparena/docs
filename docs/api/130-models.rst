@@ -170,6 +170,8 @@ API - Models calls
 /models/:model_id/configs
 -------------------------
 
+.. _data:
+
 .. note:: ``data_*`` parameters are different for each config type. The following table will list all parameters
           for all config types.
 
@@ -242,6 +244,8 @@ API - Models calls
     :data string data_caption_on: (Optional) Caption for the 'On'-value
     :data string data_label: (Optional) Label for the checkbox
 
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
+
 .. http:method:: POST /api/v1/models/:model_id/configs(color)
 
     :arg model_id: ID of the model.
@@ -290,6 +294,8 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data object meta_data: (Optional) Meta data for the config field
     :data enum data_compiler: (Optional) Which compiler should be used to generate CSS
+
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
 .. http:method:: POST /api/v1/models/:model_id/configs(date) DEPRECATED
 
@@ -358,6 +364,8 @@ API - Models calls
     :data array data_format: (Optional) Title of the image (normally appears, when the user hovers with the mouse cursor over the image)
     :data bool data_nullable: (Optional) can the image url be empty
 
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
+
 .. http:method:: POST /api/v1/models/:model_id/configs(text)
 
     :arg model_id: ID of the model.
@@ -392,6 +400,8 @@ API - Models calls
     :data integer data_min_lenght: (Optional) Minimum value (validation for type "text")
     :data string data_pattern: (Optional) Regular expression for input validation defines an input mask
 
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
+
 .. http:method:: POST /api/v1/models/:model_id/configs(textarea)
 
     :arg model_id: ID of the model.
@@ -419,6 +429,8 @@ API - Models calls
     :data object meta_data: (Optional) Meta data for the config field
     :data enum editor: (Optional) "wysiwyg", "code", "none" | Which editor should be shown to the user?
     :data bool code_view: (Optional) Is the code-view button available in the wysiwyg-editor?
+
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
 .. http:method:: POST /api/v1/models/:model_id/configs(select)
 
@@ -911,6 +923,8 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data object meta_data: (Optional) Meta data for the config field
 
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
+
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(text)
 
     :arg model_id: ID of the model.
@@ -935,6 +949,8 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data object meta_data: (Optional) Meta data for the config field
 
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
+
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(textarea)
 
     :arg model_id: ID of the model.
@@ -956,6 +972,8 @@ API - Models calls
     :data string value: (Optional) Value for the config element
     :data string description: (Optional) Description for the config value
     :data object meta_data: (Optional) Meta data for the config field
+
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(select)
 
