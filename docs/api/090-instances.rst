@@ -342,7 +342,7 @@ For parameter documentation see :ref:`instance_object`
         {
             "compiler": "less",
             "description": "Diese CSS Konfiguration wird vom Entwickler erstellt und enthält die wichtigsten CSS
-                            Formatierungen der App.",
+                        Formatierungen der App.",
             "id": "css_app",
             "instance_id": 9849,
             "lang_tag": "de_DE",
