@@ -119,6 +119,8 @@ API - Companies calls
             }
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
+
 
 .. http:method:: PUT /api/v1/companies/:company_id
 
@@ -190,6 +192,7 @@ API - Companies calls
             "total_items": 0
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 /companies/:company_id/instances
 --------------------------------
@@ -217,6 +220,7 @@ API - Companies calls
             "total_items": 0
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 /companies/:company_id/users
 ----------------------------
@@ -244,5 +248,6 @@ API - Companies calls
             "total_items": 0
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 

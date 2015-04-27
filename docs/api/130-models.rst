@@ -82,6 +82,7 @@ API - Models calls
            "total_items":176
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 /models/:model_id
 -----------------
@@ -577,6 +578,8 @@ API - Models calls
             }
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
+
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(color)
 
     :arg model_id: ID of the model.
@@ -600,6 +603,8 @@ API - Models calls
                 }
             }
         }
+
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(css)
 
@@ -625,6 +630,8 @@ API - Models calls
             }
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
+
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(date)
 
     :arg model_id: ID of the model.
@@ -648,6 +655,8 @@ API - Models calls
                 }
             }
         }
+
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(image)
 
@@ -675,6 +684,8 @@ API - Models calls
             }
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
+
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(text)
 
     :arg model_id: ID of the model.
@@ -699,6 +710,8 @@ API - Models calls
             }
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
+
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(textarea)
 
     :arg model_id: ID of the model.
@@ -722,6 +735,8 @@ API - Models calls
                 }
             }
         }
+
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(select)
 
@@ -760,6 +775,8 @@ API - Models calls
                 }
             }
         }
+
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(multiselect)
 
@@ -802,7 +819,7 @@ API - Models calls
             }
         }
 
-
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(checkbox)
 
@@ -1105,6 +1122,7 @@ API - Models calls
             "total_items": 1
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 /models/:model_id/languages/:lang_tag
 -------------------------------------
@@ -1173,6 +1191,7 @@ API - Models calls
             "total_items": 0
         }
 
+.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 /models/:model_id/languages/:lang_tag/translations/:translation_id
 ------------------------------------------------------------------
