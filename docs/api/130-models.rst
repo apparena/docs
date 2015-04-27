@@ -170,7 +170,7 @@ API - Models calls
 /models/:model_id/configs
 -------------------------
 
-.. _data:
+.. _table:
 
 .. note:: ``data_*`` parameters are different for each config type. The following table will list all parameters
           for all config types.
