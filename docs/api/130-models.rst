@@ -1099,6 +1099,8 @@ API - Models calls
     :data string data_caption_on: (Optional) Caption for the 'On'-value
     :data string data_label: (Optional) Label for the checkbox
 
+
+
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(color)
 
     :arg model_id: ID of the model.
