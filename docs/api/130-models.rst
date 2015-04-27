@@ -163,7 +163,7 @@ API - Models calls
 
 
 
-.. http:method:: DELETE /api/v1/models/{model_id}
+.. http:method:: DELETE /api/v1/models/:model_id
 
 `Successful DELETE requests will return HTTP-Status code 204. <../api/001-index.html#codes>`_
 
