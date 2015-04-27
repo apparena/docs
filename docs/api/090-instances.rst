@@ -341,8 +341,7 @@ For parameter documentation see :ref:`instance_object`
 
         {
             "compiler": "less",
-            "description": "Diese CSS Konfiguration wird vom Entwickler erstellt und enthält die wichtigsten CSS
-                        Formatierungen der App.",
+            "description": "Diese CSS Konfiguration wird vom Entwickler erstellt und enthält die wichtigsten CSS Formatierungen der App.",
             "id": "css_app",
             "instance_id": 9849,
             "lang_tag": "de_DE",
@@ -350,7 +349,7 @@ For parameter documentation see :ref:`instance_object`
             "src": "https:\/\/www.app-arena.com\/uploads\/apps\/model\/299\/0\/de_DE\/css\/css_app.css",
             "template_id": 780,
             "type": "css",
-            "value": "\/* \ \ Here you find the complete styling of the application.
+            "value": "\/* \ \ Here you find the complete styling of the application.,
             "timestamp": 1429104816,
             "_links": {
                 "self": {
