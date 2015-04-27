@@ -164,6 +164,8 @@ API - Models calls
 
 .. http:response:: Example response body.
 
+    .. sourcecode:: js
+
         {
             "app_domain": "",
             "base_url": "https:\/\/UPDATED.url-to-my-app.com\/myappsubfolder\/",
@@ -275,6 +277,8 @@ API - Models calls
 
 .. http:response:: Example response body.
 
+    .. sourcecode:: js
+
         {
             "description": "The description of my checkbox",
             "id": "config_checkbox_1430141851",
@@ -317,6 +321,8 @@ API - Models calls
 
 
 .. http:response:: Example response body.
+
+    .. sourcecode:: js
 
         {
             "description": "The description of my color",
@@ -366,6 +372,8 @@ API - Models calls
 
 .. http:response:: Example response body.
 
+    .. sourcecode:: js
+
         {
             "description": "The description of my config value.",
             "id": "config_css_1430142010",
@@ -404,7 +412,9 @@ API - Models calls
     :data string value: (Required) Default value for the config element
     :data string description: (Optional) Description for the config value
 
-    .. http:response:: Example response body.
+.. http:response:: Example response body.
+
+    .. sourcecode:: js
 
         {
             "description": "Updated Enter a valid date",
@@ -473,6 +483,8 @@ API - Models calls
 
 .. http:response:: Example response body.
 
+    .. sourcecode:: js
+
         {
             "description": "The description of my config value.",
             "id": "config_image_1430142090",
@@ -530,6 +542,8 @@ API - Models calls
 
 .. http:response:: Example response body.
 
+    .. sourcecode:: js
+
         {
             "description": "Enter a valid Username (max. 12 lowercase characters or numbers, no whitespaces).",
             "id": "config_text_1430142145",
@@ -578,6 +592,8 @@ API - Models calls
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
 .. http:response:: Example response body.
+
+    .. sourcecode:: js
 
         {
             "description": "The description of my config value.",
@@ -635,6 +651,8 @@ API - Models calls
     :data array source: (Required) All available options of the config element
 
 .. http:response:: Example response body.
+
+    .. sourcecode:: js
 
         {
             "description": "The description of my config value.",
@@ -706,6 +724,8 @@ API - Models calls
     :data array source: (Required) All available options of the config element
 
 .. http:response:: Example response body.
+
+    .. sourcecode:: js
 
         {
             "description": "The description of my config value.",

@@ -44,6 +44,8 @@ API - Companies calls
 
 .. http:response:: Example response body
 
+    .. sourcecode:: js
+
         {
             "address1": "My street 1",
             "address2": "My street 2",
@@ -182,6 +184,8 @@ API - Companies calls
     :data string font: (Optional) Company font name
 
 .. http:response:: Example response body
+
+    .. sourcecode:: js
 
         {
             "address1": "Updated My street 1",

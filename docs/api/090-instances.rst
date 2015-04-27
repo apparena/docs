@@ -896,7 +896,9 @@ For parameter documentation see :ref:`instance_object`
             "is_activated":0
         }
 
-.. http:response:: Example request body
+.. http:response:: Example response body
+
+    .. sourcecode:: js
 
         {
             "is_activated": 0,
