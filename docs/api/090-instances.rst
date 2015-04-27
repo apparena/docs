@@ -896,8 +896,19 @@ For parameter documentation see :ref:`instance_object`
             "is_activated":0
         }
 
+.. http:response:: Example request body
 
-
+        {
+            "is_activated": 0,
+            "lang_tag": "en_US",
+            "timestamp": 1430141442,
+            "id": "en_US",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9903\/languages\/en_US"
+                }
+            }
+        }
 
 /instances/:i_id/languages/:lang_tag/translations
 -------------------------------------------------

@@ -42,6 +42,29 @@ API - Companies calls
     :data string color2: (Optional) Secondary company color
     :data string font: (Optional) Company font name
 
+.. http:response:: Example response body
+
+        {
+            "address1": "My street 1",
+            "address2": "My street 2",
+            "city": "My city",
+            "color1": "#478AB8",
+            "color2": "#2D343D",
+            "country": "DE",
+            "id": 440,
+            "logo": "https:\/\/app-manager.s3.amazonaws.com\/apps\/models\/3\/0\/4\/0\/de_DE\/AppArena_Logo_aufweiss300x80_1413369016_0.png",
+            "name": "New App-Arena customer. 1430140889",
+            "parent_id": 1,
+            "subdomain": "apparena_customer_1430140889",
+            "timestamp": 1430140930,
+            "zip": "12345",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/companies\/440"
+                }
+            }
+        }
+
 .. http:method:: GET /api/v1/companies
 
 
@@ -158,8 +181,28 @@ API - Companies calls
     :data string color2: (Optional) Secondary company color
     :data string font: (Optional) Company font name
 
+.. http:response:: Example response body
 
-
+        {
+            "address1": "Updated My street 1",
+            "address2": "Updated My street 2",
+            "city": "Updated My city",
+            "color1": "#111111",
+            "color2": "#222222",
+            "country": "AT",
+            "id": 440,
+            "logo": "https:\/\/app-manager.s3.amazonaws.com\/apps\/models\/3\/0\/4\/0\/de_DE\/AppArena_Logo_aufweiss300x80_1413369016_0.png",
+            "name": "Updated New Company Name_1430141082",
+            "parent_id": 1,
+            "subdomain": "updated_my_subdomain_1430141082",
+            "timestamp": 1430141123,
+            "zip": "11112345",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/companies\/440"
+                }
+            }
+        }
 
 
 .. http:method:: DELETE /api/v1/companies/:company_id

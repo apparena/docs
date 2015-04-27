@@ -162,6 +162,32 @@ API - Models calls
                         "tr_TR", "uk_UA", "vi_VN"
 
 
+.. http:response:: Example response body.
+
+        {
+            "app_domain": "",
+            "base_url": "https:\/\/UPDATED.url-to-my-app.com\/myappsubfolder\/",
+            "created_at": "2015-04-27",
+            "description": "UPDATED This is my test description",
+            "fb_app_id": "",
+            "fb_app_namespace": "",
+            "fb_app_secret": "",
+            "fb_canvas_url": "",
+            "id": 317,
+            "lang_tag": "en_US",
+            "name": "New app model 1430141524",
+            "secret": "da8a0ad63edbaced92b1d99f46c4cacf",
+            "validity": "",
+            "timestamp": 1430141572,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/317"
+                }
+            }
+        }
+
+
+
 
 .. http:method:: DELETE /api/v1/models/:model_id
 
@@ -247,6 +273,25 @@ API - Models calls
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
+.. http:response:: Example response body.
+
+        {
+            "description": "The description of my checkbox",
+            "id": "config_checkbox_1430141851",
+            "lang_tag": "en_US",
+            "meta_data": [ ],
+            "name": "Name of Checkbox",
+            "type": "checkbox",
+            "value": 1,
+            "timestamp": 1430141892,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/317\/configs\/config_checkbox_1430141851"
+                }
+            }
+        }
+
+
 .. http:method:: POST /api/v1/models/:model_id/configs(color)
 
     :arg model_id: ID of the model.
@@ -269,6 +314,26 @@ API - Models calls
     :data string name: (Required) Name for the config value
     :data string value: (Required) Default value for the config element
     :data string description: (Optional) Description for the config value
+
+
+.. http:response:: Example response body.
+
+        {
+            "description": "The description of my color",
+            "id": "config_color_1430141894",
+            "lang_tag": "en_US",
+            "meta_data": [ ],
+            "name": "Name of Color",
+            "type": "color",
+            "value": "#335566",
+            "timestamp": 1430141935,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/317\/configs\/config_color_1430141894"
+                }
+            }
+        }
+
 
 .. http:method:: POST /api/v1/models/:model_id/configs(css)
 
@@ -298,6 +363,26 @@ API - Models calls
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
+
+.. http:response:: Example response body.
+
+        {
+            "description": "The description of my config value.",
+            "id": "config_css_1430142010",
+            "lang_tag": "en_US",
+            "meta_data": [ ],
+            "name": "Name of my CSS config",
+            "type": "css",
+            "value": "body { text-align:center; } h1.h1, h2, h3 { font-size: 30px; }",
+            "timestamp": 1430142051,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/317\/configs\/config_css_1430142010"
+                }
+            }
+        }
+
+
 .. http:method:: POST /api/v1/models/:model_id/configs(date) DEPRECATED
 
     :arg model_id: ID of the model.
@@ -318,6 +403,25 @@ API - Models calls
     :data string name: (Required) Name for the config value
     :data string value: (Required) Default value for the config element
     :data string description: (Optional) Description for the config value
+
+    .. http:response:: Example response body.
+
+        {
+            "description": "Updated Enter a valid date",
+            "id": "config_date_1430142048",
+            "lang_tag": "en_US",
+            "meta_data": [ ],
+            "name": "Updated Name of my date",
+            "type": "date",
+            "value": "2011-11-11",
+            "timestamp": 1430142089,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/317\/configs\/config_date_1430142048"
+                }
+            }
+        }
+
 
 .. http:method:: POST /api/v1/models/:model_id/configs(image)
 
@@ -367,6 +471,27 @@ API - Models calls
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
+.. http:response:: Example response body.
+
+        {
+            "description": "The description of my config value.",
+            "id": "config_image_1430142090",
+            "lang_tag": "en_US",
+            "meta_data": {
+                "tag": "<img src="https:\/\/www.app-arena.com\/media\/wysiwyg\/serviceflatrate.png" \/>"
+            },
+            "name": "Name of my image config value",
+            "type": "image",
+            "value": "https:\/\/www.app-arena.com\/media\/wysiwyg\/serviceflatrate.png",
+            "timestamp": 1430142131,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/317\/configs\/config_image_1430142090"
+                }
+            }
+        }
+
+
 .. http:method:: POST /api/v1/models/:model_id/configs(text)
 
     :arg model_id: ID of the model.
@@ -403,6 +528,25 @@ API - Models calls
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
+.. http:response:: Example response body.
+
+        {
+            "description": "Enter a valid Username (max. 12 lowercase characters or numbers, no whitespaces).",
+            "id": "config_text_1430142145",
+            "lang_tag": "en_US",
+            "meta_data": [ ],
+            "name": "Name of my config value",
+            "type": "text",
+            "value": "my_username",
+            "timestamp": 1430142186,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/317\/configs\/config_text_1430142145"
+                }
+            }
+        }
+
+
 .. http:method:: POST /api/v1/models/:model_id/configs(textarea)
 
     :arg model_id: ID of the model.
@@ -432,6 +576,25 @@ API - Models calls
     :data bool code_view: (Optional) Is the code-view button available in the wysiwyg-editor?
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
+
+.. http:response:: Example response body.
+
+        {
+            "description": "The description of my config value.",
+            "id": "config_textarea_1430142205",
+            "lang_tag": "en_US",
+            "meta_data": [ ],
+            "name": "Name of my config value",
+            "type": "textarea",
+            "value": "<h1>This is my default HTML content<\/h1>",
+            "timestamp": 1430142246,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/317\/configs\/config_textarea_1430142205"
+                }
+            }
+        }
+
 
 .. http:method:: POST /api/v1/models/:model_id/configs(select)
 
@@ -471,6 +634,39 @@ API - Models calls
     :data string description: (Optional) Description for the config value
     :data array source: (Required) All available options of the config element
 
+.. http:response:: Example response body.
+
+        {
+            "description": "The description of my config value.",
+            "id": "config_select_1430142251",
+            "lang_tag": "en_US",
+            "meta_data": [ ],
+            "name": "Name of my config value",
+            "source": [
+                {
+                    "value": "value_id_1",
+                    "text": "Text for value 1"
+                },
+                {
+                    "value": "value_id_2",
+                    "text": "Text for value 2"
+                },
+                {
+                    "value": "value_id_3",
+                    "text": "Text for value 3"
+                }
+            ],
+            "type": "select",
+            "value": "value_id_2",
+            "timestamp": 1430142293,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/317\/configs\/config_select_1430142251"
+                }
+            }
+        }
+
+
 .. http:method:: POST /api/v1/models/:model_id/configs(multiselect)
 
     :arg model_id: ID of the model.
@@ -508,6 +704,42 @@ API - Models calls
     :data array value: (Optional) Default value for the config element
     :data string description: (Optional) Description for the config value
     :data array source: (Required) All available options of the config element
+
+.. http:response:: Example response body.
+
+        {
+            "description": "The description of my config value.",
+            "id": "config_multiselect_1430142358",
+            "lang_tag": "en_US",
+            "meta_data": [ ],
+            "name": "Name of my config value",
+            "source": [
+                {
+                    "value": "value_id_1",
+                    "text": "Text for value 1"
+                },
+                {
+                    "value": "value_id_2",
+                    "text": "Text for value 2"
+                },
+                {
+                    "value": "value_id_3",
+                    "text": "Text for value 3"
+                }
+            ],
+            "type": "multiselect",
+            "value": [
+                "value_id_2",
+                "value_id_3"
+            ],
+            "timestamp": 1430142399,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/317\/configs\/config_multiselect_1430142358"
+                }
+            }
+        }
+
 
 .. http:method:: GET /api/v1/models/:model_id/configs
 
