@@ -93,6 +93,8 @@ API - Companies calls
 
 .. http:method:: GET /api/v1/companies/:company_id
 
+    :arg company_id: id of the company.
+
 
 .. http:response:: Example request body
 
@@ -119,6 +121,8 @@ API - Companies calls
 
 
 .. http:method:: PUT /api/v1/companies/:company_id
+
+    :arg company_id: id of the company.
 
 
 .. http:response:: Example request body
@@ -165,6 +169,8 @@ API - Companies calls
 
 .. http:method:: GET /api/v1/companies/:company_id/customers
 
+    :arg company_id: id of the company.
+
 
 .. http:response:: Example request body
 
@@ -190,6 +196,8 @@ API - Companies calls
 
 .. http:method:: GET /api/v1/companies/:company_id/instances
 
+    :arg company_id: id of the company.
+
 
 .. http:response:: Example request body
 
@@ -214,6 +222,8 @@ API - Companies calls
 ----------------------------
 
 .. http:method:: GET /api/v1/companies/:company_id/users
+
+    :arg company_id: id of the company.
 
 
 .. http:response:: Example request body

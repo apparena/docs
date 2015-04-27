@@ -544,6 +544,7 @@ API - Models calls
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(checkbox)
 
     :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 .. http:response:: Retrieve basic information of a single model.
 
@@ -567,6 +568,7 @@ API - Models calls
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(color)
 
     :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 .. http:response:: Retrieve basic information of a single model.
 
@@ -590,6 +592,7 @@ API - Models calls
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(css)
 
     :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 .. http:response:: Retrieve basic information of a single model.
 
@@ -613,6 +616,7 @@ API - Models calls
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(date)
 
     :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 .. http:response:: Retrieve basic information of a single model.
 
@@ -636,6 +640,7 @@ API - Models calls
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(image)
 
     :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 .. http:response:: Retrieve basic information of a single model.
 
@@ -661,6 +666,7 @@ API - Models calls
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(text)
 
     :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 .. http:response:: Retrieve basic information of a single model.
 
@@ -684,6 +690,7 @@ API - Models calls
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(textarea)
 
     :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 .. http:response:: Retrieve basic information of a single model.
 
@@ -707,6 +714,7 @@ API - Models calls
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(select)
 
     :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 .. http:response:: Retrieve basic information of a single model.
 
@@ -744,6 +752,7 @@ API - Models calls
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(multiselect)
 
     :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 .. http:response:: Retrieve basic information of a single model.
 
@@ -785,6 +794,9 @@ API - Models calls
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(checkbox)
 
+    :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
+
 
 .. http:response:: Example request body
 
@@ -808,6 +820,9 @@ API - Models calls
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(color)
 
+    :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
+
 
 .. http:response:: Example request body
 
@@ -824,6 +839,9 @@ API - Models calls
     :data string description: (Optional) Description for the config value
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(css)
+
+    :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 
 .. http:response:: Example request body
@@ -844,6 +862,9 @@ API - Models calls
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(data) DEPRECATED
 
+    :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
+
 
 .. http:response:: Example request body
 
@@ -860,6 +881,9 @@ API - Models calls
     :data string description: (Optional) Description for the config value
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(image)
+
+    :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 
 .. http:response:: Example request body
@@ -889,6 +913,9 @@ API - Models calls
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(text)
 
+    :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
+
 
 .. http:response:: Example request body
 
@@ -910,6 +937,9 @@ API - Models calls
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(textarea)
 
+    :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
+
 
 .. http:response:: Example request body
 
@@ -928,6 +958,9 @@ API - Models calls
     :data object meta_data: (Optional) Meta data for the config field
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(select)
+
+    :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 
 .. http:response:: Example request body
@@ -960,6 +993,9 @@ API - Models calls
     :data array source: (Optional) All available options of the select config value
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(multiselect)
+
+    :arg model_id: ID of the model.
+    :arg config_id: ID of the config.
 
 
 .. http:response:: Example request body
@@ -1001,6 +1037,8 @@ API - Models calls
 ---------------------------
 
 .. http:method:: POST /api/v1/models/:model_id/languages
+
+    :arg model_id: ID of the model.
 
 
 .. http:response:: Example request body
@@ -1055,6 +1093,9 @@ API - Models calls
 
 .. http:method:: PUT /api/v1/models/:model_id/languages/:lang_tag
 
+    :arg model_id: ID of the model.
+    :arg lang_tag: ID of the language.
+
 
 .. http:response:: Example request body
 
@@ -1075,6 +1116,9 @@ API - Models calls
 
 .. http:method:: POST /api/v1/models/:model_id/languages/:lang_tag/translations
 
+    :arg model_id: ID of the model.
+    :arg lang_tag: ID of the language.
+
 
 .. http:response:: Example request body
 
@@ -1088,9 +1132,10 @@ API - Models calls
     :data string translation_id: (Required) Translation ID
     :data string value: (Required) Translation
 
-.. http:method:: GET /api/v1/models/:model_id/languages/translations:lang_tag/
+.. http:method:: GET /api/v1/models/:model_id/languages/translations/:lang_tag
 
     :arg model_id: ID of the model.
+    :arg lang_tag: ID of the language.
 
 .. http:response:: Retrieve basic information of a single model.
 
@@ -1118,6 +1163,8 @@ API - Models calls
 .. http:method:: PUT /models/:model_id/languages/:lang_tag/translations/:translation_id
 
        :arg i_id: ID of the translation.
+       :arg lang_tag: ID of the language.
+       :arg translation_id: ID of the translation.
 
 .. http:response:: Example request body
 
