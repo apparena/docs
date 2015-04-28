@@ -733,6 +733,7 @@ API - Models calls
             }
         }
 
+.. _model:
 
 .. http:method:: GET /api/v1/models/:model_id/configs
 
@@ -743,22 +744,39 @@ API - Models calls
    .. sourcecode:: js
 
         {
-           "app_domain":"your-domain.com",
-           "base_url":"https:\/\/www.your-domain.com\/myappsubfolder\/",
-           "created_at":"2015-03-05",
-           "description":"Get new super-powers using this cool web-app.",
-           "fb_app_id":"1234567890123456",
-           "fb_app_secret":"1234567890123456789012345612345678901234567890",
-           "id":310,
-           "lang_tag":"de_DE",
-           "name":"My Super-Power App",
-           "secret":"12345678901234567890123456",
-           "validity":"90",
-           "_links":{
-              "self":{
-                 "href":"https:\/\/v2.app-arena.com\/api\/v1\/models\/310"
-              }
-           }
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/318\/configs"
+                }
+            },
+            "_embedded": {
+                "data": [
+                    {
+                        "app_domain": "",
+                        "base_url": "https:\/\/www.url-to-your-app.com\/appsubfolder\/",
+                        "created_at": "2015-03-24",
+                        "description": "Using this app you will superpower your skills.",
+                        "fb_app_id": "",
+                        "fb_app_namespace": "",
+                        "fb_app_secret": "",
+                        "fb_canvas_url": "",
+                        "id": 312,
+                        "lang_tag": "de_DE",
+                        "name": "My shiny new app",
+                        "secret": "fd0691803888c9171abfde4ec8d00747",
+                        "validity": "",
+                        "timestamp": 1427207187,
+                        "_links": {
+                            "self": {
+                                "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/312"
+                            }
+                        }
+                    }
+                ]
+            },
+            "page_count": 0,
+            "page_size": 25,
+            "total_items": 0
         }
 
 
@@ -803,7 +821,7 @@ API - Models calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs. <../api/130-models.html#model>`_
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(color)
 
@@ -829,7 +847,7 @@ API - Models calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs. <../api/130-models.html#model>`_
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(css)
 
@@ -855,7 +873,7 @@ API - Models calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs. <../api/130-models.html#model>`_
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(date)
 
@@ -881,7 +899,7 @@ API - Models calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs. <../api/130-models.html#model>`_
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(image)
 
@@ -909,7 +927,7 @@ API - Models calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs. <../api/130-models.html#model>`_
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(text)
 
@@ -935,7 +953,7 @@ API - Models calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs. <../api/130-models.html#model>`_
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(textarea)
 
@@ -961,7 +979,7 @@ API - Models calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs. <../api/130-models.html#model>`_
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(select)
 
@@ -1001,7 +1019,7 @@ API - Models calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs. <../api/130-models.html#model>`_
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(multiselect)
 
@@ -1044,7 +1062,7 @@ API - Models calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs. <../api/130-models.html#model>`_
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(checkbox)
 
