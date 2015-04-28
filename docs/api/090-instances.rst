@@ -993,3 +993,5 @@ API - Instances calls
         }
 
     :data string value: (Required) Translation
+
+`Documentation for the language. <../api/090-instances.html#language>`_
