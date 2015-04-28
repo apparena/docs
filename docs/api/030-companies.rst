@@ -115,7 +115,7 @@ API - Companies calls
             ]
         }
 
-`Parameter documentation from the companies. <../api/030-companies.html#company>`_
+`Parameter documentation of the companies. <../api/030-companies.html#company>`_
 
 /companies/:company_id
 ----------------------
@@ -236,14 +236,33 @@ API - Companies calls
                 }
             },
             "_embedded": {
-                "data": [ ]
+                "data": [
+                    {
+                        "id": 363,
+                        "name": "New App-Arena customer. 1429097807",
+                        "subdomain": "apparena_customer_1429097807",
+                        "address1": "My street 1",
+                        "address2": "My street 2",
+                        "zip": "12345",
+                        "city": "My city",
+                        "country": "DE",
+                        "logo": "https:\/\/app-manager.s3.amazonaws.com\/apps\/models\/3\/0\/4\/0\/de_DE\/AppArena_Logo_aufweiss300x80_1413369016_0.png",
+                        "color1": "#478AB8",
+                        "color2": "#2D343D",
+                        "_links": {
+                            "self": {
+                                "href": "https:\/\/v2.app-arena.com\/api\/v1\/companies\/363"
+                            }
+                        }
+                    }
+                ]
             },
             "page_count": 0,
             "page_size": 25,
             "total_items": 0
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Parameter documentation of the companies. <../api/030-companies.html#company>`_
 
 /companies/:company_id/instances
 --------------------------------
@@ -264,14 +283,31 @@ API - Companies calls
                 }
             },
             "_embedded": {
-                "data": [ ]
+                "data": [
+                    {
+                        "active": 1,
+                        "base_url": "https:\/\/adventskranz.onlineapp.co\/",
+                        "description": "The description of my new instance.",
+                        "id": 9627,
+                        "lang_tag": "en_US",
+                        "m_id": 299,
+                        "name": "New Instance 1427295997",
+                        "template_id": 780,
+                        "timestamp": 1427296778,
+                        "_links": {
+                            "self": {
+                                "href": "https:\/\/v2-stage.app-arena.com\/api\/v1\/instances\/9627"
+                            }
+                        }
+                    }
+                ]
             },
             "page_count": 0,
             "page_size": 25,
             "total_items": 0
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Link to the parameter documentation. <../api/090-instances.html#instance_object>`_
 
 /companies/:company_id/users
 ----------------------------

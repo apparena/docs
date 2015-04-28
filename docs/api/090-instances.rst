@@ -142,15 +142,21 @@ API - Instances calls
             "active": 1,
             "base_url": "https:\/\/adventskranz.onlineapp.co\/",
             "description": "The description of my new instance.",
-            "id": 9627,
+            "expiration_date": "2015-05-05",
+            "fb_app_id": "725444547534506",
+            "fb_app_namespace": "advents-kranz",
+            "fb_page_id": null,
+            "fb_page_name": null,
+            "fb_page_url": "",
+            "id": 9905,
             "lang_tag": "en_US",
             "m_id": 299,
-            "name": "New Instance 1427295997",
+            "name": "New Instance 1430202395",
             "template_id": 780,
-            "timestamp": 1427296778,
+            "timestamp": 1430202441,
             "_links": {
                 "self": {
-                    "href": "https:\/\/v2-stage.app-arena.com\/api\/v1\/instances\/9627"
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9905"
                 }
             }
         }
