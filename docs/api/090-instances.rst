@@ -69,7 +69,7 @@ API - Instances calls
             }
         }
 
-For parameter documentation see :ref:`instance_object`
+`Link to the parameter documentation. <../api/090-instances.html#instance_object>`_
 
 
 
@@ -121,7 +121,7 @@ For parameter documentation see :ref:`instance_object`
             "total_items": 9270
         }
 
-For parameter documentation see :ref:`instance_object`
+`Link to the parameter documentation. <../api/090-instances.html#instance_object>`_
 
 .. warning:: The Documentation about the parameter_answer will follow soon!!!
 
@@ -186,7 +186,7 @@ For parameter documentation see :ref:`instance_object`
             "expiration_date": "2015-12-24"
         }
 
-For parameter documentation see :ref:`instance_object`
+`Link to the parameter documentation. <../api/090-instances.html#instance_object>`_
 
 
 .. http:response:: Example response body
@@ -216,7 +216,7 @@ For parameter documentation see :ref:`instance_object`
             }
         }
 
-    For parameter documentation see :ref:`instance_object`
+`Link to the parameter documentation. <../api/090-instances.html#instance_object>`_
 
 .. http:method:: DELETE /api/v1/instances/:i_id
 
