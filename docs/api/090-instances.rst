@@ -358,7 +358,7 @@ API - Instances calls
             "src": "https:\/\/www.app-arena.com\/uploads\/apps\/model\/299\/0\/de_DE\/css\/css_app.css",
             "template_id": 780,
             "type": "css",
-            "value": "\/* \ \ Here you find the complete styling of the application.\ \
+            "value": "\/* \ \ Here you find the complete styling of the application.\ \"
             "timestamp": 1429104816,
             "_links": {
                 "self": {
