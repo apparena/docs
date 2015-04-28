@@ -29,6 +29,8 @@ API - Companies calls
             "font"		:"helvetica-neue"
         }
 
+.. _company:
+
     :data string name: (Required) Name of the company
     :data integer parent_id: (Optional) ID of the company whos customer the newly created company should be like
     :data string subdomain: (Required) Subdomain for all apps the company will create
@@ -111,7 +113,7 @@ API - Companies calls
             ]
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Parameter documentation from the companies. <../api/030-companies.html#company>`_
 
 /companies/:company_id
 ----------------------
