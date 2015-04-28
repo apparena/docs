@@ -148,7 +148,7 @@ API - Companies calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Parameter documentation of the companies. <../api/030-companies.html#company>`_
 
 
 .. http:method:: PUT /api/v1/companies/:company_id
@@ -328,13 +328,42 @@ API - Companies calls
                 }
             },
             "_embedded": {
-                "data": [ ]
+                "data": [
+                    {
+                        "id": 8012,
+                        "username": "user-1429943426",
+                        "password": "$2y$15$6pE0VJ0CPHrnTzyx49HBjOtTQ4ywPl2CGgoewZLVV3yXKKomTyK\/C",
+                        "email": "extremterro@outlook.de",
+                        "displayName": null,
+                        "lang_tag": "de_DE",
+                        "state": 1,
+                        "roles": [
+                            "user",
+                            "admin"
+                        ],
+                        "company_id": 427,
+                        "_links": {
+                            "self": {
+                                "href": "https:\/\/v2.app-arena.com\/api\/v1\/companies\/427\/users\/8012"
+                            }
+                        }
+                    }
+                ]
             },
-            "page_count": 0,
+            "page_count": 1,
             "page_size": 25,
-            "total_items": 0
+            "total_items": 1
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+    :data string id: ID of the User
+    :data string username: Username created by the User
+    :data string password: Password for the User
+    :data string email: Email of the current User
+    :data string displayName: Username which is displayed
+    :data string lang_tag: Language of the current User
+    :data int state: (NOCH EINFÜGEN)
+    :data string roles: Die dem User zugeteilte Rolle z.B. Admin oder User
+    :data int company_id: ID of the company of the User
+
 
 

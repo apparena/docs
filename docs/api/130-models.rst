@@ -1312,6 +1312,8 @@ API - Models calls
 /models/:model_id/languages
 ---------------------------
 
+.. _mlanguage:
+
 .. http:method:: POST /api/v1/models/:model_id/languages
 
     :arg model_id: ID of the model.
@@ -1323,6 +1325,22 @@ API - Models calls
 
         {
             "lang_tag":"fr_FR"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "is_activated": 0,
+            "lang_tag": "fr_FR",
+            "timestamp": 1430211490,
+            "id": "fr_FR",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/318\/languages\/fr_FR"
+                }
+            }
         }
 
     :data enum lang_tag: (Required) Language tag of the language to add to the model
@@ -1363,7 +1381,7 @@ API - Models calls
             "total_items": 1
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the languages of models. <../api/130-models.html#mlanguages>`_
 
 /models/:model_id/languages/:lang_tag
 -------------------------------------
@@ -1380,6 +1398,22 @@ API - Models calls
 
         {
             "is_activated":1
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "is_activated": 1,
+            "lang_tag": "fr_FR",
+            "timestamp": 1430211734,
+            "id": "fr_FR",
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/318\/languages\/fr_FR"
+                }
+            }
         }
 
     :data boolean is_activated: (Required) If the new language is activated immediately
@@ -1406,15 +1440,31 @@ API - Models calls
             "value":"Il mio test translations!"
         }
 
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "id": "test_translation",
+            "translation": "Il mio test translations!",
+            "timestamp": 1430211997,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/318\/languages\/fr_FR\/translations\/test_translation"
+                }
+            }
+        }
+
+
     :data string translation_id: (Required) Translation ID
     :data string value: (Required) Translation
 
-.. http:method:: GET /api/v1/models/:model_id/languages/translations/:lang_tag
+.. http:method:: GET /api/v1/models/:model_id/languages/:lang_tag/translations
 
     :arg model_id: ID of the model.
     :arg lang_tag: ID of the language.
 
-.. http:response:: Retrieve basic information of a single model.
+.. http:response:: Example request body.
 
     .. sourcecode:: js
 
@@ -1432,7 +1482,42 @@ API - Models calls
             "total_items": 0
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+.. http:response:: Example response body.
+
+    .. sourcecode:: js
+
+        {
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/318\/languages\/fr_FR\/translations?page=1"
+                },
+                "first": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/318\/languages\/fr_FR\/translations"
+                },
+                "last": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/318\/languages\/fr_FR\/translations?page=1"
+                }
+            },
+            "_embedded": {
+                "data": [
+                    {
+                        "id": "test_translation",
+                        "value": "Il mio test translations!",
+                        "_links": {
+                            "self": {
+                                "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/318\/languages\/fr_FR\/translations\/test_translation"
+                            }
+                        }
+                    }
+                ]
+            },
+            "page_count": 1,
+            "page_size": 25,
+            "total_items": 1
+        }
+
+
+`Documentation of the languages of models. <../api/130-models.html#mlanguages>`_
 
 /models/:model_id/languages/:lang_tag/translations/:translation_id
 ------------------------------------------------------------------
