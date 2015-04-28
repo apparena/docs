@@ -574,7 +574,7 @@ API - Instances calls
 .. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 
-.. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id
+.. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(checkbox)
 
        :arg i_id: ID of the instance.
        :arg model_id: ID of the config.
@@ -613,6 +613,8 @@ API - Instances calls
     :data string value: (Optional) Default value for the config element
     :data string description: (Optional) Description for the instance
 
+`Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
+
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(css)
 
        :arg i_id: ID of the instance.
@@ -632,7 +634,8 @@ API - Instances calls
     :data string name: (Optional) Name for the config value
     :data string value: (Optional) Default value for the config element
     :data string description: (Optional) Description for the instance
-    :data object data_compiler: (Optional) Which compiler should be used to generate CSS?
+
+`Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(date) DEPRECATED
 
@@ -652,6 +655,8 @@ API - Instances calls
     :data string name: (Optional) Name for the config value
     :data string value: (Optional) value for the config element
     :data string description: (Optional) Description for the instance
+
+`Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(image)
 
@@ -681,7 +686,6 @@ API - Instances calls
     :data string name: (Optional) Name for the config value
     :data string value: (Optional) value for the config element
     :data string description: (Optional) Description for the instance
-    :data object meta_data: (Optional) Meta data for the config field
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
@@ -719,6 +723,8 @@ API - Instances calls
     :data string description: (Optional) Description for the instance
     :data array source: (Optional) All available options of the select config value
 
+`Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
+
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(select)
 
        :arg i_id: ID of the instance.
@@ -753,6 +759,8 @@ API - Instances calls
     :data string description: (Optional) Description for the instance
     :data array source: (Optional) All available options of the select config value
 
+`Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
+
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(text)
 
        :arg i_id: ID of the instance.
@@ -774,9 +782,6 @@ API - Instances calls
     :data string name: (Optional) Name of the config value
     :data string value: (Optional) value for the config element
     :data string description: (Optional) Description for the config value
-    :data object meta_data: (Optional) Meta data for the config field
-    :data enum type: (Optional) "text", "email", "number", "url", "tel", "date" | Data schema for the text field. Default is text
-    :data string placeholder: (Optional) Input field placeholder
     :data integer min: (Optional) Minimum value (validation for type "number")
     :data integer max: (Optional) Maximum value (validation for type "number")
     :data integer max_lenght: (Optional) Maximum value (validation for type "text")
@@ -804,7 +809,6 @@ API - Instances calls
     :data string name: (Optional) Name of the config value
     :data string value: (Optional) Default value for the config element
     :data string description: (Optional) Description for the config value
-    :data object meta_data: (Optional) Meta data for the config field
     :data enum editor: (Optional) Which editor should be shown to the user?
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
@@ -886,10 +890,12 @@ API - Instances calls
             "total_items": 6
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation for the language. <../api/090-instances.html#language>`_
 
 /instances/:i_id/languages/:lang_tag
 ------------------------------------
+
+.. _language:
 
 .. http:method:: PUT /api/v1/instances/:i_id/languages/:lang_tag
 
