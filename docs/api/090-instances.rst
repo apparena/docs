@@ -123,7 +123,6 @@ API - Instances calls
 
 `Link to the parameter documentation. <../api/090-instances.html#instance_object>`_
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
 
 /instances/:i_id
 ----------------
