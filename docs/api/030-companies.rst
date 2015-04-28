@@ -8,6 +8,8 @@ API - Companies calls
 /companies
 ----------
 
+.. _company:
+
 .. http:method:: POST /api/v1/companies
 
 
@@ -29,7 +31,7 @@ API - Companies calls
             "font"		:"helvetica-neue"
         }
 
-.. _company:
+
 
     :data string name: (Required) Name of the company
     :data integer parent_id: (Optional) ID of the company whos customer the newly created company should be like
