@@ -972,7 +972,7 @@ API - Instances calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation for the language. <../api/090-instances.html#language>`_
 
 /instances/{i_id}/languages/:lang_tag/translation/:translation_id
 -----------------------------------------------------------------

@@ -269,9 +269,6 @@ API - Models calls
     :data string name: (Required) Name for the config value
     :data bool value: (Required) Default value for the config element
     :data string description: (Optional) Description for the config value
-    :data string data_caption_off: (Optional) Caption for the 'Off'-value
-    :data string data_caption_on: (Optional) Caption for the 'On'-value
-    :data string data_label: (Optional) Label for the checkbox
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
@@ -364,8 +361,6 @@ API - Models calls
     :data string name: (Required) Name for the config value
     :data string value: (Required) Default value for the config element
     :data string description: (Optional) Description for the config value
-    :data object meta_data: (Optional) Meta data for the config field
-    :data enum data_compiler: (Optional) Which compiler should be used to generate CSS
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
@@ -465,19 +460,6 @@ API - Models calls
     :data string name: (Required) Name for the config value
     :data string value: (Required) Default value for the config element
     :data string description: (Optional) Description for the config value
-    :data object meta_data: (Optional) Meta data for the config field
-    :data string data_tag: (Optional) complete HTML5 image tag including all available attributes
-    :data string data_alt: (Optional) Alternative tag for the image (used for blind people surfing the web)
-    :data string data_title: (Optional) Title of the image (normally appears, when the user hovers with the mouse cursor over the image)
-    :data object data_size: (Optional) JSON object containing optional image size restriction for the image
-    :data integer data_max_height: (Optional) Maximal height of the image, that will be accepted
-    :data integer data_max_width: (Optional) Maximal width of the image, that will be accepted
-    :data integer data_min_height: (Optional) Minimum height of the image, that will be accepted
-    :data integer data_min_width: (Optional) Minimum width of the image, that will be accepted
-    :data integer data_height: (Optional) Exact height of the image, that will be accepted
-    :data integer data_width: (Optional) Exact width of the image, that will be accepted
-    :data array data_format: (Optional) Title of the image (normally appears, when the user hovers with the mouse cursor over the image)
-    :data bool data_nullable: (Optional) can the image url be empty
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
@@ -529,14 +511,6 @@ API - Models calls
     :data string name: (Required) Name for the config value
     :data string value: (Required) Default value for the config element
     :data string description: (Optional) Description for the config value
-    :data object meta_data: (Optional) Meta data for the config field
-    :data enum data_type: (Optional) "text", "email", "number", "url", "tel", "date" | Data schema for the text field. Default is text
-    :data string data_placeholder: (Optional) Input field placeholder
-    :data integer data_min: (Optional) Minimum value (validation for type "number")
-    :data integer data_max: (Optional) Maximum value (validation for type "number")
-    :data integer data_max_lenght: (Optional) Maximum value (validation for type "text")
-    :data integer data_min_lenght: (Optional) Minimum value (validation for type "text")
-    :data string data_pattern: (Optional) Regular expression for input validation defines an input mask
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
@@ -585,7 +559,6 @@ API - Models calls
     :data string name: (Required) Name for the config value
     :data string value: (Required) Default value for the config element
     :data string description: (Optional) Description for the config value
-    :data object meta_data: (Optional) Meta data for the config field
     :data enum editor: (Optional) "wysiwyg", "code", "none" | Which editor should be shown to the user?
     :data bool code_view: (Optional) Is the code-view button available in the wysiwyg-editor?
 
@@ -1095,11 +1068,9 @@ API - Models calls
     :data string name: (Optional) Name of the config value
     :data bool value: (Optional) Value for the config element
     :data string description: (Optional) Description for the config value
-    :data string data_caption_off: (Optional) Caption for the 'Off'-value
-    :data string data_caption_on: (Optional) Caption for the 'On'-value
-    :data string data_label: (Optional) Label for the checkbox
 
 
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(color)
 
@@ -1141,7 +1112,8 @@ API - Models calls
     :data string name: (Optional) Name of the config value
     :data bool value: (Optional) Value for the config element
     :data string description: (Optional) Description for the config value
-    :data object meta_data: (Optional) Meta data for the config field
+
+`Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
 .. http:method:: PUT /api/v1/models/:model_id/configs/:config_id(data) DEPRECATED
 
@@ -1192,7 +1164,6 @@ API - Models calls
     :data string name: (Optional) Name of the config value
     :data string value: (Optional) Value for the config element
     :data string description: (Optional) Description for the config value
-    :data object meta_data: (Optional) Meta data for the config field
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
@@ -1218,7 +1189,6 @@ API - Models calls
     :data string name: (Optional) Name of the config value
     :data string value: (Optional) Value for the config element
     :data string description: (Optional) Description for the config value
-    :data object meta_data: (Optional) Meta data for the config field
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
@@ -1242,7 +1212,6 @@ API - Models calls
     :data string name: (Optional) Name of the config value
     :data string value: (Optional) Value for the config element
     :data string description: (Optional) Description for the config value
-    :data object meta_data: (Optional) Meta data for the config field
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
