@@ -72,7 +72,7 @@ API - Instances calls
 For parameter documentation see :ref:`instance_object`
 
 
-.. _instance_object:
+
 
 .. http:method:: GET /api/v1/instances
 
@@ -127,6 +127,8 @@ For parameter documentation see :ref:`instance_object`
 
 /instances/:i_id
 ----------------
+
+.. _instance_object:
 
 .. http:method:: GET /api/v1/instances/:i_id
 
