@@ -794,8 +794,8 @@ API - Models calls
 
 
 
-/models/{model_id}/configs/{config_id}
---------------------------------------
+/models/:model_id/configs/:config_id
+------------------------------------
 
 .. http:method:: GET /api/v1/models/:model_id/configs/:config_id(checkbox)
 
