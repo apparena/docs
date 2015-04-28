@@ -8,6 +8,8 @@ API - Models calls
 /models
 -------
 
+.. _models:
+
 .. http:method:: POST /api/v1/models
 
 .. http:response:: Create a new model
@@ -82,7 +84,7 @@ API - Models calls
            "total_items":176
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the models. <../api/130-models.html#models>`_
 
 /models/:model_id
 -----------------
@@ -1087,6 +1089,24 @@ API - Models calls
     :data bool value: (Optional) Value for the config element
     :data string description: (Optional) Description for the config value
 
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "description": "The description of my checkbox",
+            "id": "config_checkbox_1430221458",
+            "lang_tag": "de_DE",
+            "meta_data": [ ],
+            "name": "Name of Checkbox",
+            "type": "checkbox",
+            "value": 1,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/models\/319\/configs\/config_checkbox_1430221458"
+                }
+            }
+        }
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#data>`_
 
