@@ -407,7 +407,7 @@ API - Instances calls
     .. sourcecode:: js
 
         {
-            "description": "Das Unternehmenslogo wird auf der Header-Grafik abgebildet. Alternativ können Sie das Logo in Ihre Grafiken integrieren und die automatische Ansicht des Logos in dem Punkt "Header” deaktivieren. Empfohlene Größe: 180 x 180 px. Weitere Infos siehe Grafikleitfaden.",
+            "description": "Das Unternehmenslogo wird auf der Header-Grafik abgebildet. Alternativ können Sie das Logo in Ihre Grafiken integrieren und die automatische Ansicht des Logos in dem Punkt Header deaktivieren. Empfohlene Größe: 180 x 180 px. Weitere Infos siehe Grafikleitfaden.",
             "height": "",
             "id": "app_logo",
             "instance_id": 9849,

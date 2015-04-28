@@ -472,7 +472,7 @@ API - Models calls
             "id": "config_image_1430142090",
             "lang_tag": "en_US",
             "meta_data": {
-                "tag": "<img src="https:\/\/www.app-arena.com\/media\/wysiwyg\/serviceflatrate.png" \/>"
+                "tag": '<img src="https:\/\/www.app-arena.com\/media\/wysiwyg\/serviceflatrate.png' \/>"
             },
             "name": "Name of my image config value",
             "type": "image",
@@ -915,7 +915,7 @@ API - Models calls
             "id": "config_image_1429099933",
             "lang_tag": "de_DE",
             "meta_data": {
-                "tag": "<img src="https:\/\/www.app-arena.com\/media\/wysiwyg\/serviceflatrate.png" \/>"
+                "tag": "<img src='https:\/\/www.app-arena.com\/media\/wysiwyg\/serviceflatrate.png' \/>"
             },
             "name": "Name of my image config value",
             "type": "image",
@@ -1102,8 +1102,8 @@ API - Models calls
 
         {
             "name":               "Updated Name of color",
-            "value":              #FFFFFF,
-            "description":        "Updated description of my color",
+            "value":              "#FFFFFF",
+            "description":        "Updated description of my color"
         }
 
     :data string name: (Optional) Name of the config value
