@@ -1273,7 +1273,7 @@ API - Models calls
             "id": "config_image_1430226136",
             "lang_tag": "de_DE",
             "meta_data": {
-                "tag": "<img src="https:\/\/www.app-arena.com\/media\/wysiwyg\/serviceflatrate.png" \/>"
+                "tag": "<img src='https:\/\/www.app-arena.com\/media\/wysiwyg\/serviceflatrate.png' \/>"
             },
             "name": "Name of my image config value",
             "type": "image",
