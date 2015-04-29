@@ -281,7 +281,7 @@ API - Instances calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs parameter. <../api/130-models.html#table>`_
 
 /instances/:i_id/configs/:config_id
 -----------------------------------
@@ -312,6 +312,8 @@ API - Instances calls
             }
         }
 
+`Documentation of the configs parameter. <../api/130-models.html#table>`_
+
 .. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(color)
 
     :arg model_id: ID of the config.
@@ -337,6 +339,8 @@ API - Instances calls
                 }
             }
         }
+
+`Documentation of the configs parameter. <../api/130-models.html#table>`_
 
 .. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(css)
 
@@ -366,7 +370,7 @@ API - Instances calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs parameter. <../api/130-models.html#table>`_
 
 .. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(date)
 
@@ -394,7 +398,7 @@ API - Instances calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs parameter. <../api/130-models.html#table>`_
 
 .. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(image)
 
@@ -426,7 +430,7 @@ API - Instances calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs parameter. <../api/130-models.html#table>`_
 
 .. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(multiselect)
 
@@ -471,7 +475,7 @@ API - Instances calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs parameter. <../api/130-models.html#table>`_
 
 .. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(select)
 
@@ -511,7 +515,7 @@ API - Instances calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs parameter. <../api/130-models.html#table>`_
 
 .. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(text)
 
@@ -542,7 +546,7 @@ API - Instances calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs parameter. <../api/130-models.html#table>`_
 
 .. http:method:: GET /api/v1/instances/:i_id/configs/:config_id(textarea)
 
@@ -570,7 +574,7 @@ API - Instances calls
             }
         }
 
-.. warning:: The Documentation about the parameter_answer will follow soon!!!
+`Documentation of the configs parameter. <../api/130-models.html#table>`_
 
 
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(checkbox)
