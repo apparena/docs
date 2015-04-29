@@ -591,6 +591,29 @@ API - Instances calls
             "data_label":         "Updated Optional label"
         }
 
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "description": "Zusätzliche Loginabfrage für Export und löschen der Userdaten, inklusive Log-Eintrag der angemeldeten Person. Funktioniert nur mit App-Internen Logins, nicht mit Social-Connects!",
+            "id": "activate_admin_secure_login",
+            "instance_id": 9910,
+            "lang_tag": "de_DE",
+            "name": "[Admin Sicherheitslogin aktivieren]",
+            "template_id": 780,
+            "type": "checkbox",
+            "value": 0,
+            "timestamp": 1430291456,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9910\/configs\/activate_admin_secure_login"
+                }
+            }
+        }
+
+
+
 `Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(color)
@@ -611,6 +634,27 @@ API - Instances calls
     :data string name: (Optional) Name for the config value
     :data string value: (Optional) Default value for the config element
     :data string description: (Optional) Description for the instance
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "description": "Die Hintergrundfarbe betrifft alle Seiten der App, inklusive Footer. Empfehlung: Wählen Sie eine helle, neutrale Farbe (z.B. weiß). Weitere Infos siehe Grafikleitfaden.",
+            "id": "app_color_1",
+            "instance_id": 9910,
+            "lang_tag": "de_DE",
+            "name": "Hintergrundfarbe",
+            "template_id": 780,
+            "type": "color",
+            "value": "#ffffff",
+            "timestamp": 1430291613,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9910\/configs\/app_color_1"
+                }
+            }
+        }
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
@@ -634,6 +678,31 @@ API - Instances calls
     :data string value: (Optional) Default value for the config element
     :data string description: (Optional) Description for the instance
 
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "compiler": "less",
+            "description": "Diese CSS Konfiguration wird vom Entwickler erstellt und enthält die wichtigsten CSS Formatierungen der App.",
+            "id": "css_app",
+            "instance_id": 9910,
+            "lang_tag": "de_DE",
+            "name": "CSS der Applikation",
+            "src": "https:\/\/www.app-arena.com\/uploads\/apps\/model\/299\/0\/de_DE\/css\/css_app.css",
+            "template_id": 780,
+            "type": "css",
+            "value": "Here you find the complete styling of the application.",
+            "timestamp": 1430291682,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9910\/configs\/css_app"
+                }
+            }
+        }
+
+
+
 `Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(date) DEPRECATED
@@ -654,6 +723,28 @@ API - Instances calls
     :data string name: (Optional) Name for the config value
     :data string value: (Optional) value for the config element
     :data string description: (Optional) Description for the instance
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "description": "Nutzer können ab 0.01 Uhr des von Ihnen festgelegten Datums teilnehmen.",
+            "id": "door_11_validity_period_start",
+            "instance_id": 9910,
+            "lang_tag": "de_DE",
+            "name": "Startdatum für die Teilnahme",
+            "template_id": 780,
+            "type": "date",
+            "value": "2014-12-11",
+            "timestamp": 1430291882,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9910\/configs\/door_11_validity_period_start"
+                }
+            }
+        }
+
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
@@ -685,6 +776,33 @@ API - Instances calls
     :data string name: (Optional) Name for the config value
     :data string value: (Optional) value for the config element
     :data string description: (Optional) Description for the instance
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "description": "Das Unternehmenslogo wird auf der Header-Grafik abgebildet. Alternativ können Sie das Logo in Ihre Grafiken integrieren und die automatische Ansicht des Logos in dem Punkt "Header” deaktivieren. Empfohlene Größe: 180 x 180 px. Weitere Infos siehe Grafikleitfaden.",
+            "height": "",
+            "id": "app_logo",
+            "instance_id": 9910,
+            "lang_tag": "de_DE",
+            "name": "Unternehmenslogo",
+            "size": "",
+            "src": "https:\/\/app-manager.s3.amazonaws.com\/apps\/models\/2\/9\/9\/0\/de_DE\/01_01_logo_1411631048_0.png",
+            "template_id": 780,
+            "type": "image",
+            "value": "https:\/\/app-manager.s3.amazonaws.com\/apps\/models\/2\/9\/9\/0\/de_DE\/01_01_logo_1411631048_0.png",
+            "width": "",
+            "timestamp": 1430291933,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9910\/configs\/app_logo"
+                }
+            }
+        }
+
+
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
@@ -722,6 +840,46 @@ API - Instances calls
     :data string description: (Optional) Description for the instance
     :data array source: (Optional) All available options of the select config value
 
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "description": "Geben Sie hier an, welche Art von Inhalten Sie hinter dem Türchen anzeigen möchten. Die jeweiligen Inhalte legen Sie innerhalb der nächsten Schritte fest. Weitere Infos siehe Konfigurationsleitfaden.",
+            "id": "door_1_pages_activated",
+            "instance_id": 9910,
+            "lang_tag": "de_DE",
+            "name": "Inhalte des Türchens",
+            "source": [
+                {
+                    "value": "none",
+                    "text": "Keine Seite"
+                },
+                {
+                    "value": "page",
+                    "text": "Inhaltsseite"
+                },
+                {
+                    "value": "quiz",
+                    "text": "Quiz-Seite"
+                }
+            ],
+            "template_id": 780,
+            "type": "multiselect",
+            "value": [
+            "page",
+            "quiz"
+            ],
+            "timestamp": 1430291995,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9910\/configs\/door_1_pages_activated"
+                }
+            }
+        }
+
+
+
 `Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(select)
@@ -758,6 +916,38 @@ API - Instances calls
     :data string description: (Optional) Description for the instance
     :data array source: (Optional) All available options of the select config value
 
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "description": "Wählen Sie eine der vordefinierten Schriftarten aus oder legen Sie per CSS eine eigene Schriftart fest. Weitere Infos siehe Grafikleitfaden.",
+            "id": "app_font_body",
+            "instance_id": 9910,
+            "lang_tag": "de_DE",
+            "name": "Schriftart für Textkörper",
+            "source": [
+                {
+                    "value": "arial",
+                    "text": "Arial"
+                },
+                {
+                    "value": "delius-Swash",
+                    "text": "Delius Swash Caps"
+                }
+            ],
+            "template_id": 780,
+            "type": "select",
+            "value": "source-sans-pro",
+            "timestamp": 1430292095,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9910\/configs\/app_font_body"
+                }
+            }
+        }
+
+
 `Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(text)
@@ -787,6 +977,32 @@ API - Instances calls
     :data integer min_lenght: (Optional) Minimum value (validation for type "text")
     :data string pattern: (Optional) Regular expression for input validation defines an input mask
 
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "description": "Die E-Mail-Adresse des Ansprechpartners wird nicht veröffentlicht oder an Dritte weitergegeben. Beispiel: maxmustermann@unternehmensname.com.",
+            "format": "text",
+            "id": "admin_mails",
+            "instance_id": 9910,
+            "lang_tag": "de_DE",
+            "maxlength": "",
+            "name": "E-Mail-Adresse des Ansprechpartners (nicht öffentlich sichtbar)",
+            "placeholder": "",
+            "template_id": 780,
+            "type": "text",
+            "value": "",
+            "timestamp": 1430292203,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9910\/configs\/admin_mails"
+                }
+            }
+        }
+
+
+
 `Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
 .. http:method:: PUT /api/v1/instances/:i_id/configs/:config_id(textarea)
@@ -809,6 +1025,28 @@ API - Instances calls
     :data string value: (Optional) Default value for the config element
     :data string description: (Optional) Description for the config value
     :data enum editor: (Optional) Which editor should be shown to the user?
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+            "description": "<p>Erklärung, die ein Admin bestätigen muss, bevor er die Teilnehmer-Daten des Wettbewerbs exportieren darf.\ \ <\/p>",
+            "id": "admin_export_terms",
+            "instance_id": 9910,
+            "lang_tag": "de_DE",
+            "name": "[Erklärung zur Datenverwendung beim Export]",
+            "template_id": 780,
+            "type": "textarea",
+            "value": "<h3>Erklärung zur vertraulichen Datenverwendung<\/h3>Hiermit bestätige ich, dass die durch diese Facebook Applikation erhobenen Daten ausschließlich zur Durchführung dieses Wettbewerbs verwendet werden. Zudem bestätige ich die Daten nach Ablauf der Werbeaktion zu löschen. Die iConsultants GmbH wird von jeglicher Haftung, die durch den Missbrauch der zur Verfügung gestellten Daten entsteht, befreit.",
+            "timestamp": 1430292255,
+            "_links": {
+                "self": {
+                    "href": "https:\/\/v2.app-arena.com\/api\/v1\/instances\/9910\/configs\/admin_export_terms"
+                }
+            }
+        }
+
 
 `Table with data_ parameters and the description of them. <../api/130-models.html#table>`_
 
