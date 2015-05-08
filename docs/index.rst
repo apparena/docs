@@ -17,6 +17,7 @@ The main documentation for the site is organized into a couple sections:
 
     * :ref:`tools`
     * :ref:`dev-docs`
+    * :ref:`sdk`
     * :ref:`integrator-docs`
 
 .. _tools:
@@ -37,14 +38,26 @@ App Developer
 If you want to develop apps, then start with one of these topics:
 
 .. toctree::
+:maxdepth: 2
+
+        api/001-index
+        api/030-companies
+        api/090-instances
+        api/130-models
+        // echo "api/200-templates";
+        postman
+
+.. _sdk:
+
+SDK
+~~~
+
+Use one of our SDKs to get started quick and easy.
+
+.. toctree::
     :maxdepth: 2
 
-    api/001-index
-    api/030-companies
-    api/090-instances
-    api/130-models
-    // echo "api/200-templates";
-    postman
+    sdk/php/001-index
 
 .. _integrator-docs:
 
