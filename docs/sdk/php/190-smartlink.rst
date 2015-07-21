@@ -7,6 +7,7 @@ links.
 
 Here are some use-cases:
 
+
 iframe Embeds
 ~~~~~~~~~~~~~
 
@@ -20,7 +21,7 @@ Facebook Fanpage Tabs
 
 A user uses you app on a Facebook Fanpage Tab. He shares the App on his timeline using the Facebook Share Dialog.
 A friend sees this post in his facebook native app (e.g. mobile iOS or Android App) and clicks on it. This user will
- be redirected to the mobile version of the app, as Facebook Fanpage Tabs are not available for mobile devices.
+be redirected to the mobile version of the app, as Facebook Fanpage Tabs are not available for mobile devices.
 
 
 Multilanguage Support
