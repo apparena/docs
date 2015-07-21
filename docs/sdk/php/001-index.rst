@@ -20,7 +20,7 @@ Usage
 
 Use the Composer Autoloader to start using the App-Manager
 
-    .. sourcecode:: php
+    ::
 
         define("ROOT_PATH", realpath(dirname(__FILE__)) . "../../../../");
         require ROOT_PATH . '/vendor/autoload.php';
@@ -45,7 +45,6 @@ your Instance ID (i_id) from GET-Parameters or from Cookies. So your Url should 
 
     ``http://www.domainofmyapp.com/mypage.php?i_id=1234``
 
-.. _table:
 
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | Method                | Description                                                      | Parameters                                    | Response |
