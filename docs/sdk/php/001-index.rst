@@ -12,7 +12,7 @@ Installation
 
     ::
 
-    composer require app-arena/php-sdk
+        composer require app-arena/php-sdk
 
 
 Usage
@@ -20,24 +20,24 @@ Usage
 
 Use the Composer Autoloader to start using the App-Manager
 
-    ::
+    .. sourcecode:: php
 
-    define("ROOT_PATH", realpath(dirname(__FILE__)) . "../../../../");
-    require ROOT_PATH . '/vendor/autoload.php';
+        define("ROOT_PATH", realpath(dirname(__FILE__)) . "../../../../");
+        require ROOT_PATH . '/vendor/autoload.php';
 
-    $m_id = 123; // Set your app-arena Model ID here
+        $m_id = 123; // Set your app-arena Model ID here
 
-    // Clear the cache before, requestion Instance in for each
-    $am = new \AppManager\AppManager(
-        $m_id,
-        array(
-            "cache_dir" => ROOT_PATH . "/var/cache"
-        )
-    );
-    // Get all necessary instance information to start working
-    $config = $am->getConfigs();
-    $translation = $am->getTranslations();
-    $info = $am->getInfos();
+        // Clear the cache before, requestion Instance in for each
+        $am = new \AppManager\AppManager(
+            $m_id,
+            array(
+                "cache_dir" => ROOT_PATH . "/var/cache"
+            )
+        );
+        // Get all necessary instance information to start working
+        $config = $am->getConfigs();
+        $translation = $am->getTranslations();
+        $info = $am->getInfos();
 
 
 Now the connection is build up and you can start using you App-Instance. The App-Manager SDK automatically tries to get
