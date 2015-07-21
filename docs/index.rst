@@ -32,10 +32,9 @@ Tools
 
 .. _dev-docs:
 
-App Developer
-~~~~~~~~~~~~~
+API
+~~~
 
-If you want to develop apps, then start with one of these topics:
 
 .. toctree::
     :maxdepth: 2
@@ -51,12 +50,11 @@ If you want to develop apps, then start with one of these topics:
 SDK
 ~~~
 
-Use one of our SDKs to get started quick and easy.
-
 .. toctree::
     :maxdepth: 2
 
     sdk/php/001-index
+    sdk/php/190-smartlink
 
 .. _integrator-docs:
 
