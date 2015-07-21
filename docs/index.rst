@@ -38,14 +38,13 @@ App Developer
 If you want to develop apps, then start with one of these topics:
 
 .. toctree::
-:maxdepth: 2
+    :maxdepth: 2
 
-        api/001-index
-        api/030-companies
-        api/090-instances
-        api/130-models
-        // echo "api/200-templates";
-        postman
+    api/001-index
+    api/030-companies
+    api/090-instances
+    api/130-models
+    postman
 
 .. _sdk:
 
