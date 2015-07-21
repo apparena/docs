@@ -45,9 +45,19 @@ your Instance ID (i_id) from GET-Parameters or from Cookies. So your Url should 
 
     ``http://www.domainofmyapp.com/mypage.php?i_id=1234``
 
+Usage
+-----
 
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | Method                | Description                                                      | Parameters                                    | Response |
++=======================+==================================================================+===============================================+==========+
+| addParams($params)    | This will add parameters to the smartLink Url. These             | array $params Array of parameters             |          |
+|                       | parameters will be available as GET-Parameters, when a           | which should be passed through                |          |
+|                       | user* clicks on the smartLink. The parameters will be            |                                               |          |
+|                       | available as GET parameters as well in the facebook              |                                               |          |
+|                       | page tab* or within an iframe                                    |                                               |          |
++-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
+| cleanCache()          | Cleans the cache, so that a fresh API call will be done          |                                               |          |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getBaseUrl()          | Returns the BaseUrl your Sharing Url is generated with.          |                                               | string   |
 |                       | By default it will use the currently used domain                 |                                               |          |
@@ -97,12 +107,6 @@ your Instance ID (i_id) from GET-Parameters or from Cookies. So your Url should 
 |                       | of the share page. The array keys ``title``, ``desc``, ``image`` |                                               |          |
 |                       | are the most important. The array values can be Strings or       |                                               |          |
 |                       | config identifiers of the instance                               |                                               |          |
-+-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
-| setParams($params)    | This will add parameters to the smartLink Url. These             | array $params Array of parameters             |          |
-|                       | parameters will be available as GET-Parameters, when a           | which should be passed through                |          |
-|                       | user* clicks on the smartLink. The parameters will be            |                                               |          |
-|                       | available as GET parameters as well in the facebook              |                                               |          |
-|                       | page tab* or within an iframe                                    |                                               |          |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | Next  Previous        |                                                                  |                                               |          |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
