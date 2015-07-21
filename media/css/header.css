@@ -41,3 +41,6 @@
 .ui-state-hover { background: #eee; }
 .ui-menu-item a { display: block; padding: 3px 10px; }
 
+/* Custom settings */
+.wy-menu.rst-pro { display: none !important; }
+
