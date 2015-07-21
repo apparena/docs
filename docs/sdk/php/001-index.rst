@@ -45,8 +45,8 @@ your Instance ID (i_id) from GET-Parameters or from Cookies. So your Url should 
 
     ``http://www.domainofmyapp.com/mypage.php?i_id=1234``
 
-Usage
------
+Methods
+-------
 
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | Method                | Description                                                      | Parameters                                    | Response |
