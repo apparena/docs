@@ -45,9 +45,7 @@ your Instance ID (i_id) from GET-Parameters or from Cookies. So your Url should 
 
     ``http://www.domainofmyapp.com/mypage.php?i_id=1234``
 
-
-This will use Instance 1234 to setup your connection. Now these functions are available:
-
+.. _table:
 
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+----------------------------------------------------------------------+------------+
 | Method                          | Description                                                                                                                                                                                                                                                                   + Parameters                                                           | Response   |

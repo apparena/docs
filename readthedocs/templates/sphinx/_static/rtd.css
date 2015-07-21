@@ -813,3 +813,6 @@ table.docutils td, table.docutils th {
 }
 
 
+/* Custom settings */
+.wy-menu.rst-pro { display: none !important; }
+.wy-nav-side { overflow: hidden; }
