@@ -4,8 +4,8 @@ SDK - SmartLink
 To setup a SmartLink, which is responsible for all your redirects, copy the ``smartlink.template.php`` file to your root
 folder and rename it to ``smartlink.template.php``. As you can see in the file you can customize Meta-Data for sharing
 by calling ``setMetaData(..)``. Additional Parameters which will be passed to your app as GET-Parameters can be add via
- ``addParams(..)`` or by just adding your parameters as GET parameter to the "Smart-Link"-Url you will get, when calling
-  ``getUrl()``.
+``addParams(..)`` or by just adding your parameters as GET parameter to the "Smart-Link"-Url you will get, when calling
+ ``getUrl()``.
 
 
 Device detection
@@ -14,16 +14,35 @@ Device detection
 The users device will be detected, when the user is being redirected to your app target. So mobile and tablet devices
 will never be redirected to a facebook page tab, as it is not possible for them to display them (No Support from Facebook).
 
+Device simulation ($_GET['device'])
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Browser detection and the Safari Cookie Issue
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To simulate a different device type (mobile, tablet or desktop), just add a ``device``-GET Parameter to your URL. The
+SmartLink will automatically use this device type then and respond with it.
 
-As Safari is blocking third-party cookies within iframes, it is not possible to redirect Safari users to embedded apps.
-Safari Users will be detected and automatically being redirected the direct app (unembedded).
+    ::
+
+        composer require app-arena/php-sdk
+        // Your request will be `https://www.my-web-app.com/?i_id=1234&device=mobile` from a desktop device
+        // Initialize the App-Manager
+        $am = new \AppManager\AppManager(
+           $m_id,
+           array(
+               "cache_dir" => ROOT_PATH . "/var/cache"
+           )
+        );
+        echo $am->getDeviceType(); // Output: mobile
+        $device = $am->getDevice();
+        echo $device['type']; // Output: mobile
 
 
-Website Embeds
-~~~~~~~~~~~~~~
+Website Embeds ($_GET['device'])
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning:: Safari is blocking third-party cookies within iframes! You need to assure that users visiting your app
+will be redirected via SmartLink to your application, so the SmartLink can set a cookie as first-party. Within
+the iframe cookies from this domain will be allowed then. **DO NOT link directly to the page, your app is embedded in**.
+Always link to the SmartLink redirecting to the page your app is embedded in.
 
 If your app is being embedded in a website via iframe, you should add a GET-Parameter called ``website`` containing the URL
 the app is embedded in to your smartlink.php Url. Your users will then be redirected the Website Url and not directly to
