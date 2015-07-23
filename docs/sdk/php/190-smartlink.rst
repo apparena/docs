@@ -41,9 +41,9 @@ Website Embeds ($_GET['device'])
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning:: Safari is blocking third-party cookies within iframes! You need to assure that users visiting your app
-will be redirected via SmartLink to your application, so the SmartLink can set a cookie as first-party. Within
-the iframe cookies from this domain will be allowed then. **DO NOT link directly to the page, your app is embedded in**.
-Always link to the SmartLink redirecting to the page your app is embedded in.
+             will be redirected via SmartLink to your application, so the SmartLink can set a cookie as first-party.
+             Within the iframe cookies from this domain will be allowed then. **DO NOT link directly to the page,
+             your app is embedded in**. Always link to the SmartLink redirecting to the page your app is embedded in.
 
 If your app is being embedded in a website via iframe, you should add a GET-Parameter called ``website`` containing the URL
 the app is embedded in to your smartlink.php Url. Your users will then be redirected the Website Url and not directly to
