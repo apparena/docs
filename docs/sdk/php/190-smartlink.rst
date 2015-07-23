@@ -18,7 +18,8 @@ Device simulation ($_GET['device'])
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To simulate a different device type (mobile, tablet or desktop), just add a ``device``-GET Parameter to your URL. The
-SmartLink will automatically use this device type then and respond with it.
+SmartLink will automatically use this device type then and respond with it. Allowed values are ``mobile``, ``tablet``
+and ``desktop``.
 
     ::
 
