@@ -5,7 +5,7 @@ To setup a SmartLink, which is responsible for all your redirects, copy the ``sm
 folder and rename it to ``smartlink.template.php``. As you can see in the file you can customize Meta-Data for sharing
 by calling ``setMetaData(..)``. Additional Parameters which will be passed to your app as GET-Parameters can be add via
 ``addParams(..)`` or by just adding your parameters as GET parameter to the "Smart-Link"-Url you will get, when calling
- ``getUrl()``.
+``getUrl()``.
 
 
 Device detection
