@@ -69,3 +69,14 @@ please get started with one of the following topics:
     :maxdepth: 2
 
     integration/index
+
+
+Glossar
+~~~~~~~
+
+App-Manager terminology explained simple.
+
+.. toctree::
+    :maxdepth: 2
+
+    glossary
