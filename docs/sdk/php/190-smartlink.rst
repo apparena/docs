@@ -1,5 +1,5 @@
-SDK - SmartLink
-===============
+PHP-SDK - SmartLink
+===================
 
 To setup a SmartLink, which is responsible for all your redirects, copy the ``smartlink.template.php`` file to your root
 folder and rename it to ``smartlink.template.php``. As you can see in the file you can customize Meta-Data for sharing

@@ -1,5 +1,5 @@
-SDK - PHP
-=========
+PHP-SDK
+=======
 
 Getting started
 ---------------

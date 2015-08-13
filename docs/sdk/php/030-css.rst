@@ -1,5 +1,5 @@
-CSS and LESS
-============
+PHP-SDK - CSS and LESS
+======================
 
 The App-Manager SDK provides a helper to enable you to **compile, concatenate and minify all your CSS and Less-Files**.
 As well config values (type CSS) can be included in the process. The output file will be **automatically saved to your
