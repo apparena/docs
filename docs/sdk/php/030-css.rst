@@ -6,6 +6,7 @@ As well config values (type CSS) can be included in the process. The output file
 file cache to keep your app fast. The App-Manager SDK uses the great `PHP Less compiler`_ by Josh Schmidt.
 
 The CSS-Helper Class provides the following functions:
+
 - Compile Less files (including @imports), CSS Files and `Config value <glossary.html#config-value>`_ (type CSS)
 - Compiles `Bootstrap CSS`_ :-)
 - Dynamically Less replace Variables with values you submit
