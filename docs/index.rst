@@ -32,14 +32,13 @@ Tools and Help
 .. toctree::
     :maxdepth: 2
 
-        glossary
+    glossary
 
 
 .. _dev-docs:
 
 API
 ~~~
-
 
 .. toctree::
     :maxdepth: 2
