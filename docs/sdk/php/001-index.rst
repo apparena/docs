@@ -4,8 +4,9 @@ PHP-SDK
 Getting started
 ---------------
 
-You can find our `PHP SDK on github_`.
+You can find our `PHP SDK on github`_.
 
+.. _PHP SDK on github: https://github.com/apparena/php-sdk
 
 Installation
 ------------
@@ -22,7 +23,8 @@ Use the Composer Autoloader to start using the App-Manager
 
     ::
 
-        define("ROOT_PATH", realpath(dirname(__FILE__)) . "../../../../");
+        // In your index.php
+        define("ROOT_PATH", realpath(dirname(__FILE__)));
         require ROOT_PATH . '/vendor/autoload.php';
 
         $m_id = 123; // Set your app-arena Model ID here

@@ -1,12 +1,11 @@
 PHP-SDK - CSS and LESS
 ======================
 
-The App-Manager SDK provides a helper to enable you to **compile, concatenate and minify all your CSS and Less-Files**.
-As well config values (type CSS) can be included in the process. The output file will be **automatically saved to your
-file cache** to keep your app fast. The App-Manager SDK uses the great `PHP Less compiler`_ by Josh Schmidt.
+The App-Manager SDK provides a helper to enable you to compile, concatenate and minify all your CSS and Less-Files.
+As well config values (type CSS) can be included in the process. The output file will be automatically saved to your
+file cache to keep your app fast. The App-Manager SDK uses the great `PHP Less compiler`_ by Josh Schmidt.
 
 The CSS-Helper Class provides the following functions:
-
 - Compile Less files (including @imports), CSS Files and `Config value <glossary.html#config-value>`_ (type CSS)
 - Compiles `Bootstrap CSS`_ :-)
 - Dynamically Less replace Variables with values you submit
@@ -18,8 +17,6 @@ The CSS-Helper Class provides the following functions:
 
 Getting started
 ~~~~~~~~~~~~~~~
-
-So let's get started.
 
 Here is an example config to compile bootstrap and some custom styling.
 
