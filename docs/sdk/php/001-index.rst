@@ -66,6 +66,9 @@ Methods
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getConfigs()          | Returns all Config Elements of the current instance as array     |                                               | array    |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
+| getCssHelper()        | Returns CSS Helper object to compile and concatenate Less, CSS   |                                               | CSS      |
+|                       | and Config-Type (CSS) values                                     |                                               |          |
++-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getDevice()           | Returns user device information                                  |                                               | array    |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getDeviceType()       | Returns the device type of the current device                    |                                               | string   |
@@ -90,6 +93,8 @@ Methods
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getUrl()              | Returns the SmartLink Url for Sharing                            |                                               | string   |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
+| getUrlLong()          | Returns the SmartLink Url without Url Shortener                  | bool $shorten Shorten URL using smartl.ink    | string   |
++-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getInfos()            | Returns all basic information of the current instance            |                                               | array    |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getLang()             | Returns the currently used Language as Language Code             |                                               | string   |
@@ -107,5 +112,11 @@ Methods
 |                       | of the share page. The array keys ``title``, ``desc``, ``image`` |                                               |          |
 |                       | are the most important. The array values can be Strings or       |                                               |          |
 |                       | config identifiers of the instance                               |                                               |          |
++-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
+| setParams($params)    | This will reset all parameters of the smartLink Url. These       | array $params Array of parameters             |          |
+|                       | parameters will be available as GET-Parameters, when a           | which should be passed through                |          |
+|                       | user* clicks on the smartLink. The parameters will be            |                                               |          |
+|                       | available as GET parameters as well in the facebook              |                                               |          |
+|                       | page tab* or within an iframe                                    |                                               |          |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 

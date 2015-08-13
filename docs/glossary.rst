@@ -1,6 +1,14 @@
 Glossary
 ========
 
+Config-Value
+------------
+
+Config values are used to provide content, settings and style for all applications. There is a list of different config
+types, which have different attributes.
+
+.. include:: partials/config-type-table
+
 Instance
 --------
 

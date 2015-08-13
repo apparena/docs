@@ -1,0 +1,115 @@
+CSS and LESS
+============
+
+The App-Manager SDK provides a helper to enable you to **compile, concatenate and minify all your CSS and Less-Files**.
+As well config values (type CSS) can be included in the process. The output file will be **automatically saved to your
+file cache** to keep your app fast. The App-Manager SDK uses the great `PHP Less compiler`_ by Josh Schmidt.
+
+The CSS-Helper Class provides the following functions:
+
+- Compile Less files (including @imports), CSS Files and `Config value <glossary.html#config-value>`_ (type CSS)
+- Compiles `Bootstrap CSS`_ :-)
+- Dynamically Less replace Variables with values you submit
+- Search and Replace strings
+
+.. _PHP Less compiler: http://lessphp.gpeasy.com/
+.. _Bootstrap CSS: http://getbootstrap.com/
+
+
+Getting started
+~~~~~~~~~~~~~~~
+
+So let's get started.
+
+Here is an example config to compile bootstrap and some custom styling.
+
+    ::
+
+        /**
+         * A list of files which should be generated/compiled and cached. The key in the array is the file ID, you can
+         * see in your cached CSS file later...
+         */
+        // Save this to css-config.php
+        $css-config = array(
+            'framework' => array(
+                'files' => array(
+                    ROOT_PATH . '/css/less/bootstrap-custom.less',
+                    ROOT_PATH . '/css/less/bootstrap-social.less',
+                    ROOT_PATH . '/js/vendor_bower/animo.js/animate+animo.css',
+                    ROOT_PATH . '/js/vendor_bower/font-awesome/css/font-awesome.min.css'
+                ),
+                'config_values' => array(),
+                'variables' => array(
+                    'brand-primary' => __c('app_color_secondary'),
+                    'border-radius-base' => '0px',
+                    'border-radius-large' => '0px',
+                    'border-radius-small' => '0px',
+                ),
+                'replacements' => array(
+                    '../fonts/fontawesome' => '../../js/vendor_bower/font-awesome/fonts/fontawesome'
+                ),
+            ),
+            'style' => array(
+                'files' => array(
+                    ROOT_PATH . '/css/style.css'
+                    ROOT_PATH . '/css/less/app.less',
+                ),
+                'config_values' => array( 'css_app', 'css_user' ), // A list of config IDs
+                'variables' => array(
+                    'primary' => __c('app_color_primary'),
+                    'secondary' => __c('app_color_secondary'),
+                    'highlight' => __c('app_color_highlight'),
+                ),
+                'replacements' => array()
+            ),
+        );
+
+
+And here is your initialization code:
+
+    ::
+
+        define("ROOT_PATH", realpath(dirname(__FILE__)));
+        include('css-config.php');
+
+        // Initialize the App-Manager
+        $am = new \AppManager\AppManager(
+           $m_id,
+           array(
+               "cache_dir" => ROOT_PATH . "/var/cache"
+           )
+        );
+        $css_helper = $am->getCssHelper();
+        $compiled_files = array();
+        foreach ($css_config as $file_id => $css_file) {
+            $css_helper->setFileId($file_id);
+            // Reset settings
+            $css_helper->setConfigValues(array());
+            $css_helper->setFiles(array());
+            $css_helper->setVariables(array());
+            $css_helper->setReplacements(array());
+
+            if (isset($css_file['config_values'])) {
+                $css_helper->setConfigValues($css_file['config_values']);
+            }
+            if (isset($css_file['files'])) {
+                $css_helper->setFiles($css_file['files']);
+            }
+            if (isset($css_file['variables'])) {
+                $css_helper->setVariables($css_file['variables']);
+            }
+            if (isset($css_file['replacements'])) {
+                $css_helper->setReplacements($css_file['replacements']);
+            }
+
+            $compiled_files[] = $css_helper->getFilePath();
+        }
+
+        // Output of the compiled CSS files to the HTML head
+        foreach ($compiled_files as $file) {
+            ?>
+            <link type="text/css" rel="stylesheet" href="<?php echo $file ?>"/>
+        <?php
+        }
+        ?>
+

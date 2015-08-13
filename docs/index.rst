@@ -54,6 +54,7 @@ SDK
     :maxdepth: 2
 
     sdk/php/001-index
+    sdk/php/030-css
     sdk/php/190-smartlink
 
 .. _integrator-docs:
