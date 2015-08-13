@@ -22,12 +22,17 @@ The main documentation for the site is organized into a couple sections:
 
 .. _tools:
 
-Tools
-~~~~~
+Tools and Help
+~~~~~~~~~~~~~~
 
     `API-Explorer`_ - Quick overview of all available requests and interactive testing
 
 .. _API-Explorer: https://v2.app-arena.com/apigility/swagger/API-v1
+
+.. toctree::
+    :maxdepth: 2
+
+        glossary
 
 
 .. _dev-docs:
@@ -70,13 +75,3 @@ please get started with one of the following topics:
 
     integration/index
 
-
-Glossar
-~~~~~~~
-
-App-Manager terminology explained simple.
-
-.. toctree::
-    :maxdepth: 2
-
-    glossary
