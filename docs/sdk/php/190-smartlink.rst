@@ -19,6 +19,7 @@ links and some ``GET``-Parameters to modify the Redirect-Behaviour.
 
 .. note:: You can add all of the listed parameters to the SmartLink Url to modify the Redirect behaviour.
 
+
 +---------------+------------------------------------------------------------------+---------------------------------------------------------+
 | Parameter     | Description                                                      | Example                                                 |
 +===============+==================================================================+=========================================================+
@@ -31,7 +32,7 @@ links and some ``GET``-Parameters to modify the Redirect-Behaviour.
 |               | should add a GET-Parameter called ``website`` containing the URL | iframe with your app is embedded in e.g.                |
 |               | the app is embedded in to your smartlink.php Url.                | https://www.app-arena.com/fotowettbewerb.html           |
 |               | Your users will then be redirected the Website Url and not       | The SmartLink is:                                       |
-|               | directly to your app.                                            | ``https://stage.fotowettbewerb.co/?i_id=9713&website=https%3A%2F%2Fwww.app-arena.com%2Ffotowettbewerb.html`` |
+|               | directly to your app.                                            |                                                         |
 |               | This will keep  traffic up on your website. :-)                  |                                                         |
 +---------------+------------------------------------------------------------------+---------------------------------------------------------+
 | fb_page_id    | Submit this parameter to redirect to this Facebook fanpage Tab   |                                                         |
@@ -41,6 +42,10 @@ links and some ``GET``-Parameters to modify the Redirect-Behaviour.
 | lang          | The language parameter controls the used language of the app     | Show your app in french:                                |
 |               |                                                                  | ``https://www.my-web-app.com/?i_id=1234&lang=fr_FR``    |
 +---------------+------------------------------------------------------------------+---------------------------------------------------------+
+| debug         | Add the debug parameter to disable redirects and show Debug info | Show the Debug-Page for the SmartLink:                  |
+|               | on the smartlink.php page                                        | ``https://www.my-web-app.com/smartlink.php?debug=1``    |
++---------------+------------------------------------------------------------------+---------------------------------------------------------+
+
 
 
 Embed an App via iframe ($_GET['website'])
