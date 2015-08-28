@@ -82,6 +82,9 @@ Methods
 |                       | facebook page tab ``direct`` means the app is being accessed       |                                             |          |
 |                       | directly without iframe embed                                    |                                               |          |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
+| getFacebookInfo()     | Returns all available Facebook information, like currently       |                                               |          |
+|                       | used fanpage and canvas information.                             |                                               |          |
++-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getIId()              | Returns the currently used Instance ID                           |                                               | int      |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getInfos()            | Returns all basic information of the current instance            |                                               | array    |
