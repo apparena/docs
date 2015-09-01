@@ -39,6 +39,9 @@ links and some ``GET``-Parameters to modify the Redirect-Behaviour.
 |               | your app is embedded in. You can use this to have the same app   |                                                         |
 |               | installed on several fanpages and to control the redirects       |                                                         |
 +---------------+------------------------------------------------------------------+---------------------------------------------------------+
+| ref_app_env   | Set this parameter to ``fb`` to force the redirection to the     | ``https://www.my-app.com/?i_id=1234&ref_app_env=fb``    |
+|               | facebook fanpage the app is installed on.                        |                                                         |
++---------------+------------------------------------------------------------------+---------------------------------------------------------+
 | lang          | The language parameter controls the used language of the app     | Show your app in french:                                |
 |               |                                                                  | ``https://www.my-web-app.com/?i_id=1234&lang=fr_FR``    |
 +---------------+------------------------------------------------------------------+---------------------------------------------------------+
