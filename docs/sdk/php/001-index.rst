@@ -66,6 +66,9 @@ Methods
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getBrowser()          | Returns user browser information                                 |                                               | array    |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
+| getConfig($config_id, $attr = "value") | Returns the value of a config value             | String $config_id Config identifier to get the data for              | string   |
+|                                        |                                                 | String|array $attr Attribute or Attributes which should be returned  |          |
++-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getConfigs()          | Returns all Config Elements of the current instance as array     |                                               | array    |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getCssHelper()        | Returns CSS Helper object to compile and concatenate Less, CSS   |                                               | CSS      |
@@ -87,6 +90,8 @@ Methods
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getIId()              | Returns the currently used Instance ID                           |                                               | int      |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
+| getInfo($attr)        | Returns an attribute of the instance                             | String $attr Attribute you want to return     | string   |
++-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getInfos()            | Returns all basic information of the current instance            |                                               | array    |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | getLang()             | Returns the currently used Language as Language                  |                                               | string   |
@@ -105,10 +110,17 @@ Methods
 | getLang()             | Returns the currently used Language as Language Code             |                                               | string   |
 |                       | (e.g. de_DE, en_US, ...)                                         |                                               |          |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
+| getTranslation($translation_id, $args = array()  | Returns the translation for the submitted ID   | String $translation_id Config identifier to get the data for                                                                | string   |
+|                                                  |                                                | Array  $args Array of values to replace in the translation (@see http://php.net/manual/de/function.vsprintf.php)            |          |
++-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
+| getTranslations()     | Returns all translations for the currently set language          |                                               | array    |
++-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | renderSharePage       | Renders the complete HTML of the Share page including            | bool $debug - Show debug information          | string   |
 | ($debug = false)      | all meta tags and redirection.                                   | on the page?                                  |          |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
-| setBaseUrl($base_url) | Sets a new base url for your sharing links (–>getUrl()).         | string $base_url New base url                 | void     |
+| setBaseUrl($base_url) | Sets a new base url for your sharing links (->getUrl()).         | string $base_url New base url                 | void     |
++-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
+| setFilename($filename) | Sets the filename for the SmartLink (default: smartlink.php)    | string $filename                              | void     |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
 | setLang($lang)        | Sets a new language for the current instance                     | string $lang 5 char Language Code, e.g. de_DE |          |
 +-----------------------+------------------------------------------------------------------+-----------------------------------------------+----------+
