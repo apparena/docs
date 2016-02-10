@@ -1,4 +1,4 @@
-PHP-SDK
+JS-SDK
 =======
 
 Getting started
