@@ -6,10 +6,14 @@ Getting started
 
 You can find our `JS SDK on github`_.
 
-.. _PHP SDK on github: https://github.com/apparena/js-sdk
+.. _JS SDK on github: https://github.com/apparena/js-sdk
 
 Installation
 ------------
+
+1. Clone the repository
+2. npm install
+3. npm run build (production & develop) | npm run build:prod (production) | npm run build:dev (develop)
 
 
 Usage
