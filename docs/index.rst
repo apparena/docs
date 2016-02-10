@@ -60,6 +60,7 @@ SDK
     sdk/php/001-index
     sdk/php/030-css
     sdk/php/190-smartlink
+    sdk/js/001-index
 
 .. _integrator-docs:
 
