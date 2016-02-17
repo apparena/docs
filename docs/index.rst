@@ -1,4 +1,4 @@
-App-Arena Developer documentation
+App-Arena Developer documentation v1.0
 =================================
 
 `App-Arena.com`_ provides an infrastructure to manage and scale web-apps.
