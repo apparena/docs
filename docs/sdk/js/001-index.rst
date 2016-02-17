@@ -13,7 +13,7 @@ Installation
 
 1. Clone the repository
 2. npm install
-3. npm run build (production & develop) | npm run build:prod (production) | npm run build:dev (develop)
+3. npm run build (production & develop)  | npm run build:prod (production) | npm run build:dev (develop)
 
 
 Usage
