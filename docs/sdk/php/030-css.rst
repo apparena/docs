@@ -3,16 +3,18 @@ PHP-SDK - CSS, LESS and SCSS
 
 The App-Manager SDK provides a helper to enable you to compile, concatenate and minify all your CSS and Less-Files.
 As well config values (type CSS) can be included in the process. The output file will be automatically saved to your
-file cache to keep your app fast. The App-Manager SDK uses the great `PHP Less compiler`_ by Josh Schmidt.
+file cache to keep your app fast. The App-Manager SDK uses the great `PHP Less compiler`_ by Josh Schmidt and the
+`PHP SCSS compiler`_ by Leaf Corcoran.
 
 The CSS-Helper Class provides the following functions:
 
-- Compile Less files (including @imports), CSS Files and `Config value <glossary.html#config-value>`_ (type CSS)
+- Compile Less and SCSS files (including @imports), CSS Files and `Config value <glossary.html#config-value>`_ (CSS)
 - Compiles `Bootstrap CSS`_ :-)
-- Dynamically Less replace Variables with values you submit
+- Dynamically replace Variables with values you submit
 - Search and Replace strings
 
 .. _PHP Less compiler: http://lessphp.gpeasy.com/
+.. _PHP SCSS compiler: http://leafo.github.io/scssphp/
 .. _Bootstrap CSS: http://getbootstrap.com/
 
 
@@ -66,7 +68,7 @@ is defined in an array:
                     ROOT_PATH . '/css/style.css'
                     ROOT_PATH . '/css/less/app.less',
                 ),
-                'config_values' => array( 'css_app', 'css_user' ), // A list of config value IDs
+                'config_values' => array( 'css_app', 'css_user' ), // A list of config value IDs to include in the CSS
                 'variables' => array(
                     'primary' => '#478AB8',
                     'secondary' => '#2D343D',
