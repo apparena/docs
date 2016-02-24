@@ -24,7 +24,7 @@ Getting started
 To request compiled CSS files, you need to tell the SDK, what files to include in your compiled files. Your "input"
 is defined in an array:
 
-    ::
+    .. sourcecode:: php
 
         // And here is your initialization code:
         define("ROOT_PATH", realpath(dirname(__FILE__)));
