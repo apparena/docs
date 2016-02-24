@@ -98,11 +98,15 @@ Now you got an array containing two CSS file path's. To use them in your app jus
         </head>
 
 
-Overwriting variables
-~~~~~~~~~~~~~~~~~~~~~
 
-In you CSS-Config file you can set variables, which will be set before your source files are being compiled. When you
-use SCSS source files, please assure, that all variables you want to overwrite are flagged with *!default*:
+.. note:: Test all available requests in our API-Explorer_.
+
+
+Overwriting variables using SCSS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In you CSS-Config file you can set variables, which will be set before your source files are being compiled.
+When you use **SCSS source files**, please assure, that all variables you want to overwrite are flagged with **!default**
 
     ::
 
