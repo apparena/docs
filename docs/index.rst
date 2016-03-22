@@ -1,5 +1,9 @@
-App-Arena Developer documentation
-=================================
+App-Arena Developer documentation 2.0
+=====================================
+
+
+.. warning:: The documentation of the API 2.0 is still in beta. We are constantly improving it and we are glad for pull
+             requests.
 
 `App-Arena.com`_ provides an infrastructure to manage and scale web-apps.
 Developers can publish and sell own web-apps through our sales channels.
@@ -15,25 +19,8 @@ this documentation better.
 
 The main documentation for the site is organized into a couple sections:
 
-    * :ref:`tools`
     * :ref:`dev-docs`
     * :ref:`sdk`
-    * :ref:`integrator-docs`
-
-.. _tools:
-
-Tools and Help
-~~~~~~~~~~~~~~
-
-    `API-Explorer`_ - Quick overview of all available requests and interactive testing
-
-.. _API-Explorer: https://v2.app-arena.com/apigility/swagger/API-v1
-
-.. toctree::
-    :maxdepth: 2
-
-    glossary
-
 
 .. _dev-docs:
 
@@ -44,9 +31,11 @@ API
     :maxdepth: 2
 
     api/001-index
+    api/020-auth
     api/030-companies
     api/090-instances
     api/130-models
+    glossary
     postman
 
 .. _sdk:
@@ -62,16 +51,5 @@ SDK
     sdk/php/190-smartlink
     sdk/js/001-index
 
-.. _integrator-docs:
 
-Integrator
-~~~~~~~~~~
-
-If you want to integrate the App-Manager to your system and you want to sell apps on your website,
-please get started with one of the following topics:
-
-.. toctree::
-    :maxdepth: 2
-
-    integration/index
 
