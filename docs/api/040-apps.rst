@@ -12,7 +12,7 @@ GET /apps
 
 .. http:method:: GET /api/v2/apps
 
-Receive a collection of the apps of your company showing basic information.
+Receive a collection of the apps of your company, showing basic information.
 
 .. http:response:: Example request body
 
@@ -40,3 +40,47 @@ Receive a collection of the apps of your company showing basic information.
             }
         }
 
+
+.. http:method:: GET /api/v2/apps/:app_id
+
+Receive detailed information about the requested app. Key "Appinfo" holds specific app information , Key "AppLanguage"
+contains available languages and their translation status.
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "_embedded": {
+                "data": {
+                    "App": {
+                        "appId":            1,
+                        "name":             "Example App",
+                        "lang":             "de_DE",
+                        "activated":        true,
+                        "expiryDate":       "2099-01-01 00:00:00"
+                        "templateId":       22,
+                        "companyId":        1
+                    },
+                    "AppInfo": {
+                        "Example info": {
+                            "infoId":       "Example info",
+                            "lang":         "de_DE",
+                            "revision":     0,
+                            "value":        "Some information",
+                            "meta":         null,
+                            "appId":        1
+                        }
+                    },
+                    "AppLanguage": {
+                        "en_US": {
+                            "name":         "english",
+                            "lang":         "en_US",
+                            "activated":    true,
+                            "translated":   1,
+                            "appId":        1
+                        }
+                    }
+                }
+            }
+        }
