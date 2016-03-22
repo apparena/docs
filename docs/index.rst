@@ -36,7 +36,6 @@ API
     api/090-instances
     api/130-models
     glossary
-    postman
 
 .. _sdk:
 
