@@ -43,8 +43,8 @@ Receive a collection of the apps of your company, showing basic information.
 
 .. http:method:: GET /api/v2/apps/:app_id
 
-Receive detailed information about the requested app. Key "Appinfo" holds specific app information , Key "AppLanguage"
-contains available languages and their translation status.
+Receive detailed information about the requested app. Additionally to the basic properties of the app key "Appinfo"
+holds specific app information , key "AppLanguage" contains available languages and their translation status.
 
 .. http:response:: Example request body
 
