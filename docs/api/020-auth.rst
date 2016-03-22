@@ -7,8 +7,8 @@ You have two options to authenticate against our API:
 
 Both methods can be used be sending an "Authorization" header.
 
-API Key authentication
-----------------------
+API Key usage
+-------------
 
 The example request will return a list of all apps of the company, the api key is assigned to.
 
@@ -27,7 +27,20 @@ Json Web Token (JWT)
 --------------------
 
 The token will automatically expire after 2 hours. It is meant for the use in browser for example for your Ajax
-requests. To obtain a token send one of the following requests.
+requests.
+
+The example request will return a list of all apps of the company, the token is assigned to.
+
+.. http:method:: POST /api/v2/apps
+
+.. http:response:: Request header
+
+    .. sourcecode:: js
+
+        Host: v2.app-arena.com
+        Content-Type: application/json
+        Authorization: Bearer **JWT-TOKEN**
+
 
 Generate user token
 ~~~~~~~~~~~~~~~~~~~
