@@ -1,26 +1,21 @@
 API - Getting started
 =====================
 
-.. note:: Test all available requests in our API-Explorer_.
-
-.. _API-Explorer: http://v2.app-arena.com/apigility/swagger/API-v1
-
 API key
 -------
 
-To request restricted information from the API, you need to add an API key to your request header::
-
-    GET /api/v1/models HTTP/1.1
-    Host: v2.app-arena.com
-    Authorization: Basic YOURAPIKEY
+To request restricted information from the API, you need to add an API key or `JWT`_ to your request header. Read more
+about it in `Authorization <api/020-auth.html>`_
 
 If you do not have access to the developer section yet, please drop us an email to s.buckpesch at app-arena.com
 with your contact data and will we get in touch with you and sent you an API key.
 
+.. _JWT: http://jwt.io/
+
 API Endpoint
 ------------
 
-All API URLs listed in this documentation are relative to ``https://v2.app-arena.com/api/v1/``.
+All API URLs listed in this documentation are relative to ``https://v25.app-arena.com/api/v2/``.
 
 HTTP Verbs
 ----------
