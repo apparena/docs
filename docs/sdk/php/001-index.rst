@@ -19,7 +19,7 @@ Installation
 Usage
 -----
 
-Use the Composer Autoloader to start using the App-Manager
+Use the Composer autoloader to start using the App-Manager
 
     ::
 
