@@ -5,7 +5,7 @@ API key
 -------
 
 To request restricted information from the API, you need to add an API key or `JWT`_ to your request header. Read more
-about it in `Authorization <api/020-auth.html>`_
+about it in `Authorization <020-auth.html>`_
 
 If you do not have access to the developer section yet, please drop us an email to s.buckpesch at app-arena.com
 with your contact data and will we get in touch with you and sent you an API key.
