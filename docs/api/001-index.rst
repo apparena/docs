@@ -106,7 +106,6 @@ contained objects are named after their characterizing item for easy processing 
 the output of the 'App' 9999 entity GET request.
 
     .. sourcecode:: js
-
     {
       "_embedded": {
         "data": {
@@ -144,7 +143,6 @@ Pagination information is added and can be modified by the following queries:
  - page  : defines the current page
 
     .. sourcecode:: js
-
     {
       "_links": {
         "next": {
@@ -212,7 +210,6 @@ Pagination information is added and can be modified by the following queries:
 The output of these types of requests contains the HTTP status and the created/updated information of the entity in the object "data".
 
     .. sourcecode:: js
-
     {
       "status": 201,
       "data": {
@@ -229,7 +226,6 @@ The output of these types of requests contains the HTTP status and the created/u
 //.. http:method:: DELETE request
 
     .. sourcecode:: js
-
     {
         "status":   200,
         "message":  "App '9999' deleted."
