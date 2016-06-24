@@ -205,7 +205,7 @@ Pagination information is added and can be modified by the following queries:
       "page_number": 2
     }
 
-.. http:method:: POST/PUT request
+//.. http:method:: POST/PUT request
 
 The output of these types of requests contains the HTTP status and the created/updated information of the entity in the object "data".
 
