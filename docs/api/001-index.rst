@@ -105,37 +105,37 @@ The relevant data can be found in "_embedded" -> "data" and the status code is o
 contained objects are named after their characterizing item for easy processing and representation. This example shows
 the output of the 'App' 9999 entity GET request.
 
-.. sourcecode:: js
+    .. sourcecode:: js
 
-{
-  "_embedded": {
-    "data": {
-      "9999": {
-        "appId":        9999,
-        "name":         "Example App",
-        "lang":         "en_US",
-        "activated":    false,
-        "expiryDate":   "2099-01-01 00:00:00",
-        "companyId":    1,
-        "templateId":   888,
-        "_links": {
-          "app": {
-            "href":     "https://my.app-arena.com/api/v2/apps/9999"
-          },
-          "language": {
-            "href":     "https://my.app-arena.com/api/v2/apps/9999/languages/en_US"
-          },
-          "company": {
-            "href":     "https://my.app-arena.com/api/v2/companies/1"
-          },
-          "template": {
-            "href":     "https://my.app-arena.com/api/v2/templates/888"
+    {
+      "_embedded": {
+        "data": {
+          "9999": {
+            "appId":        9999,
+            "name":         "Example App",
+            "lang":         "en_US",
+            "activated":    false,
+            "expiryDate":   "2099-01-01 00:00:00",
+            "companyId":    1,
+            "templateId":   888,
+            "_links": {
+              "app": {
+                "href":     "https://my.app-arena.com/api/v2/apps/9999"
+              },
+              "language": {
+                "href":     "https://my.app-arena.com/api/v2/apps/9999/languages/en_US"
+              },
+              "company": {
+                "href":     "https://my.app-arena.com/api/v2/companies/1"
+              },
+              "template": {
+                "href":     "https://my.app-arena.com/api/v2/templates/888"
+              }
+            }
           }
         }
       }
     }
-  }
-}
 
 .. http:method:: GET request HAL format paginated
 
@@ -143,86 +143,86 @@ Pagination information is added and can be modified by the following queries:
  - items : defines the number of objects to be sent per page
  - page  : defines the current page
 
-.. sourcecode:: js
+    .. sourcecode:: js
 
-{
-  "_links": {
-    "next": {
-      "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=3"
-    },
-    "previous": {
-      "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=1"
-    },
-    "self": {
-      "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=2"
-    }
-  },
-  "_embedded": {
-    "data": {
-      "100": {
-        "appId":        100,
-        "name":         "example App",
-        "lang":         "en_US",
-        "activated":    true,
-        "expiryDate":   "2017-08-04 00:00:00",
-        "companyId":    1,
-        "templateId":   10,
-        "_links": {
-          "app": {
-            "href":     "https://my.app-arena.com/api/v2/apps/100"
-          },
-          "language": {
-            "href":     "https://my.app-arena.com/api/v2/apps/100/languages/en_US"
-          },
-          "company": {
-            "href":     "https://my.app-arena.com/api/v2/companies/1"
-          },
-          "template": {
-            "href":     "https://my.app-arena.com/api/v2/templates/10"
-          }
+    {
+      "_links": {
+        "next": {
+          "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=3"
+        },
+        "previous": {
+          "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=1"
+        },
+        "self": {
+          "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=2"
         }
       },
-      "101": {
-        "appId": 101,
-            .
-            .
-            .
+      "_embedded": {
+        "data": {
+          "100": {
+            "appId":        100,
+            "name":         "example App",
+            "lang":         "en_US",
+            "activated":    true,
+            "expiryDate":   "2017-08-04 00:00:00",
+            "companyId":    1,
+            "templateId":   10,
+            "_links": {
+              "app": {
+                "href":     "https://my.app-arena.com/api/v2/apps/100"
+              },
+              "language": {
+                "href":     "https://my.app-arena.com/api/v2/apps/100/languages/en_US"
+              },
+              "company": {
+                "href":     "https://my.app-arena.com/api/v2/companies/1"
+              },
+              "template": {
+                "href":     "https://my.app-arena.com/api/v2/templates/10"
+              }
+            }
+          },
+          "101": {
+            "appId": 101,
+                .
+                .
+                .
+            }
+          },
+          "102": {
+            "appId": 102,
+                .
+                .
+                .
+            }
+          },
+          .
+          .
+          .
         }
       },
-      "102": {
-        "appId": 102,
-            .
-            .
-            .
-        }
-      },
-      .
-      .
-      .
-    }
-  },
-  "total_items": 10511,
-  "page_size": 5,
-  "page_count": 2103,
-  "page_number": 2
+      "total_items": 10511,
+      "page_size": 5,
+      "page_count": 2103,
+      "page_number": 2
 }
 
 .. http:method:: POST/PUT request
 
 The output of these types of requests contains the HTTP status and the created/updated information of the entity in the object "data".
 
-.. sourcecode:: js
+    .. sourcecode:: js
 
-{
-  "status": 201,
-  "data": {
-    "appId":        11559,
-    "templateId":   888,
-    "companyId":    1,
-    "lang":         "en_US",
-    "name":         "example App",
-    "activated":    false,
-    "expiryDate":   "2016-08-23 12:24:12"
-  }
-}
+    {
+      "status": 201,
+      "data": {
+        "appId":        11559,
+        "templateId":   888,
+        "companyId":    1,
+        "lang":         "en_US",
+        "name":         "example App",
+        "activated":    false,
+        "expiryDate":   "2016-08-23 12:24:12"
+      }
+    }
 
