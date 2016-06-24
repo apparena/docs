@@ -105,7 +105,7 @@ The relevant data can be found in "_embedded" -> "data" and the status code is o
 contained objects are named after their characterizing item for easy processing and representation. This example shows
 the output of the 'App' 9999 entity GET request.
 
-    .. sourcecode:: js
+    //.. sourcecode:: js
 
     {
       "_embedded": {
@@ -143,7 +143,7 @@ Pagination information is added and can be modified by the following queries:
  - items : defines the number of objects to be sent per page
  - page  : defines the current page
 
-    .. sourcecode:: js
+    //.. sourcecode:: js
 
     {
       "_links": {
@@ -211,7 +211,7 @@ Pagination information is added and can be modified by the following queries:
 
 The output of these types of requests contains the HTTP status and the created/updated information of the entity in the object "data".
 
-    .. sourcecode:: js
+    //.. sourcecode:: js
 
     {
       "status": 201,
@@ -224,5 +224,14 @@ The output of these types of requests contains the HTTP status and the created/u
         "activated":    false,
         "expiryDate":   "2016-08-23 12:24:12"
       }
+    }
+
+.. http:method:: DELETE request
+
+    //.. sourcecode:: js
+
+    {
+        "status":   200,
+        "message":  "App '9999' deleted."
     }
 
