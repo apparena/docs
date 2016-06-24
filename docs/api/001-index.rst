@@ -223,7 +223,7 @@ The output of these types of requests contains the HTTP status and the created/u
       }
     }
 
-.. http:method:: DELETE request
+//.. http:method:: DELETE request
 
     .. sourcecode:: js
     {
