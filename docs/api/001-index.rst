@@ -205,7 +205,7 @@ Pagination information is added and can be modified by the following queries:
       "page_size": 5,
       "page_count": 2103,
       "page_number": 2
-}
+    }
 
 .. http:method:: POST/PUT request
 
