@@ -57,7 +57,7 @@ Available query options:
 +============+==========================+=======================================================+
 | lang       |    GET,PUT,DELETE        |   points the request to the desired language          |
 +------------+--------------------------+-------------------------------------------------------+
-| fields     |    GET                   |   Retrieves                 |
+| fields     |    GET                   |   Retrieves                                           |
 +------------+--------------------------+-------------------------------------------------------+
 | PUT        |    Entity                |   Updates an entity                                   |
 +------------+--------------------------+-------------------------------------------------------+
@@ -225,3 +225,4 @@ The output of these types of requests contains the HTTP status and the created/u
     "expiryDate":   "2016-08-23 12:24:12"
   }
 }
+
