@@ -99,7 +99,7 @@ DELETE requests will always output a status and a message.
 Response examples
 -----------------
 
-//.. http:method:: GET request HAL format
+.. http:method:: GET request HAL format
 
 The relevant data can be found in "_embedded" -> "data" and the status code is only submitted via HTTP. The keys of the
 contained objects are named after their characterizing item for easy processing and representation. This example shows
