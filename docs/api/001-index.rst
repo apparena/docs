@@ -64,6 +64,46 @@ A complete list of HTTP response formats you can find here: HTTP-Statuscodes_
 +------------+------------------------------+
 
 The JSON output depends on the type of request and the data submitted. GET Requests will mostly output data in the HAL-format,
-a format which provides links to the mentioned resources.
+a format which provides links to the mentioned resources for easy resource browsing. As some of the requests are intended for listing
+items to the user, these requests will output the data paginated. The data comes in chunks of an adjustable size for convenient
+item browsing. PUT and POST requests however output besides a status code the created/updated information without any links to the resources,
+as this information serves for verification and further processing. DELETE requests will always output a status and a message.
 
 .. _HAL-format: https://en.wikipedia.org/wiki/Hypertext_Application_Language
+
+Response examples
+-----------------
+
+.. http:method:: GET request HAL format
+
+    .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "9273": {
+                "appId": 9273,
+                "name": "Onpage App-1421917963",
+                "lang": "de_DE",
+                "activated": false,
+                "expiryDate": "2099-01-01 00:00:00",
+                "companyId": 2,
+                "templateId": 838,
+                "_links": {
+                  "app": {
+                    "href": "https://v25-stage.app-arena.com/api/v2/apps/9273"
+                  },
+                  "appLanguage": {
+                    "href": "https://v25-stage.app-arena.com/api/v2/apps//languages/de_DE"
+                  },
+                  "company": {
+                    "href": "https://v25-stage.app-arena.com/api/v2/companies/2"
+                  },
+                  "template": {
+                    "href": "https://v25-stage.app-arena.com/api/v2/templates/838"
+                  }
+                }
+              }
+            }
+          }
+        }
