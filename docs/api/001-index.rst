@@ -46,7 +46,7 @@ The documentation for each API call will contain more detail on the parameters a
 Response Formats
 ----------------
 
-We respond using HTTP Status Codes so that you can see immediately if you request was successful or an error occured.
+The API responds using HTTP Status Codes so that you can see immediately if you request was successful or an error occurred.
 A complete list of HTTP response formats you can find here: HTTP-Statuscodes_
 
 .. _HTTP-Statuscodes: http://de.wikipedia.org/wiki/HTTP-Statuscode
@@ -60,5 +60,10 @@ A complete list of HTTP response formats you can find here: HTTP-Statuscodes_
 +------------+------------------------------+
 | PUT        |    200 (OK)                  |
 +------------+------------------------------+
-| DELETE     |    204 (No content)          |
+| DELETE     |    200 (OK)                  |
 +------------+------------------------------+
+
+The JSON output depends on the type of request and the data submitted. GET Requests will mostly output data in the HAL-format,
+a format which provides links to the mentioned resources.
+
+.. _HAL-format: https://en.wikipedia.org/wiki/Hypertext_Application_Language
