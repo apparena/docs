@@ -139,8 +139,8 @@ the output of the 'App' 9999 entity GET request.
 .. http:method:: GET request HAL format paginated
 
 Pagination information is added and can be modified by the following queries:
- - items : defines the number of objects to be sent per page
- - page  : defines the current page
+- items : defines the number of objects to be sent per page
+- page  : defines the current page
 
     .. sourcecode:: js
     {
@@ -205,7 +205,7 @@ Pagination information is added and can be modified by the following queries:
       "page_number": 2
     }
 
-//.. http:method:: POST/PUT request
+.. http:method:: POST/PUT request
 
 The output of these types of requests contains the HTTP status and the created/updated information of the entity in the object "data".
 
@@ -223,7 +223,7 @@ The output of these types of requests contains the HTTP status and the created/u
       }
     }
 
-//.. http:method:: DELETE request
+.. http:method:: DELETE request
 
     .. sourcecode:: js
     {
