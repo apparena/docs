@@ -178,7 +178,7 @@ POST /apps
 
     :data integer companyId:            ID of the owning company, if not specified, app will be owned by the company used for authorization
     :data integer/string expiryDate:    Integer: Sets the number of days the app is valid, 0 sets the app valid for 50 years. String: Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
-    :data boolean activated:            Sets the status of the app
+    :data boolean activated:            Sets the activation status of the app
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 
@@ -268,7 +268,7 @@ GET /apps/:app_id/configs
                 "appId": 1,
                 "_links": {
                   "app": {
-                    "href": "http://manager.local/api/v2/apps/1"
+                    "href": "http://my.app-arena.com/api/v2/apps/1"
                   },
                   "config": {
                     "href": "http://my.app-arena.com/api/v2/apps/1/configs/config_1"
