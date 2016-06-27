@@ -12,7 +12,7 @@ GET /apps
 
 .. http:method:: GET /api/v2/apps
 
-Receive a collection of apps owned by your company.
+    Receive a collection of apps owned by your company.
 
 .. http:response:: Example response body
 
@@ -21,10 +21,10 @@ Receive a collection of apps owned by your company.
         {
           "_links": {
             "next": {
-              "href": "https://v25-stage.app-arena.com/api/v2/apps?page=2"
+              "href": "https://my.app-arena.com/api/v2/apps?page=2"
             },
             "self": {
-              "href": "https://v25-stage.app-arena.com/api/v2/apps"
+              "href": "https://my.app-arena.com/api/v2/apps"
             }
           },
           "_embedded": {
@@ -39,16 +39,16 @@ Receive a collection of apps owned by your company.
                 "templateId": 888,
                 "_links": {
                   "app": {
-                    "href": "https://v25-stage.app-arena.com/api/v2/apps/1"
+                    "href": "https://my.app-arena.com/api/v2/apps/1"
                   },
                   "appLanguage": {
-                    "href": "https://v25-stage.app-arena.com/api/v2/apps/1/languages/en_US"
+                    "href": "https://my.app-arena.com/api/v2/apps/1/languages/en_US"
                   },
                   "company": {
-                    "href": "https://v25-stage.app-arena.com/api/v2/companies/1"
+                    "href": "https://my.app-arena.com/api/v2/companies/1"
                   },
                   "template": {
-                    "href": "https://v25-stage.app-arena.com/api/v2/templates/888"
+                    "href": "https://my.app-arena.com/api/v2/templates/888"
                   }
                 }
               },
@@ -83,7 +83,7 @@ Receive a collection of apps owned by your company.
 
 .. http:method:: GET /api/v2/apps/:app_id
 
-Receive detailed information about the requested app.
+    Receive information about an app entity.
 
 .. http:response:: Example response body
 
@@ -153,9 +153,9 @@ Receive detailed information about the requested app.
 
     Required:
 
-    :data string name:          Name of the company
-    :data integer templateId:   The Template ID this App is connected to
-    :data string lang:          A language code_. Syntax: de_DE for Germany, de_AT for Austrian german
+    :string name:          Name of the company
+    :integer templateId:   The Template ID this App is connected to
+    :string lang:          A language code_. Syntax: de_DE for Germany, de_AT for Austrian german
 
 .. _code: http://en.wikipedia.org/wiki/ISO3166-1alpha-2
 
@@ -166,5 +166,44 @@ Receive detailed information about the requested app.
     :data string expiryDate:    Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
     :data boolean activated:    Sets the Status of the App
 
+.. http:method:: PUT /api/v2/apps/:app_id
 
+    Alters an App entry
 
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "activated"    :   true,
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "appId": 1,
+            "templateId": 888,
+            "companyId": 1,
+            "lang": "de_DE",
+            "name": "created Example App",
+            "activated": true,
+            "expiryDate": "2016-08-26 10:39:00"
+          }
+        }
+
+.. http:method:: DELETE /api/v2/apps/:app_id
+
+    Deletes an App from the database
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "App '1' deleted."
+        }
