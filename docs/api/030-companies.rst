@@ -12,29 +12,30 @@ API - Companies calls
 
 .. http:method:: POST /api/v1/companies
 
+    Outputs a list of companies in the current store. This request can only be used by store admins.
 
 .. http:response:: Example request body
 
     .. sourcecode:: js
 
         {
-            "name"		:"New App-Arena customer. {{$timestamp}}",
-            "subdomain"	        :"apparena_customer_{{$timestamp}}",
-            "address1"	        :"My street 1",
-            "address2"	        :"My street 2",
-            "zip"		:"12345",
-            "city"		:"My city",
+            "name"          :"App-Arena",
+            "subdomain"     :"aa",
+            "address1"	    :"My street 1",
+            "address2"	    :"My street 2",
+            "zip"		    :"12345",
+            "city"		    :"My city",
             "country"		:"DE",
-            "logo"		:"https://app-manager.s3.amazonaws.com/apps/models/3/0/4/0/de_DE/AppArena_Logo_aufweiss300x80_1413369016_0.png",
+            "logo"		    :"https://app-manager.s3.amazonaws.com/apps/models/3/0/4/0/de_DE/AppArena_Logo_aufweiss300x80_1413369016_0.png",
             "color1"		:"#478AB8",
             "color2"		:"#2D343D",
-            "font"		:"helvetica-neue"
+            "font"		    :"helvetica-neue"
         }
 
 
 
     :data string name:          (Required) Name of the company
-    :data integer parent_id:    (Optional) ID of the company whos customer the newly created company should be like
+    :data integer parent_id:    (Optional) ID of the company whose customer the newly created company should be like
     :data string address1:      (Optional) Address field 1, e.g. Street 1
     :data string address2:      (Optional) Address field 2, e.g. Street 2
     :data string zip:           (Optional) Zip code
