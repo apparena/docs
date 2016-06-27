@@ -151,20 +151,18 @@ GET /apps
           }
         }
 
-    Required:
+    Request data:
 
-    :string name:          Name of the company
-    :integer templateId:   The Template ID this App is connected to
-    :string lang:          A language code_. Syntax: de_DE for Germany, de_AT for Austrian german
+    :required string name:          Name of the company
+    :required integer templateId:   The Template ID this App is connected to
+    :required string lang:          A language code_. Syntax: de_DE for Germany, de_AT for Austrian german
 
 .. _code: http://en.wikipedia.org/wiki/ISO3166-1alpha-2
 
-    Optional:
-
-    :data integer companyId:    ID of the owning company
-    :data integer expiryDate:   Sets the number of days the App is valid, 0 sets the app valid for 50 years
-    :data string expiryDate:    Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
-    :data boolean activated:    Sets the Status of the App
+    :optional integer companyId:    ID of the owning company
+    :optional integer expiryDate:   Sets the number of days the App is valid, 0 sets the app valid for 50 years
+    :optional string expiryDate:    Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
+    :optional boolean activated:    Sets the Status of the App
 
 .. http:method:: PUT /api/v2/apps/:app_id
 
