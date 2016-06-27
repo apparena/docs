@@ -105,37 +105,39 @@ Response examples
     contained objects are named after their characterizing item for easy processing and representation. This example shows
     the output of the 'App' 9999 entity GET request.
 
-        .. sourcecode:: js
+.. http:response:: Example request body
 
-            {
-              "_embedded": {
-                "data": {
-                  "9999": {
-                    "appId":        9999,
-                    "name":         "Example App",
-                    "lang":         "en_US",
-                    "activated":    false,
-                    "expiryDate":   "2099-01-01 00:00:00",
-                    "companyId":    1,
-                    "templateId":   888,
-                    "_links": {
-                      "app": {
-                        "href":     "https://my.app-arena.com/api/v2/apps/9999"
-                      },
-                      "language": {
-                        "href":     "https://my.app-arena.com/api/v2/apps/9999/languages/en_US"
-                      },
-                      "company": {
-                        "href":     "https://my.app-arena.com/api/v2/companies/1"
-                      },
-                      "template": {
-                        "href":     "https://my.app-arena.com/api/v2/templates/888"
-                      }
-                    }
+    .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "9999": {
+                "appId":        9999,
+                "name":         "Example App",
+                "lang":         "en_US",
+                "activated":    false,
+                "expiryDate":   "2099-01-01 00:00:00",
+                "companyId":    1,
+                "templateId":   888,
+                "_links": {
+                  "app": {
+                    "href":     "https://my.app-arena.com/api/v2/apps/9999"
+                  },
+                  "language": {
+                    "href":     "https://my.app-arena.com/api/v2/apps/9999/languages/en_US"
+                  },
+                  "company": {
+                    "href":     "https://my.app-arena.com/api/v2/companies/1"
+                  },
+                  "template": {
+                    "href":     "https://my.app-arena.com/api/v2/templates/888"
                   }
                 }
               }
             }
+          }
+        }
 
 .. http:method:: GET request HAL format paginated
 
@@ -143,73 +145,77 @@ Response examples
     items : defines the number of objects to be sent per page
     page  : defines the current page
 
-        .. sourcecode:: js
+.. http:response:: Example request body
 
-            {
-              "_links": {
-                "next": {
-                  "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=3"
-                },
-                "previous": {
-                  "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=1"
-                },
-                "self": {
-                  "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=2"
-                }
-              },
-              "_embedded": {
-                "data": {
-                  "100": {
-                    "appId":        100,
-                    "name":         "example App",
-                    "lang":         "en_US",
-                    "activated":    true,
-                    "expiryDate":   "2017-08-04 00:00:00",
-                    "companyId":    1,
-                    "templateId":   10,
-                    "_links": {
-                      "app": {
-                        "href":     "https://my.app-arena.com/api/v2/apps/100"
-                      },
-                      "language": {
-                        "href":     "https://my.app-arena.com/api/v2/apps/100/languages/en_US"
-                      },
-                      "company": {
-                        "href":     "https://my.app-arena.com/api/v2/companies/1"
-                      },
-                      "template": {
-                        "href":     "https://my.app-arena.com/api/v2/templates/10"
-                      }
-                    }
-                  },
-                  "101": {
-                    "appId": 101,
-                        .
-                        .
-                        .
-                    }
-                  },
-                  "102": {
-                    "appId": 102,
-                        .
-                        .
-                        .
-                    }
-                  },
-                  .
-                  .
-                  .
-                }
-              },
-              "total_items": 10511,
-              "page_size": 5,
-              "page_count": 2103,
-              "page_number": 2
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "next": {
+              "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=3"
+            },
+            "previous": {
+              "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=1"
+            },
+            "self": {
+              "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=2"
             }
+          },
+          "_embedded": {
+            "data": {
+              "100": {
+                "appId":        100,
+                "name":         "example App",
+                "lang":         "en_US",
+                "activated":    true,
+                "expiryDate":   "2017-08-04 00:00:00",
+                "companyId":    1,
+                "templateId":   10,
+                "_links": {
+                  "app": {
+                    "href":     "https://my.app-arena.com/api/v2/apps/100"
+                  },
+                  "language": {
+                    "href":     "https://my.app-arena.com/api/v2/apps/100/languages/en_US"
+                  },
+                  "company": {
+                    "href":     "https://my.app-arena.com/api/v2/companies/1"
+                  },
+                  "template": {
+                    "href":     "https://my.app-arena.com/api/v2/templates/10"
+                  }
+                }
+              },
+              "101": {
+                "appId": 101,
+                    .
+                    .
+                    .
+                }
+              },
+              "102": {
+                "appId": 102,
+                    .
+                    .
+                    .
+                }
+              },
+              .
+              .
+              .
+            }
+          },
+          "total_items": 10511,
+          "page_size": 5,
+          "page_count": 2103,
+          "page_number": 2
+        }
 
 //.. http:method:: POST/PUT request
 
 The output of these types of requests contains the HTTP status and the created/updated information of the entity in the object "data".
+
+.. http:response:: Example request body
 
     .. sourcecode:: js
 
@@ -227,6 +233,8 @@ The output of these types of requests contains the HTTP status and the created/u
         }
 
 .. http:method:: DELETE request
+
+.. http:response:: Example request body
 
     .. sourcecode:: js
 
