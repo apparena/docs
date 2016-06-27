@@ -4,7 +4,7 @@ API - Getting started
 API key
 -------
 
-To request restricted information from the API, you need to add an API key or `JWT`_ to your request header. Read more
+To request restricted information from the API, you need to add an API key or a JSON Web Token (`JWT`_) to your request header. Read more
 about it in `Authorization <020-auth.html>`_
 
 If you do not have access to the developer section yet, please drop us an email to s.buckpesch at app-arena.com
@@ -57,7 +57,7 @@ Available query options:
 +============+==========================+=======================================================+
 | lang       |    GET,PUT,DELETE        |   points the request to the desired language          |
 +------------+--------------------------+-------------------------------------------------------+
-| fields     |    GET                   |   Retrieves                                           |
+| fields     |    GET                   |                                            |
 +------------+--------------------------+-------------------------------------------------------+
 | PUT        |    Entity                |   Updates an entity                                   |
 +------------+--------------------------+-------------------------------------------------------+
@@ -100,6 +100,7 @@ Response examples
 -----------------
 
 .. http:method:: GET request HAL format
+
 
     The relevant data can be found in "_embedded" -> "data" and the status code is only submitted via HTTP. The keys of the
     contained objects are named after their characterizing item for easy processing and representation. This example shows
@@ -233,6 +234,8 @@ Response examples
         }
 
 .. http:method:: DELETE request
+
+    The output of a delete request contains the status and a message.
 
 .. http:response:: Example request body
 
