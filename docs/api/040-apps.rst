@@ -159,9 +159,9 @@ GET /apps
 
     Optional data:
 
-    :optional integer companyId:            ID of the owning company
-    :optional integer/string expiryDate:    Integer: Sets the number of days the App is valid, 0 sets the app valid for 50 years. String: Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
-    :optional boolean activated:            Sets the Status of the App
+    :data integer companyId:            ID of the owning company
+    :data integer/string expiryDate:    Integer: Sets the number of days the App is valid, 0 sets the app valid for 50 years. String: Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
+    :data boolean activated:            Sets the Status of the App
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 
