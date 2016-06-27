@@ -90,7 +90,7 @@ API - App requests
 
 .. http:method:: GET /apps/:app_id
 
-|   Receive information about an app entity.
+|   Receive information about an app entity specified by :app_id
 |
 |   Available queries:
 |   - fields
@@ -181,7 +181,7 @@ API - App requests
 
 .. http:method:: PUT /apps/:app_id
 
-|   Alters an app entry
+|   Alters an app entry specified by :app_id
 |
 |   Available queries
 |   - force
@@ -213,7 +213,7 @@ API - App requests
 
 .. http:method:: DELETE /apps/:app_id
 
-|   Deletes an app from the database
+|   Deletes an app from the database specified by :app_id
 |
 |   Available queries: none
 
@@ -231,14 +231,12 @@ API - App requests
 
 .. http:method:: GET /apps/:app_id/configs
 
-|   Receive a collection of config values of a specified app.
+|   Receive a collection of config values of an app specified by :app_id
 |
 |   Available queries:
-|   - page
-|   - items
 |   - fields
 |   - exclude
-|   - orderasc/orderdesc
+|   - lang
 
 .. http:response:: Example response body
 
@@ -265,6 +263,9 @@ API - App requests
                 "_links": {
                   "app": {
                     "href": "http://manager.local/api/v2/apps/1"
+                  },
+                  "config": {
+                    "href": "http://my.app-arena.com/api/v2/apps/1/configs/config_1"
                   }
                 }
               },
@@ -280,5 +281,78 @@ API - App requests
                     .
               }
             }
+          }
+        }
+
+.. http:method:: GET /apps/:app_id/configs/:config_id
+
+|   Receive the information of a config values entity of an app specified by :app_id
+|
+|   Available queries:
+|   - fields
+|   - exclude
+|   - lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "config_1": {
+                "configId": "config_1",
+                "lang": "de_DE",
+                "name": "config value 1",
+                "revision": 0,
+                "value": "some_value",
+                "meta": "{"meta_key":{"meta_inner":"meta_inner_value"}},
+                "type": "input",
+                "description": "This is an example of a app config value.",
+                "appId": 1,
+                "_links": {
+                  "app": {
+                    "href": "http://manager.local/api/v2/apps/1"
+                  },
+                  "config": {
+                    "href": "http://my.app-arena.com/api/v2/apps/1/configs/config_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+
+.. http:method:: PUT /apps/:app_id/configs
+
+|   Alter a config value for an app specified by :app_id
+|
+|   Available queries:
+|   - lang
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "value"    :   "new value"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "appId": 1,
+            "configId": "config_1",
+            "lang": "de_DE",
+            "type": "input",
+            "name": "config value 1",
+            "value": "new value",
+            "description": "This is an example of a app config value.",
+            "revision": 1,
+            "meta": "{"meta_key":{"meta_inner":"meta_inner_value"}}
           }
         }
