@@ -5,14 +5,21 @@ API - App requests
 
 .. _API-Explorer: http://www.app-arena.com
 
-GET /apps
----------
+/apps
+-----
 
 .. _apps:
 
-.. http:method:: GET /api/v2/apps
+.. http:method:: GET /apps
 
-    Receive a collection of apps owned by your company.
+|   Receive a collection of apps owned by your company.
+|
+|   Available queries:
+|   - page
+|   - items
+|   - fields
+|   - exclude
+|   - orderasc/orderdesc
 
 .. http:response:: Example response body
 
@@ -31,7 +38,7 @@ GET /apps
             "data": {
               "1": {
                 "appId": 1,
-                "name": "Example App",
+                "name": "Example app",
                 "lang": "en_US",
                 "activated": true,
                 "expiryDate": "2016-11-30 00:00:00",
@@ -54,7 +61,7 @@ GET /apps
               },
               "2": {
                 "appId": 2,
-                "name": "Example App 2",
+                "name": "Example app 2",
                  .
                  .
                  .
@@ -81,7 +88,7 @@ GET /apps
         }
 
 
-.. http:method:: GET /api/v2/apps/:app_id
+.. http:method:: GET /apps/:app_id
 
     Receive information about an app entity.
 
@@ -94,7 +101,7 @@ GET /apps
             "data": {
               "1": {
                 "appId": 1,
-                "name": "Example App",
+                "name": "Example app",
                 "lang": "de_DE",
                 "activated": false,
                 "expiryDate": "2099-01-01 00:00:00",
@@ -119,9 +126,9 @@ GET /apps
           }
         }
 
-.. http:method:: POST /api/v2/apps
+.. http:method:: POST /apps
 
-    Creates a new App
+    Creates a new app
 
 .. http:response:: Example request body
 
@@ -129,7 +136,7 @@ GET /apps
 
         {
             "templateId"    :   888,
-            "name"          :   "created example App",
+            "name"          :   "created example app",
             "expiryDate"    :   60,
             "lang"          :   "de_DE"
         }
@@ -145,7 +152,7 @@ GET /apps
             "templateId": 888,
             "companyId": 1,
             "lang": "de_DE",
-            "name": "created example App",
+            "name": "created example app",
             "activated": false,
             "expiryDate": "2016-08-26 10:39:00"
           }
@@ -154,20 +161,20 @@ GET /apps
     Required data:
 
     :data string name:          Name of the company
-    :data integer templateId:   The Template ID this App is connected to
+    :data integer templateId:   The Template ID this app is connected to
     :data string lang:          A language code_. Syntax: de_DE for Germany, de_AT for Austrian german
 
     Optional data:
 
-    :data integer companyId:            ID of the owning company
-    :data integer/string expiryDate:    Integer: Sets the number of days the App is valid, 0 sets the app valid for 50 years. String: Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
-    :data boolean activated:            Sets the Status of the App
+    :data integer companyId:            ID of the owning company, if not specified, app will be owned by the company used for authorization
+    :data integer/string expiryDate:    Integer: Sets the number of days the app is valid, 0 sets the app valid for 50 years. String: Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
+    :data boolean activated:            Sets the status of the app
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 
-.. http:method:: PUT /api/v2/apps/:app_id
+.. http:method:: PUT /apps/:app_id
 
-    Alters an App entry
+    Alters an app entry
 
 .. http:response:: Example request body
 
@@ -188,15 +195,15 @@ GET /apps
             "templateId": 888,
             "companyId": 1,
             "lang": "de_DE",
-            "name": "created Example App",
+            "name": "created Example app",
             "activated": true,
             "expiryDate": "2016-08-26 10:39:00"
           }
         }
 
-.. http:method:: DELETE /api/v2/apps/:app_id
+.. http:method:: DELETE /apps/:app_id
 
-    Deletes an App from the database
+    Deletes an app from the database
 
 .. http:response:: Example response body
 
@@ -204,5 +211,55 @@ GET /apps
 
         {
           "status": 200,
-          "message": "App '1' deleted."
+          "message": "app '1' deleted."
+        }
+
+/apps/:app_id/configs
+---------------------
+
+.. http:method:: GET /apps/:app_id/configs
+
+    Receive a collection of config values of a specified app.
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "self": {
+              "href": "http://manager.local/api/v2/apps/1/configs"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "config_1": {
+                "configId": "config_1",
+                "lang": "de_DE",
+                "name": "config value 1",
+                "revision": 0,
+                "value": "some_value",
+                "meta": "{"meta_key":{"meta_inner":"meta_inner_value"}},
+                "type": "input",
+                "description": "This is an example of a app config value.",
+                "appId": 1,
+                "_links": {
+                  "app": {
+                    "href": "http://manager.local/api/v2/apps/1"
+                  }
+                }
+              },
+              "config_2": {
+                "configId": "config_2",
+                    .
+                    .
+                    .
+                }
+              },
+                    .
+                    .
+                    .
+              }
+            }
+          }
         }
