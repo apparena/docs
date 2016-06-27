@@ -227,7 +227,7 @@ API - App requests
         }
 
 /apps/:app_id/configs
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 .. http:method:: GET /apps/:app_id/configs
 
