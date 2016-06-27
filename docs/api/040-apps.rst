@@ -127,29 +127,29 @@ Receive detailed information about the requested app.
 
     .. sourcecode:: js
 
-    {
-        "templateId"    :   888,
-        "name"          :   "created example App",
-        "expiryDate"    :   60,
-        "lang"          :   "de_DE"
-    }
+        {
+            "templateId"    :   888,
+            "name"          :   "created example App",
+            "expiryDate"    :   60,
+            "lang"          :   "de_DE"
+        }
 
 .. http:response:: Example response body
 
     .. sourcecode:: js
 
-    {
-      "status": 201,
-      "data": {
-        "appId": 1,
-        "templateId": 888,
-        "companyId": 1,
-        "lang": "de_DE",
-        "name": "created example App",
-        "activated": false,
-        "expiryDate": "2016-08-26 10:39:00"
-      }
-    }
+        {
+          "status": 201,
+          "data": {
+            "appId": 1,
+            "templateId": 888,
+            "companyId": 1,
+            "lang": "de_DE",
+            "name": "created example App",
+            "activated": false,
+            "expiryDate": "2016-08-26 10:39:00"
+          }
+        }
 
     Required:
 
