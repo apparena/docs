@@ -10,7 +10,8 @@ API - App requests
 
 .. _apps:
 
-.. http:method:: GET /apps
+GET /apps
+~~~~~~~~~
 
 |   Receive a collection of apps owned by your company.
 |
@@ -88,7 +89,8 @@ API - App requests
         }
 
 
-.. http:method:: GET /apps/:app_id
+GET /apps/:app_id
+~~~~~~~~~~~~~~~~~
 
 |   Receive information about an app entity specified by :app_id
 |
@@ -130,7 +132,8 @@ API - App requests
           }
         }
 
-.. http:method:: POST /apps
+POST /apps
+~~~~~~~~~~
 
 |   Creates a new app
 |
@@ -179,7 +182,8 @@ API - App requests
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 
-.. http:method:: PUT /apps/:app_id
+PUT /apps/:app_id
+~~~~~~~~~~~~~~~~~
 
 |   Alters an app entry specified by :app_id
 |
@@ -211,7 +215,8 @@ API - App requests
           }
         }
 
-.. http:method:: DELETE /apps/:app_id
+DELETE /apps/:app_id
+~~~~~~~~~~~~~~~~~~~~
 
 |   Deletes an app from the database specified by :app_id
 |
@@ -227,9 +232,10 @@ API - App requests
         }
 
 /apps/:app_id/configs
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
-.. http:method:: GET /apps/:app_id/configs
+GET /apps/:app_id/configs
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |   Receive a collection of config values of an app specified by :app_id
 |
@@ -284,7 +290,8 @@ API - App requests
           }
         }
 
-.. http:method:: GET /apps/:app_id/configs/:config_id
+GET /apps/:app_id/configs/:config_id
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |   Receive the information of a config values entity of an app specified by :app_id
 |
@@ -323,7 +330,8 @@ API - App requests
           }
         }
 
-.. http:method:: PUT /apps/:app_id/configs
+PUT /apps/:app_id/configs
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |   Alter a config value for an app specified by :app_id
 |
