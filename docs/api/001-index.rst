@@ -213,7 +213,7 @@ Response examples
 
 .. http:method:: POST/PUT request
 
-The output of these types of requests contains the HTTP status and the created/updated information of the entity in the object "data".
+    The output of these types of requests contains the HTTP status and the created/updated information of the entity in the object "data".
 
 .. http:response:: Example request body
 
