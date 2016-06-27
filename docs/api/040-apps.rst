@@ -90,7 +90,11 @@ API - App requests
 
 .. http:method:: GET /apps/:app_id
 
-    Receive information about an app entity.
+|   Receive information about an app entity.
+|
+|   Available queries:
+|   - fields
+|   - exclude
 
 .. http:response:: Example response body
 
@@ -128,7 +132,10 @@ API - App requests
 
 .. http:method:: POST /apps
 
-    Creates a new app
+|   Creates a new app
+|
+|   Available queries:
+|   - force
 
 .. http:response:: Example request body
 
@@ -174,7 +181,10 @@ API - App requests
 
 .. http:method:: PUT /apps/:app_id
 
-    Alters an app entry
+|   Alters an app entry
+|
+|   Available queries
+|   - force
 
 .. http:response:: Example request body
 
@@ -203,7 +213,9 @@ API - App requests
 
 .. http:method:: DELETE /apps/:app_id
 
-    Deletes an app from the database
+|   Deletes an app from the database
+|
+|   Available queries: none
 
 .. http:response:: Example response body
 
@@ -219,7 +231,14 @@ API - App requests
 
 .. http:method:: GET /apps/:app_id/configs
 
-    Receive a collection of config values of a specified app.
+|   Receive a collection of config values of a specified app.
+|
+|   Available queries:
+|   - page
+|   - items
+|   - fields
+|   - exclude
+|   - orderasc/orderdesc
 
 .. http:response:: Example response body
 
