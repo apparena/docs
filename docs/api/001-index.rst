@@ -143,8 +143,8 @@ Response examples
 .. http:method:: GET request HAL format paginated
 
     Pagination information is added and can be modified by the following queries:
-    items : defines the number of objects to be sent per page
-    page  : defines the current page
+    - items : defines the number of objects to be sent per page
+    - page  : defines the current page
 
 .. http:response:: Example request body
 
