@@ -293,7 +293,7 @@ GET /apps/:app_id/configs
 GET /apps/:app_id/configs/:config_id
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|   Receive the information of a config values entity of an app specified by :app_id
+|   Receive the information of a config value entity of an app specified by :app_id and :config_id
 |
 |   Available queries:
 |   - fields
@@ -362,5 +362,119 @@ PUT /apps/:app_id/configs
             "description": "This is an example of a app config value.",
             "revision": 1,
             "meta": "{"meta_key":{"meta_inner":"meta_inner_value"}}
+          }
+        }
+
+DELETE /apps/:app_id/configs/:config_id
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|   Deletes a config value of an app from the database specified by :app_id and :config_id
+|
+|   Available queries: none
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Config 'config_1' deleted."
+        }
+
+/apps/:app_id/infos
+-------------------
+
+GET /apps/:app_id/infos
+~~~~~~~~~~~~~~~~~~~~~~~
+
+|   Receive a collection of info values of an app specified by :app_id
+|
+|   Available queries:
+|   - fields
+|   - exclude
+|   - lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "self": {
+              "href": "http://manager.local/api/v2/apps/1/infos"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "info_1": {
+                "infoId": "info_1",
+                "lang": "de_DE",
+                "name": "info value 1",
+                "revision": 0,
+                "value": "some_value",
+                "meta": "{"meta_key":{"meta_inner":"meta_inner_value"}},
+                "type": "input",
+                "description": "This is an example of an app info value.",
+                "appId": 1,
+                "_links": {
+                  "app": {
+                    "href": "http://my.app-arena.com/api/v2/apps/1"
+                  },
+                  "info": {
+                    "href": "http://my.app-arena.com/api/v2/apps/1/configs/config_1"
+                  }
+                }
+              },
+              "config_2": {
+                "configId": "config_2",
+                    .
+                    .
+                    .
+                }
+              },
+                    .
+                    .
+                    .
+              }
+            }
+          }
+        }
+
+GET /apps/:app_id/infos/:info_id
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|   Receive the information of an info entity of an app specified by :app_id and :info_id
+|
+|   Available queries:
+|   - fields
+|   - exclude
+|   - lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "info_1": {
+                "infoId": "info_1",
+                "lang": "de_DE",
+                "revision": 0,
+                "value": "1234",
+                "templateId": 888,
+                "meta": {
+                  "type": "integer"
+                },
+                "_links": {
+                  "info": {
+                    "href": "http://my.app-arena.com/api/v2/apps/1/infos/info_1"
+                  },
+                  "template": {
+                    "href": "http://my.app-arena.com/api/v2/templates/888"
+                  }
+                }
+              }
+            }
           }
         }
