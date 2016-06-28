@@ -24,7 +24,7 @@ which alter the Headline to 'Band-Contest', 'Beauty-Contest' and 'Funniest-Video
 
 Figure 1 visualizes the relations between 'apps', 'templates' and 'projects'.
 
-.. image:: img/App-Customization.jpg
+.. image:: docs/img/App-Customization.jpg
     :height: 600
        :width: 800
            :scale: 50
