@@ -4,7 +4,7 @@ API - Data structure
 App-Arena.com apps launched in the world wide web are designed to be highly customizable. Through a system of interconnected configuration sets,
 we make sure that every customer is able to make his app look and feel like a unique and individually crafted application.
 
-In order to create new apps it is crucial to know the mechanics which work in the background.
+In order to create new apps it is crucial to know the mechanics working in the background.
 
 At the foundation of every application is a project. Projects serve as the central entry point for a collection of version varieties, which
 occur over the course of a development. Every version contains everything the application needs to operate, from configuration entries which define fundamental
@@ -25,6 +25,7 @@ which alter the Headline to 'Band-Contest', 'Beauty-Contest' and 'Funniest-Video
 Image 1 visualizes the relations between 'apps', 'templates' and 'projects'.
 
 .. image:: App_Customization.jpg
+    :alt: Image 1: App customization
 
 language    -> project language makes the possible languages
              creating a language in a template or app activates it

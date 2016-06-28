@@ -484,4 +484,3 @@ GET /apps/:app_id/infos/:info_id
     :height: 600
        :width: 800
                :scale: 50
-                    :alt: Image 1: App customization
