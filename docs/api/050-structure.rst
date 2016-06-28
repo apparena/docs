@@ -22,13 +22,9 @@ an entire application. However, the real power of the templates derives from the
 behaviour with minimal effort. We could create a template which 'shapes' the contest-project to a video contest by altering the configuration accordingly. Now we create three templates
 which alter the Headline to 'Band-Contest', 'Beauty-Contest' and 'Funniest-Video-Contest' as well as setting the logos adequately.
 
-Figure 1 visualizes the relations between 'apps', 'templates' and 'projects'.
+Image 1 visualizes the relations between 'apps', 'templates' and 'projects'.
 
-.. image:: img/App_Customization.jpg
-    :height: 600
-       :width: 800
-           :scale: 50
-                :alt: Figure 1: App customization
+.. image:: App_Customization.jpg
 
 language    -> project language makes the possible languages
              creating a language in a template or app activates it
