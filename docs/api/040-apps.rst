@@ -615,21 +615,21 @@ POST /apps/:appId/languages
 
     .. sourcecode:: js
 
-    {
-        "lang"  : "en_US"
-    }
+        {
+            "lang"  : "en_US"
+        }
 
 .. http:response:: Example response body
 
     .. sourcecode:: js
 
-    {
-      "status": 201,
-      "data": {
-        "appId": 1,
-        "lang": "en_US",
-      }
-    }
+        {
+          "status": 201,
+          "data": {
+            "appId": 1,
+            "lang": "en_US",
+          }
+        }
 
 /apps/:appId/translations
 -------------------------
