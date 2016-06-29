@@ -545,6 +545,13 @@ PUT /apps/:appId/infos/:infoId
           }
         }
 
+    **Changeable fields**
+
+    value
+        string
+    meta
+        see `config <../api/060-config.html>`_ meta section for information about the PUT behaviour of meta data
+
 DELETE /apps/:appId/infos/:infoId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
