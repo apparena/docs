@@ -7,8 +7,8 @@ we make sure that every customer is able to make his app look and feel like a un
 In order to create new apps it is crucial to know the mechanics working in the background.
 
 At the foundation of every application is a project. Projects serve as the central entry point for a collection of version varieties, which
-occur over the course of a development. Every version contains everything the application needs to operate, from configuration entries which define fundamental
-application functionality over information entries framing it in its web context. Translations are found there as well as the languages in which the project
+occur over the course of a development. Every version contains the information an application needs to operate, from configuration entries which define fundamental
+application functionality to information entries framing it in its web context. Translations are found there as well as the languages in which the project
 is available.
 
 The distinctive versions of a project hold the entirety of customization options your customer has at his disposal to individualize his web appearance. It may contain
@@ -19,13 +19,19 @@ These items can be anything from a picture or a video to a song. The core of the
 the voting modes is achieved through configuration sets, which 'shape' the project to the customers needs.
 On our platform, we call these configuration sets 'templates'. Templates can contain as little as a single configuration but may be used as well to configure, style and translate
 an entire application. However, the real power of the templates derives from the possibility to chain them together and thus, let you create vast amounts of apps of individual
-behaviour with minimal effort. We could create a template which 'shapes' the contest-project to a video contest by altering the configuration accordingly. Now we create three templates
-which alter the Headline to 'Band-Contest', 'Beauty-Contest' and 'Funniest-Video-Contest' as well as setting the logos adequately.
+behaviour with minimal effort.
+We could create a template which 'shapes' the contest-project to a video contest by altering the configuration accordingly. In the next step, we create three templates
+which alter the Headline to 'Band-Contest', 'Beauty-Contest' and 'Funniest-Video-Contest' as well as setting the logos adequately. This results in three different apps
+which individual look and feel while the core logic behind them stays the same.
 
 Image 1 visualizes the relation between 'apps', 'templates' and 'projects'.
 
 .. image:: images/App_Customization.jpg
     :alt: Image 1: App customization
+
+As seen in Image 1, all versions point to their root project. Templates however can point to a project version as well as to a different template. The difference is determined by
+the parentId: If the parentId points to itself, or in other words, if the parentId equals the templateId, the template points to the project version. In the case that templateId and parentId
+are different, the template points to its parent template.
 
 language    -> project language makes the possible languages
              creating a language in a template or app activates it
