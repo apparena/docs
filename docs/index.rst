@@ -33,6 +33,7 @@ API
     api/001-index
     api/020-auth
     api/050-structure
+    api/060-config
     api/040-apps
     api/030-companies
     api/090-instances
