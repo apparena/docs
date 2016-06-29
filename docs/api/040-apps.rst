@@ -89,10 +89,10 @@ GET /apps
         }
 
 
-GET /apps/:app_id
-~~~~~~~~~~~~~~~~~
+GET /apps/:appId
+~~~~~~~~~~~~~~~~
 
-|   Receive information about an app entity specified by :app_id
+|   Receive information about an app entity specified by :appId
 |
 |   Available queries:
 |   - fields
@@ -182,10 +182,10 @@ POST /apps
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 
-PUT /apps/:app_id
-~~~~~~~~~~~~~~~~~
+PUT /apps/:appId
+~~~~~~~~~~~~~~~~
 
-|   Alters an app entry specified by :app_id
+|   Alters an app entry specified by :appId
 |
 |   Available queries
 |   - force
@@ -222,10 +222,10 @@ PUT /apps/:app_id
     *activated      (bool)
     *expiryDate     (integer or string) integer: app validity in days, string: date in format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
 
-DELETE /apps/:app_id
-~~~~~~~~~~~~~~~~~~~~
+DELETE /apps/:appId
+~~~~~~~~~~~~~~~~~~~
 
-|   Deletes an app from the database specified by :app_id
+|   Deletes an app from the database specified by :appId
 |
 |   Available queries: none
 
@@ -238,13 +238,13 @@ DELETE /apps/:app_id
           "message": "app '1' deleted."
         }
 
-/apps/:app_id/configs
----------------------
+/apps/:appId/configs
+--------------------
 
-GET /apps/:app_id/configs
-~~~~~~~~~~~~~~~~~~~~~~~~~
+GET /apps/:appId/configs
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-|   Receive a collection of config values of an app specified by :app_id
+|   Receive a collection of config values of an app specified by :appId
 |
 |   Available queries:
 |   - fields
@@ -297,10 +297,10 @@ GET /apps/:app_id/configs
           }
         }
 
-GET /apps/:app_id/configs/:config_id
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GET /apps/:appId/configs/:configId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|   Receive the information of a config value entity of an app specified by :app_id and :config_id
+|   Receive the information of a config value entity of an app specified by :appId and :configId
 |
 |   Available queries:
 |   - fields
@@ -337,10 +337,10 @@ GET /apps/:app_id/configs/:config_id
           }
         }
 
-PUT /apps/:app_id/configs
-~~~~~~~~~~~~~~~~~~~~~~~~~
+PUT /apps/:appId/configs
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-|   Alter a config value for an app specified by :app_id
+|   Alter a config value for an app specified by :appId
 |
 |   Available queries:
 |   - lang
@@ -372,10 +372,10 @@ PUT /apps/:app_id/configs
           }
         }
 
-DELETE /apps/:app_id/configs/:config_id
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DELETE /apps/:appId/configs/:configId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|   Deletes a config value of an app from the database specified by :app_id and :config_id
+|   Deletes a config value of an app from the database specified by :appId and :configId
 |
 |   Available queries: none
 
@@ -388,13 +388,13 @@ DELETE /apps/:app_id/configs/:config_id
           "message": "Config 'config_1' deleted."
         }
 
-/apps/:app_id/infos
--------------------
+/apps/:appId/infos
+------------------
 
-GET /apps/:app_id/infos
-~~~~~~~~~~~~~~~~~~~~~~~
+GET /apps/:appId/infos
+~~~~~~~~~~~~~~~~~~~~~~
 
-|   Receive a collection of info values of an app specified by :app_id
+|   Receive a collection of info values of an app specified by :appId
 |
 |   Available queries:
 |   - fields
@@ -447,10 +447,10 @@ GET /apps/:app_id/infos
           }
         }
 
-GET /apps/:app_id/infos/:info_id
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GET /apps/:appId/infos/:infoId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|   Receive the information of an info entity of an app specified by :app_id and :info_id
+|   Receive the information of an info entity of an app specified by :appId and :infoId
 |
 |   Available queries:
 |   - fields
