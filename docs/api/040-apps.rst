@@ -170,15 +170,22 @@ POST /apps
 
     Required data:
 
-    :data string name:          Name of the company
-    :data integer templateId:   The Template ID this app is connected to
-    :data string lang:          A language code_. Syntax: de_DE for Germany, de_AT for Austrian german
+    name:
+        Name of the company
+    templateId:
+        The template ID this app is connected to
+    lang:
+        A language code_. Syntax: de_DE for Germany, de_AT for Austrian german
 
     Optional data:
 
-    :data integer companyId:            ID of the owning company, if not specified, app will be owned by the company used for authorization
-    :data integer/string expiryDate:    Integer: Sets the number of days the app is valid, 0 sets the app valid for 50 years. String: Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
-    :data boolean activated:            Sets the activation status of the app
+    companyId:
+        ID of the owning company, if not specified, app will be owned by the company used for authorization
+    expiryDate:
+        Integer: Sets the number of days the app is valid, 0 sets the app valid for 50 years.
+        String: Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
+    activated:
+        Sets the activation status of the app
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 
