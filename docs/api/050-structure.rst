@@ -47,14 +47,9 @@ The image shows how the different types of settings:
     - info:         Works as a key => value storage for general application information like e.g. domain name, facebook ID, app validity in days, ...
     - config:       Is used to configure the application itself like e.g. font, logo uri, images, html and css code, ... The different types of config values are categorized. See the different types of config values and their characteristics `here <../api/060-config.html>`_.
     - translation:  Stores the translation strings used for multi language support.
-    - language:
+    - language:     Sets the available/activated languages.
 
+The language support works in the following way:
 
+The project version determines the languages available.
 
-language    -> project language makes the possible languages
-             creating a language in a template or app activates it
-
-configs     -> represents the set of config values available
-            -> same for infos
-
-struktur apps, templates, projects,

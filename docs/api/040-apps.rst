@@ -215,6 +215,13 @@ PUT /apps/:app_id
           }
         }
 
+    Changeable fields:
+
+    *templateId     (integer)
+    *name           (string)
+    *activated      (bool)
+    *expiryDate     (integer or string) integer: app validity in days, string: date in format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
+
 DELETE /apps/:app_id
 ~~~~~~~~~~~~~~~~~~~~
 
