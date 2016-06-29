@@ -27,7 +27,7 @@ which individual look and feel while the core logic behind them stays the same.
 Image 1 visualizes the relation between 'apps', 'templates' and 'projects'.
 
 .. image:: images/App_Customization.jpg
-    :alt: Image 1: App customization
+    :alt: Image 1
 
 As seen in Image 1, all versions point to their root project. Templates however can point to a project version as well as to a different template. The difference is determined by
 the parentId: If the parentId points to itself, or in other words, if the parentId equals the templateId, the template points to the project version. In the case that templateId and parentId
