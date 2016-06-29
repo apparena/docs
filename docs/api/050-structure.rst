@@ -45,8 +45,7 @@ template settings overwrite those of the parent template and project. Image 2 sh
 The image shows how the different types of settings:
 
     - info:         Works as a key => value storage for general application information like e.g. domain name, facebook ID, app validity in days, ...
-    - config:       Is used to configure the application itself like e.g. font, logo uri, images, html and css code, ...
-                    The different types of config values are categorized. See the different types of config values and their characteristics `here <../api/060-config.html>`_.
+    - config:       Is used to configure the application itself like e.g. font, logo uri, images, html and css code, ... The different types of config values are categorized. See the different types of config values and their characteristics `here <../api/060-config.html>`_.
     - translation:  Stores the translation strings used for multi language support.
     - language:
 
