@@ -609,7 +609,7 @@ POST /apps/:appId/languages
     .. sourcecode:: js
 
     {
-        "lang"  : "{{new_lang}}"
+        "lang"  : "en_US"
     }
 
 .. http:response:: Example response body
@@ -623,3 +623,112 @@ POST /apps/:appId/languages
         "lang": "en_US",
       }
     }
+
+/apps/:appId/translations
+-------------------------
+
+GET /apps/:appId/translations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive translations of an app specified by :appId
+
+|   *Available queries*
+|       lang
+|       fields
+|       exclude
+|       orderasc/orderdesc
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+    {
+      "_links": {
+        "self": {
+          "href": "http://my.app-arena.com/api/v2/apps/1/translations"
+        }
+      },
+      "_embedded": {
+        "data": {
+          "translation_1": {
+            "translationId": "translation_1",
+            "lang": "de_DE",
+            "revision": 0,
+            "translation": "translated_text",
+            "translated": true,
+            "translationPluralized": "translation_pluralized_text",
+            "pluralized": true,
+            "versionId": 1,
+            "_links": {
+              "version": {
+                "href": "http://my.app-arena.com/api/v2/projects/1/versions/1"
+              }
+            }
+          },
+          "translation_2": {
+            "translationId": "translation_2",
+                .
+                .
+                .
+          },
+          "translation_3":{
+                .
+                .
+                .
+          },
+            .
+            .
+            .
+          "translation_N":{
+                .
+                .
+                .
+          }
+        }
+      }
+    }
+
+PUT /apps/:appId/translations/:translationId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Change a translation for an app specified by :appId and :infoId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "translation": "new translation"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "translationId": "translation_1",
+            "lang": "de_DE",
+            "appId": 1,
+            "translation": "new translation",
+            "translated": true,
+            "translation_pluralized": "translation_pluralized_text",
+            "pluralized": true,
+            "revision": 1
+          }
+        }
+
+    **Changeable fields**
+
+    translation
+        string
+    translated
+        bool
+    translationPluralized
+        string
+    pluralized
+        bool
