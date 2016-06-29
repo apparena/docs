@@ -412,7 +412,7 @@ GET /apps/:app_id/infos
                 "name": "info value 1",
                 "revision": 0,
                 "value": "some_value",
-                "meta": "{"meta_key":{"meta_inner":"meta_inner_value"}},
+                "meta": "{"meta_key":{"meta_inner":"meta_inner_value"}}",
                 "type": "input",
                 "description": "This is an example of an app info value.",
                 "appId": 1,
