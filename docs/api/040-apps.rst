@@ -649,51 +649,51 @@ GET /apps/:appId/translations
 
     .. sourcecode:: js
 
-    {
-      "_links": {
-        "self": {
-          "href": "http://my.app-arena.com/api/v2/apps/1/translations"
-        }
-      },
-      "_embedded": {
-        "data": {
-          "translation_1": {
-            "translationId": "translation_1",
-            "lang": "de_DE",
-            "revision": 0,
-            "translation": "translated_text",
-            "translated": true,
-            "translationPluralized": "translation_pluralized_text",
-            "pluralized": true,
-            "versionId": 1,
-            "_links": {
-              "version": {
-                "href": "http://my.app-arena.com/api/v2/projects/1/versions/1"
-              }
+        {
+          "_links": {
+            "self": {
+              "href": "http://my.app-arena.com/api/v2/apps/1/translations"
             }
           },
-          "translation_2": {
-            "translationId": "translation_2",
+          "_embedded": {
+            "data": {
+              "translation_1": {
+                "translationId": "translation_1",
+                "lang": "de_DE",
+                "revision": 0,
+                "translation": "translated_text",
+                "translated": true,
+                "translationPluralized": "translation_pluralized_text",
+                "pluralized": true,
+                "versionId": 1,
+                "_links": {
+                  "version": {
+                    "href": "http://my.app-arena.com/api/v2/projects/1/versions/1"
+                  }
+                }
+              },
+              "translation_2": {
+                "translationId": "translation_2",
+                    .
+                    .
+                    .
+              },
+              "translation_3":{
+                    .
+                    .
+                    .
+              },
                 .
                 .
                 .
-          },
-          "translation_3":{
-                .
-                .
-                .
-          },
-            .
-            .
-            .
-          "translation_N":{
-                .
-                .
-                .
+              "translation_N":{
+                    .
+                    .
+                    .
+              }
+            }
           }
         }
-      }
-    }
 
 PUT /apps/:appId/translations/:translationId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
