@@ -15,7 +15,7 @@ GET /apps
 
     Receive a collection of apps owned by your company.
 
-    *Available queries*
+|   *Available queries*
 |       page
 |       items
 |       fields
