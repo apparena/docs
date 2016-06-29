@@ -565,3 +565,38 @@ DELETE /apps/:appId/infos/:infoId
 GET /apps/:appId/languages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    Receive information about the available and activated languages specified by :appId
+
+|   *Available queries*
+|       none
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "activated": {
+            "de_DE": {
+              "lang": "de_DE",
+              "activated": false,
+              "translated": 0,
+              "appId": 1
+            }
+          },
+          "available": {
+            "de_DE": {
+              "lang": "de_DE",
+              "activated": true,
+              "translated": 0,
+              "pluralized": 0,
+              "versionId": 1
+            },
+            "en_US": {
+              "lang": "en_US",
+              "activated": false,
+              "translated": 0,
+              "pluralized": 0,
+              "versionId": 1
+            }
+          }
+        }
