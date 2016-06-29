@@ -337,10 +337,10 @@ GET /apps/:appId/configs/:configId
           }
         }
 
-PUT /apps/:appId/configs
-~~~~~~~~~~~~~~~~~~~~~~~~
+PUT /apps/:appId/configs/:configId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|   Alter a config value for an app specified by :appId
+|   Alter a config value for an app specified by :appId and :configId
 |
 |   Available queries:
 |   - lang
@@ -372,12 +372,20 @@ PUT /apps/:appId/configs
           }
         }
 
+    Changeable fields:
+
+    - value          see `config <../api/060-config.html>`_ for characteristic behavior
+    - name           (string)
+    - description    (string)
+    - meta           see `config <../api/060-config.html>`_ meta section for information about the meta data of config values
+
 DELETE /apps/:appId/configs/:configId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |   Deletes a config value of an app from the database specified by :appId and :configId
 |
-|   Available queries: none
+|   Available queries:
+|   - lang
 
 .. http:response:: Example response body
 
@@ -484,8 +492,55 @@ GET /apps/:appId/infos/:infoId
           }
         }
 
+PUT /apps/:appId/infos/:infoId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: img/App_Customization.jpg
-    :height: 600
-       :width: 800
-               :scale: 50
+|   Alter a info value for an app specified by :appId and :infoId
+|
+|   Available queries:
+|   - lang
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "value"    :   "new value"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "appId": 1,
+            "infoId": "info_1",
+            "lang": "de_DE",
+            "revision": 1,
+            "value": "new value",
+            "meta": {"type":"string"}
+          }
+        }
+
+DELETE /apps/:appId/infos/:infoId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|   Deletes a info value of an app from the database specified by :appId and :infoId
+|
+|   Available queries:
+|   - lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Config 'info_1' deleted."
+        }
+
+GET /apps/:appId/languages
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
