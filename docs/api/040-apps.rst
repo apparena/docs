@@ -562,6 +562,9 @@ DELETE /apps/:appId/infos/:infoId
           "message": "Config 'info_1' deleted."
         }
 
+/apps/:appId/languages
+----------------------
+
 GET /apps/:appId/languages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -572,31 +575,51 @@ GET /apps/:appId/languages
 
 .. http:response:: Example response body
 
-.. sourcecode:: js
+    .. sourcecode:: js
+
+        {
+          "activated": {
+            "de_DE": {
+              "lang": "de_DE",
+              "appId": 1
+            }
+          },
+          "available": {
+            "de_DE": {
+              "lang": "de_DE",
+              "versionId": 1
+            },
+            "en_US": {
+              "lang": "en_US",
+              "versionId": 1
+            }
+          }
+        }
+
+POST /apps/:appId/languages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Activate a language in an app specified by :appId and :lang
+
+|   *Available queries*
+|       none
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
 
     {
-      "activated": {
-        "de_DE": {
-          "lang": "de_DE",
-          "activated": false,
-          "translated": 0,
-          "appId": 1
-        }
-      },
-      "available": {
-        "de_DE": {
-          "lang": "de_DE",
-          "activated": true,
-          "translated": 0,
-          "pluralized": 0,
-          "versionId": 1
-        },
-        "en_US": {
-          "lang": "en_US",
-          "activated": false,
-          "translated": 0,
-          "pluralized": 0,
-          "versionId": 1
-        }
+        "lang"  : "{{new_lang}}"
+    }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+    {
+      "status": 201,
+      "data": {
+        "appId": 1,
+        "lang": "en_US",
       }
     }
