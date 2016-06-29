@@ -732,3 +732,20 @@ PUT /apps/:appId/translations/:translationId
         string
     pluralized
         bool
+
+DELETE /apps/:appId/translations/:translationId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Deletes a translation of an app specified by :appId and :infoId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Translation 'translation_1' deleted."
+        }
