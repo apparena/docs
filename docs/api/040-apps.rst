@@ -15,7 +15,7 @@ GET /apps
 
     Receive a collection of apps owned by your company.
 
-    Available queries:
+    *Available queries*
         page
         items
         fields
@@ -94,7 +94,7 @@ GET /apps/:appId
 
     Receive information about an app entity specified by :appId
 
-    Available queries
+    *Available queries*
         fields
         exclude
 
@@ -137,7 +137,7 @@ POST /apps
 
     Creates a new app
 
-    Available queries:
+    *Available queries*
         force
 
 .. http:response:: Example request body
@@ -168,7 +168,7 @@ POST /apps
           }
         }
 
-    Required data:
+    **Required data**
 
     name
         Name of the company
@@ -177,7 +177,7 @@ POST /apps
     lang
         A language code_. Syntax: de_DE for Germany, de_AT for Austrian german
 
-    Optional data:
+    **Optional data**
 
     companyId
         ID of the owning company, if not specified, app will be owned by the company used for authorization
@@ -196,7 +196,7 @@ PUT /apps/:appId
 
     Alters an app entry specified by :appId
 
-    Available queries
+    *Available queries*
         force
 
 .. http:response:: Example request body
@@ -224,7 +224,7 @@ PUT /apps/:appId
           }
         }
 
-    Changeable fields:
+    **Changeable fields**
 
     templateId
         integer
@@ -243,7 +243,8 @@ DELETE /apps/:appId
 
     Deletes an app from the database specified by :appId
 
-    Available queries: none
+    *Available queries*
+        none
 
 .. http:response:: Example response body
 
@@ -262,7 +263,7 @@ GET /apps/:appId/configs
 
     Receive a collection of config values of an app specified by :appId
 
-    Available queries:
+    *Available queries*
         fields
         exclude
         lang
@@ -318,7 +319,7 @@ GET /apps/:appId/configs/:configId
 
     Receive the information of a config value entity of an app specified by :appId and :configId
 
-    Available queries:
+    *Available queries*
         fields
         exclude
         lang
@@ -358,7 +359,7 @@ PUT /apps/:appId/configs/:configId
 
     Alter a config value for an app specified by :appId and :configId
 
-    Available queries:
+    *Available queries*
         lang
 
 .. http:response:: Example request body
@@ -388,7 +389,7 @@ PUT /apps/:appId/configs/:configId
           }
         }
 
-    Changeable fields:
+    **Changeable fields**
 
     value
         see `config <../api/060-config.html>`_ for characteristic behavior
@@ -404,7 +405,7 @@ DELETE /apps/:appId/configs/:configId
 
     Deletes a config value of an app from the database specified by :appId and :configId
 
-    Available queries:
+    *Available queries*
         lang
 
 .. http:response:: Example response body
@@ -424,7 +425,7 @@ GET /apps/:appId/infos
 
     Receive a collection of info values of an app specified by :appId
 
-    Available queries:
+    *Available queries*
         fields
         exclude
         lang
@@ -480,7 +481,7 @@ GET /apps/:appId/infos/:infoId
 
     Receive the information of an info entity of an app specified by :appId and :infoId
 
-    Available queries:
+    *Available queries*
         fields
         exclude
         lang
@@ -517,7 +518,7 @@ PUT /apps/:appId/infos/:infoId
 
     Alter a info value for an app specified by :appId and :infoId
 
-    Available queries:
+    *Available queries*
         lang
 
 .. http:response:: Example request body
@@ -549,7 +550,7 @@ DELETE /apps/:appId/infos/:infoId
 
     Deletes a info value of an app from the database specified by :appId and :infoId
 
-    Available queries:
+    *Available queries*
         lang
 
 .. http:response:: Example response body
