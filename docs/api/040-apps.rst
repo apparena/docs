@@ -262,7 +262,7 @@ GET /apps/:app_id/configs
                 "name": "config value 1",
                 "revision": 0,
                 "value": "some_value",
-                "meta": "{"meta_key":{"meta_inner":"meta_inner_value"}}",
+                "meta": {"meta_key":{"meta_inner":"meta_inner_value"}},
                 "type": "input",
                 "description": "This is an example of a app config value.",
                 "appId": 1,
@@ -313,7 +313,7 @@ GET /apps/:app_id/configs/:config_id
                 "name": "config value 1",
                 "revision": 0,
                 "value": "some_value",
-                "meta": "{"meta_key":{"meta_inner":"meta_inner_value"}}",
+                "meta": {"meta_key":{"meta_inner":"meta_inner_value"}},
                 "type": "input",
                 "description": "This is an example of a app config value.",
                 "appId": 1,
@@ -361,7 +361,7 @@ PUT /apps/:app_id/configs
             "value": "new value",
             "description": "This is an example of a app config value.",
             "revision": 1,
-            "meta": "{"meta_key":{"meta_inner":"meta_inner_value"}}"
+            "meta": {"meta_key":{"meta_inner":"meta_inner_value"}}
           }
         }
 
@@ -412,7 +412,7 @@ GET /apps/:app_id/infos
                 "name": "info value 1",
                 "revision": 0,
                 "value": "some_value",
-                "meta": "{"meta_key":{"meta_inner":"meta_inner_value"}}",
+                "meta": {"meta_key":{"meta_inner":"meta_inner_value"}},
                 "type": "input",
                 "description": "This is an example of an app info value.",
                 "appId": 1,
@@ -463,9 +463,7 @@ GET /apps/:app_id/infos/:info_id
                 "revision": 0,
                 "value": "1234",
                 "templateId": 888,
-                "meta": {
-                  "type": "integer"
-                },
+                "meta": {"type": "integer"},
                 "_links": {
                   "info": {
                     "href": "http://my.app-arena.com/api/v2/apps/1/infos/info_1"
