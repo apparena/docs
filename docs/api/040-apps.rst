@@ -94,7 +94,7 @@ GET /apps/:appId
 
     Receive information about an app entity specified by :appId
 
-    *Available queries*
+|   *Available queries*
 |       fields
 |       exclude
 
@@ -137,7 +137,7 @@ POST /apps
 
     Creates a new app
 
-    *Available queries*
+|   *Available queries*
 |       force
 
 .. http:response:: Example request body
@@ -196,7 +196,7 @@ PUT /apps/:appId
 
     Alters an app entry specified by :appId
 
-    *Available queries*
+|   *Available queries*
 |       force
 
 .. http:response:: Example request body
@@ -243,8 +243,8 @@ DELETE /apps/:appId
 
     Deletes an app from the database specified by :appId
 
-    *Available queries*
-        none
+|   *Available queries*
+|       none
 
 .. http:response:: Example response body
 
@@ -263,7 +263,7 @@ GET /apps/:appId/configs
 
     Receive a collection of config values of an app specified by :appId
 
-    *Available queries*
+|   *Available queries*
 |       fields
 |       exclude
 |       lang
@@ -319,7 +319,7 @@ GET /apps/:appId/configs/:configId
 
     Receive the information of a config value entity of an app specified by :appId and :configId
 
-    *Available queries*
+|   *Available queries*
 |       fields
 |       exclude
 |       lang
@@ -359,7 +359,7 @@ PUT /apps/:appId/configs/:configId
 
     Alter a config value for an app specified by :appId and :configId
 
-    *Available queries*
+|   *Available queries*
 |       lang
 
 .. http:response:: Example request body
@@ -405,7 +405,7 @@ DELETE /apps/:appId/configs/:configId
 
     Deletes a config value of an app from the database specified by :appId and :configId
 
-    *Available queries*
+|   *Available queries*
 |       lang
 
 .. http:response:: Example response body
@@ -425,7 +425,7 @@ GET /apps/:appId/infos
 
     Receive a collection of info values of an app specified by :appId
 
-    *Available queries*
+|   *Available queries*
 |       fields
 |       exclude
 |       lang
@@ -481,7 +481,7 @@ GET /apps/:appId/infos/:infoId
 
     Receive the information of an info entity of an app specified by :appId and :infoId
 
-    *Available queries*
+|   *Available queries*
 |       fields
 |       exclude
 |       lang
@@ -518,7 +518,7 @@ PUT /apps/:appId/infos/:infoId
 
     Alter a info value for an app specified by :appId and :infoId
 
-    *Available queries*
+|   *Available queries*
 |       lang
 
 .. http:response:: Example request body
@@ -550,7 +550,7 @@ DELETE /apps/:appId/infos/:infoId
 
     Deletes a info value of an app from the database specified by :appId and :infoId
 
-    *Available queries*
+|   *Available queries*
 |       lang
 
 .. http:response:: Example response body
