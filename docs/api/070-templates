@@ -1,0 +1,130 @@
+API - Template requests
+=======================
+
+.. Tip:: You can test all requests in our API-Explorer_.
+
+.. _API-Explorer: http://www.app-arena.com
+
+/templates
+----------
+
+GET /templates
+~~~~~~~~~~~~~~
+
+    Receive a collection of templates owned by your company.
+
+|   *Available queries*
+|       page
+|       items
+|       fields
+|       exclude
+|       orderasc/orderdesc
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "next": {
+              "href": "https://my.app-arena.com/api/v2/templates?page=2"
+            },
+            "self": {
+              "href": "https://my.app-arena.com/api/v2/templates"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "1": {
+                "templateId": 1,
+                "name": "template_1",
+                "lang": "de_DE",
+                "parentId": 1,
+                "versionId": 1,
+                "companyId": 1,
+                "public": true,
+                "_links": {
+                  "template": {
+                    "href": "https://my.app-arena.com/api/v2/templates/1"
+                  },
+                  "language": {
+                    "href": "https://my.app-arena.com/api/v2/templates/1/languages"
+                  },
+                  "parent": {
+                    "href": "https://my.app-arena.com/api/v2/templates/1"
+                  },
+                  "version": {
+                    "href": "https://my.app-arena.com/api/v2/projects/1/versions/1"
+                  },
+                  "company": {
+                    "href": "https://my.app-arena.com/api/v2/companies/1"
+                  }
+                }
+              },
+              "2": {
+                "templateId": 2,
+                    .
+                    .
+                    .
+              },
+              .
+              .
+              .
+              "N":{
+                    .
+                    .
+                    .
+              }
+            }
+          },
+          "total_items": 1000,
+          "page_size": 20,
+          "page_count": 50,
+          "page_number": 1
+        }
+
+GET /templates/:templateId
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive information about a template entity specified by :templateId
+
+|   *Available queries*
+|       fields
+|       exclude
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "1": {
+                "templateId": 1,
+                "name": "template_1",
+                "lang": "de_DE",
+                "parentId": 1,
+                "versionId": 1,
+                "companyId": 1,
+                "public": true,
+                "_links": {
+                  "template": {
+                    "href": "http://my.app-arena.com/api/v2/templates/1"
+                  },
+                  "language": {
+                    "href": "http://my.app-arena.com/api/v2/templates/1/languages"
+                  },
+                  "parent": {
+                    "href": "http://my.app-arena.com/api/v2/templates/1"
+                  },
+                  "version": {
+                    "href": "http://my.app-arena.com/api/v2/projects/1/versions/1"
+                  },
+                  "company": {
+                    "href": "http://my.app-arena.com/api/v2/companies/1"
+                  }
+                }
+              }
+            }
+          }
+        }

@@ -32,9 +32,10 @@ API
 
     api/001-index
     api/020-auth
-    api/050-structure
-    api/060-config
-    api/040-apps
+    api/040-structure
+    api/050-config
+    api/060-apps
+    api/070-templates
     api/030-companies
     api/090-instances
     api/130-models
