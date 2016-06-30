@@ -168,23 +168,23 @@ POST /templates
     **Required data**
 
     name
-        Name of the company
-    templateId
-        The template ID this app is connected to
-    lang
-        A language code_. Syntax: de_DE for Germany, de_AT for Austrian german
+        (string) Name of the template
+    projectId
+        (integer) The project this template is connected to
 
     **Optional data**
 
+    parentId
+        (integer) The ID of the parent template
+    version
+        (float) The version of the specified project the template should point to, if not specified the most recent version is used
     companyId
-        ID of the owning company, if not specified, app will be owned by the company used for authorization
-    expiryDate
-        Integer
-            Sets the number of days the app is valid, 0 sets the app valid for 50 years.
-        String
-            Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
-    activated
-        Sets the activation status of the app
+        (integer) ID of the owning company, if not specified, app will be owned by the company used for authorization
+    lang
+        (string) The default language of the template, if left out, the default language of the project is used instead.
+        Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+    public
+        (bool) Sets the public status of the template
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 
@@ -683,3 +683,64 @@ GET /templates/:templateId/translations
           }
         }
 
+PUT /templates/:templateId/translations/:translationId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Change a translation for an template specified by :templateId and :infoId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "translation": "new translation"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "translationId": "translation_1",
+            "lang": "de_DE",
+            "templateId": 1,
+            "translation": "new translation",
+            "translated": true,
+            "translation_pluralized": "translation_pluralized_text",
+            "pluralized": true,
+            "revision": 1
+          }
+        }
+
+    **Changeable fields**
+
+    translation
+        string
+    translated
+        bool
+    translationPluralized
+        string
+    pluralized
+        bool
+
+DELETE /templates/:templateId/translations/:translationId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Deletes a translation of an template specified by :templateId and :infoId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Translation 'translation_1' in template '1' deleted."
+        }
