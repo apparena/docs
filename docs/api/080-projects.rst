@@ -110,7 +110,7 @@ POST /projects
 
     Creates a new project
 
-    .. Note:: When creating a new project, a version '1.0' and the specified language will be created as well.
+    .. Attention:: When creating a new project, a version '1.0' and the specified language will be created as well.
 
 |   *Available queries*
 |       force
