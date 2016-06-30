@@ -1,6 +1,8 @@
 API - Project requests
 ======================
 
+    .. Hint:: While this documentation uses dummy names like config_1, info_1, etc., you are free to choose the ID of the values yourself as long as they contain only letters from a-z, numbers plus the underscore
+
 /projects
 ---------
 
@@ -529,3 +531,26 @@ GET /projects/:projectId/configs/:configID
 .. http:response:: Example response body
 
     .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "config_1": {
+                "configId": "bla",
+                "lang": "de_DE",
+                "revision": 0,
+                "type": "input",
+                "name": "bla",
+                "value": "lala",
+                "meta": null,
+                "description": null,
+                "versionId": 384,
+                "_links": {
+                  "version": {
+                    "href": "http://manager.local/api/v2/projects/111/versions/384"
+                  }
+                }
+              }
+            }
+          }
+        }
