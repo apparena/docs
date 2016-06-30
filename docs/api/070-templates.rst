@@ -347,3 +347,218 @@ GET /templates/:templateId/configs/:configId
             }
           }
         }
+
+PUT /templates/:templateId/configs/:configId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Alter a config value for an template specified by :templateId and :configId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "value"    :   "new value"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "appId": 1,
+            "configId": "config_1",
+            "lang": "de_DE",
+            "type": "input",
+            "name": "config value 1",
+            "value": "new value",
+            "description": "This is an example of a app config value.",
+            "revision": 1,
+            "meta": {"meta_key":{"meta_inner":"meta_inner_value"}}
+          }
+        }
+
+    **Changeable fields**
+
+    value
+        see `config <../api/060-config.html>`_ for characteristic behavior
+    name
+        string
+    description
+        string
+    meta
+        see `config <../api/060-config.html>`_ meta section for information about the meta data of config values
+
+DELETE /templates/:templateId/configs/:configId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Deletes a config value of an template from the database specified by :templateId and :configId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Config 'config_1' deleted."
+        }
+
+/templates/:templateId/infos
+----------------------------
+
+GET /templates/:templateId/infos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive a collection of info values of an template specified by :templateId
+
+|   *Available queries*
+|       fields
+|       exclude
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "self": {
+              "href": "http://my.app-arena.com/api/v2/templates/1/infos"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "info_1": {
+                "infoId": "info_1",
+                "lang": "de_DE",
+                "name": "info value 1",
+                "revision": 0,
+                "value": "some_value",
+                "meta": {"meta_key":{"meta_inner":"meta_inner_value"}},
+                "type": "input",
+                "description": "This is an example of an template info value.",
+                "templateId": 1,
+                "_links": {
+                  "app": {
+                    "href": "http://my.app-arena.com/api/v2/templates/1"
+                  },
+                  "info": {
+                    "href": "http://my.app-arena.com/api/v2/templates/1/configs/info_1"
+                  }
+                }
+              },
+              "info_2": {
+                "infoId": "info_2",
+                    .
+                    .
+                    .
+                }
+              },
+                    .
+                    .
+                    .
+              }
+            }
+          }
+        }
+
+GET /templates/:templateId/infos/:infoId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive the information of an info entity of an template specified by :templateId and :infoId
+
+|   *Available queries*
+|       fields
+|       exclude
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "info_1": {
+                "infoId": "info_1",
+                "lang": "de_DE",
+                "revision": 0,
+                "value": "1234",
+                "templateId": 888,
+                "meta": {"type": "integer"},
+                "_links": {
+                  "info": {
+                    "href": "http://my.app-arena.com/api/v2/apps/1/infos/info_1"
+                  },
+                  "template": {
+                    "href": "http://my.app-arena.com/api/v2/templates/888"
+                  }
+                }
+              }
+            }
+          }
+        }
+
+PUT /templates/:templateId/infos/:infoId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Alter a info value for an template specified by :templateId and :infoId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "value"    :   "new value"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "templateId": 1,
+            "infoId": "info_1",
+            "lang": "de_DE",
+            "revision": 1,
+            "value": "new value",
+            "meta": {"type":"string"}
+          }
+        }
+
+    **Changeable fields**
+
+    value
+        string
+    meta
+        see `config <../api/060-config.html>`_ meta section for information about the PUT behaviour of meta data
+
+DELETE /templates/:templateId/infos/:infoId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Deletes a info value of an template from the database specified by :templateId and :infoId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Info 'info_1' in template '1' deleted."
+        }

@@ -275,7 +275,7 @@ GET /apps/:appId/configs
         {
           "_links": {
             "self": {
-              "href": "http://manager.local/api/v2/apps/1/configs"
+              "href": "http://my.app-arena.com/api/v2/apps/1/configs"
             }
           },
           "_embedded": {
@@ -437,7 +437,7 @@ GET /apps/:appId/infos
         {
           "_links": {
             "self": {
-              "href": "http://manager.local/api/v2/apps/1/infos"
+              "href": "http://my.app-arena.com/api/v2/apps/1/infos"
             }
           },
           "_embedded": {
@@ -445,11 +445,9 @@ GET /apps/:appId/infos
               "info_1": {
                 "infoId": "info_1",
                 "lang": "de_DE",
-                "name": "info value 1",
                 "revision": 0,
                 "value": "some_value",
                 "meta": {"meta_key":{"meta_inner":"meta_inner_value"}},
-                "type": "input",
                 "description": "This is an example of an app info value.",
                 "appId": 1,
                 "_links": {
@@ -457,12 +455,12 @@ GET /apps/:appId/infos
                     "href": "http://my.app-arena.com/api/v2/apps/1"
                   },
                   "info": {
-                    "href": "http://my.app-arena.com/api/v2/apps/1/configs/config_1"
+                    "href": "http://my.app-arena.com/api/v2/apps/1/infos/info_1"
                   }
                 }
               },
-              "config_2": {
-                "configId": "config_2",
+              "info_2": {
+                "infoId": "info_2",
                     .
                     .
                     .
@@ -566,7 +564,7 @@ DELETE /apps/:appId/infos/:infoId
 
         {
           "status": 200,
-          "message": "Config 'info_1' deleted."
+          "message": "Info 'info_1' in app '1' deleted."
         }
 
 /apps/:appId/languages
