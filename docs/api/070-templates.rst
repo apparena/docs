@@ -562,3 +562,124 @@ DELETE /templates/:templateId/infos/:infoId
           "status": 200,
           "message": "Info 'info_1' in template '1' deleted."
         }
+
+/templates/:templateId/languages
+--------------------------------
+
+GET /templates/:templateId/languages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive information about the available and activated languages specified by :templateId
+
+|   *Available queries*
+|       none
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "available": {
+            "de_DE": {
+              "lang": "de_DE",
+              "versionId": 1
+            },
+            "en_US": {
+              "lang": "en_US",
+              "versionId": 1
+            }
+          }
+        }
+
+POST /templates/:templateId/languages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Activate a language in an template specified by :templateId and :lang
+
+|   *Available queries*
+|       none
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "lang"  : "en_US"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 201,
+          "data": {
+            "templateId": 1,
+            "lang": "en_US",
+          }
+        }
+
+/templates/:templateId/translations
+-----------------------------------
+
+GET /templates/:templateId/translations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive translations of an template specified by :templateId
+
+|   *Available queries*
+|       lang
+|       fields
+|       exclude
+|       orderasc/orderdesc
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "self": {
+              "href": "http://my.app-arena.com/api/v2/templates/1/translations"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "translation_1": {
+                "translationId": "translation_1",
+                "lang": "de_DE",
+                "revision": 0,
+                "translation": "translated_text",
+                "translated": true,
+                "translationPluralized": "translation_pluralized_text",
+                "pluralized": true,
+                "versionId": 1,
+                "_links": {
+                  "version": {
+                    "href": "http://my.app-arena.com/api/v2/projects/1/versions/1"
+                  }
+                }
+              },
+              "translation_2": {
+                "translationId": "translation_2",
+                    .
+                    .
+                    .
+              },
+              "translation_3":{
+                    .
+                    .
+                    .
+              },
+                .
+                .
+                .
+              "translation_N":{
+                    .
+                    .
+                    .
+              }
+            }
+          }
+        }
+
