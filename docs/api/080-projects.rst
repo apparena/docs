@@ -110,7 +110,7 @@ POST /projects
 
     Creates a new project
 
-    .. Attention:: When creating a new project, a version '1.0' and the specified language will be created as well.
+    .. Note:: When creating a new project, a version '1.0' and the specified language will be created as well.
 
 |   *Available queries*
 |       force
@@ -150,6 +150,8 @@ POST /projects
             }
           }
         }
+
+    .. Tip:: You can change the name of the initial version with a PUT request to /projects/:projectId/versions/1.0
 
     **Required data**
 
