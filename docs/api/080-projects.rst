@@ -1,12 +1,8 @@
 API - Project requests
 ======================
 
-.. Tip:: You can test all requests in our API-Explorer_.
-
-.. _API-Explorer: http://www.app-arena.com
-
 /projects
-----------
+---------
 
 GET /projects
 ~~~~~~~~~~~~~
@@ -230,4 +226,118 @@ DELETE /projects/:projectId
         {
           "status": 200,
           "message": "Project '2' deleted."
+        }
+
+/projects/:projectId/versions
+-----------------------------
+
+GET /projects/:projectId/versions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive information about the versions of a project specified by :project_id
+
+|   *Available queries*
+|       page
+|       items
+|       fields
+|       exclude
+|       orderasc/orderdesc
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "self": {
+              "href": "http://my.app-arena.com/api/v2/projects/1/versions"
+            },
+            "next": {
+              "href": "http://my.app-arena.com/api/v2/projects/1/versions?page=2"
+            },
+          },
+          "_embedded": {
+            "data": {
+              "1.0": {
+                "versionId": 1,
+                "name": "project version 1.0",
+                "variant": 1,
+                "public": false,
+                "lang": "de_DE",
+                "companyId": 1,
+                "projectId": 1,
+                "_links": {
+                  "version": {
+                    "href": "http://my.app-arena.com/api/v2/projects/1/versions/1.0"
+                  },
+                  "company": {
+                    "href": "http://my.app-arena.com/api/v2/companies/1"
+                  },
+                  "project": {
+                    "href": "http://my.app-arena.com/api/v2/projects/1"
+                  }
+                }
+              },
+              "1.1": {
+                "versionId": 2,
+                        .
+                        .
+                        .
+              },
+                .
+                .
+                .
+              "X.Y": {
+                        .
+                        .
+                        .
+              }
+            }
+          },
+          "total_items": 10,
+          "page_size": 5,
+          "page_count": 1,
+          "page_number": 1
+        }
+
+GET /projects/:projectId/versions/:versionId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive information about a project version specified by :projectId and :versionId
+
+    .. Note:: Use the version number as :versionId e.g.: GET /projects/1/versions/1.1
+
+|   *Available queries*
+|       fields
+|       exclude
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "1.1": {
+                "versionId": 2,
+                "name": "project version 1.1",
+                "variant": 1.1,
+                "public": false,
+                "lang": "de_DE",
+                "companyId": 1,
+                "projectId": 1,
+                "_links": {
+                  "version": {
+                    "href": "http://manager.local/api/v2/projects/1/versions/1.1"
+                  },
+                  "company": {
+                    "href": "http://manager.local/api/v2/companies/1"
+                  },
+                  "project": {
+                    "href": "http://manager.local/api/v2/projects/1"
+                  }
+                }
+              }
+            }
+          }
         }
