@@ -1,6 +1,8 @@
 API - Template requests
 =======================
 
+    .. Hint:: While this documentation uses dummy names like config_1, info_1, etc., you are free to choose the ID of the values yourself as long as they contain only letters from a-z, numbers 0-9 and/or the underscore
+
 /templates
 ----------
 
@@ -190,7 +192,7 @@ PUT /templates/:templateId
     Alters an template entry specified by :templateId
 
 |   *Available queries*
-|       force
+|       lang
 
 .. http:response:: Example request body
 

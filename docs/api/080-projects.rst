@@ -1,7 +1,7 @@
 API - Project requests
 ======================
 
-    .. Hint:: While this documentation uses dummy names like config_1, info_1, etc., you are free to choose the ID of the values yourself as long as they contain only letters from a-z, numbers plus the underscore
+    .. Hint:: While this documentation uses dummy names like config_1, info_1, etc., you are free to choose the ID of the values yourself as long as they contain only letters from a-z, numbers 0-9 and/or the underscore
 
 /projects
 ---------
@@ -553,4 +553,128 @@ GET /projects/:projectId/configs/:configID
               }
             }
           }
+        }
+
+POST /projects/:projectId/configs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Creates a new config value
+
+|   *Available queries*
+|       force
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name"      : "new config",
+            "configId"  : "text_content",
+            "type"      : "input"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 201,
+          "data": {
+            "versionId": 1,
+            "configId": "text_content",
+            "lang": "de_DE",
+            "type": "input",
+            "name": "new config",
+            "value": null,
+            "description": null,
+            "meta": null,
+            "revision": 0
+          }
+        }
+
+    **Required data**
+
+    name
+        (string) Sets the name of the config value
+    configId
+        (string) Sets the identifier of the new config value
+    type
+        (string) Sets the type of the config value. See `config <../api/060-config.html>`_ for more information
+
+    **Optional data**
+
+    value
+        (string)
+    description
+        (string)
+    meta
+        see `config <../api/060-config.html>`_ meta section for information about adding information to the meta data
+    lang
+        (string) The language of the config value, if left out, the default language of the project is used instead.
+        Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+
+
+PUT /projects/:projectId/configs/:configId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Alters the properties of a project config entry specified by :projectId and :configId
+
+|   *Available queries*
+|       lang
+|       version
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":         "new config name",
+            "meta_example": "meta_content",
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "versionId": 1,
+            "configId": "config_1",
+            "lang": "de_DE",
+            "type": "input",
+            "name": "new config name",
+            "value": "some_value",
+            "description": null,
+            "meta": "{\"meta_example\":\"meta_content\"}",
+            "revision": 2
+          }
+        }
+
+    **Changeable parameters**
+
+    description
+        (string)
+    name
+        (string)
+    value
+        (string)
+    meta
+        see `config <../api/060-config.html>`_ meta section for information about adding information to the meta data
+
+DELETE /projects/:projectId/configs/:configId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Deletes a config entry of an project from the database specified by :projectId and :configId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Config 'config_1' in project '1' deleted."
         }
