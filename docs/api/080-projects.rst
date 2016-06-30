@@ -152,9 +152,9 @@ POST /projects
     **Required data**
 
     name
-        (string) Name of the project
+        (string) The name of the project
     lang
-        (string) A language code_. Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+        (string) The default language code_ of the version. Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
 
         Used to set the default language of the initial project version.
 
@@ -201,11 +201,11 @@ PUT /projects/:projectId
     **Changeable fields**
 
     name
-        (string)
+        (string) The name of the project
     companyId
         (integer) changes the owner of the project
     description
-        (string)
+        (string) A description of the project
 
 DELETE /projects/:projectId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -383,15 +383,15 @@ POST /projects/:projectId/versions
     **Required data**
 
     name
-        (string) Name of the template
+        (string) The name of the version
     lang
-        (string) The default language of the template, if left out, the default language of the project is used instead.
+        (string) The default language of the version, if left blank, the default language of the project is used instead
         Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
 
     **Optional data**
 
     variant
-        (float) The desired version number. If left blank, the version number gets auto incremented.
+        (float) The desired version number. If left blank, the version number gets auto incremented
     public
         (bool) Sets the public status of the version
 
@@ -431,6 +431,44 @@ PUT /projects/:projectId/versions/:versionId
     **Changeable parameters**
 
     name
-        (string)
+        (string) The name of the version
     public
-        (bool)
+        (bool) The public status of the version
+
+DELETE /projects/:projectId/versions/:versionId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Deletes a version of an project from the database specified by :projectId and :versionId
+
+    .. Warning:: This deletes all containing settings and translations of the version as well!
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Version '111' deleted."
+        }
+
+/projects/:projectId/configs
+----------------------------
+
+    .. Note:: For all of the following requests, the query 'version' can be used. If it is left blank the operation will automatically use the most recent version
+
+GET /projects/:projectId/configs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive a collection of config values of an template specified by :templateId
+
+|   *Available queries*
+|       fields
+|       exclude
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
