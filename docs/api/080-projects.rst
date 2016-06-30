@@ -157,21 +157,15 @@ POST /projects
 
     name
         (string) Name of the project
-    templateId
-        The template ID this app is connected to
     lang
-        A language code_. Syntax: de_DE for Germany, de_AT for Austrian german
+        (string) A language code_. Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+        Used to set the default language of the initial project version.
 
     **Optional data**
 
     companyId
-        ID of the owning company, if not specified, app will be owned by the company used for authorization
-    expiryDate
-        Integer
-            Sets the number of days the app is valid, 0 sets the app valid for 50 years.
-        String
-            Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
-    activated
-        Sets the activation status of the app
+        (integer) ID of the owning company, if not specified, app will be owned by the company used for authorization
+    description
+        (string) A description of the project
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
