@@ -462,7 +462,64 @@ DELETE /projects/:projectId/versions/:versionId
 GET /projects/:projectId/configs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Receive a collection of config values of an template specified by :templateId
+    Receive a collection of config values of an project specified by :projectId
+
+|   *Available queries*
+|       fields
+|       exclude
+|       lang
+|       version
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "self": {
+              "href": "http://manager.local/api/v2/projects/1/configs"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "config_1": {
+                "configId": "config_1",
+                "lang": "de_DE",
+                "revision": 0,
+                "type": "input",
+                "name": "project config_1 name",
+                "value": "some_value",
+                "meta": {"meta_key":{"meta_inner":"meta_inner_value"}},
+                "description": "This is a config value description",
+                "versionId": 1,
+                "_links": {
+                  "version": {
+                    "href": "http://my.app-arena.com/api/v2/projects/1/versions/1.0"
+                  }
+                }
+              },
+              "config_2": {
+                "configId": "config_2",
+                        .
+                        .
+                        .
+              },
+                .
+                .
+                .
+              "config_N": {
+                        .
+                        .
+                        .
+              }
+            }
+          }
+        }
+
+GET /projects/:projectId/configs/:configID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive the information of a config value entity of a project specified by :templateId and :configId
 
 |   *Available queries*
 |       fields
