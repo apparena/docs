@@ -187,3 +187,163 @@ POST /templates
         Sets the activation status of the app
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+
+PUT /templates/:templateId
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Alters an template entry specified by :templateId
+
+|   *Available queries*
+|       force
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name"          : "new template name"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "templateId": 1,
+            "versionId": 1,
+            "projectId": 1,
+            "parentId": 1,
+            "companyId": 1,
+            "lang": "de_DE",
+            "name": "new template name",
+            "public": false
+          }
+        }
+
+    **Changeable fields**
+
+    parentId
+        integer
+    versionId
+        integer
+    companyId
+        integer
+    name
+        string
+    public
+        bool
+
+DELETE /templates/:templateId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Deletes an template from the database specified by :templateId
+
+|   *Available queries*
+|       none
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Template '1' deleted."
+        }
+
+/templates/:templateId/configs
+------------------------------
+
+GET /templates/:templateId/configs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive a collection of config values of an template specified by :templateId
+
+|   *Available queries*
+|       fields
+|       exclude
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "self": {
+              "href": "http://my.app-arena.com/api/v2/templates/1/configs"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "config_1": {
+                "configId": "config_1",
+                "lang": "de_DE",
+                "revision": 0,
+                "name": "template_config_name",
+                "value": "some_value",
+                "type": "input",
+                "description": "This is an example of a template config value.",
+                "templateId": 1,
+                "meta": {"meta_key":{"meta_inner":"meta_inner_value"}},
+                "_links": {
+                  "template": {
+                    "href": "http://my.app-arena.com/api/v2/templates/1"
+                  }
+                }
+              },
+              "config_2": {
+                "configId": "config_2",
+                    .
+                    .
+                    .
+              },
+                .
+                .
+                .
+              "config_N":{
+              }
+            }
+          }
+        }
+
+GET /templates/:templateId/configs/:configId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive the information of a config value entity of an template specified by :templateId and :configId
+
+|   *Available queries*
+|       fields
+|       exclude
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "config_1": {
+                "configId": "config_1",
+                "lang": "de_DE",
+                "name": "template_config_name",
+                "revision": 0,
+                "value": "some_value",
+                "meta": {"meta_key":{"meta_inner":"meta_inner_value"}},
+                "type": "input",
+                "description": "This is an example of a template config value.",
+                "appId": 1,
+                "_links": {
+                  "app": {
+                    "href": "http://my.app-arena.com/api/v2/apps/1"
+                  },
+                  "config": {
+                    "href": "http://my.app-arena.com/api/v2/apps/1/configs/config_1"
+                  }
+                }
+              }
+            }
+          }
+        }

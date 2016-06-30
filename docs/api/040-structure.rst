@@ -49,7 +49,7 @@ The image shows how the different types of settings:
     - translation:  Stores the translation strings used for multi language support.
     - language:     Sets the available/activated languages.
 
-The language support works in the following way:
+The language functionality :
 
 The project version determines the languages available.
 

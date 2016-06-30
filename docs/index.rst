@@ -36,9 +36,6 @@ API
     api/050-config
     api/060-apps
     api/070-templates
-    api/030-companies
-    api/090-instances
-    api/130-models
     glossary
 
 .. _sdk:

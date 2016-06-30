@@ -63,22 +63,22 @@ GET /apps
               "2": {
                 "appId": 2,
                 "name": "Example app 2",
-                 .
-                 .
-                 .
+                        .
+                        .
+                        .
               },
               "3": {
-                 .
-                 .
-                 .
+                        .
+                        .
+                        .
               },
-                 .
-                 .
-                 .
-              "20": {
-                 .
-                 .
-                 .
+                .
+                .
+                .
+              "N": {
+                        .
+                        .
+                        .
               }
             }
           },
@@ -343,7 +343,7 @@ GET /apps/:appId/configs/:configId
                 "appId": 1,
                 "_links": {
                   "app": {
-                    "href": "http://manager.local/api/v2/apps/1"
+                    "href": "http://my.app-arena.com/api/v2/apps/1"
                   },
                   "config": {
                     "href": "http://my.app-arena.com/api/v2/apps/1/configs/config_1"
