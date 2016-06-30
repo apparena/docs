@@ -201,13 +201,11 @@ PUT /projects/:projectId
     **Changeable fields**
 
     name
-        integer
+        (string)
     companyId
-        integer
-
-        changes the owner of the project
+        (integer) changes the owner of the project
     description
-        string
+        (string)
 
 DELETE /projects/:projectId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -341,3 +339,98 @@ GET /projects/:projectId/versions/:versionId
             }
           }
         }
+
+POST /projects/:projectId/versions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Create a new version for a project, specified by :projectId
+
+    .. Note:: The default language specified in the request body will be created automatically as well!
+
+|   *Available queries*
+|       force
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name"      : "new project version",
+            "lang"      : "de_DE"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "versionId": 3,
+            "projectId": 1,
+            "companyId": 1,
+            "name": "new project version",
+            "lang": "de_DE",
+            "variant": 1.2,
+            "public": false,
+            "language": {
+              "versionId": 3,
+              "lang": "de_DE",
+            }
+          }
+        }
+
+    **Required data**
+
+    name
+        (string) Name of the template
+    lang
+        (string) The default language of the template, if left out, the default language of the project is used instead.
+        Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+
+    **Optional data**
+
+    variant
+        (float) The desired version number. If left blank, the version number gets auto incremented.
+    public
+        (bool) Sets the public status of the version
+
+PUT /projects/:projectId/versions/:versionId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Alters the properties of a version, specified by :projectId and :versionId
+
+|   *Available queries*
+|       none
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name"      : "new version name"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "versionId": 3,
+            "projectId": 1,
+            "companyId": 1,
+            "name": "new version name",
+            "lang": "de_DE",
+            "variant": 1.2,
+            "public": false
+          }
+        }
+
+    **Changeable parameters**
+
+    name
+        (string)
+    public
+        (bool)

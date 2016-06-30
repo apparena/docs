@@ -218,18 +218,18 @@ PUT /templates/:templateId
           }
         }
 
-    **Changeable fields**
+    **Changeable parameters**
 
     parentId
-        integer
+        (integer)
     versionId
-        integer
+        (integer)
     companyId
-        integer
+        (integer)
     name
-        string
+        (string)
     public
-        bool
+        (bool)
 
 DELETE /templates/:templateId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -381,14 +381,14 @@ PUT /templates/:templateId/configs/:configId
           }
         }
 
-    **Changeable fields**
+    **Changeable parameters**
 
     value
         see `config <../api/060-config.html>`_ for characteristic behavior
     name
-        string
+        (string)
     description
-        string
+        (string)
     meta
         see `config <../api/060-config.html>`_ meta section for information about the meta data of config values
 
@@ -537,10 +537,10 @@ PUT /templates/:templateId/infos/:infoId
           }
         }
 
-    **Changeable fields**
+    **Changeable parameters**
 
     value
-        string
+        (string)
     meta
         see `config <../api/060-config.html>`_ meta section for information about the PUT behaviour of meta data
 
@@ -715,16 +715,16 @@ PUT /templates/:templateId/translations/:translationId
           }
         }
 
-    **Changeable fields**
+    **Changeable parameters**
 
     translation
-        string
+        (string)
     translated
-        bool
+        (bool)
     translationPluralized
-        string
+        (string)
     pluralized
-        bool
+        (bool)
 
 DELETE /templates/:templateId/translations/:translationId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
