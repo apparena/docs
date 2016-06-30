@@ -243,6 +243,8 @@ DELETE /apps/:appId
 
     Deletes an app from the database specified by :appId
 
+    .. Warning:: This deletes all contained settings and translations as well!
+
 |   *Available queries*
 |       none
 

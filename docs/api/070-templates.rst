@@ -240,6 +240,8 @@ DELETE /templates/:templateId
 
     Deletes an template from the database specified by :templateId
 
+    .. Warning:: This deletes all containing settings and translations as well!
+
 |   *Available queries*
 |       none
 

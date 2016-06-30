@@ -170,3 +170,64 @@ POST /projects
         (string) A description of the project
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+
+PUT /projects/:projectId
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Alters an project entry specified by :projectId
+
+|   *Available queries*
+|       force
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name":         "new project name",
+            "description":  "This is a new project description"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "projectId": 2,
+            "companyId": 1,
+            "name": "new project name",
+            "description": "This is a new project description"
+          }
+        }
+
+    **Changeable fields**
+
+    name
+        integer
+    companyId
+        integer
+
+        changes the owner of the project
+    description
+        string
+
+DELETE /projects/:projectId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Deletes an project from the database specified by :projectId
+
+    .. Warning:: This deletes all versions including all contained settings and translations as well!
+
+|   *Available queries*
+|       none
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Project '2' deleted."
+        }
