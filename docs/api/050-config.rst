@@ -1,3 +1,3 @@
-API - Data structure
-====================
+API - Config data
+=================
 
