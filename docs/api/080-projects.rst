@@ -1019,3 +1019,31 @@ PUT /projects/:projectId/translations/:translationId
             "revision": 1
           }
         }
+
+    **Changeable parameters**
+
+    translation
+        (string)
+    translated
+        (bool)
+    translationPluralized
+        (string)
+    pluralized
+        (bool)
+
+DELETE /projects/:projectId/translations/:translationId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Deletes a translation of a project specified by :projectId and :infoId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Translation 'translation_1' in project '1' deleted."
+        }
