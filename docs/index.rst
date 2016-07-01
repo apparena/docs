@@ -37,6 +37,7 @@ API
     api/060-apps
     api/070-templates
     api/080-projects
+    api/090-companies
     glossary
 
 .. _sdk:
