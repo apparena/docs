@@ -328,13 +328,13 @@ GET /projects/:projectId/versions/:versionId
                 "projectId": 1,
                 "_links": {
                   "version": {
-                    "href": "http://manager.local/api/v2/projects/1/versions/1.1"
+                    "href": "http://my.app-arena.com/api/v2/projects/1/versions/1.1"
                   },
                   "company": {
-                    "href": "http://manager.local/api/v2/companies/1"
+                    "href": "http://my.app-arena.com/api/v2/companies/1"
                   },
                   "project": {
-                    "href": "http://manager.local/api/v2/projects/1"
+                    "href": "http://my.app-arena.com/api/v2/projects/1"
                   }
                 }
               }
@@ -479,7 +479,7 @@ GET /projects/:projectId/configs
         {
           "_links": {
             "self": {
-              "href": "http://manager.local/api/v2/projects/1/configs"
+              "href": "http://my.app-arena.com/api/v2/projects/1/configs"
             }
           },
           "_embedded": {
@@ -547,7 +547,7 @@ GET /projects/:projectId/configs/:configID
                 "versionId": 384,
                 "_links": {
                   "version": {
-                    "href": "http://manager.local/api/v2/projects/111/versions/384"
+                    "href": "http://my.app-arena.com/api/v2/projects/111/versions/384"
                   }
                 }
               }
@@ -677,4 +677,345 @@ DELETE /projects/:projectId/configs/:configId
         {
           "status": 200,
           "message": "Config 'config_1' in project '1' deleted."
+        }
+
+/projects/:projectId/infos
+--------------------------
+
+GET /projects/:projectId/infos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive the collection of info values of a project specified by :projectId
+
+|   *Available queries*
+|       fields
+|       exclude
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "self": {
+              "href": "http://my.app-arena.com/api/v2/projects/1/infos"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "info_1": {
+                "infoId": "info_1",
+                "lang": "de_DE",
+                "revision": 1,
+                "value": "some_value",
+                "versionId": 1,
+                "meta": null,
+                "_links": {
+                  "version": {
+                    "href": "http://my.app-arena.com/api/v2/projects/1/versions/1.0"
+                  }
+                }
+              },
+              "info_2": {
+                "infoId": "info_2",
+                        .
+                        .
+                        .
+              },
+                .
+                .
+                .
+              "info_N": {
+                        .
+                        .
+                        .
+              }
+            }
+          }
+        }
+
+GET /projects/:projectId/infos/:infoId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive the information of an info entity of an project specified by :projectId and :infoId
+
+|   *Available queries*
+|       fields
+|       exclude
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "info_1": {
+                "infoId": "info_1",
+                "lang": "de_DE",
+                "revision": 1,
+                "value": "some_value",
+                "versionId": 1,
+                "meta": {"type": "string"},
+                "_links": {
+                  "version": {
+                    "href": "http://my.app-arena.com/api/v2/projects/1/versions/1.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+
+POST /projects/:projectId/infos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Creates a new info entry
+
+|   *Available queries*
+|       force
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "name"      : "new info name",
+            "infoId"    : "new info",
+            "lang"      : "de_DE",
+            "metakey"   : "metavalue"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "versionId": 1,
+            "infoId": "new info",
+            "lang": "de_DE",
+            "value": null,
+            "meta": {"metakey": "metavalue"},
+            "revision": 0
+          }
+        }
+
+    **Required data**
+
+    infoId
+        (string) Sets the identifier of the new info entry
+
+    **Optional data**
+
+    value
+        (string) Sets the value of the new info entry
+    meta
+        see `config <../api/060-config.html>`_ meta section for information about adding information to the meta data
+    lang
+        (string) The language of the config value, if left out, the default language of the project is used instead.
+        Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+
+PUT /projects/:projectId/infos/:infoId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Alter a info value for an project specified by :projectId and :infoId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "value":   "new value"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "versionId": 1,
+            "infoId": "info_1",
+            "lang": "de_DE",
+            "value": "new value",
+            "meta": "{\"type\":\"string\"}",
+            "revision": 2
+          }
+        }
+
+    **Changeable parameters**
+
+    value
+        (string)
+    meta
+        see `config <../api/060-config.html>`_ meta section for information about the PUT behaviour of meta data
+
+DELETE /projects/:projectId/infos/:infoId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Deletes a info value of an project from the database specified by :projectId and :infoId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "Info 'info_1' in project '1' deleted."
+        }
+
+/projects/:projectId/languages
+------------------------------
+
+GET /projects/:projectId/languages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive information about the available languages specified by :projectId
+
+|   *Available queries*
+|       none
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "available": {
+            "de_DE": {
+              "lang": "de_DE",
+              "versionId": 112
+            }
+          }
+        }
+
+POST /projects/:projectId/languages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Activate a language in an project specified by :projectId and :lang
+
+|   *Available queries*
+|       none
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "lang"  : "en_US"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 201,
+          "data": {
+            "versionId": 1,
+            "lang": "en_US"
+          }
+        }
+
+/projects/:projectId/translations
+---------------------------------
+
+GET /projects/:projectId/translations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive translations of a project specified by :projectId
+
+|   *Available queries*
+|       lang
+|       fields
+|       exclude
+|       orderasc/orderdesc
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "self": {
+              "href": "http://my-app-arena.com/api/v2/projects/1/translations"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "translation_1": {
+                "translationId": "translation_1",
+                "lang": "de_DE",
+                "revision": 0,
+                "translation": "This is a translated text",
+                "translated": true,
+                "translationPluralized": null,
+                "pluralized": false,
+                "versionId": 1,
+                "_links": {
+                  "version": {
+                    "href": "http://my-app-arena.com/api/v2/projects/1/versions/1.0"
+                  }
+                }
+              },
+              "translation_2": {
+                "translationId": "translation_2",
+                            .
+                            .
+                            .
+              },
+                .
+                .
+                .
+              "translation_N": {
+                            .
+                            .
+                            .
+              }
+            }
+          }
+        }
+
+PUT /projects/:projectId/translations/:translationId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Change a translation for a project specified by :projectId and :infoId
+
+|   *Available queries*
+|       lang
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "translation":  "new translation"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "translationId": "translation_1",
+            "lang": "de_DE",
+            "versionId": 1,
+            "translated": true,
+            "translation": "new translation",
+            "translationPluralized": null,
+            "pluralized": false,
+            "revision": 1
+          }
         }
