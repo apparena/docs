@@ -30,7 +30,7 @@ Image 1 visualizes the relation between 'apps', 'templates' and 'projects'.
     :alt: Image 1
 
 As seen in Image 1, all versions point to their root project. Templates however can point to a project version as well as to a another template. The difference is determined by
-the parentId: If the parentId points to itself, or in other words, if the parentId equals the templateId, the template points to the project version declared in it. If it is the case that
+the parentId: If the parentId points to itself, or in other words, if the parentId equals the templateId, the template points to the project version declared in it. In the case that
 templateId and parentId differ, the template points to its parent template.
 Templates may only contain settings that are already present in the project version. They are therefore only capable of overwriting existing settings and do not create configurations on their
 own. Besides other crucial information, the app itself holds a set of configurations as well, making it a mixture between a template and additional customization options. The app is mostly
@@ -49,7 +49,12 @@ The image shows how the different types of settings:
     - translation:  Stores the translation strings used for multi language support.
     - language:     Sets the available/activated languages.
 
-The language functionality :
+The hierarchy of the distinct sections lead to some basic rules in the design of an application:
+The project version dictates the range of configs, infos and languages available for templates and apps pointing to it. Templates and app can therefore
+only change (by PUT request) configs, infos and translations in languages present in the project. New entries can only be created in the project itself, which explains
+the absence of POST request for the respective sections.
+Slightly different is the behaviour for the available languages. While it is possible to edit configs, infos and translations
 
-The project version determines the languages available.
+
+
 
