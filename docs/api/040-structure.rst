@@ -53,7 +53,7 @@ The hierarchy of the distinct sections lead to some basic rules in the design of
 The project version dictates the range of configs, infos and languages available for templates and apps pointing to it. Templates and app can therefore
 only change (by PUT request) configs, infos and translations in languages present in the project. New entries can only be created in the project itself, which explains
 the absence of POST request for the respective sections.
-Slightly different is the behaviour for the available languages. While it is possible to edit configs, infos and translations
+Slightly different is the behaviour for the available languages. While it is possible to edit configs, infos and translations,
 
 
 
