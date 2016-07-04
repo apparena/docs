@@ -521,7 +521,7 @@ DELETE /companies/:companyId/users/:userId & DELETE /customers/:companyId/users/
 /companies/:companyId/customers
 -------------------------------
 
-    .. Note:: The output of `these <../api/090-companies.html#companies-customers>`_ requests is similar to GET /customers/. It is used to receive information about a customer of your customer companies.
+    .. Note:: The output of the following requests is similar to `GET /customers <../api/090-companies.html#companies-customers>`_. It is used to receive information about a customer of your customer companies.
 
 GET /companies/:companyId/customers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

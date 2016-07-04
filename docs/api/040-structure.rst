@@ -1,8 +1,8 @@
 API - Data structure
 ====================
 
-App-Arena.com apps launched in the world wide web are designed to be highly customizable. Through a system of interconnected configuration sets,
-we make sure that every customer is able to make his app look and feel like a unique and individually crafted application.
+*App-Arena.com apps launched in the world wide web are designed to be highly customizable. Through a system of interconnected configuration sets,
+we make sure that every customer is able to make his app look and feel like a unique and individually crafted application.*
 
 In order to create new apps it is crucial to know the mechanics working in the background.
 
@@ -50,10 +50,10 @@ The image shows how the different types of settings:
     - language:     Sets the available/activated languages.
 
 The hierarchy of the distinct sections lead to some basic rules in the design of an application:
-The project version dictates the range of configs, infos and languages available for templates and apps pointing to it. Templates and app can therefore
-only change (by PUT request) configs, infos and translations in languages present in the project. New entries can only be created in the project itself, which explains
+The project version dictates the range of configs, infos and languages available for templates and apps pointing to it. Templates and apps can therefore
+overwrite (by PUT request) configs, infos and translations in languages present in the project. New entries can only be created in the project itself, which explains
 the absence of POST request for the respective sections.
-Slightly different is the behaviour for the available languages. While it is possible to edit configs, infos and translations,
+Slightly different is the behaviour for the available languages. While it is possible to edit configs, infos and translations, for templates and apps
 
 
 
