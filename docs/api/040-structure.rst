@@ -17,24 +17,24 @@ Every App-Arena.com application consists of three types of components:
 
 All of these components are build up in the same way, consisting of a config, an info, a translation and a language section
 
-+------------+------------------------------+-----------------------------------+
-| Component  | Component section            | Route                             |
-+============+==============================+===================================+
-| project    | projectconfig                | /projects/:projectId/config       |
-|            | projectinfo                  | /projects/:projectId/info         |
-|            | projecttranslation           | /projects/:projectId/translation  |
-|            | projectlanguage              | /projects/:projectId/language     |
-+------------+------------------------------+-----------------------------------+
-| template   | templateconfig               | /templates/:templateId/config     |
-|            | templateinfo                 | /templates/:templateId/info       |
-|            | templatetranslation          | /templates/:templateId/translation|
-|            | templatelanguage             | /templates/:templateId/language   |
-+------------+------------------------------+-----------------------------------+
-| app        | appconfig                    | /apps/:appId/language             |
-|            | appinfo                      | /apps/:appId/language             |
-|            | apptranslation               | /apps/:appId/language             |
-|            | applanguage                  | /apps/:appId/language             |
-+------------+------------------------------+-----------------------------------+
++------------+------------------------------+-------------------------------------+
+| Component  | Component section            | Route                               |
++============+==============================+=====================================+
+| project    | - projectconfig              | - /projects/:projectId/config       |
+|            | - projectinfo                | - /projects/:projectId/info         |
+|            | - projecttranslation         | - /projects/:projectId/translation  |
+|            | - projectlanguage            | - /projects/:projectId/language     |
++------------+------------------------------+-------------------------------------+
+| template   | - templateconfig             | - /templates/:templateId/config     |
+|            | - templateinfo               | - /templates/:templateId/info       |
+|            | - templatetranslation        | - /templates/:templateId/translation|
+|            | - templatelanguage           | - /templates/:templateId/language   |
++------------+------------------------------+-------------------------------------+
+| app        | - appconfig                  | - /apps/:appId/language             |
+|            | - appinfo                    | - /apps/:appId/language             |
+|            | - apptranslation             | - /apps/:appId/language             |
+|            | - applanguage                | - /apps/:appId/language             |
++------------+------------------------------+-------------------------------------+
 
 The requests to access the resources contained in the components are explained in their respective chapters.
 
