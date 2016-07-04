@@ -20,9 +20,11 @@ is available.
 To clarify this concept, imagine a contest project. It contains the logic necessary to let users pick a single item of their preference out of a greater heap of related items.
 These items can be anything from a picture or a video to a song. The core of the voting system stays the same, no matter what is being voted for. The difference between
 the contest modes is achieved through configuration sets, which 'shape' the project to the customers needs.
+
 On our platform, we call these configuration sets 'templates'. Templates can contain as little as a single configuration but may as well be used to configure, style and translate
 an entire application. However, the real power of the templates derives from the possibility to chain them together and thus, let you create vast amounts of apps of individual
 behaviour with minimal effort.
+
 We could create a template which 'shapes' the contest-project to a video contest by altering the configuration accordingly. In the next step, we create three templates
 which alter the Headline to 'Band-Contest', 'Beauty-Contest' and 'Funniest-Video-Contest' as well as setting the logos adequately. These templates now get chained to the template we
 created in the first place by declaring them as children of it. This results in three different apps with individual look and feel while the core logic behind them stays the same.
