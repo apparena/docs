@@ -7,27 +7,47 @@ we make sure that every customer is able to make his app look and feel like a un
 In order to create new apps it is crucial to know the mechanics working in the background.
 
 The components of an application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
+
+The project
+~~~~~~~~~~~
 
 At the foundation of every application is a project. Projects serve as the central entry point for a collection of version varieties, which
-occur over the course of a development. Every version contains the necessary information an application needs to operate, from configuration entries which define fundamental
+occur over the course of a development. Every version contains the necessary settings and information an application needs to operate, from configuration entries which define fundamental
 application functionality to information entries framing it in its web context. Translations are found there as well as the languages in which the project
 is available.
 
 .. Note:: The distinctive versions of a project hold the entirety of customization options your customer has at his disposal to individualize his web appearance. It may contain
     functionality and content which can selectively be activated to shape the application your customer wants to use in his or her individual context.
 
-To clarify this concept, imagine a contest project. It contains the logic necessary to let users pick a single item of their preference out of a greater heap of related items.
-These items can be anything from a picture or a video to a song. The core of the voting system stays the same, no matter what is being voted for. The difference between
-the contest modes is achieved through configuration sets, which 'shape' the project to the customers needs.
+The template
+~~~~~~~~~~~~
+
+In order to customize an application to their individual purpose there are configuration sets which can overwrite the default values contained in the root project.
 
 On our platform, we call these configuration sets 'templates'. Templates can contain as little as a single configuration but may as well be used to configure, style and translate
 an entire application. However, the real power of the templates derives from the possibility to chain them together and thus, let you create vast amounts of apps of individual
 behaviour with minimal effort.
 
+The app
+~~~~~~~
+
+Projects and templates are the space in which the designers of an application operate. The app however is the place where the customers have the power to make their application look and feel
+the way they want it. Customers can
+
+An example
+~~~~~~~~~~
+
+To clarify this concept, imagine a contest project in its initial version "1.0". It contains the logic necessary to let users pick a single item of their preference out of a greater heap of related items.
+These items can be anything from a picture or a video to a song, the core of the voting system stays the same, no matter what is being voted for. The difference between
+the contest modes is determined through the configuration sets, which 'shape' the project to the customers needs.
+
 We could create a template which 'shapes' the contest-project to a video contest by altering the configuration accordingly. In the next step, we create three templates
 which alter the Headline to 'Band-Contest', 'Beauty-Contest' and 'Funniest-Video-Contest' as well as setting the logos adequately. These templates now get chained to the template we
-created in the first place by declaring them as children of it. This results in three different apps with individual look and feel while the core logic behind them stays the same.
+created in the first place by declaring them as children of it.
+
+This results in three different apps with individual look and feel while the core logic behind them stays the same. The customers now get a web interface in which they can choose the font, the
+colors of their corporate design and the content e.g. the text to be displayed after a user casted a vote for an item.
 
 Image 1 visualizes the relation between 'apps', 'templates' and 'projects'.
 
