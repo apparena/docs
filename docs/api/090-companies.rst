@@ -428,17 +428,14 @@ POST /companies/:companyId/users & POST /customers/:companyId/users
 
     **Optional data**
 
-    subdomain
-        (string) Sets the individual subdomain of the company
-    address1 & address2
-        (string) Sets address information of the company
-    zip
-        (string) Sets the zip code
-    city
+    gender
+        (string) Sets the gender of the user. Valid strings: "male" or "female"
+    telephone
         (string)
-    country
-        (string) Sets the country of the company with a two letter code e.g.: Germany -> DE, Autria -> AT etc.
-    logo
-        (string) Sets the uri of the company logo
-    color1 & color2
-        (string) Set the company's default colors as Hex values
+    avatar
+        (string) Sets the uri to an avatar picture
+    lang
+        (string) The default language of the version, if left blank, the default language of the project is used instead
+        Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+    roles
+        (string) Sets the roles of the user. Every role consists of a set of rights. A user can have as much roles as desired. Syntax: "roles" : "Support" for a single role, "roles" : ["Support","Translator", ...] for multiple roles. See  `config <../api/060-config.html>`_  for available roles.
