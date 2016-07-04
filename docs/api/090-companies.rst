@@ -523,6 +523,31 @@ DELETE /companies/:companyId/users/:userId & DELETE /customers/:companyId/users/
 
     .. Note:: The output of `these <../api/090-companies.html#companies-customers>`_ requests is similar to GET /customers/. It is used to receive information about a customer of your customer companies.
 
+GET /companies/:companyId/customers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    .. Note:: You can find the output format of this request `here <../api/090-companies.html#get-companies-get-customers>`_
+
+GET /companies/:companyId/customers/:companyId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    .. Note:: You can find the output format of this request `here <../api/090-companies.html#get-customers-companyid-get-companies-companyid>`_
+
+POST /companies/:companyId/customers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    .. Note:: You can find the output format of this request `here <../api/090-companies.html#post-companies-post-customers>`_
+
+PUT /companies/:companyId/customers/:companyId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    .. Note:: You can find the output format of this request `here <../api/090-companies.html#put-companies-companyid-put-customer-companyid>`_
+
+DELETE /companies/:companyId/customers/:companyId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    .. Note:: You can find the output format of this request `here <../api/090-companies.html#delete-companies-companyid-delete-customers-companyid>`_
+
 /companies/:companyId/projects
 ------------------------------
 
