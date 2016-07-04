@@ -9,11 +9,33 @@ In order to create new apps it is crucial to know the mechanics working in the b
 The components of an application
 --------------------------------
 
-    Every App-Arena.com application consists of three types of components:
+Every App-Arena.com application consists of three types of components:
 
     - projects
     - templates
     - apps
+
+All of these components are build up in the same way, consisting of a config, an info, a translation and a language section
+
++------------+------------------------------+-----------------------------------+
+| Component  | Component section            | route                             |
++============+==============================+-----------------------------------+
+| project    | projectconfig                | /projects/:projectId/config       |
+|            | projectinfo                  | /projects/:projectId/info         |
+|            | projecttranslation           | /projects/:projectId/translation  |
+|            | projectlanguage              | /projects/:projectId/language     |
++------------+------------------------------+-----------------------------------+
+| template   | templateconfig               | /templates/:templateId/config     |
+|            | templateinfo                 | /templates/:templateId/info       |
+|            | templatetranslation          | /templates/:templateId/translation|
+|            | templatelanguage             | /templates/:templateId/language   |
++------------+------------------------------+-----------------------------------+
+| app        | appconfig                    | /apps/:appId/language             |
+|            | appinfo                      | /apps/:appId/language             |
+|            | apptranslation               | /apps/:appId/language             |
+|            | applanguage                  | /apps/:appId/language             |
++------------+------------------------------+-----------------------------------+
+
 
 The project
 ~~~~~~~~~~~
@@ -65,9 +87,10 @@ In image 1, the relation between 'apps', 'templates' and 'projects' is illustrat
 .. image:: images/App_Customization.jpg
     :alt: Image 1
 
-As seen in Image 1, all versions point to their root project. Templates however can point to a project version as well as to a another template. The difference is determined by
+As seen in image 1, all versions point to their root project. Templates however can point to a project version as well as to a another template. The difference is determined by
 the parentId: If the parentId points to itself, or in other words, if the parentId equals the templateId, the template points to the project version declared in it. In the case that
 templateId and parentId differ, the template points to its parent template.
+
 Templates may only contain settings that are already present in the project version. They are therefore only capable of overwriting existing settings and do not create configurations on their
 own. Besides other crucial information, the app itself holds a set of configurations as well, making it a mixture between a template and additional customization options. The app is mostly
 the customers domain where he can give the application his final personal touch.
