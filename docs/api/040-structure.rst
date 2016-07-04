@@ -6,12 +6,15 @@ we make sure that every customer is able to make his app look and feel like a un
 
 In order to create new apps it is crucial to know the mechanics working in the background.
 
+The components of an application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 At the foundation of every application is a project. Projects serve as the central entry point for a collection of version varieties, which
-occur over the course of a development. Every version contains the information an application needs to operate, from configuration entries which define fundamental
+occur over the course of a development. Every version contains the necessary information an application needs to operate, from configuration entries which define fundamental
 application functionality to information entries framing it in its web context. Translations are found there as well as the languages in which the project
 is available.
 
-The distinctive versions of a project hold the entirety of customization options your customer has at his disposal to individualize his web appearance. It may contain
+.. Note:: The distinctive versions of a project hold the entirety of customization options your customer has at his disposal to individualize his web appearance. It may contain
 functionality and content which can selectively be activated to shape the application your customer wants to use in his or her individual context.
 
 To clarify this concept, imagine a contest project. It contains the logic necessary to let users pick a single item of their preference out of a greater heap of related items.
