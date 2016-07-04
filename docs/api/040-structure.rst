@@ -9,6 +9,11 @@ In order to create new apps it is crucial to know the mechanics working in the b
 The components of an application
 --------------------------------
 
+Every App-Arena.com application consists of three types of components:
+    - projects
+    - templates
+    - apps
+
 The project
 ~~~~~~~~~~~
 
@@ -17,8 +22,7 @@ occur over the course of a development. Every version contains the necessary set
 application functionality to information entries framing it in its web context. Translations are found there as well as the languages in which the project
 is available.
 
-.. Note:: The distinctive versions of a project hold the entirety of customization options your customer has at his disposal to individualize his web appearance. It may contain
-    functionality and content which can selectively be activated to shape the application your customer wants to use in his or her individual context.
+.. Note:: The distinctive versions of a project hold the entirety of customization options, hence defining the palette of available items.
 
 The template
 ~~~~~~~~~~~~
@@ -33,7 +37,9 @@ The app
 ~~~~~~~
 
 Projects and templates are the space in which the designers of an application operate. The app however is the place where the customers have the power to make their application look and feel
-the way they want it. Customers can
+the way they want it.
+
+.. Note:: While templates mostly contain general configurations altering the core functionality of the project version, the app domain is used for storing what makes the application unique.
 
 An example
 ~~~~~~~~~~
@@ -43,13 +49,17 @@ These items can be anything from a picture or a video to a song, the core of the
 the contest modes is determined through the configuration sets, which 'shape' the project to the customers needs.
 
 We could create a template which 'shapes' the contest-project to a video contest by altering the configuration accordingly. In the next step, we create three templates
-which alter the Headline to 'Band-Contest', 'Beauty-Contest' and 'Funniest-Video-Contest' as well as setting the logos adequately. These templates now get chained to the template we
+which alter the Headline to 'Band-Contest', 'Beauty-Contest' and 'Funny-Video-Contest' as well as setting the logos adequately. These templates now get chained to the template we
 created in the first place by declaring them as children of it.
 
 This results in three different apps with individual look and feel while the core logic behind them stays the same. The customers now get a web interface in which they can choose the font, the
 colors of their corporate design and the content e.g. the text to be displayed after a user casted a vote for an item.
 
-Image 1 visualizes the relation between 'apps', 'templates' and 'projects'.
+Should the developers of this contest project come up with new ideas and features, they can easily create a new version of the project (in this example it would be version "1.1"), copying
+whatever they want to adopt from the initial version to the newly created one. The new version can now be enhanced with new configurations and content while apps pointing to version "1.0"
+still work without restriction.
+
+In image 1, the relation between 'apps', 'templates' and 'projects' is illustrated.
 
 .. image:: images/App_Customization.jpg
     :alt: Image 1
@@ -67,7 +77,7 @@ template settings overwrite those of the parent template and project. Image 2 sh
 .. image:: images/AppTemplateProjectRelation.jpg
     :alt: Image 2
 
-The image shows how the different types of settings:
+The image shows how the different types of settings found in projects/templates/apps:
 
     - info:         Works as a key => value storage for general application information like e.g. domain name, facebook ID, app validity in days, ...
     - config:       Is used to configure the application itself like e.g. font, logo uri, images, html and css code, ... The different types of config values are categorized. See the different types of config values and their characteristics `here <../api/060-config.html>`_.
