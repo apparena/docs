@@ -220,7 +220,7 @@ PUT /templates/:templateId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     parentId
         (integer)
@@ -383,7 +383,7 @@ PUT /templates/:templateId/configs/:configId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     value
         see `config <../api/060-config.html>`_ for characteristic behavior
@@ -539,7 +539,7 @@ PUT /templates/:templateId/infos/:infoId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     value
         (string)
@@ -717,7 +717,7 @@ PUT /templates/:templateId/translations/:translationId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     translation
         (string)

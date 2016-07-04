@@ -200,7 +200,7 @@ PUT /projects/:projectId
           }
         }
 
-    **Changeable fields**
+    **modifiable parameters**
 
     name
         (string) The name of the project
@@ -430,7 +430,7 @@ PUT /projects/:projectId/versions/:versionId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     name
         (string) The name of the version
@@ -651,7 +651,7 @@ PUT /projects/:projectId/configs/:configId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     description
         (string)
@@ -851,7 +851,7 @@ PUT /projects/:projectId/infos/:infoId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     value
         (string)
@@ -1020,7 +1020,7 @@ PUT /projects/:projectId/translations/:translationId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     translation
         (string)

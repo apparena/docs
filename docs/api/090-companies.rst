@@ -222,7 +222,7 @@ PUT /companies/:companyId & PUT /customer/:companyId
           }
         }
 
-    **Changeable fields**
+    **modifiable parameters**
 
     name
         (string)
@@ -267,8 +267,6 @@ GET /companies/:companyId/users & GET /customers/:companyId/users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Receive a list of the users of a company specified by :companyId
-
-.. Note:: The GET /companies request is reserved to store owners
 
 |   *Available queries*
 |       page
@@ -332,9 +330,7 @@ GET /companies/:companyId/users & GET /customers/:companyId/users
 GET /companies/:companyId/users/:userId & GET /customers/:companyId/users/:userId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Receive information about a user of a company specified by :companyId and :userId
-
-.. Note:: The GET /companies request is reserved to store owners
+Receive information about a user of a company specified by :companyId and :userId
 
 |   *Available queries*
 |       fields
@@ -356,7 +352,7 @@ GET /companies/:companyId/users/:userId & GET /customers/:companyId/users/:userI
                 "firstName": "John",
                 "lastName": "Doe",
                 "telephone": +555 12345678,
-                "displayname": "Sebastian Buckpesch",
+                "displayname": "John_Doe",
                 "avatar": null,
                 "lang": "de_DE",
                 "companyId": 1,
@@ -438,4 +434,91 @@ POST /companies/:companyId/users & POST /customers/:companyId/users
         (string) The default language of the version, if left blank, the default language of the project is used instead
         Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
     roles
-        (string) Sets the roles of the user. Every role consists of a set of rights. A user can have as much roles as desired. Syntax: "roles" : "Support" for a single role, "roles" : ["Support","Translator", ...] for multiple roles. See  `config <../api/060-config.html>`_  for available roles.
+        (string) Sets the roles of the user. Every role consists of a set of rights. A user can have as much roles as desired.
+
+        Syntax: "roles" : "Support" for a single role,
+
+        "roles" : ["Support","Translator", ...] for multiple roles. See  `config <../api/060-config.html>`_  for available roles.
+
+PUT /companies/:companyId/users/:userId & PUT /customer/:companyId/users/:userId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Alters a user entry specified by :companyId and :userId
+
+|   *Available queries*
+|       force
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "username"      : "new user name"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "data": {
+            "userId": 2,
+            "companyId": 1,
+            "email": "Jane@doe.com",
+            "username": "new user name",
+            "gender": female,
+            "firstname": "Jane",
+            "lastname": "Doe",
+            "displayname": Jane_Doe,
+            "telephone": null,
+            "avatar": null,
+            "lang": "de_DE",
+            "roles": "Administrator"
+          }
+        }
+
+    **modifiable parameters**
+
+    email
+        (string)
+    username
+        (string)
+    gender
+        (string)
+    firstname
+        (string)
+    lastname
+        (string)
+    displayname
+        (string)
+    telephone
+        (string)
+    avatar
+        (string)
+    lang
+        (string)
+    roles
+        (string)
+
+DELETE /companies/:companyId/users/:userId & DELETE /customers/:companyId/users/:userId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Deletes an user from the database specified by :companyId
+
+|   *Available queries*
+|       none
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 200,
+          "message": "User '1' deleted."
+        }
+
+/companies/:companyId/customers
+-------------------------------
+
+    .. Note:: The output of `these <../api/090-companies.html#companies-customers>`_ requests is similar to GET /customers/. It is used to receive information about a customer of your customer companies.

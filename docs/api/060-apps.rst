@@ -222,7 +222,7 @@ PUT /apps/:appId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     templateId
         integer
@@ -389,7 +389,7 @@ PUT /apps/:appId/configs/:configId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     value
         see `config <../api/060-config.html>`_ for characteristic behavior
@@ -543,7 +543,7 @@ PUT /apps/:appId/infos/:infoId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     value
         string
@@ -727,7 +727,7 @@ PUT /apps/:appId/translations/:translationId
           }
         }
 
-    **Changeable parameters**
+    **modifiable parameters**
 
     translation
         string
