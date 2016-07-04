@@ -15,7 +15,7 @@ application functionality to information entries framing it in its web context. 
 is available.
 
 .. Note:: The distinctive versions of a project hold the entirety of customization options your customer has at his disposal to individualize his web appearance. It may contain
-functionality and content which can selectively be activated to shape the application your customer wants to use in his or her individual context.
+    functionality and content which can selectively be activated to shape the application your customer wants to use in his or her individual context.
 
 To clarify this concept, imagine a contest project. It contains the logic necessary to let users pick a single item of their preference out of a greater heap of related items.
 These items can be anything from a picture or a video to a song. The core of the voting system stays the same, no matter what is being voted for. The difference between
