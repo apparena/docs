@@ -522,3 +522,234 @@ DELETE /companies/:companyId/users/:userId & DELETE /customers/:companyId/users/
 -------------------------------
 
     .. Note:: The output of `these <../api/090-companies.html#companies-customers>`_ requests is similar to GET /customers/. It is used to receive information about a customer of your customer companies.
+
+/companies/:companyId/projects
+------------------------------
+
+    .. Note:: This request is similar to the `GET /projects <../api/080-projects.html#get-projects>`_ with the difference that it shows only projects owned by the specified company.
+
+GET /companies/:companyId/projects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive a collection of projects owned by a company specified by :companyId.
+
+|   *Available queries*
+|       page
+|       items
+|       fields
+|       exclude
+|       orderasc/orderdesc
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "next": {
+              "href": "http://my.app-arena.com/api/v2/projects?page=2"
+            },
+            "self": {
+              "href": "http://my.app-arena.com/api/v2/projects"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "1": {
+                "projectId": 1,
+                "name": "Project_1",
+                "description": "This is a project description",
+                "companyId": 1,
+                "_links": {
+                  "project": {
+                    "href": "http://my.app-arena.com/api/v2/projects/1"
+                  },
+                  "company": {
+                    "href": "http://my.app-arena.com/api/v2/companies/1"
+                  }
+                }
+              },
+              "2": {
+                "projectId": 2,
+                        .
+                        .
+                        .
+              },
+                .
+                .
+                .
+              "N":{
+                        .
+                        .
+                        .
+              }
+            }
+          },
+          "total_items": 100,
+          "page_size": 20,
+          "page_count": 5,
+          "page_number": 1
+        }
+
+/companies/:companyId/templates
+-------------------------------
+
+    .. Note:: This request is similar to the `GET /templates <../api/080-projects.html#get-projects>`_ with the difference that it shows only templates owned by the specified company.
+
+GET /companies/:companyId/templates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive a collection of templates owned by your company.
+
+|   *Available queries*
+|       page
+|       items
+|       fields
+|       exclude
+|       orderasc/orderdesc
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "next": {
+              "href": "https://my.app-arena.com/api/v2/templates?page=2"
+            },
+            "self": {
+              "href": "https://my.app-arena.com/api/v2/templates"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "1": {
+                "templateId": 1,
+                "name": "template_1",
+                "lang": "de_DE",
+                "parentId": 1,
+                "versionId": 1,
+                "companyId": 1,
+                "public": true,
+                "_links": {
+                  "template": {
+                    "href": "https://my.app-arena.com/api/v2/templates/1"
+                  },
+                  "language": {
+                    "href": "https://my.app-arena.com/api/v2/templates/1/languages"
+                  },
+                  "parent": {
+                    "href": "https://my.app-arena.com/api/v2/templates/1"
+                  },
+                  "version": {
+                    "href": "https://my.app-arena.com/api/v2/projects/1/versions/1"
+                  },
+                  "company": {
+                    "href": "https://my.app-arena.com/api/v2/companies/1"
+                  }
+                }
+              },
+              "2": {
+                "templateId": 2,
+                    .
+                    .
+                    .
+              },
+              .
+              .
+              .
+              "N":{
+                    .
+                    .
+                    .
+              }
+            }
+          },
+          "total_items": 1000,
+          "page_size": 20,
+          "page_count": 50,
+          "page_number": 1
+        }
+
+/companies/:companyId/apps
+--------------------------
+
+    .. Note:: This request is similar to the `GET /apps <../api/060-apps.html#get-apps>`_ with the difference that it shows only apps owned by the specified company.
+
+GET /companies/:companyId/apps
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Receive a collection of apps owned by your company.
+
+|   *Available queries*
+|       page
+|       items
+|       fields
+|       exclude
+|       orderasc/orderdesc
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "next": {
+              "href": "https://my.app-arena.com/api/v2/apps?page=2"
+            },
+            "self": {
+              "href": "https://my.app-arena.com/api/v2/apps"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "1": {
+                "appId": 1,
+                "name": "Example app",
+                "lang": "en_US",
+                "activated": true,
+                "expiryDate": "2016-11-30 00:00:00",
+                "companyId": 1,
+                "templateId": 888,
+                "_links": {
+                  "app": {
+                    "href": "https://my.app-arena.com/api/v2/apps/1"
+                  },
+                  "appLanguage": {
+                    "href": "https://my.app-arena.com/api/v2/apps/1/languages/en_US"
+                  },
+                  "company": {
+                    "href": "https://my.app-arena.com/api/v2/companies/1"
+                  },
+                  "template": {
+                    "href": "https://my.app-arena.com/api/v2/templates/888"
+                  }
+                }
+              },
+              "2": {
+                "appId": 2,
+                "name": "Example app 2",
+                        .
+                        .
+                        .
+              },
+              "3": {
+                        .
+                        .
+                        .
+              },
+                .
+                .
+                .
+              "N": {
+                        .
+                        .
+                        .
+              }
+            }
+          },
+          "total_items": 1000,
+          "page_size": 20,
+          "page_count": 50,
+          "page_number": 1
+        }
