@@ -30,9 +30,9 @@ All of these components are build up in the same way, consisting of a config, an
 |            | - templatetranslation        | - /templates/:templateId/translation|
 |            | - templatelanguage           | - /templates/:templateId/language   |
 +------------+------------------------------+-------------------------------------+
-| app        | - appconfig                  | - /apps/:appId/language             |
-|            | - appinfo                    | - /apps/:appId/language             |
-|            | - apptranslation             | - /apps/:appId/language             |
+| app        | - appconfig                  | - /apps/:appId/config               |
+|            | - appinfo                    | - /apps/:appId/info                 |
+|            | - apptranslation             | - /apps/:appId/translation          |
 |            | - applanguage                | - /apps/:appId/language             |
 +------------+------------------------------+-------------------------------------+
 
@@ -72,16 +72,16 @@ To clarify this concept, imagine a contest project in its initial version "1.0".
 These items can be anything from a picture or a video to a song, the core of the voting system stays the same, no matter what is being voted for. The difference between
 the contest modes is determined through the configuration sets, which 'shape' the project to the customers needs.
 
-We could create a template which 'shapes' the contest-project to a video contest by altering the configuration accordingly. In the next step, we create three templates
+In this example we create a template which 'shapes' the contest-project to a video contest by altering the configuration accordingly. In the next step, we create three templates
 which alter the Headline to 'Band-Contest', 'Beauty-Contest' and 'Funny-Video-Contest' as well as setting the logos adequately. These templates now get chained to the template we
-created in the first place by declaring them as children of it.
+created in the first place. This can be achieved by setting the parentId to the templateId of the initially created template.
 
 This results in three different apps with individual look and feel while the core logic behind them stays the same. The customers now get a web interface in which they can choose the font, the
 colors of their corporate design and the content e.g. the text to be displayed after a user casted a vote for an item.
 
 Should the developers of this contest project come up with new ideas and features, they can easily create a new version of the project (in this example it would be version "1.1"), copying
 whatever they want to adopt from the initial version to the newly created one. The new version can now be enhanced with new configurations and content while apps pointing to version "1.0"
-still work without restriction.
+still work without any restriction.
 
 In image 1, the relation between 'apps', 'templates' and 'projects' is illustrated.
 
