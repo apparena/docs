@@ -9,7 +9,8 @@ In order to create new apps it is crucial to know the mechanics working in the b
 The components of an application
 --------------------------------
 
-Every App-Arena.com application consists of three types of components:
+    Every App-Arena.com application consists of three types of components:
+
     - projects
     - templates
     - apps
