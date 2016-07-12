@@ -14,6 +14,9 @@
 +---------------+-----------------------------------+---------------------------------------------------------+
 | date          |                                   |                                                         |
 +---------------+-----------------------------------+---------------------------------------------------------+
+| HTML          |                                   |                                                         |
+|               |                                   |                                                         |
++---------------+-----------------------------------+---------------------------------------------------------+
 | image         | - ``string`` data_alt             | - HTML image alt attribute                              |
 |               | - ``string`` data_title           | - HTML image title attribute                            |
 |               | - ``int`` data_height             | - Forced image height (when set, image will be cropped) |
@@ -25,16 +28,13 @@
 |               | - ``array`` data_format           | - [jpg | png | gif ] Array of accepted image formats    |
 |               | - ``bool`` data_nullable          | - Image value can be NULL or not                        |
 +---------------+-----------------------------------+---------------------------------------------------------+
-| text          | - ``string`` data_type            | - HTML5 input data type                                 |
+| input         | - ``string`` data_type            | - HTML5 input data type                                 |
 |               | - ``string`` data_placeholder     | - HTML5 placeholder attribute                           |
 |               | - ``string`` data_pattern         | - RegExp for input validation. Defines an input mask    |
 |               | - ``int`` data_min                | - Minimum value (validation for data_type "number")     |
 |               | - ``int`` data_max                | - Maximum value (validation for data_type "number")     |
 |               | - ``int`` data_min_length         | - Min. number of characters                             |
 |               | - ``int`` data_max_length         | - Max. number of characters                             |
-+---------------+-----------------------------------+---------------------------------------------------------+
-| textarea      | - ``enum`` data_editor            | - [wysiwyg, code, none] Rendered frontend editor        |
-|               | - ``bool`` data_code_view         | - Code view allowed in the frontend                     |
 +---------------+-----------------------------------+---------------------------------------------------------+
 | select        |                                   |                                                         |
 +---------------+-----------------------------------+---------------------------------------------------------+
