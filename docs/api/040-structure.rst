@@ -54,6 +54,12 @@ can only overwrite data which is present in the version.
 
 .. Note:: The distinctive versions of a project hold the entirety of customization options, hence defining the palette of available items templates and apps can access.
 
+The version number consists of 3 components: MAJOR.MINOR.PATCH. Recommended use is to increment the:
+
+    - MAJOR version when you make incompatible changes,
+    - MINOR version when you add functionality in a backwards-compatible manner, and
+    - PATCH version when you make backwards-compatible bug fixes.
+
 The template
 ~~~~~~~~~~~~
 
@@ -126,9 +132,4 @@ represent the languages activated for the customer.
 
 
 
-Given a version number MAJOR.MINOR.PATCH, increment the:
 
-    MAJOR version when you make incompatible API changes,
-    MINOR version when you add functionality in a backwards-compatible manner, and
-    PATCH version when you make backwards-compatible bug fixes.
-Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
