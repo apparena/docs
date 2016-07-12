@@ -8,8 +8,8 @@ the 'type' field. This table shows the data types and what to keep in mind using
 +---------------+-----------------------------------+-------------------------------------------+
 | Config-Type   | Valid input                       | Description                               |
 +===============+===================================+===========================================+
-| checkbox      | - ``mixed`` boolean values:       | * Simple Checkbox which can be checked or |
-|               | - 1, 0, "1", "0", true, false     | * unchecked                               |
+| checkbox      | | ``mixed`` boolean values:       | | Simple Checkbox which can be checked or |
+|               | | 1, 0, "1", "0", true, false     | | unchecked                               |
 |               |                                   |                                           |
 +---------------+-----------------------------------+-------------------------------------------+
 | color         | - ``string`` Hex value:           | - Sets a color in Hex format              |
