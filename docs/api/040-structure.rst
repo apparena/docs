@@ -123,9 +123,11 @@ The image shows how the different types of settings found in projects/templates/
     - language:     Sets the available/activated languages.
 
 The hierarchy of the distinct sections lead to some basic rules in the design of an application:
-The project version dictates the range of configs, infos and languages available for templates and apps pointing to it. Templates and apps can therefore
-overwrite (by PUT request) configs, infos and translations in languages present in the project. New entries can only be created in the project itself, which explains
-the absence of POST request for the respective sections.
+
+    - The project version dictates the range of configs, infos and languages available for templates and apps pointing to it.
+    - Templates and apps can therefore overwrite (by PUT request) configs, infos and translations in languages present in the project.
+    - New items can only be created in the project itself, which explains the absence of POST request for templates and apps.
+
 Slightly different is the behaviour for the available languages. While it is possible to edit configs, infos and translations, for templates and apps, the languages present in the app
 represent the languages activated for the customer.
 
