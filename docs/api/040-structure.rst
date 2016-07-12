@@ -49,9 +49,8 @@ The project
 ~~~~~~~~~~~
 
 At the foundation of every application is a project. Projects serve as the central entry point for a collection of version varieties, which
-occur over the course of a development. Every version contains the necessary settings and information an application needs to operate, from configuration entries which define fundamental
-application functionality to information entries framing it in its web context. Translations are found there as well as the languages in which the project
-is available.
+occur over the course of a development. Every version contains the necessary settings and information an application needs to operate. Templates and apps connected to a version
+can only overwrite data which is present in the version.
 
 .. Note:: The distinctive versions of a project hold the entirety of customization options, hence defining the palette of available items templates and apps can access.
 
@@ -83,8 +82,8 @@ In this example we create a template which 'shapes' the contest-project to a vid
 which alter the Headline to 'Band-Contest', 'Beauty-Contest' and 'Funny-Video-Contest' as well as setting the logos adequately. These templates now get chained to the template we
 created in the first place. This can be achieved by setting the parentId to the templateId of the initially created template.
 
-This results in three different apps with individual look and feel while the core logic behind them stays the same. The customers now get a web interface in which they can choose the font, the
-colors of their corporate design and the content e.g. the text to be displayed after a user casted a vote for an item.
+This results in three different apps with individual look and feel while the core logic behind them stays the same. The customers now get a web interface in which they can choose things like
+the font, the colors of their corporate design and the content e.g. the text to be displayed after a user casted a vote for an item.
 
 Should the developers of this contest project come up with new ideas and features, they can easily create a new version of the project (in this example it would be version "1.1"), copying
 whatever they want to adopt from the initial version to the newly created one. The new version can now be enhanced with new configurations and content while apps pointing to version "1.0"
@@ -95,16 +94,17 @@ In image 1, the relation between 'apps', 'templates' and 'projects' is illustrat
 .. image:: images/App_Customization.jpg
     :alt: Image 1
 
-As seen in image 1, all versions point to their root project. Templates however can point to a project version as well as to a another template. The difference is determined by
+As seen in image 1, all versions point to their root project. Templates can point to a project version as well as to a another template. The difference is determined by
 the parentId: If the parentId points to itself, or in other words, if the parentId equals the templateId, the template points to the project version declared in it. In the case that
 templateId and parentId differ, the template points to its parent template.
 
 Templates may only contain settings that are already present in the project version. They are therefore only capable of overwriting existing settings and do not create configurations on their
-own. Besides other crucial information, the app itself holds a set of configurations as well, making it a mixture between a template and additional customization options. The app is mostly
+own.
+The same rules apply for the app component. While templates can be used for multiple apps, the configuration of the app applies only for itself. This is why the app is mostly
 the customers domain where he can give the application his final personal touch.
 
-Projects, templates and app settings are hierarchically structured. This means that settings in the app overwrite occurrences of the same setting from templates and the project. Likewise
-template settings overwrite those of the parent template and project. Image 2 shows this behaviour.
+Projects, templates and app settings are hierarchically structured. This means that settings in the app overwrite occurrences of the same setting from templates and the project. Likewise,
+template settings overwrite those of the parent template and project. Image 2 visualizes this behaviour.
 
 .. image:: images/AppTemplateProjectRelation.jpg
     :alt: Image 2
@@ -120,7 +120,8 @@ The hierarchy of the distinct sections lead to some basic rules in the design of
 The project version dictates the range of configs, infos and languages available for templates and apps pointing to it. Templates and apps can therefore
 overwrite (by PUT request) configs, infos and translations in languages present in the project. New entries can only be created in the project itself, which explains
 the absence of POST request for the respective sections.
-Slightly different is the behaviour for the available languages. While it is possible to edit configs, infos and translations, for templates and apps
+Slightly different is the behaviour for the available languages. While it is possible to edit configs, infos and translations, for templates and apps, the languages present in the app
+represent the languages activated for the customer.
 
 
 
