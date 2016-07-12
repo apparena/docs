@@ -36,7 +36,14 @@ All of these components are build up in the same way, consisting of a config, an
 |            | - applanguage                | - /apps/:appId/language             |
 +------------+------------------------------+-------------------------------------+
 
+.. Note:: Variable route elements start with a ':'. These variables can be an integer or a string, depending on the context.
+
 The requests to access the resources contained in the components are explained in their respective chapters.
+
+    - the config section holds the configuration parameters which define functionality, look and layout of the application
+    - the info section is a key : value storage for entries which frame the application in its web context
+    - the translation section contains the strings for the different languages
+    - the language section defines the available languages for the app
 
 The project
 ~~~~~~~~~~~
@@ -46,7 +53,7 @@ occur over the course of a development. Every version contains the necessary set
 application functionality to information entries framing it in its web context. Translations are found there as well as the languages in which the project
 is available.
 
-.. Note:: The distinctive versions of a project hold the entirety of customization options, hence defining the palette of available items.
+.. Note:: The distinctive versions of a project hold the entirety of customization options, hence defining the palette of available items templates and apps can access.
 
 The template
 ~~~~~~~~~~~~
@@ -118,3 +125,9 @@ Slightly different is the behaviour for the available languages. While it is pos
 
 
 
+Given a version number MAJOR.MINOR.PATCH, increment the:
+
+    MAJOR version when you make incompatible API changes,
+    MINOR version when you add functionality in a backwards-compatible manner, and
+    PATCH version when you make backwards-compatible bug fixes.
+Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
