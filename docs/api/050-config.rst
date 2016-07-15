@@ -170,7 +170,7 @@ After this request, a GET on the 'test_config' yields:
     }
 
 While it is possible to create deep level structures, you can only address the top-level entries. Keeping the meta object
- shallow is therefore recommended in order to avoid confusion and simplify the reading process.
+shallow is therefore recommended in order to avoid confusion and simplify the reading process.
 
 To delete entries, send a PUT request with an empty value.
 
