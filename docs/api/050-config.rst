@@ -48,7 +48,7 @@ typo in a JSON key when POSTing a new entity) usually lead to an error with the 
 This is not the case when PUTting a config or info entry, or more specific, when changing an entry containing the meta
 data field: unrecognized fields are saved into the meta data array.
 
-To clarify this concept, we go through the process and make a before after comparison.
+To clarify this concept, we go through the process in simple example.
 
 Lets assume a config entry of an app/template/project with the configId 'test_config' and the type 'input' which means it
 is a text field. The meta data field is initially empty. A GET request on that entry would yield something like:
@@ -93,6 +93,8 @@ example the config entry lives in an app with the appId '1', so the request url 
 
 Because the app config entry doesn't have fields called 'author' and 'content' they will be created in the meta data.
 A GET request on this config entry now yields
+
+.. Warning:: In consequence, you cannot use meta-keys equal to existing fields of a config entry like: 'configId', 'lang', 'value', ...
 
 .. sourcecode:: js
 
