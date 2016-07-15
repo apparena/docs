@@ -1,6 +1,9 @@
 API - Config data
 =================
 
+Config types
+~~~~~~~~~~~~
+
 Config values have a mandatory field 'type' which determines what kind of data is stored. When creating a config value in
 a project (-version) or updating (overwriting) it in a template or app, the 'value' field gets validated based on the contents of
 the 'type' field. This table shows the data types and what to keep in mind using them.
