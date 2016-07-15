@@ -225,4 +225,4 @@ Change meta data
 
 In order to change existing meta data entries use the same approach as adding data.
 
-.. Warning:: Changing a meta entry will overwrite the existing data completely!
+.. Warning:: Changing a meta key will overwrite the existing data in that key completely!
