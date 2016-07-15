@@ -48,6 +48,9 @@ typo in a JSON key when POSTing a new entity) usually lead to an error with the 
 This is not the case when PUTting a config or info entry, or more specific, when changing an entry containing the meta
 data field: unrecognized fields are saved into the meta data array.
 
+Add meta data
+~~~~~~~~~~~~~
+
 To clarify this concept, we go through the process in simple example.
 
 Lets assume a config entry of an app/template/project with the configId 'test_config' and the type 'input' which means it
@@ -124,6 +127,9 @@ A GET request on this config entry now yields
       }
     }
 
+Add meta objects
+~~~~~~~~~~~~~~~~
+
 As you can see, the meta field became an object with the newly created information on the top level. To create
 sub-level objects, an object can be submitted. This way it is possible to create objects with unlimited depth.
 An example of a sub-level object:
@@ -172,6 +178,9 @@ After this request, a GET on the 'test_config' yields:
 While it is possible to create deep level structures, you can only address the top-level entries. Keeping the meta object
 shallow is therefore recommended in order to avoid confusion and simplify the reading process.
 
+Delete meta keys
+~~~~~~~~~~~~~~~~
+
 To delete entries, send a PUT request with an empty value.
 
 .. sourcecode:: js
@@ -210,3 +219,10 @@ Now a GET request yields:
         }
       }
     }
+
+Change meta data
+~~~~~~~~~~~~~~~~
+
+In order to change existing meta data entries use the same approach as adding data.
+
+.. Warning:: Changing a meta entry will overwrite the existing data completely!
