@@ -43,8 +43,8 @@ Passing Request Data
 Request data is passed to the API by Posting JSON objects to the API endpoints with the appropriate parameters.
 The documentation for each API call will contain more detail on the parameters accepted by the call.
 
-Additionally, the requests can be manipulated by queries. The first query must be preceded by a '?' while the following queries
-have to be separated by a '&'.
+Additionally, the requests can be manipulated by query parameters. The first query must be preceded by a '?' while the following queries
+have to be separated by a '&' character.
 
 Example:
 
@@ -83,7 +83,7 @@ Available query options:
 |            |                          | example: orderasc=appId                               |
 +------------+--------------------------+-------------------------------------------------------+
 
-The queries
+.. Note:: There are no default values. When a query parameter is not defined, no action is performed.
 
 Response Formats
 ----------------
