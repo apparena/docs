@@ -5,7 +5,7 @@ You have two options to authenticate against our API:
 1) API Key
 2) Json Web Token
 
-Both methods can be used be sending an "Authorization" header.
+Both methods can be used be by sending an "Authorization" header.
 
 API Key usage
 -------------

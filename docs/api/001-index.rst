@@ -15,7 +15,7 @@ with your contact data and will we get in touch with you and sent you an API key
 API Endpoint
 ------------
 
-All API URLs listed in this documentation are relative to ``https://v25.app-arena.com/api/v2/``.
+All API URLs listed in this documentation are relative to ``https://my.app-arena.com/api/v2/``.
 
 HTTP Verbs
 ----------
@@ -50,18 +50,37 @@ Example:
 
 http://route.to.api/collection/entity?query1=xxx&query2=yyy&query3=...
 
+.. Note:: You can find the available queries for each call in their respective section.
+
 Available query options:
 
 +------------+--------------------------+-------------------------------------------------------+
-| Query      |    Valid for             |   Description                                         |
+| Query      | Valid for                | Description                                           |
 +============+==========================+=======================================================+
-| lang       |    GET,PUT,DELETE        |   points the request to the desired language          |
+| lang       | GET,PUT,DELETE           | points the request to the desired language            |
 +------------+--------------------------+-------------------------------------------------------+
-| fields     |    GET                   |                                            |
+| fields     | GET                      | receive only desired fields in the response,          |
+|            |                          | list fields comma separated                           |
+|            |                          | example: fields=appId,expiryDate,name                 |
 +------------+--------------------------+-------------------------------------------------------+
-| PUT        |    Entity                |   Updates an entity                                   |
+| exclude    | GET                      | exclude fields from the response                      |
 +------------+--------------------------+-------------------------------------------------------+
-| DELETE     |    Entity                |   Deletes an entity                                   |
+| force      | POST                     | todo                                                  |
++------------+--------------------------+-------------------------------------------------------+
+| type       | GET                      | receive only media items of type image, audio or      |
+|            |                          | video                                                 |
++------------+--------------------------+-------------------------------------------------------+
+| orderasc   | GET                      | order the response items ascending                    |
+|            |                          | example: orderasc=appId                               |
++------------+--------------------------+-------------------------------------------------------+
+| orderdesc  | GET                      | order the response items descending                   |
++------------+--------------------------+-------------------------------------------------------+
+| page       | GET                      | sets the page of paginated results                    |
++------------+--------------------------+-------------------------------------------------------+
+| items      | GET                      | sets the amount of items of paginated results         |
++------------+--------------------------+-------------------------------------------------------+
+| version    | GET, POST, PUT, DELETE   | order the response items ascending                    |
+|            |                          | example: orderasc=appId                               |
 +------------+--------------------------+-------------------------------------------------------+
 
 The queries
@@ -86,7 +105,7 @@ A complete list of HTTP response formats you can find here: HTTP-Statuscodes_
 | DELETE     |    200 (OK)                  |
 +------------+------------------------------+
 
-The JSON output depends on the type of request and the data submitted. GET Requests will mostly output data in the HAL-format,
+The JSON output depends on the type of request and the data submitted. GET Requests will mostly output data in the HAL-format_,
 a format which provides links to the mentioned resources for easy resource browsing.
 As some of the requests are intended for listing items to the user, these requests will additionally output the data paginated.
 The data comes in chunks of an adjustable size for convenient item representation. PUT and POST requests however output

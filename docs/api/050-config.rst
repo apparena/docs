@@ -134,7 +134,7 @@ Add meta objects
 ~~~~~~~~~~~~~~~~
 
 As you can see, the meta field became an object with the newly created information on the top level. To create
-sub-level objects, an object can be submitted. This way it is possible to create objects with unlimited depth.
+sub-levels, an object can be submitted. This way it is possible to create objects with unlimited depth.
 An example of a sub-level object:
 
 .. sourcecode:: js

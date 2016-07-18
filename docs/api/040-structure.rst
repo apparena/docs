@@ -129,7 +129,7 @@ The hierarchy of the distinct sections lead to some basic rules in the design of
     - New items can only be created in the project itself, which explains the absence of POST request for templates and apps.
 
 Slightly different is the behaviour for the available languages. While it is possible to edit configs, infos and translations, for templates and apps, the languages present in the app
-represent the languages activated for the customer.
+represent the languages activated for the customer. Content can only be retrieved in activated languages.
 
 
 
