@@ -169,25 +169,23 @@ POST /apps
     **Required data**
 
     name
-        (string) The name of the app
+        .. include:: /partials/name.rst
     templateId
-        (integer) The template ID this app is connected to
+        .. include:: /partials/templateId.rst
     lang
-        (string) The default language code_. Syntax: de_DE for Germany, de_AT for Austrian german
+        .. include:: /partials/lang.rst
 
     **Optional data**
 
     companyId
-        (integer) The ID of the owning company, if not specified, the app will be owned by the company used for authorization
+        .. include:: /partials/companyId.rst
     expiryDate
-        Integer
+        ``Integer``
             Sets the number of days the app is valid, 0 sets the app valid for 50 years.
-        String
+        ``String``
             Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
     activated
-        (bool) Sets the activation status of the app
-
-.. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        .. include:: /partials/activated.rst
 
 PUT /apps/:appId
 ~~~~~~~~~~~~~~~~
@@ -398,7 +396,7 @@ PUT /apps/:appId/configs/:configId
     description
         string
     meta
-        see `config <../api/060-config.html>`_ meta section for information about the meta data of config values
+        .. include:: /partials/meta.rst
 
 DELETE /apps/:appId/configs/:configId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

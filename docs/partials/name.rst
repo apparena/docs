@@ -1,0 +1,1 @@
+``string`` the name of the entity
