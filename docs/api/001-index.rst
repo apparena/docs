@@ -80,7 +80,7 @@ Available query options:
 | items      | GET                      | | sets the amount of items of paginated results       |
 +------------+--------------------------+-------------------------------------------------------+
 | version    | GET, POST, PUT, DELETE   | | order the response items ascending                  |
-|            |                          | | example: orderasc=appId                             |
+|            |                          | example: orderasc=appId                               |
 +------------+--------------------------+-------------------------------------------------------+
 
 .. Note:: There are no default values. When a query parameter is not defined, no action is performed.
