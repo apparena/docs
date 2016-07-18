@@ -11,7 +11,7 @@ GET /templates
 
     Receive a collection of templates owned by your company.
 
-|   *Available queries*
+|   *Query parameters*
 |       page
 |       items
 |       fields
@@ -86,7 +86,7 @@ GET /templates/:templateId
 
     Receive information about a template entity specified by :templateId
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 
@@ -132,7 +132,7 @@ POST /templates
 
     Creates a new template
 
-|   *Available queries*
+|   *Query parameters*
 |       force
 
 .. http:response:: Example request body
@@ -191,7 +191,7 @@ PUT /templates/:templateId
 
     Alters an template entry specified by :templateId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example request body
@@ -240,7 +240,7 @@ DELETE /templates/:templateId
 
     .. Warning:: This deletes all containing settings and translations as well!
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example response body
@@ -260,7 +260,7 @@ GET /templates/:templateId/configs
 
     Receive a collection of config values of an template specified by :templateId
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 |       lang
@@ -313,7 +313,7 @@ GET /templates/:templateId/configs/:configId
 
     Receive the information of a config value entity of an template specified by :templateId and :configId
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 |       lang
@@ -353,7 +353,7 @@ PUT /templates/:templateId/configs/:configId
 
     Alter a config value for an template specified by :templateId and :configId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example request body
@@ -399,7 +399,7 @@ DELETE /templates/:templateId/configs/:configId
 
     Deletes a config value of an template from the database specified by :templateId and :configId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example response body
@@ -419,7 +419,7 @@ GET /templates/:templateId/infos
 
     Receive a collection of info values of an template specified by :templateId
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 |       lang
@@ -475,7 +475,7 @@ GET /templates/:templateId/infos/:infoId
 
     Receive the information of an info entity of an template specified by :templateId and :infoId
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 |       lang
@@ -512,7 +512,7 @@ PUT /templates/:templateId/infos/:infoId
 
     Alter a info value for an template specified by :templateId and :infoId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example request body
@@ -551,7 +551,7 @@ DELETE /templates/:templateId/infos/:infoId
 
     Deletes a info value of an template from the database specified by :templateId and :infoId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example response body
@@ -571,7 +571,7 @@ GET /templates/:templateId/languages
 
     Receive information about the available and activated languages specified by :templateId
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example response body
@@ -596,7 +596,7 @@ POST /templates/:templateId/languages
 
     Activate a language in an template specified by :templateId and :lang
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example request body
@@ -627,7 +627,7 @@ GET /templates/:templateId/translations
 
     Receive translations of an template specified by :templateId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 |       fields
 |       exclude
@@ -688,7 +688,7 @@ PUT /templates/:templateId/translations/:translationId
 
     Change a translation for an template specified by :templateId and :infoId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example request body
@@ -733,7 +733,7 @@ DELETE /templates/:templateId/translations/:translationId
 
     Deletes a translation of an template specified by :templateId and :infoId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example response body

@@ -13,7 +13,7 @@ GET /companies & GET /customers
 
 .. Note:: The GET /companies request is reserved to store owners
 
-|   *Available queries*
+|   *Query parameters*
 |       page
 |       items
 |       fields
@@ -84,7 +84,7 @@ GET /customers/:companyId & GET /companies/:companyId
 
 .. Note:: From a database point of view there is no difference between a company and a customer. That is why there is used :companyId instead of :customerId in customer requests!
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 |       orderasc/orderdesc
@@ -127,7 +127,7 @@ POST /companies & POST /customers
 
     .. Note:: This request creates a new company with your own companyId as parentId which makes it a customer of your company. To create a company/customer for a different owner than yourself use POST /companies/:companyId/customers.
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example request body
@@ -188,7 +188,7 @@ PUT /companies/:companyId & PUT /customer/:companyId
 
     Alters a company entry specified by :companyId
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example request body
@@ -248,7 +248,7 @@ DELETE /companies/:companyId & DELETE /customers/:companyId
 
     .. Warning:: This deletes every project, template or app this company owns!
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example response body
@@ -268,7 +268,7 @@ GET /companies/:companyId/users & GET /customers/:companyId/users
 
     Receive a list of the users of a company specified by :companyId
 
-|   *Available queries*
+|   *Query parameters*
 |       page
 |       items
 |       fields
@@ -332,7 +332,7 @@ GET /companies/:companyId/users/:userId & GET /customers/:companyId/users/:userI
 
 Receive information about a user of a company specified by :companyId and :userId
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 |       orderasc/orderdesc
@@ -371,7 +371,7 @@ POST /companies/:companyId/users & POST /customers/:companyId/users
 
     Creates a user
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example request body
@@ -445,7 +445,7 @@ PUT /companies/:companyId/users/:userId & PUT /customer/:companyId/users/:userId
 
     Alters a user entry specified by :companyId and :userId
 
-|   *Available queries*
+|   *Query parameters*
 |       force
 
 .. http:response:: Example request body
@@ -506,7 +506,7 @@ DELETE /companies/:companyId/users/:userId & DELETE /customers/:companyId/users/
 
     Deletes an user from the database specified by :companyId
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example response body
@@ -558,7 +558,7 @@ GET /companies/:companyId/projects
 
     Receive a collection of projects owned by a company specified by :companyId.
 
-|   *Available queries*
+|   *Query parameters*
 |       page
 |       items
 |       fields
@@ -626,7 +626,7 @@ GET /companies/:companyId/templates
 
     Receive a collection of templates owned by your company.
 
-|   *Available queries*
+|   *Query parameters*
 |       page
 |       items
 |       fields
@@ -704,9 +704,9 @@ GET /companies/:companyId/templates
 GET /companies/:companyId/apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Receive a collection of apps owned by your company.
+    Receive a collection of apps owned by a company specified by :companyId.
 
-|   *Available queries*
+|   *Query parameters*
 |       page
 |       items
 |       fields

@@ -11,7 +11,7 @@ GET /projects
 
     Receive a collection of projects owned by your company.
 
-|   *Available queries*
+|   *Query parameters*
 |       page
 |       items
 |       fields
@@ -74,7 +74,7 @@ GET /projects/:projectId
 
     Receive information about a project entity specified by :projectId
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 
@@ -110,7 +110,7 @@ POST /projects
 
     .. Note:: When creating a new project, a version '1.0' and the specified language will be created as well.
 
-|   *Available queries*
+|   *Query parameters*
 |       force
 
 .. http:response:: Example request body
@@ -174,7 +174,7 @@ PUT /projects/:projectId
 
     Alters an project entry specified by :projectId
 
-|   *Available queries*
+|   *Query parameters*
 |       force
 
 .. http:response:: Example request body
@@ -216,7 +216,7 @@ DELETE /projects/:projectId
 
     .. Warning:: This deletes all versions including all contained settings and translations as well!
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example response body
@@ -236,7 +236,7 @@ GET /projects/:projectId/versions
 
     Receive information about the versions of a project specified by :project_id
 
-|   *Available queries*
+|   *Query parameters*
 |       page
 |       items
 |       fields
@@ -307,7 +307,7 @@ GET /projects/:projectId/versions/:versionId
 
     .. Note:: Use the version number as :versionId e.g.: GET /projects/1/versions/1.1
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 
@@ -349,7 +349,7 @@ POST /projects/:projectId/versions
 
     .. Note:: The default language specified in the request body will be created automatically as well!
 
-|   *Available queries*
+|   *Query parameters*
 |       force
 
 .. http:response:: Example request body
@@ -402,7 +402,7 @@ PUT /projects/:projectId/versions/:versionId
 
     Alters the properties of a version, specified by :projectId and :versionId
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example request body
@@ -444,7 +444,7 @@ DELETE /projects/:projectId/versions/:versionId
 
     .. Warning:: This deletes all containing settings and translations of the version as well!
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example response body
@@ -466,7 +466,7 @@ GET /projects/:projectId/configs
 
     Receive a collection of config values of an project specified by :projectId
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 |       lang
@@ -523,7 +523,7 @@ GET /projects/:projectId/configs/:configID
 
     Receive the information of a config value entity of a project specified by :templateId and :configId
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 |       lang
@@ -560,7 +560,7 @@ POST /projects/:projectId/configs
 
     Creates a new config value
 
-|   *Available queries*
+|   *Query parameters*
 |       force
 
 .. http:response:: Example request body
@@ -619,7 +619,7 @@ PUT /projects/:projectId/configs/:configId
 
     Alters the properties of a project config entry specified by :projectId and :configId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 |       version
 
@@ -667,7 +667,7 @@ DELETE /projects/:projectId/configs/:configId
 
     Deletes a config entry of an project from the database specified by :projectId and :configId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example response body
@@ -687,7 +687,7 @@ GET /projects/:projectId/infos
 
     Receive the collection of info values of a project specified by :projectId
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 |       lang
@@ -740,7 +740,7 @@ GET /projects/:projectId/infos/:infoId
 
     Receive the information of an info entity of an project specified by :projectId and :infoId
 
-|   *Available queries*
+|   *Query parameters*
 |       fields
 |       exclude
 |       lang
@@ -774,7 +774,7 @@ POST /projects/:projectId/infos
 
     Creates a new info entry
 
-|   *Available queries*
+|   *Query parameters*
 |       force
 
 .. http:response:: Example request body
@@ -824,7 +824,7 @@ PUT /projects/:projectId/infos/:infoId
 
     Alter a info value for an project specified by :projectId and :infoId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example request body
@@ -863,7 +863,7 @@ DELETE /projects/:projectId/infos/:infoId
 
     Deletes a info value of an project from the database specified by :projectId and :infoId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example response body
@@ -883,7 +883,7 @@ GET /projects/:projectId/languages
 
     Receive information about the available languages specified by :projectId
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example response body
@@ -904,7 +904,7 @@ POST /projects/:projectId/languages
 
     Activate a language in an project specified by :projectId and :lang
 
-|   *Available queries*
+|   *Query parameters*
 |       none
 
 .. http:response:: Example request body
@@ -935,7 +935,7 @@ GET /projects/:projectId/translations
 
     Receive translations of a project specified by :projectId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 |       fields
 |       exclude
@@ -991,7 +991,7 @@ PUT /projects/:projectId/translations/:translationId
 
     Change a translation for a project specified by :projectId and :infoId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example request body
@@ -1036,7 +1036,7 @@ DELETE /projects/:projectId/translations/:translationId
 
     Deletes a translation of a project specified by :projectId and :infoId
 
-|   *Available queries*
+|   *Query parameters*
 |       lang
 
 .. http:response:: Example response body

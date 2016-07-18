@@ -730,7 +730,7 @@ PUT /apps/:appId/translations/:translationId
     **modifiable parameters**
 
     translation
-        string
+        .. include:: partials/translation.rst
     translated
         bool
     translationPluralized
