@@ -59,9 +59,11 @@ Available query options:
 +============+==========================+=======================================================+
 | lang       | GET,PUT,DELETE           | | points the request to the desired language          |
 +------------+--------------------------+-------------------------------------------------------+
-| fields     | GET                      | | receive only desired fields in the response,        |
-|            |                          | | list fields comma separated                         |
-|            |                          | | example: fields=appId,expiryDate,name               |
+| fields     | GET                      | receive only desired fields in the response,          |
+|            |                          |                                                       |
+|            |                          | list fields comma separated                           |
+|            |                          |                                                       |
+|            |                          | example: fields=appId,expiryDate,name                 |
 +------------+--------------------------+-------------------------------------------------------+
 | exclude    | GET                      | | exclude fields from the response                    |
 +------------+--------------------------+-------------------------------------------------------+
@@ -80,7 +82,7 @@ Available query options:
 | items      | GET                      | | sets the amount of items of paginated results       |
 +------------+--------------------------+-------------------------------------------------------+
 | version    | GET, POST, PUT, DELETE   | | order the response items ascending                  |
-|            |                          | example: orderasc=appId                               |
+|            |                          | | example: orderasc=appId                             |
 +------------+--------------------------+-------------------------------------------------------+
 
 .. Note:: There are no default values. When a query parameter is not defined, no action is performed.
