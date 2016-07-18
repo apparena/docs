@@ -548,7 +548,7 @@ PUT /apps/:appId/infos/:infoId
     value
         string
     meta
-        see `config <../api/060-config.html>`_ meta section for information about the PUT behaviour of meta data
+        .. include:: /partials/meta.rst
 
 DELETE /apps/:appId/infos/:infoId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

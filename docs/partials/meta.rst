@@ -1,0 +1,1 @@
+see `config <../api/060-config.html>`_ meta section for information about the PUT behaviour of meta data
