@@ -1,1 +1,1 @@
-``integer`` The ID of the owning company, if not specified, the app will be owned by the company used for authorization
+``integer`` The ID of the owning company

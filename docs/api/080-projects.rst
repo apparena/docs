@@ -3,8 +3,27 @@ API - Project requests
 
     .. Hint:: While this documentation uses dummy names like config_1, info_1, etc., you are free to choose the ID of the values yourself as long as they contain only alphanumerics and the underscore
 
+    .. Warning:: todo make a version number tutorial
+
 /projects
 ---------
+
+The project component consists of the following fields:
+
+    **project fields**
+
+    projectId
+        .. include:: /partials/uniqeId.rst
+    companyId
+        .. include:: /partials/companyId.rst
+    name
+        .. include:: /partials/name.rst
+    description
+        .. include:: /partials/description.rst
+
+    **common fields**
+
+    .. include:: /partials/common_all.rst
 
 GET /projects
 ~~~~~~~~~~~~~
@@ -154,20 +173,18 @@ POST /projects
     **Required data**
 
     name
-        (string) The name of the project
+        .. include:: /partials/name.rst
     lang
-        (string) The default language code_ of the version. Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+        .. include:: /partials/lang.rst
 
-        Used to set the default language of the initial project version.
+        sets the default language of the initial project version and makes the language available to all connected templates/apps
 
     **Optional data**
 
     companyId
-        (integer) ID of the owning company, if not specified, app will be owned by the company used for authorization
+        .. include:: /partials/companyId.rst
     description
-        (string) A description of the project
-
-.. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        .. include:: /partials/description.rst
 
 PUT /projects/:projectId
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -203,11 +220,11 @@ PUT /projects/:projectId
     **modifiable parameters**
 
     name
-        (string) The name of the project
+        .. include:: /partials/name.rst
     companyId
-        (integer) changes the owner of the project
+        .. include:: /partials/companyId.rst
     description
-        (string) A description of the project
+        .. include:: /partials/description.rst
 
 DELETE /projects/:projectId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -230,6 +247,27 @@ DELETE /projects/:projectId
 
 /projects/:projectId/versions
 -----------------------------
+
+The version component consists of the following fields:
+
+    **version fields**
+
+    projectId
+        .. include:: /partials/uniqueId.rst
+    companyId
+        .. include:: /partials/companyId.rst
+    lang
+        .. include:: /partials/lang.rst
+    name
+        .. include:: /partials/name.rst
+    variant
+        ``string`` the version number (is called 'variant' only in the version itself, all other components call this field 'version')
+    public
+        .. include:: /partials/public.rst
+
+    **common fields**
+
+    .. include:: /partials/common_all.rst
 
 GET /projects/:projectId/versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -347,7 +385,7 @@ POST /projects/:projectId/versions
 
     Create a new version for a project, specified by :projectId
 
-    .. Note:: The default language specified in the request body will be created automatically as well!
+    .. Note:: The default language specified in the request body will be created automatically and is included in the response under the 'language' sub-object!
 
 |   *Query parameters*
 |       force
@@ -385,17 +423,16 @@ POST /projects/:projectId/versions
     **Required data**
 
     name
-        (string) The name of the version
+        .. include:: /partials/name.rst
     lang
-        (string) The default language of the version, if left blank, the default language of the project is used instead
-        Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+        .. include:: /partials/lang.rst
 
     **Optional data**
 
     variant
-        (float) The desired version number. If left blank, the version number gets auto incremented
+        ``string`` the version number (is called 'variant' only in the version itself, all other components call this field 'version')
     public
-        (bool) Sets the public status of the version
+        .. include:: /partials/public.rst
 
 PUT /projects/:projectId/versions/:versionId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -433,9 +470,9 @@ PUT /projects/:projectId/versions/:versionId
     **modifiable parameters**
 
     name
-        (string) The name of the version
+        .. include:: /partials/name.rst
     public
-        (bool) The public status of the version
+        .. include:: /partials/public.rst
 
 DELETE /projects/:projectId/versions/:versionId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -459,7 +496,34 @@ DELETE /projects/:projectId/versions/:versionId
 /projects/:projectId/configs
 ----------------------------
 
-    .. Note:: For all of the following requests, the query 'version' can be used. If it is left blank the operation will automatically use the most recent version
+    The project config component consists of the following fields:
+
+    **project config fields**
+
+    projectId
+        .. include:: /partials/uniqeId.rst
+    version
+        ``string`` the version number, format: "Ma.Mi.P" Ma=Major, Mi=Minor, P=Patch e.g.: "2.0.3"
+    configId
+        .. include:: /partials/identifier.rst
+    lang
+        .. include:: /partials/lang.rst
+    type
+        .. include:: /partials/type.rst
+    name
+        .. include:: /partials/name.rst
+    value
+        .. include:: /partials/value.rst
+    description
+        .. include:: /partials/description.rst
+    meta
+        .. include:: /partials/meta.rst
+
+    **common fields**
+
+    .. include:: /partials/common_revision.rst
+
+    .. Note:: For all of the following requests, the query 'version' can be used to select a specific project-version. If it is left blank the operation will automatically use the most recent version
 
 GET /projects/:projectId/configs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -595,23 +659,22 @@ POST /projects/:projectId/configs
     **Required data**
 
     name
-        (string) Sets the name of the config value
+        .. include:: /partials/name.rst
     configId
-        (string) Sets the identifier of the new config value
+        .. include:: /partials/identifier.rst
     type
-        (string) Sets the type of the config value. See `config <../api/060-config.html>`_ for more information
+        .. include:: /partials/type.rst
 
     **Optional data**
 
     value
-        (string)
+        .. include:: /partials/put_value.rst
     description
-        (string)
+        .. include:: /partials/description.rst
     meta
-        see `config <../api/060-config.html>`_ meta section for information about adding information to the meta data
+        .. include:: /partials/meta.rst
     lang
-        (string) The language of the config value, if left out, the default language of the project is used instead.
-        Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+        .. include:: /partials/lang.rst
 
 
 PUT /projects/:projectId/configs/:configId
@@ -654,13 +717,13 @@ PUT /projects/:projectId/configs/:configId
     **modifiable parameters**
 
     description
-        (string)
+        .. include:: /partials/description.rst
     name
-        (string)
+        .. include:: /partials/name.rst
     value
-        (string)
+        .. include:: /partials/value.rst
     meta
-        see `config <../api/060-config.html>`_ meta section for information about adding information to the meta data
+        .. include:: /partials/meta.rst
 
 DELETE /projects/:projectId/configs/:configId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -681,6 +744,27 @@ DELETE /projects/:projectId/configs/:configId
 
 /projects/:projectId/infos
 --------------------------
+
+The project info component consists of the following fields:
+
+    **project info fields**
+
+    projectId
+        .. include:: /partials/uniqeId.rst
+    version
+        ``string`` the version number, format: "Ma.Mi.P" Ma=Major, Mi=Minor, P=Patch e.g.: "2.0.3"
+    info_id
+        .. include:: /partials/identifier.rst
+    lang
+        .. include:: /partials/lang.rst
+    value
+        .. include:: /partials/value.rst
+    meta
+        .. include:: /partials/meta.rst
+
+    **common fields**
+
+    .. include:: /partials/common_revision.rst
 
 GET /projects/:projectId/infos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -807,17 +891,16 @@ POST /projects/:projectId/infos
     **Required data**
 
     infoId
-        (string) Sets the identifier of the new info entry
+        .. include:: /partials/identifier.rst
 
     **Optional data**
 
     value
-        (string) Sets the value of the new info entry
+        .. include:: /partials/put_value.rst
     meta
-        see `config <../api/060-config.html>`_ meta section for information about adding information to the meta data
+        .. include:: /partials/meta.rst
     lang
-        (string) The language of the config value, if left out, the default language of the project is used instead.
-        Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+        .. include:: /partials/lang.rst
 
 PUT /projects/:projectId/infos/:infoId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -854,9 +937,9 @@ PUT /projects/:projectId/infos/:infoId
     **modifiable parameters**
 
     value
-        (string)
+        .. include:: /partials/put_value.rst
     meta
-        see `config <../api/060-config.html>`_ meta section for information about the PUT behaviour of meta data
+        .. include:: /partials/meta.rst
 
 DELETE /projects/:projectId/infos/:infoId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -877,6 +960,21 @@ DELETE /projects/:projectId/infos/:infoId
 
 /projects/:projectId/languages
 ------------------------------
+
+The project language component consists of the following fields:
+
+    *project language fields*
+
+    projectId
+        .. include:: /partials/uniqeId.rst
+    version
+        ``string`` the version number, format: "Ma.Mi.P" Ma=Major, Mi=Minor, P=Patch e.g.: "2.0.3"
+    lang
+        .. include:: /partials/lang.rst
+
+    **common fields**
+
+    .. include:: /partials/common_all.rst
 
 GET /projects/:projectId/languages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -927,8 +1025,38 @@ POST /projects/:projectId/languages
           }
         }
 
+    **required data**
+
+    lang
+        .. include:: /partials/lang.rst
+
 /projects/:projectId/translations
 ---------------------------------
+
+The template translation component consists of the following fields:
+
+    **template translation fields**
+
+    translationId
+        .. include:: /partials/identifier.rst
+    version
+        ``string`` the version number, format: "Ma.Mi.P" Ma=Major, Mi=Minor, P=Patch e.g.: "2.0.3"
+    lang
+        .. include:: /partials/lang.rst
+    projectId
+        .. include:: /partials/uniqeId.rst
+    translated
+        .. include:: /partials/translated.rst
+    translation
+        .. include:: /partials/translation.rst
+    pluralized
+        .. include:: /partials/pluralized.rst
+    translationPluralized
+        .. include:: /partials/translationPluralized.rst
+
+    **common fields**
+
+    .. include:: /partials/common_revision.rst
 
 GET /projects/:projectId/translations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1023,13 +1151,13 @@ PUT /projects/:projectId/translations/:translationId
     **modifiable parameters**
 
     translation
-        (string)
+        .. include:: /partials/translation.rst
     translated
-        (bool)
+        .. include:: /partials/translated.rst
     translationPluralized
-        (string)
+        .. include:: /partials/translationPluralized.rst
     pluralized
-        (bool)
+        .. include:: /partials/pluralized.rst
 
 DELETE /projects/:projectId/translations/:translationId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1047,3 +1175,5 @@ DELETE /projects/:projectId/translations/:translationId
           "status": 200,
           "message": "Translation 'translation_1' in project '1' deleted."
         }
+
+.. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2

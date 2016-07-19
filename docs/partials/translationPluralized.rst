@@ -1,0 +1,1 @@
+``string`` the translated string (plural translation)

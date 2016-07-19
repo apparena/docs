@@ -11,7 +11,7 @@ The app component consists of the following fields:
     **app fields**
 
     appId
-        .. include:: /partials/appId.rst
+        .. include:: /partials/uniqeId.rst
     templateId
         ``integer`` the template this app points to
     companyId
@@ -199,7 +199,7 @@ POST /apps
     **Optional data**
 
     companyId
-        .. include:: /partials/companyId.rst
+        .. include:: /partials/post_companyId.rst
     expiryDate
         ``Integer``
             Sets the number of days the app is valid, 0 sets the app valid for 50 years.
@@ -277,12 +277,12 @@ DELETE /apps/:appId
 /apps/:appId/configs
 --------------------
 
-The app component consists of the following fields:
+The app config component consists of the following fields:
 
     **app config fields**
 
-    appId
-        .. include:: /partials/appId.rst
+    appId/templateId/projectId
+        .. include:: /partials/uniqeId.rst
     configId
         .. include:: /partials/identifier.rst
     lang
@@ -464,12 +464,12 @@ DELETE /apps/:appId/configs/:configId
 /apps/:appId/infos
 ------------------
 
-The app component consists of the following fields:
+The app info component consists of the following fields:
 
     **app info fields**
 
-    appId
-        .. include:: /partials/appId.rst
+    appId/templateId/projectId
+        .. include:: /partials/uniqeId.rst
     info_id
         .. include:: /partials/identifier.rst
     lang
@@ -633,14 +633,20 @@ DELETE /apps/:appId/infos/:infoId
 /apps/:appId/languages
 ----------------------
 
-The app component consists of the following fields:
+The app language component consists of the following fields:
 
     *app language fields*
 
-    appId
-        .. include:: /partials/appId.rst
+    appId/versionId
+        .. include:: /partials/uniqeId.rst
     lang
         .. include:: /partials/lang.rst
+
+    **common fields**
+
+    .. include:: /partials/common_all.rst
+
+.. Note:: Activated languages always belong to the app while the available languages derive from the corresponding project.
 
 GET /apps/:appId/languages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -701,8 +707,36 @@ POST /apps/:appId/languages
           }
         }
 
+    **required data**
+
+    lang
+        .. include:: /partials/lang.rst
+
 /apps/:appId/translations
 -------------------------
+
+The app translation component consists of the following fields:
+
+    **app translation fields**
+
+    translationId
+        .. include:: /partials/identifier.rst
+    lang
+        .. include:: /partials/lang.rst
+    appId
+        .. include:: /partials/uniqeId.rst
+    translated
+        .. include:: /partials/translated.rst
+    translation
+        .. include:: /partials/translation.rst
+    pluralized
+        .. include:: /partials/pluralized.rst
+    translationPluralized
+        .. include:: /partials/translationPluralized.rst
+
+    **common fields**
+
+    .. include:: /partials/common_revision.rst
 
 GET /apps/:appId/translations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -804,11 +838,11 @@ PUT /apps/:appId/translations/:translationId
     translation
         .. include:: partials/translation.rst
     translated
-        bool
+        .. include:: partials/translated.rst
     translationPluralized
-        string
+        .. include:: partials/translationPluralized.rst
     pluralized
-        bool
+        .. include:: partials/pluralized.rst
 
 DELETE /apps/:appId/translations/:translationId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,1 @@
+``bool`` shows if the string is translated (singular translation)

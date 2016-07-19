@@ -6,6 +6,29 @@ API - Template requests
 /templates
 ----------
 
+The template component consists of the following fields:
+
+    **template fields**
+
+    templateId
+        .. include:: /partials/uniqeId.rst
+    projectId
+        .. include:: /partials/template_projectId.rst
+    parentId
+        .. include:: /partials/parentId.rst
+    companyId
+        .. include:: /partials/companyId.rst
+    lang
+        .. include:: /partials/lang.rst
+    name
+        .. include:: /partials/name.rst
+    public
+        .. include:: /partials/public.rst
+
+    **common fields**
+
+    .. include:: /partials/common_all.rst
+
 GET /templates
 ~~~~~~~~~~~~~~
 
@@ -166,25 +189,22 @@ POST /templates
     **Required data**
 
     name
-        (string) Name of the template
+        .. include:: /partials/name.rst
     projectId
-        (integer) The project this template is connected to
+        .. include:: /partials/uniqueId.rst
 
     **Optional data**
 
     parentId
-        (integer) The ID of the parent template
+        ``integer`` the template this template should be connected to, if left blank the newly created templateId is inserted
     version
-        (float) The version of the specified project the template should point to, if not specified the most recent version is used
+        ``string`` The version of the specified project the template should point to, if not specified the most recent version is used
     companyId
-        (integer) ID of the owning company, if not specified, app will be owned by the company used for authorization
+        ``integer`` ID of the owning company, if not specified, app will be owned by the company used for authorization
     lang
-        (string) The default language of the template, if left out, the default language of the project is used instead.
-        Syntax: de_DE for Germany, de_AT for Austrian german, en_US for american english ...
+        .. include:: /partials/lang.rst
     public
-        (bool) Sets the public status of the template
-
-.. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        .. include:: /partials/public.rst
 
 PUT /templates/:templateId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -223,15 +243,17 @@ PUT /templates/:templateId
     **modifiable parameters**
 
     parentId
-        (integer)
-    versionId
-        (integer)
+        .. include:: /partials/parentId.rst
+    projectId
+        .. include:: /partials/template_projectId.rst
+    version
+        ``string`` The version of the specified project the template should point to, if not specified the most recent version is used (needs a projectId)
     companyId
-        (integer)
+        .. include:: /partials/companyId.rst
     name
-        (string)
+        .. include:: /partials/name.rst
     public
-        (bool)
+        .. include:: /partials/public.rst
 
 DELETE /templates/:templateId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -254,6 +276,31 @@ DELETE /templates/:templateId
 
 /templates/:templateId/configs
 ------------------------------
+
+The template config component consists of the following fields:
+
+    **template config fields**
+
+    templateId/projectId
+        .. include:: /partials/uniqeId.rst
+    configId
+        .. include:: /partials/identifier.rst
+    lang
+        .. include:: /partials/lang.rst
+    type
+        .. include:: /partials/type.rst
+    name
+        .. include:: /partials/name.rst
+    value
+        .. include:: /partials/value.rst
+    description
+        .. include:: /partials/description.rst
+    meta
+        .. include:: /partials/meta.rst
+
+    **common fields**
+
+    .. include:: /partials/common_revision.rst
 
 GET /templates/:templateId/configs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -386,13 +433,13 @@ PUT /templates/:templateId/configs/:configId
     **modifiable parameters**
 
     value
-        see `config <../api/060-config.html>`_ for characteristic behavior
+        .. include:: /partials/value.rst
     name
-        (string)
+        .. include:: /partials/name.rst
     description
-        (string)
+        .. include:: /partials/description.rst
     meta
-        see `config <../api/060-config.html>`_ meta section for information about the meta data of config values
+        .. include:: /partials/meta.rst
 
 DELETE /templates/:templateId/configs/:configId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -413,6 +460,25 @@ DELETE /templates/:templateId/configs/:configId
 
 /templates/:templateId/infos
 ----------------------------
+
+The template info component consists of the following fields:
+
+    **template info fields**
+
+    templateId/projectId
+        .. include:: /partials/uniqeId.rst
+    info_id
+        .. include:: /partials/identifier.rst
+    lang
+        .. include:: /partials/lang.rst
+    value
+        .. include:: /partials/value.rst
+    meta
+        .. include:: /partials/meta.rst
+
+    **common fields**
+
+    .. include:: /partials/common_revision.rst
 
 GET /templates/:templateId/infos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -542,9 +608,9 @@ PUT /templates/:templateId/infos/:infoId
     **modifiable parameters**
 
     value
-        (string)
+        .. include:: /partials/value.rst
     meta
-        see `config <../api/060-config.html>`_ meta section for information about the PUT behaviour of meta data
+        .. include:: /partials/meta.rst
 
 DELETE /templates/:templateId/infos/:infoId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -565,6 +631,20 @@ DELETE /templates/:templateId/infos/:infoId
 
 /templates/:templateId/languages
 --------------------------------
+
+The template language component consists of the following fields:
+
+    *template language fields*
+
+    appId/versionId
+        .. include:: /partials/uniqeId.rst
+    lang
+        .. include:: /partials/lang.rst
+
+    **common fields**
+
+    .. include:: /partials/common_all.rst
+
 
 GET /templates/:templateId/languages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -619,8 +699,36 @@ POST /templates/:templateId/languages
           }
         }
 
+    **required data**
+
+    lang
+        .. include:: /partials/lang.rst
+
 /templates/:templateId/translations
 -----------------------------------
+
+The template translation component consists of the following fields:
+
+    **template translation fields**
+
+    translationId
+        .. include:: /partials/identifier.rst
+    lang
+        .. include:: /partials/lang.rst
+    templateId
+        .. include:: /partials/uniqeId.rst
+    translated
+        .. include:: /partials/translated.rst
+    translation
+        .. include:: /partials/translation.rst
+    pluralized
+        .. include:: /partials/pluralized.rst
+    translationPluralized
+        .. include:: /partials/translationPluralized.rst
+
+    **common fields**
+
+    .. include:: /partials/common_revision.rst
 
 GET /templates/:templateId/translations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -720,13 +828,13 @@ PUT /templates/:templateId/translations/:translationId
     **modifiable parameters**
 
     translation
-        (string)
+        .. include:: /partials/translation.rst
     translated
-        (bool)
+        .. include:: /partials/translated.rst
     translationPluralized
-        (string)
+        .. include:: /partials/translationPluralized.rst
     pluralized
-        (bool)
+        .. include:: /partials/pluralized.rst
 
 DELETE /templates/:templateId/translations/:translationId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -744,3 +852,7 @@ DELETE /templates/:templateId/translations/:translationId
           "status": 200,
           "message": "Translation 'translation_1' in template '1' deleted."
         }
+
+.. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+
+.. _meta: ../api/050-config.html#meta-data-behaviour
