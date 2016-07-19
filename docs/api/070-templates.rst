@@ -11,7 +11,7 @@ The template component consists of the following fields:
     **template fields**
 
     templateId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     projectId
         .. include:: /partials/template_projectId.rst
     parentId
@@ -282,7 +282,7 @@ The template config component consists of the following fields:
     **template config fields**
 
     templateId/projectId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     configId
         .. include:: /partials/identifier.rst
     lang
@@ -466,7 +466,7 @@ The template info component consists of the following fields:
     **template info fields**
 
     templateId/projectId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     info_id
         .. include:: /partials/identifier.rst
     lang
@@ -637,7 +637,7 @@ The template language component consists of the following fields:
     *template language fields*
 
     appId/versionId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     lang
         .. include:: /partials/lang.rst
 
@@ -716,7 +716,7 @@ The template translation component consists of the following fields:
     lang
         .. include:: /partials/lang.rst
     templateId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     translated
         .. include:: /partials/translated.rst
     translation

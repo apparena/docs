@@ -11,7 +11,7 @@ The app component consists of the following fields:
     **app fields**
 
     appId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     templateId
         ``integer`` the template this app points to
     companyId
@@ -282,7 +282,7 @@ The app config component consists of the following fields:
     **app config fields**
 
     appId/templateId/projectId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     configId
         .. include:: /partials/identifier.rst
     lang
@@ -469,7 +469,7 @@ The app info component consists of the following fields:
     **app info fields**
 
     appId/templateId/projectId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     info_id
         .. include:: /partials/identifier.rst
     lang
@@ -635,10 +635,10 @@ DELETE /apps/:appId/infos/:infoId
 
 The app language component consists of the following fields:
 
-    *app language fields*
+    **app language fields**
 
     appId/versionId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     lang
         .. include:: /partials/lang.rst
 

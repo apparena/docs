@@ -13,7 +13,7 @@ The project component consists of the following fields:
     **project fields**
 
     projectId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     companyId
         .. include:: /partials/companyId.rst
     name
@@ -501,7 +501,7 @@ DELETE /projects/:projectId/versions/:versionId
     **project config fields**
 
     projectId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     version
         ``string`` the version number, format: "Ma.Mi.P" Ma=Major, Mi=Minor, P=Patch e.g.: "2.0.3"
     configId
@@ -750,7 +750,7 @@ The project info component consists of the following fields:
     **project info fields**
 
     projectId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     version
         ``string`` the version number, format: "Ma.Mi.P" Ma=Major, Mi=Minor, P=Patch e.g.: "2.0.3"
     info_id
@@ -963,7 +963,7 @@ DELETE /projects/:projectId/infos/:infoId
 
 The project language component consists of the following fields:
 
-    *project language fields*
+    **project language fields**
 
     projectId
         .. include:: /partials/uniqeId.rst
@@ -1044,7 +1044,7 @@ The template translation component consists of the following fields:
     lang
         .. include:: /partials/lang.rst
     projectId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     translated
         .. include:: /partials/translated.rst
     translation
