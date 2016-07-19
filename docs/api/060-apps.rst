@@ -724,7 +724,7 @@ The app translation component consists of the following fields:
     lang
         .. include:: /partials/lang.rst
     appId
-        .. include:: /partials/uniqeId.rst
+        .. include:: /partials/uniqueId.rst
     translated
         .. include:: /partials/translated.rst
     translation
