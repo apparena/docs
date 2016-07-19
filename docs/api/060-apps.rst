@@ -828,3 +828,5 @@ DELETE /apps/:appId/translations/:translationId
         }
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+
+.. _meta: ../api/050-config.html#meta-data-behaviour
