@@ -8,7 +8,7 @@ API - App requests
 
 The app component consists of the following fields:
 
-    *app fields*
+    **app fields**
 
     appId
         .. include:: /partials/appId.rst
@@ -25,7 +25,7 @@ The app component consists of the following fields:
     expiryDate
         ``string`` the date until the app is running or ``integer`` the number of days the app is running
 
-    *common fields*
+    **common fields**
 
     .. include:: /partials/common_all.rst
 
@@ -279,7 +279,7 @@ DELETE /apps/:appId
 
 The app component consists of the following fields:
 
-    *app config fields*
+    **app config fields**
 
     appId
         .. include:: /partials/appId.rst
@@ -298,7 +298,7 @@ The app component consists of the following fields:
     meta
         .. include:: /partials/meta.rst
 
-    *common fields*
+    **common fields**
 
     .. include:: /partials/common_revision.rst
 
@@ -466,7 +466,7 @@ DELETE /apps/:appId/configs/:configId
 
 The app component consists of the following fields:
 
-    *app info fields*
+    **app info fields**
 
     appId
         .. include:: /partials/appId.rst
@@ -479,7 +479,7 @@ The app component consists of the following fields:
     meta
         .. include:: /partials/meta.rst
 
-    *common fields*
+    **common fields**
 
     .. include:: /partials/common_revision.rst
 
@@ -826,3 +826,5 @@ DELETE /apps/:appId/translations/:translationId
           "status": 200,
           "message": "Translation 'translation_1' deleted."
         }
+
+.. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2

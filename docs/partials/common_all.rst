@@ -11,4 +11,4 @@ createdBy
 updatedBy
     ``string`` the username or apikeyId of the person modifying this entity
 deletedAt
-    the entity got deleted when this field contains a ``dateTime``, otherwise this field in ``null``
+    the entity got deleted when this field contains a ``dateTime``, otherwise this field contains ``null``
