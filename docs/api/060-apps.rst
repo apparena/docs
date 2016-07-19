@@ -6,7 +6,28 @@ API - App requests
 /apps
 -----
 
-.. _apps:
+The app component consists of the following fields:
+
+    *app fields*
+
+    appId
+        .. include:: /partials/appId.rst
+    templateId
+        ``integer`` the template this app points to
+    companyId
+        ``integer`` id of the owning company
+    lang
+        .. include:: /partials/lang.rst
+    name
+        .. include:: /partials/name.rst
+    activated
+        .. include:: /partials/activated.rst
+    expiryDate
+        ``string`` the date until the app is running or ``integer`` the number of days the app is running
+
+    *common fields*
+
+    .. include:: /partials/common_all.rst
 
 GET /apps
 ~~~~~~~~~
@@ -223,16 +244,16 @@ PUT /apps/:appId
     **modifiable parameters**
 
     templateId
-        integer
+        .. include:: /partials/templateId.rst
     name
-        string
+        .. include:: /partials/name.rst
     activated
-        bool
+        .. include:: /partials/activated.rst
     expiryDate
-        integer
-            app validity in days
-        string
-            date in format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
+        ``Integer``
+            Sets the number of days the app is valid, 0 sets the app valid for 50 years.
+        ``String``
+            Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
 
 DELETE /apps/:appId
 ~~~~~~~~~~~~~~~~~~~
@@ -255,6 +276,31 @@ DELETE /apps/:appId
 
 /apps/:appId/configs
 --------------------
+
+The app component consists of the following fields:
+
+    *app config fields*
+
+    appId
+        .. include:: /partials/appId.rst
+    configId
+        .. include:: /partials/identifier.rst
+    lang
+        .. include:: /partials/lang.rst
+    type
+        .. include:: /partials/type.rst
+    name
+        .. include:: /partials/name.rst
+    value
+        .. include:: /partials/value.rst
+    description
+        .. include:: /partials/description.rst
+    meta
+        .. include:: /partials/meta.rst
+
+    *common fields*
+
+    .. include:: /partials/common_revision.rst
 
 GET /apps/:appId/configs
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -390,11 +436,11 @@ PUT /apps/:appId/configs/:configId
     **modifiable parameters**
 
     value
-        see `config <../api/060-config.html>`_ for characteristic behavior
+        .. include:: /partials/put_value.rst
     name
-        string
+        .. include:: /partials/name.rst
     description
-        string
+        .. include:: /partials/description.rst
     meta
         .. include:: /partials/meta.rst
 
@@ -417,6 +463,25 @@ DELETE /apps/:appId/configs/:configId
 
 /apps/:appId/infos
 ------------------
+
+The app component consists of the following fields:
+
+    *app info fields*
+
+    appId
+        .. include:: /partials/appId.rst
+    info_id
+        .. include:: /partials/identifier.rst
+    lang
+        .. include:: /partials/lang.rst
+    value
+        .. include:: /partials/value.rst
+    meta
+        .. include:: /partials/meta.rst
+
+    *common fields*
+
+    .. include:: /partials/common_revision.rst
 
 GET /apps/:appId/infos
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -544,7 +609,7 @@ PUT /apps/:appId/infos/:infoId
     **modifiable parameters**
 
     value
-        string
+        .. include:: /partials/put_value.rst
     meta
         .. include:: /partials/meta.rst
 
@@ -567,6 +632,15 @@ DELETE /apps/:appId/infos/:infoId
 
 /apps/:appId/languages
 ----------------------
+
+The app component consists of the following fields:
+
+    *app language fields*
+
+    appId
+        .. include:: /partials/appId.rst
+    lang
+        .. include:: /partials/lang.rst
 
 GET /apps/:appId/languages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

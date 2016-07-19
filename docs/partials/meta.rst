@@ -1,1 +1,1 @@
-see `config <../api/060-config.html>`_ meta section for information about the PUT behaviour of meta data
+Additional information in custom format. See `config meta<../api/050-config.html#meta-data-behaviour>`_ section for information about the behaviour of meta data

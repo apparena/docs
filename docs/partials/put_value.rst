@@ -1,0 +1,1 @@
+``string`` the currently selected config content. See `config <../api/060-config.html>`_ for more information

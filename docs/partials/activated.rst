@@ -1,1 +1,1 @@
-``bool`` Sets the activation status of the app
+``bool`` the status of the app

@@ -1,1 +1,1 @@
-``string`` the name of the entity
+``string`` give this entity a name

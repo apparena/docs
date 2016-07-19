@@ -1,0 +1,1 @@
+``string`` the currently selected config entity content
