@@ -836,13 +836,13 @@ PUT /apps/:appId/translations/:translationId
     **modifiable parameters**
 
     translation
-        .. include:: partials/translation.rst
+        .. include:: /partials/translation.rst
     translated
-        .. include:: partials/translated.rst
+        .. include:: /partials/translated.rst
     translationPluralized
-        .. include:: partials/translationPluralized.rst
+        .. include:: /partials/translationPluralized.rst
     pluralized
-        .. include:: partials/pluralized.rst
+        .. include:: /partials/pluralized.rst
 
 DELETE /apps/:appId/translations/:translationId
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
