@@ -12,7 +12,7 @@ With this approach, the list of existing projects is slimmed down drastically wh
 
 In order to work on a specific version, the project routes are used while the version can be selected through the query parameter 'version'.
 
-    Example: GET /projects/1/configs?version=2.1.0 will return all config entries of the version '2.1.0' of project '1'
+    ``Example``: **GET /projects/1/configs?version=2.1.0** will return all config entries of the version '2.1.0' of project '1'
 
 If no version query parameter is defined, the API automatically determines the highest version and performs the requested action on it.
 
