@@ -7,12 +7,12 @@ The version concept
 -------------------
 
 As you can see in image 1 of the structure_ chapter, all versions point to a root project. This was introduced in order to
-give every version a home instead of letting them coexist on the same level. With this approach, the list of existing projects
-can be slimmed down drastically while keeping everything nicely accessible.
+give every application a home instead of letting them coexist on the same level, which can lead to long unordered lists when displaying.
+With this approach, the list of existing projects is slimmed down drastically while keeping everything nicely accessible.
 
 In order to work on a specific version, the project routes are used while the version can be selected through the query parameter 'version'.
 
-    .. Example:: GET /projects/1/configs?version=2.1.0 will return all config entries of the version '2.1.0' of project '1'
+    .. http:response:: GET /projects/1/configs?version=2.1.0 will return all config entries of the version '2.1.0' of project '1'
 
 If no version query parameter is defined, the API automatically determines the highest version and performs the requested action on it.
 
