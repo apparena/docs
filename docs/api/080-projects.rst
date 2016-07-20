@@ -16,7 +16,7 @@ In order to work on a specific version, the project routes are used while the ve
 
 If no version query parameter is defined, the API automatically determines the highest version and performs the requested action on it.
 
-The format of the version-number is based on `semantic versioning<http://semver.org/>`_. It is stored in a string and consists of three integers in the format
+The format of the version-number is based on `semantic versioning`_. It is stored in a string and consists of three integers in the format
 'Ma.Mi.P', where Ma stands for 'MAJOR', Mi for 'MINOR' and P for 'PATCH'.
 
 Recommended usage is that you increment the:
@@ -26,6 +26,7 @@ Recommended usage is that you increment the:
     - PATCH version when you make backwards-compatible bug fixes.
 
 .. _structure: ../api/040-structure.html#an-example
+.. _semantic versioning: http://semver.org/
 
 /projects
 ---------
