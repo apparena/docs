@@ -3,7 +3,29 @@ API - Project requests
 
     .. Hint:: While this documentation uses dummy names like config_1, info_1, etc., you are free to choose the ID of the values yourself as long as they contain only alphanumerics and the underscore
 
-    .. Warning:: todo make a version number tutorial
+The version concept
+-------------------
+
+As you can see in image 1 of the structure_ chapter, all versions point to a root project. This was introduced in order to
+give every version a home instead of letting them coexist on the same level. With this approach, the list of existing projects
+can be slimmed down drastically while keeping everything nicely accessible.
+
+In order to work on a specific version, the project routes are used while the version can be selected through the query parameter 'version'.
+
+    .. Example:: GET /projects/1/configs?version=2.1.0 will return all config entries of the version '2.1.0' of project '1'
+
+If no version query parameter is defined, the API automatically determines the highest version and performs the requested action on it.
+
+The format of the version-number is based on `semantic versioning<http://semver.org/>`_. It is stored in a string and consists of three integers in the format
+'Ma.Mi.P', where Ma stands for 'MAJOR', Mi for 'MINOR' and P for 'PATCH'.
+
+Recommended usage is that you increment the:
+
+    - MAJOR version when you make incompatible changes,
+    - MINOR version when you add functionality in a backwards-compatible manner, and
+    - PATCH version when you make backwards-compatible bug fixes.
+
+.. _structure: ../api/040-structure.html#an-example
 
 /projects
 ---------
@@ -343,7 +365,7 @@ GET /projects/:projectId/versions/:versionId
 
     Receive information about a project version specified by :projectId and :versionId
 
-    .. Note:: Use the version number as :versionId e.g.: GET /projects/1/versions/1.1
+    .. Note:: Use the version number as :versionId e.g.: GET /projects/1/versions/1.1.0
 
 |   *Query parameters*
 |       fields
@@ -358,7 +380,7 @@ GET /projects/:projectId/versions/:versionId
             "data": {
               "1.1": {
                 "versionId": 2,
-                "name": "project version 1.1",
+                "name": "project version 1.1.0",
                 "variant": 1.1,
                 "public": false,
                 "lang": "de_DE",
