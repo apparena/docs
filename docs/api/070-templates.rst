@@ -61,7 +61,8 @@ GET /templates
                 "name": "template_1",
                 "lang": "de_DE",
                 "parentId": 1,
-                "versionId": 1,
+                "projectId": 1,
+                "version": "1.1.0"
                 "companyId": 1,
                 "public": true,
                 "_links": {
@@ -125,7 +126,8 @@ GET /templates/:templateId
                 "name": "template_1",
                 "lang": "de_DE",
                 "parentId": 1,
-                "versionId": 1,
+                "projectId": 1,
+                "version": "1.1.0"
                 "companyId": 1,
                 "public": true,
                 "_links": {
@@ -176,8 +178,8 @@ POST /templates
           "status": 201,
           "data": {
             "templateId": 1,
-            "versionId": 1,
             "projectId": 1,
+            "version": "1.1.0"
             "parentId": 1190,
             "companyId": 1,
             "lang": "de_DE",
@@ -230,8 +232,8 @@ PUT /templates/:templateId
           "status": 200,
           "data": {
             "templateId": 1,
-            "versionId": 1,
             "projectId": 1,
+            "version": "1.1.0"
             "parentId": 1,
             "companyId": 1,
             "lang": "de_DE",
@@ -636,7 +638,7 @@ The template language component consists of the following fields:
 
     *template language fields*
 
-    appId/versionId
+    appId/projectId
         .. include:: /partials/uniqueId.rst
     lang
         .. include:: /partials/lang.rst
@@ -662,11 +664,13 @@ GET /templates/:templateId/languages
           "available": {
             "de_DE": {
               "lang": "de_DE",
-              "versionId": 1
+              "projectId": 1,
+              "version": "1.1.0"
             },
             "en_US": {
               "lang": "en_US",
-              "versionId": 1
+              "projectId": 1,
+              "version": "1.1.0"
             }
           }
         }
@@ -761,7 +765,8 @@ GET /templates/:templateId/translations
                 "translated": true,
                 "translationPluralized": "translation_pluralized_text",
                 "pluralized": true,
-                "versionId": 1,
+                "projectId": 1,
+                "version": "1.1.0"
                 "_links": {
                   "version": {
                     "href": "http://my.app-arena.com/api/v2/projects/1/versions/1"

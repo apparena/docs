@@ -637,7 +637,7 @@ The app language component consists of the following fields:
 
     **app language fields**
 
-    appId/versionId
+    appId/projectId
         .. include:: /partials/uniqueId.rst
     lang
         .. include:: /partials/lang.rst
@@ -670,11 +670,13 @@ GET /apps/:appId/languages
           "available": {
             "de_DE": {
               "lang": "de_DE",
-              "versionId": 1
+              "projectId": 1,
+              "version": "1.1.0"
             },
             "en_US": {
               "lang": "en_US",
-              "versionId": 1
+              "projectId": 1,
+              "version": "1.1.0"
             }
           }
         }
@@ -769,7 +771,8 @@ GET /apps/:appId/translations
                 "translated": true,
                 "translationPluralized": "translation_pluralized_text",
                 "pluralized": true,
-                "versionId": 1,
+                "projectId": 1,
+                "version": "1.1.0"
                 "_links": {
                   "version": {
                     "href": "http://my.app-arena.com/api/v2/projects/1/versions/1"
