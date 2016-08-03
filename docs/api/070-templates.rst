@@ -121,31 +121,29 @@ GET /templates/:templateId
         {
           "_embedded": {
             "data": {
-              "1": {
-                "templateId": 1,
-                "name": "template_1",
-                "lang": "de_DE",
-                "parentId": 1,
-                "projectId": 1,
-                "version": "1.1.0"
-                "companyId": 1,
-                "public": true,
-                "_links": {
-                  "template": {
-                    "href": "http://my.app-arena.com/api/v2/templates/1"
-                  },
-                  "language": {
-                    "href": "http://my.app-arena.com/api/v2/templates/1/languages"
-                  },
-                  "parent": {
-                    "href": "http://my.app-arena.com/api/v2/templates/1"
-                  },
-                  "version": {
-                    "href": "http://my.app-arena.com/api/v2/projects/1/versions/1"
-                  },
-                  "company": {
-                    "href": "http://my.app-arena.com/api/v2/companies/1"
-                  }
+              "templateId": 1,
+              "name": "template_1",
+              "lang": "de_DE",
+              "parentId": 1,
+              "projectId": 1,
+              "version": "1.1.0",
+              "companyId": 1,
+              "public": true,
+              "_links": {
+                "template": {
+                  "href": "http://my.app-arena.com/api/v2/templates/1"
+                },
+                "language": {
+                  "href": "http://my.app-arena.com/api/v2/templates/1/languages"
+                },
+                "parent": {
+                  "href": "http://my.app-arena.com/api/v2/templates/1"
+                },
+                "version": {
+                  "href": "http://my.app-arena.com/api/v2/projects/1/versions/1"
+                },
+                "company": {
+                  "href": "http://my.app-arena.com/api/v2/companies/1"
                 }
               }
             }
@@ -374,23 +372,25 @@ GET /templates/:templateId/configs/:configId
         {
           "_embedded": {
             "data": {
-              "config_1": {
-                "configId": "config_1",
-                "lang": "de_DE",
-                "name": "template_config_name",
-                "revision": 0,
-                "value": "some_value",
-                "meta": {"meta_key":{"meta_inner":"meta_inner_value"}},
-                "type": "input",
-                "description": "This is an example of a template config value.",
-                "appId": 1,
-                "_links": {
-                  "app": {
-                    "href": "http://my.app-arena.com/api/v2/apps/1"
-                  },
-                  "config": {
-                    "href": "http://my.app-arena.com/api/v2/apps/1/configs/config_1"
-                  }
+              "configId": "config_1",
+              "lang": "de_DE",
+              "name": "template_config_name",
+              "revision": 0,
+              "value": "some_value",
+              "meta": {
+                "meta_key": {
+                  "meta_inner": "meta_inner_value"
+                }
+              },
+              "type": "input",
+              "description": "This is an example of a template config value.",
+              "appId": 1,
+              "_links": {
+                "app": {
+                  "href": "http://my.app-arena.com/api/v2/apps/1"
+                },
+                "config": {
+                  "href": "http://my.app-arena.com/api/v2/apps/1/configs/config_1"
                 }
               }
             }
@@ -555,20 +555,20 @@ GET /templates/:templateId/infos/:infoId
         {
           "_embedded": {
             "data": {
-              "info_1": {
-                "infoId": "info_1",
-                "lang": "de_DE",
-                "revision": 0,
-                "value": "1234",
-                "templateId": 888,
-                "meta": {"type": "integer"},
-                "_links": {
-                  "info": {
-                    "href": "http://my.app-arena.com/api/v2/apps/1/infos/info_1"
-                  },
-                  "template": {
-                    "href": "http://my.app-arena.com/api/v2/templates/888"
-                  }
+              "infoId": "info_1",
+              "lang": "de_DE",
+              "revision": 0,
+              "value": "1234",
+              "templateId": 888,
+              "meta": {
+                "type": "integer"
+              },
+              "_links": {
+                "info": {
+                  "href": "http://my.app-arena.com/api/v2/apps/1/infos/info_1"
+                },
+                "template": {
+                  "href": "http://my.app-arena.com/api/v2/templates/888"
                 }
               }
             }

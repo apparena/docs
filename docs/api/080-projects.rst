@@ -12,7 +12,7 @@ With this approach, the list of existing projects is slimmed down drastically wh
 
 In order to work on a specific version, the project routes are used while the version can be selected through the query parameter 'version'.
 
-    ``Example``: **GET /projects/1/configs?version=2.1.0** will return all config entries of the version '2.1.0' of project '1'
+    ``Example:`` **GET /projects/1/configs?version=2.1.0** will return all config entries of the version '2.1.0' of project '1'
 
 If no version query parameter is defined, the API automatically determines the highest version and performs the requested action on it.
 
@@ -127,18 +127,16 @@ GET /projects/:projectId
         {
           "_embedded": {
             "data": {
-              "1": {
-                "projectId": 1,
-                "name": "Project_1 name",
-                "description": "This is s project description",
-                "companyId": 1,
-                "_links": {
-                  "project": {
-                    "href": "http://my.app-arena.com/api/v2/projects/1"
-                  },
-                  "company": {
-                    "href": "http://my.app-arena.com/api/v2/companies/1"
-                  }
+              "projectId": 1,
+              "name": "Project_1 name",
+              "description": "This is s project description",
+              "companyId": 1,
+              "_links": {
+                "project": {
+                  "href": "http://my.app-arena.com/api/v2/projects/1"
+                },
+                "company": {
+                  "href": "http://my.app-arena.com/api/v2/companies/1"
                 }
               }
             }
@@ -382,23 +380,21 @@ GET /projects/:projectId/versions/:version
         {
           "_embedded": {
             "data": {
-              "1.1.0": {
-                "name": "project version 1.1.0",
-                "variant": "1.1.0",
-                "public": false,
-                "lang": "de_DE",
-                "companyId": 1,
-                "projectId": 1,
-                "_links": {
-                  "version": {
-                    "href": "http://my.app-arena.com/api/v2/projects/1/versions/1.1"
-                  },
-                  "company": {
-                    "href": "http://my.app-arena.com/api/v2/companies/1"
-                  },
-                  "project": {
-                    "href": "http://my.app-arena.com/api/v2/projects/1"
-                  }
+              "name": "project version 1.1.0",
+              "variant": "1.1.0",
+              "public": false,
+              "lang": "de_DE",
+              "companyId": 1,
+              "projectId": 1,
+              "_links": {
+                "version": {
+                  "href": "http://my.app-arena.com/api/v2/projects/1/versions/1.1"
+                },
+                "company": {
+                  "href": "http://my.app-arena.com/api/v2/companies/1"
+                },
+                "project": {
+                  "href": "http://my.app-arena.com/api/v2/projects/1"
                 }
               }
             }
@@ -624,21 +620,19 @@ GET /projects/:projectId/configs/:configId
         {
           "_embedded": {
             "data": {
-              "config_1": {
-                "configId": "bla",
-                "lang": "de_DE",
-                "revision": 0,
-                "type": "input",
-                "name": "bla",
-                "value": "lala",
-                "meta": null,
-                "description": null,
-                "projectId": 1,
-                "version": "1.1.0"
-                "_links": {
-                  "version": {
-                    "href": "http://my.app-arena.com/api/v2/projects/111/versions/384"
-                  }
+              "configId": "bla",
+              "lang": "de_DE",
+              "revision": 0,
+              "type": "input",
+              "name": "bla",
+              "value": "lala",
+              "meta": null,
+              "description": null,
+              "projectId": 1,
+              "version": "1.1.0",
+              "_links": {
+                "version": {
+                  "href": "http://my.app-arena.com/api/v2/projects/111/versions/384"
                 }
               }
             }
@@ -865,18 +859,18 @@ GET /projects/:projectId/infos/:infoId
         {
           "_embedded": {
             "data": {
-              "info_1": {
-                "infoId": "info_1",
-                "lang": "de_DE",
-                "revision": 1,
-                "value": "some_value",
-                "projectId": 1,
-                "version": "1.1.0"
-                "meta": {"type": "string"},
-                "_links": {
-                  "version": {
-                    "href": "http://my.app-arena.com/api/v2/projects/1/versions/1.0"
-                  }
+              "infoId": "info_1",
+              "lang": "de_DE",
+              "revision": 1,
+              "value": "some_value",
+              "projectId": 1,
+              "version": "1.1.0",
+              "meta": {
+                "type": "string"
+              },
+              "_links": {
+                "version": {
+                  "href": "http://my.app-arena.com/api/v2/projects/1/versions/1.0"
                 }
               }
             }
