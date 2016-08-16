@@ -15,6 +15,8 @@ To keep the response JSON small, only the basic template information is returned
 
 .. Note:: Submit only the appId. Additional information leads to denial of the request.
 
+.. http:response:: POST /templates
+
 .. http:response:: Example request body
 
     .. sourcecode:: js
@@ -23,7 +25,7 @@ To keep the response JSON small, only the basic template information is returned
             "appID"    :   1
         }
 
-    .. http:response:: Example response body
+.. http:response:: Example response body
 
     .. sourcecode:: js
 
