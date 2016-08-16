@@ -43,4 +43,6 @@ To keep the response JSON small, only the basic template information is returned
           }
         }
 
-.. Note:: The newly created template will be created as non-public. To change it into a publically available template, use a PUT request.
+.. Note:: The newly created template will be created as non-public. To change it into a publically available template, use a `PUT`_ request.
+
+.. _PUT: ../api/070-templates.html#put-templates-templateid
