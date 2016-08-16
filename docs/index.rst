@@ -38,6 +38,7 @@ API
     api/070-templates
     api/080-projects
     api/090-companies
+    api/100-Special_API_calls
 
 .. _sdk:
 
