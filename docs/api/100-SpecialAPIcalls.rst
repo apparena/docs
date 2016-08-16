@@ -22,7 +22,7 @@ To keep the response JSON small, only the basic template information is returned
     .. sourcecode:: js
 
         {
-            "appID"    :   1
+            "appId"    :   1
         }
 
 .. http:response:: Example response body
@@ -32,7 +32,7 @@ To keep the response JSON small, only the basic template information is returned
         {
           "status": 201,
           "data": {
-            "templateId": 1,
+            "templateId": 2,
             "version": "1.0.0",
             "projectId": 1,
             "parentId": 2,
