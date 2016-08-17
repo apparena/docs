@@ -79,8 +79,8 @@ If you want to modify an existing template but keep the original, you can copy i
     .. sourcecode:: js
 
         {
-            "copyFrom"  : "app",
-            "templateId"     :   1
+            "copyFrom"      : "app",
+            "templateId"    :   1
         }
 
 .. http:response:: Example response body
@@ -121,6 +121,6 @@ If you want to modify an existing template but keep the original, you can copy i
     lang
         ``string`` sets the default language of the new template. This language must be present in the root project.
     name
-        ``string`` defines the name of the new template. If not specified, the name of the app with an additional "[copy]" string is used
+        ``string`` defines the name of the new template. If not specified, the name of the pattern template with an additional "[copy]" string is used
     public
         ``bool`` sets the public status of the new template
