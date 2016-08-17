@@ -58,9 +58,9 @@ To keep the response JSON small, only the basic template information is returned
     projectId
         ``integer`` defines the project the newly created template points to. If the parentId is not equal to the templateId, the template points to the parent template, meaning that this will have no effect if a parent template is defined.
     version
-        ``string`` If a projectId is submitted, you can specify the version here
+        ``string`` if a projectId is submitted, you can specify the version here
     lang
-        .. include:: /partials/lang.rst
+        ``string`` sets the default language of the new template. This language must be present in the root project.
     name
         ``string`` defines the name of the new template
     public
