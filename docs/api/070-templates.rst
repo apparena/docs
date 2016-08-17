@@ -3,6 +3,8 @@ API - Template requests
 
     .. Hint:: While this documentation uses dummy names like config_1, info_1, etc., you are free to choose the ID of the values yourself as long as they contain only letters from a-z, numbers 0-9 and the underscore
 
+    Every template points to a parent template or a project. When the parentId is not equal to the templateId, the parent template is used. Only if the parentId equals the templateId, the project is the next step in the chain.
+
 /templates
 ----------
 

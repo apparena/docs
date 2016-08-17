@@ -5,15 +5,13 @@ Creating a template from an app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sometimes it might be handy to convert an app into a template. In this case a new template is created and all config, info,
-translation and language entries are copied into it. The template that the app was pointing to is being inserted as the parent template.
+translation and language entries are copied into it.
 
 In order to execute this, make a regular POST request onto /templates, but instead of submitting the required information for creating
-a template, just send the appId of the app you want to convert.
+a template, just send a field "copyFrom" : "app" and the appId of the app you want to convert.
 
-To keep the response JSON small, only the basic template information is returned. Use a GET/PUT request on templates/:templateId/infos, .../configs,
-.../translations or .../languages to retrieve/change its contents.
-
-.. Note:: Submit only the appId. Additional information leads to denial of the request.
+To keep the response JSON small, only the basic template information is returned. Use a GET request on templates/:templateId/infos, .../configs,
+.../translations or .../languages to retrieve its contents.
 
 .. http:response:: POST /templates
 
@@ -22,7 +20,8 @@ To keep the response JSON small, only the basic template information is returned
     .. sourcecode:: js
 
         {
-            "appId"    :   1
+            "copyFrom"  : "app",
+            "appId"     :   1
         }
 
 .. http:response:: Example response body
@@ -43,6 +42,27 @@ To keep the response JSON small, only the basic template information is returned
           }
         }
 
-.. Note:: The newly created template will be created as non-public. To change it into a publically available template, use a `PUT`_ request.
+    **Required data**
 
-.. _PUT: ../api/070-templates.html#put-templates-templateid
+    copyFrom
+        ``string`` must be "app"
+    appId
+        ``integer`` specifies the app the template will be copied from
+
+    **Optional data**
+
+    companyId
+        ``integer`` defines a different company than your own as owner of the newly created template
+    parentId
+        ``integer`` defines the template, the newly created template should point to. If left out, the template to which the app pointed will be used, if set to '0', the template points to the project.
+    projectId
+        ``integer`` defines the project the newly created template points to. If the parentId is not equal to the templateId, the template points to the parent template, meaning that this will have no effect if a parent template is defined.
+    version
+        ``string`` If a projectId is submitted, you can specify the version here
+    lang
+        .. include:: /partials/lang.rst
+    name
+        ``string`` defines the name of the new template
+    public
+        ``bool`` sets the public status of the new template
+
