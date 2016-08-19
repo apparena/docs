@@ -1,1 +1,1 @@
-``string`` specifies the contents of the config entity
+``string``      specifies the contents of the config entity

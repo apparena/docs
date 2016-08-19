@@ -209,6 +209,56 @@ POST /projects
     description
         .. include:: /partials/description.rst
 
+Copy an existing project
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This request makes a copy of an existing project. You can set
+
+.. http:response:: POST /projects
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "copyFrom"  : 1,
+            "version"   : "1.0.0"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 201,
+          "data": {
+            "projectId": 2,
+            "companyId": 1,
+            "name": "dummy project [copy]",
+            "description": null
+          }
+        }
+
+    **Required data**
+
+    copyFrom
+        ``string``  specifies the project which is to be copied
+    version
+        ``string``
+            "all"                   copies all existing versions of the project
+            "latest"                copies the most recent version of the project
+            "X.Y.Z"                 copies the specified version of the project
+            ["A.B.C","X.Y.Z",...]   copies all the declared versions of the project
+
+    **Optional data**
+
+    companyId
+        ``integer`` defines a different company than your own as owner of the newly created template
+    name
+        ``string``  defines the name of the new project. If not specified, the name of the original project with an additional "[copy]" string is used
+    description
+        ``string``  describe the newly created project
+
 PUT /projects/:projectId
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -284,7 +334,7 @@ The version component consists of the following fields:
     name
         .. include:: /partials/name.rst
     variant
-        ``string`` the version number (is called 'variant' only in the version itself, all other components call this field 'version')
+        ``string``  the version number (is called 'variant' only in the version itself, all other components call this field 'version')
     public
         .. include:: /partials/public.rst
 

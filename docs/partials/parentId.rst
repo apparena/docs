@@ -1,1 +1,1 @@
-``integer`` the parent template this template points to
+``integer``     the parent template this template points to

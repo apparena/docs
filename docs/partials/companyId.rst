@@ -1,1 +1,1 @@
-``integer`` The ID of the owning company
+``integer``     the id of the owning company

@@ -1,1 +1,1 @@
-``bool`` the status of the app
+``bool``    the status of the app

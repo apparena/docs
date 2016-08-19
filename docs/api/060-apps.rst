@@ -13,9 +13,9 @@ The app component consists of the following fields:
     appId
         .. include:: /partials/uniqueId.rst
     templateId
-        ``integer`` the template this app points to
+        ``integer``     the template this app points to
     companyId
-        ``integer`` id of the owning company
+        ``integer``     id of the owning company
     lang
         .. include:: /partials/lang.rst
     name
@@ -23,7 +23,7 @@ The app component consists of the following fields:
     activated
         .. include:: /partials/activated.rst
     expiryDate
-        ``string`` the date until the app is running or ``integer`` the number of days the app is running
+        ``string``      the date until the app is running or ``integer`` the number of days the app is running
 
     **common fields**
 

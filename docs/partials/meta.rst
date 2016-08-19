@@ -1,1 +1,1 @@
-``string`` additional information in custom format. See config meta_ section for information about the behaviour of meta data
+``string``      additional information in custom format. See config meta_ section for information about the behaviour of meta data

@@ -1,1 +1,1 @@
-``string`` an informational description of the purpose of this entity, displayed to the user
+``string``      an informational description of the purpose of this entity, displayed to the user

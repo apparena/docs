@@ -1,2 +1,2 @@
-``integer`` instead of modifying an existing entity, a new entity is created while the revision reflects its actuality -> The highest revision marks the currently used entity
-see the `revision<../api/040-structure>`_ section for more information
+``integer``     instead of modifying an existing entity, a new entity is created while the revision reflects its actuality -> The highest revision marks the currently used entity
+                see the `revision<../api/040-structure>`_ section for more information

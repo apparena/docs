@@ -1,1 +1,1 @@
-``string`` the unique identifier for this entity
+``string``      the unique identifier for this entity

@@ -1,1 +1,1 @@
-``bool`` determines if the template may be used by users of foreign companies
+``bool``        determines if the template may be used by users of foreign companies

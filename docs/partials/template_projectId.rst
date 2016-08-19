@@ -1,1 +1,1 @@
-``integer`` the project this template points to (if parentId equals templateId)
+``integer``     the project this template points to (if parentId equals templateId)

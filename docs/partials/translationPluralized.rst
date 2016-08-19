@@ -1,1 +1,1 @@
-``string`` the translated string (plural translation)
+``string``      the translated string (plural translation)

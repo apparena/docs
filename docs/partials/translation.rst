@@ -1,1 +1,1 @@
-``string`` the translated string (singular translation)
+``string``      the translated string (singular translation)
