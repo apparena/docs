@@ -400,6 +400,8 @@ DELETE /templates/:templateId
           "message": "Template '1' deleted."
         }
 
+--------
+
 /templates/:templateId/configs
 ------------------------------
 
@@ -586,6 +588,8 @@ DELETE /templates/:templateId/configs/:configId
           "message": "Config 'config_1' deleted."
         }
 
+--------
+
 /templates/:templateId/infos
 ----------------------------
 
@@ -756,6 +760,8 @@ DELETE /templates/:templateId/infos/:infoId
           "status": 200,
           "message": "Info 'info_1' in template '1' deleted."
         }
+
+--------
 
 /templates/:templateId/languages
 --------------------------------

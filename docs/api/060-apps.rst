@@ -326,6 +326,8 @@ DELETE /apps/:appId
           "message": "app '1' deleted."
         }
 
+--------
+
 /apps/:appId/configs
 --------------------
 
@@ -515,6 +517,8 @@ DELETE /apps/:appId/configs/:configId
           "message": "Config 'config_1' deleted."
         }
 
+--------
+
 /apps/:appId/infos
 ------------------
 
@@ -683,6 +687,8 @@ DELETE /apps/:appId/infos/:infoId
           "status": 200,
           "message": "Info 'info_1' in app '1' deleted."
         }
+
+--------
 
 /apps/:appId/languages
 ----------------------

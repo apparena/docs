@@ -318,6 +318,8 @@ DELETE /projects/:projectId
           "message": "Project '2' deleted."
         }
 
+--------
+
 /projects/:projectId/versions
 -----------------------------
 
@@ -612,6 +614,8 @@ DELETE /projects/:projectId/versions/:version
           "message": "Version '111' deleted."
         }
 
+--------
+
 /projects/:projectId/configs
 ----------------------------
 
@@ -863,6 +867,8 @@ DELETE /projects/:projectId/configs/:configId
           "message": "Config 'config_1' in project '1' deleted."
         }
 
+--------
+
 /projects/:projectId/infos
 --------------------------
 
@@ -1083,6 +1089,8 @@ DELETE /projects/:projectId/infos/:infoId
           "message": "Info 'info_1' in project '1' deleted."
         }
 
+--------
+
 /projects/:projectId/languages
 ------------------------------
 
@@ -1156,6 +1164,8 @@ POST /projects/:projectId/languages
 
     lang
         .. include:: /partials/lang.rst
+
+--------
 
 /projects/:projectId/translations
 ---------------------------------
