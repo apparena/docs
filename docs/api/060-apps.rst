@@ -1,3 +1,4 @@
+==================
 API - App requests
 ==================
 
@@ -205,6 +206,59 @@ POST /apps
             Sets a date for app expiration, needs to be in the format 'Y-m-d H:i:s' with Y=year, m=month, d=day, H=hour, i=minute, s=second
     activated
         .. include:: /partials/activated.rst
+
+Copy an existing app
+~~~~~~~~~~~~~~~~~~~~
+
+If you want to modify an existing template but keep the original, you can copy it by sending a POST request with the field "copyFrom" : "template" and the templateId
+
+.. http:response:: POST /apps
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "copyFrom"      : 1
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 201,
+          "data": {
+            "appId": 2,
+            "templateId": 1,
+            "companyId": 1,
+            "lang": "de_DE",
+            "name": "App name [copy]",
+            "activated": true,
+            "expiryDate": "2016-10-03 13:16:52"
+          }
+        }
+
+    **Required data**
+
+    copyFrom
+        ``string``  specifies the app which is to be copied
+
+    **Optional data**
+
+    templateId
+        ``integer`` sets the template the new app is pointing to
+    companyId
+        ``integer`` sets a different company than your own as owner of the newly created app
+    expiryDate
+        ``string``  sets the expiration date of the app
+        ``integer`` sets the expiration date in days. A value of 30 means that the app will expire in 30 days from the day of execution
+    lang
+        ``string``  sets the default language of the new app. This language must be present in the root project
+    name
+        ``string``  defines the name of the new app. If not specified, the name of the original app with an additional "[copy]" string is used
+    activated
+        ``bool``    sets the activation status of the new app
 
 PUT /apps/:appId
 ~~~~~~~~~~~~~~~~

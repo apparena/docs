@@ -321,6 +321,8 @@ DELETE /projects/:projectId
 /projects/:projectId/versions
 -----------------------------
 
+.. Note:: Every request regarding a version of a project uses 'projectId' and 'version' fields for indication. When handling the actual version entities, the field 'variant' is used.
+
 The version component consists of the following fields:
 
     **version fields**
@@ -504,6 +506,53 @@ POST /projects/:projectId/versions
         ``string`` the version number (is called 'variant' only in the version itself, all other components call this field 'version')
     public
         .. include:: /partials/public.rst
+
+Copy an existing version
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Copies a version inside a project specified by :projectId
+
+.. http:response:: POST /projects/:projectId/versions
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "copyFrom"  : "1.0.0"
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 201,
+          "data": {
+            "projectId": 1,
+            "variant": "1.0.1",
+            "companyId": 1,
+            "name": "dummy version of project 1 [copy]",
+            "lang": "de_DE",
+            "public": false
+          }
+        }
+
+    **Required data**
+
+    copyFrom
+        ``string``  specifies the version which is to be copied
+
+    **Optional data**
+
+    name
+        ``string``  defines the name of the new version. If not specified, the name of the original version with an additional "[copy]" string is used
+    lang
+        ``string``  sets the default language of the new version
+    variant
+        ``string``  sets the version variant number ("A.B.C") of the new version. If not submitted, the last digit is increased by one
+    public
+        ``bool``    sets the public status of the new version
 
 PUT /projects/:projectId/versions/:version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
