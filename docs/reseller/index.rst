@@ -5,9 +5,14 @@ As a reseller you can create your own Whitelabel Web-App-Store running under you
 integrate the store into your processes there is some information, which makes it easier for you to integrate.
 Read about it on this page.
 
+Create a whitelabel store
+-------------------------
 
-Let customer's create free demos
---------------------------------
+To create your own store contact us for pricing and the setup: service@app-arena.com or +49 (0)221 177 340.
+
+
+Let customers create free demos
+-------------------------------
 
 That's an easy one. Just link to `https://www.yourstoredomain.com/app/create?templateId=123&templateName=App-Name`
 
