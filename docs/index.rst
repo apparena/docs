@@ -52,5 +52,15 @@ SDK
     sdk/php/190-smartlink
     sdk/js/001-index
 
+.. _reseller:
+
+Reseller
+~~~~~~~~
+
+.. toctree::
+    :maxdepth: 2
+
+    reseller/index
+
 
 
