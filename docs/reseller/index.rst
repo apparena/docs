@@ -8,7 +8,7 @@ Read about it on this page.
 Create a whitelabel store
 -------------------------
 
-To create your own store contact us for pricing and the setup: service@app-arena.com or +49 (0)221 177 340.
+To create your own store contact us for pricing and the setup: service@app-arena.com or +49 (0)221 177 340 - 00.
 
 
 Let customers create free demos
