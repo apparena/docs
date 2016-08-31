@@ -1,3 +1,5 @@
+.. include:: /partials/helpers/html.rst
+
 API - Getting started
 =====================
 
