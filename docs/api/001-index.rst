@@ -52,8 +52,6 @@ http://route.to.api/collection/entity?query1=xxx&query2=yyy&query3=...
 
 .. Note:: You can find the available queries for each call in their respective section.
 
-.. Warning:: INCOMPLETE! todo
-
 Available query options:
 
 +------------+--------------------------+-------------------------------------------------------+
