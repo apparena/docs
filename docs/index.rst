@@ -1,6 +1,9 @@
 App-Arena Developer documentation 2.0
 =====================================
 
+.. |br| raw:: html
+
+   <br />
 
 .. warning:: The documentation of the API 2.0 is still in beta. We are constantly improving it and we are glad for pull
              requests.

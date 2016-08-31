@@ -59,9 +59,9 @@ Available query options:
 +============+==========================+=======================================================+
 | lang       | GET,PUT,DELETE           | points the request to the desired language            |
 +------------+--------------------------+-------------------------------------------------------+
-| fields     | GET                      | receive only desired fields in the response,          |
-|            |                          |       list fields comma separated                     |
-|            |                          |               example: fields=appId,expiryDate,name   |
+| fields     | GET                      | receive only desired fields in the response, |br|     |
+|            |                          | list fields comma separated |br|                      |
+|            |                          | example: fields=appId,expiryDate,name                 |
 +------------+--------------------------+-------------------------------------------------------+
 | exclude    | GET                      | exclude fields from the response                      |
 +------------+--------------------------+-------------------------------------------------------+
