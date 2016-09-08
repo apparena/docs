@@ -1,7 +1,6 @@
 App-Arena Developer documentation 2.0
 =====================================
 
-
 .. warning:: The documentation of the API 2.0 is still in beta. We are constantly improving it and we are glad for pull
              requests.
 
@@ -51,6 +50,16 @@ SDK
     sdk/php/030-css
     sdk/php/190-smartlink
     sdk/js/001-index
+
+.. _reseller:
+
+Reseller
+~~~~~~~~
+
+.. toctree::
+    :maxdepth: 2
+
+    reseller/index
 
 
 

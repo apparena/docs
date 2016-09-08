@@ -1,3 +1,5 @@
+.. include:: /partials/helpers/html.rst
+
 API - Getting started
 =====================
 
@@ -52,37 +54,32 @@ http://route.to.api/collection/entity?query1=xxx&query2=yyy&query3=...
 
 .. Note:: You can find the available queries for each call in their respective section.
 
-.. Warning:: INCOMPLETE! todo
-
 Available query options:
 
 +------------+--------------------------+-------------------------------------------------------+
 | Query      | Valid for                | Description                                           |
 +============+==========================+=======================================================+
-| lang       | GET,PUT,DELETE           | | points the request to the desired language          |
+| lang       | GET,PUT,DELETE           | points the request to the desired language            |
 +------------+--------------------------+-------------------------------------------------------+
-| fields     | GET                      | | receive only desired fields in the response,        |
-|            |                          | | list fields comma separated                         |
-|            |                          | | example: fields=appId,expiryDate,name               |
+| fields     | GET                      | receive only desired fields in the response, |br|     |
+|            |                          | list fields comma separated |br|                      |
+|            |                          | example: fields=appId,expiryDate,name                 |
 +------------+--------------------------+-------------------------------------------------------+
-| exclude    | GET                      | | exclude fields from the response                    |
+| exclude    | GET                      | exclude fields from the response                      |
 +------------+--------------------------+-------------------------------------------------------+
-| force      | POST                     | | //todo                                              |
+| type       | GET                      | receive only media items of type image, audio or      |
+|            |                          | video                                                 |
 +------------+--------------------------+-------------------------------------------------------+
-| type       | GET                      | | receive only media items of type image, audio or    |
-|            |                          | | video                                               |
+| orderasc   | GET                      | order the response items ascending                    |
+|            |                          | example: orderasc=appId                               |
 +------------+--------------------------+-------------------------------------------------------+
-| orderasc   | GET                      | | order the response items ascending                  |
-|            |                          | | example: orderasc=appId                             |
+| orderdesc  | GET                      | order the response items descending                   |
 +------------+--------------------------+-------------------------------------------------------+
-| orderdesc  | GET                      | | order the response items descending                 |
+| page       | GET                      | sets the page of paginated results                    |
 +------------+--------------------------+-------------------------------------------------------+
-| page       | GET                      | | sets the page of paginated results                  |
+| items      | GET                      | sets the amount of items of paginated results         |
 +------------+--------------------------+-------------------------------------------------------+
-| items      | GET                      | | sets the amount of items of paginated results       |
-+------------+--------------------------+-------------------------------------------------------+
-| version    | GET, POST, PUT, DELETE   | | order the response items ascending                  |
-|            |                          | | example: orderasc=appId                             |
+| version    | GET, POST, PUT, DELETE   |                                                       |
 +------------+--------------------------+-------------------------------------------------------+
 
 .. Note:: There are no default values. When a query parameter is not defined, no action is performed.
