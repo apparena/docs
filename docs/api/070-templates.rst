@@ -313,7 +313,7 @@ If you want to modify an existing template but keep the original, you can copy i
     copyFrom
         ``string``  must be "template"
     templateId
-        ``integer`` specifies the pattern template
+        ``integer``|``string`` sets the template ID which is to be copied
 
     **Optional data**
 

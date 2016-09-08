@@ -242,7 +242,7 @@ If you want to modify an existing template but keep the original, you can copy i
     **Required data**
 
     copyFrom
-        ``integer``  specifies the app which is to be copied
+        ``integer``|``string``  sets the app ID which is to be copied
 
     **Optional data**
 

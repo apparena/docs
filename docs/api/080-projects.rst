@@ -242,7 +242,7 @@ This request makes a copy of an existing project. You can set
     **Required data**
 
     copyFrom
-        ``string``  specifies the project which is to be copied
+        ``integer``|``string``  sets the project ID which is to be copied
     version
         ``string``
             "all"                   copies all existing versions of the project
