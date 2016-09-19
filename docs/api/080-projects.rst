@@ -247,10 +247,10 @@ This request makes a copy of an existing project. You can set
         ``integer``|``string``  sets the project ID which is to be copied
     version
         ``string``
-            `"all"`                   copies all existing versions of the project|br|
-            `"latest"`                copies the most recent version of the project|br|
-            `"X.Y.Z"`                 copies the specified version of the project|br|
-            `["A.B.C","X.Y.Z",...]`   copies all the declared versions of the project|br|
+            `"all"`                   copies all existing versions of the project |br|
+            `"latest"`                copies the most recent version of the project |br|
+            `"X.Y.Z"`                 copies the specified version of the project |br|
+            `["A.B.C","X.Y.Z",...]`   copies all the declared versions of the project |br|
 
     **Optional data**
 
