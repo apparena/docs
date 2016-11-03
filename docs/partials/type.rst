@@ -1,1 +1,1 @@
-``string``      specifies the contents of the config entity
+``string``      has to be one of "facebook", "domain" or "website"
