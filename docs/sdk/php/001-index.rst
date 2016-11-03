@@ -31,14 +31,15 @@ Use the Composer autoloader to start using the App-Manager
         $am = new \AppArena\AppManager(
             array(
                 "projectId" => 123, // Add your project ID here
-                "cache" => ["dir" => ROOT_PATH . "/var/cache"],
+                "root_path" => ROOT_PATH,
+                "cache" => ["dir" => "/var/cache"],
                 'apikey' => "ABCDEFGHIJKLMNOPQRSTUVW" // Add you API key here
             )
         );
         // Get all necessary instance information to start working
-        $configs = $am->getApp()->getConfigs();
+        $configs      = $am->getApp()->getConfigs();
         $translations = $am->getApp()->getTranslations();
-        $info = $am->getApp()->getInfos();
+        $info         = $am->getApp()->getInfos();
 
 
 Now the connection is build up and you can start using you App-Instance. The App-Manager SDK automatically tries to get
