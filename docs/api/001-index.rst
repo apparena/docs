@@ -118,37 +118,37 @@ The field types in use are:
 
 .. Note:: The filter is generally case insensitive.
 
-Any field of an entity can be targeted for filtering with one of the following operators:
+A field of an entity can be targeted for filtering with one of the following operators:
 
     [eq]
         equals : receive a collection of entities where the target field value equals the submitted value
-            applicable for all field types, in case of type ``datetime`` the filter returns all entities that match the day regardless of the time of the day
+        applicable for all field types, in case of type ``datetime`` the filter returns all entities that match the day regardless of the time of the day
     [neq]
         equals not : receive a collection of entities where the target field value does not equal the submitted value
-            applicable for all field types, in case of type ``datetime`` the filter returns all entities that do not match the day regardless of the time of the day
+        applicable for all field types, in case of type ``datetime`` the filter returns all entities that do not match the day regardless of the time of the day
     [match]
         matches : receive a collection of entities where the target field value matches the submitted value partially
-            e.g. : the match value 'test' for the target field 'name' returns all entities where the 'name' field contains the string 'test' independent of the location of the occurrence in the string like 'testApp', 'Apptest' or 'appTESTapp'
-            applicable only for the field types 'string'
+        e.g. : the match value 'test' for the target field 'name' returns all entities where the 'name' field contains the string 'test' independent of the location of the occurrence in the string like 'testApp', 'Apptest' or 'appTESTapp'
+        applicable only for the field types 'string'
     [not]
         matches not: receive a collection of entities where the target field value does not contain the submitted value
-            applicable only for the field types 'string'
+        applicable only for the field types 'string'
     [gt]
         greater than : receive a collection of entities where the target field value is greater than the submitted value
-            applicable for field types 'integer' and 'datetime'
+        applicable for field types 'integer' and 'datetime'
     [gte]
         greater than or equal: receive the same as [gt] inclusive the submitted value
-            applicable for field types 'integer' and 'datetime'
+        applicable for field types 'integer' and 'datetime'
     [lt]
         lower than : receive a collection of entities where the target field value is lower than the submitted value
-            applicable for field types 'integer' and 'datetime'
+        applicable for field types 'integer' and 'datetime'
     [lte]
         lower than or equal: receive the same as [gt] inclusive the submitted value
-            applicable for field types 'integer' and 'datetime'
+        applicable for field types 'integer' and 'datetime'
 
 Syntax:
 
-GET /{collection}?filter.{target}[{operator}]={value}
+.. http:response:: GET /{collection}?filter.{target}[{operator}]={value}
 
     Where {collection} is the route to the target collection, if we wanted to receive apps it would be just 'apps', for the config entities of that app it would be 'apps/:appId/configs'.
     The 'filter.' keyword at the beginning of the query parameter is mandatory, indicating the filter intention to the API.
@@ -160,13 +160,13 @@ Example:
 
 1.) If we wanted to get apps which are not yet expired and will not expire today, the request would look like this (on the 25th of november in 2016, the date this was written):
 
-GET /apps?filter.expiryDate[gt]=2016-11-25
+.. http:response:: GET /apps?filter.expiryDate[gt]=2016-11-25
 
 2.) If we wanted to get all the config entities of app '1' where the 'type' field is 'input' the request would be
 
-GET /apps/1/configs?filter[eq]=input
+.. http:response:: GET /apps/1/configs?filter[eq]=input
 
-.. Note:: You can combine all the available query parameter with this filter, shaping your request as you want it.
+Combine these request with pagination, order- and field filters to make precise and lightweight requests!
 
 Response Formats
 ----------------
