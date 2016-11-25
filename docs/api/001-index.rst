@@ -257,9 +257,7 @@ There are no restrictions when fetching an entity. Add as much relations to the 
 You will find the relation data under its identifier key (already used in the request) in the "_embedded" -> "data" object. Relation entities
 data is in the first level of the relation object while relation collections data is in objects with their identifier as keys.
 
-.. Warning:: The relation query parameter directly modifies the query to the database. Therefore you only receive properties directly connected to the base entity,
-no inheritance of entities from the App/Template/Version chain as you know it from the regular calls on those collections/entities takes place! Relation calls are not intended
-to substitute the regular calls, but rather to complete requests in order to save time and reduce server load.
+.. Warning:: The relation query parameter directly modifies the query to the database. Therefore you only receive properties directly connected to the base entity, no inheritance of entities from the App/Template/Version chain as you know it from the regular calls on those collections/entities takes place! Relation calls are not intended to substitute the regular calls, but rather to complete requests in order to save time and reduce server load.
 
 Collection Relations
 ~~~~~~~~~~~~~~~~~~~~
@@ -383,8 +381,8 @@ The response format of a collection request with relations looks something like 
 
 .. Note:: Relation entities/collection do not contain links in the `HAL-format <#response-formats>`_ style
 
-Example Requests
-~~~~~~~~~~~~~~~~
+Example Request
+~~~~~~~~~~~~~~~
 
 Let's assume that we want to display the App with the Id = 1, including all details of it. That means we need the name of the template as well as
 the name of the company that owns it. Additionally we want to display the activated languages and wen need some information stored in the
