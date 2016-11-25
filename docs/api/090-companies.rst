@@ -862,9 +862,9 @@ POST /companies/:companyId/channels
 
     name
         .. include:: /partials/name.rst
-type
+    type
         .. include:: /partials/channeltype.rst
-value
+    value
         ``string`` stores channel information like a key, domain name, etc.
 
     **Optional data**

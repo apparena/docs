@@ -81,8 +81,87 @@ Available query options:
 +------------+--------------------------+-------------------------------------------------------+
 | version    | GET, POST, PUT, DELETE   |                                                       |
 +------------+--------------------------+-------------------------------------------------------+
+| filter     | GET                      | filter the results, explanation in the                |
+|            |                          | `Filter section`_ below.                              |
++------------+--------------------------+-------------------------------------------------------+
+| rel        | GET                      | receive additional related information in a single    |
+|            |                          | request, explanation in the `Relation section`_ below |
++------------+--------------------------+-------------------------------------------------------+
 
-.. Note:: There are no default values. When a query parameter is not defined, no action is performed.
+.. _Filter section: #the-filter-query-parameter
+.. _Relation section: #the-relation-query-parameter
+
+.. Note:: Only collection requests on 'Apps', 'Templates', 'Projects', 'Versions', 'Companies' and 'Customers' have default pagination values. Elsewhere, when a query parameter is not defined, no action is performed.
+
+The Filter Query Parameter
+--------------------------
+
+Requests can be refined with a filter query to shape the output exactly to what you want to receive. In combination with the
+pagination query parameters, the filter function make a great search tool for the data you want to display.
+
+.. Note:: The filter is applicable for all GET requests of collections and can be combined freely with the other available query parameter options.
+
+The filter distinguishes between the different field types and allows only certain operator types for each type. You can find the types of the fields in the respective section of the calls.
+The field types in use are:
+    ``bool``
+        operators: [eq], [neq]
+    ``integer``
+        operators: [eq], [neq],[gt], [gte], [lt], [lte]
+    ``text`` and ``string`` (which are treated the same)
+        operators: [eq], [neq], [match], [not]
+    ``datetime`` in the format Y-m-D (Year-Month-Day)
+        operators: [eq], [neq], [gt], [gte], [lt], [lte]
+
+.. Note:: The filter is generally case insensitive.
+
+Any field of an entity can be targeted for filtering with one of the following operators:
+    [eq]
+        equals : receive a collection of entities where the target field value equals the submitted value
+            applicable for all field types, in case of type ``datetime`` the filter returns all entities that match the day regardless of the time of the day
+    [neq]
+        equals not : receive a collection of entities where the target field value does not equal the submitted value
+            applicable for all field types, in case of type ``datetime`` the filter returns all entities that do not match the day regardless of the time of the day
+    [match]
+        matches : receive a collection of entities where the target field value matches the submitted value partially
+            e.g. : the match value 'test' for the target field 'name' returns all entities where the 'name' field contains the string 'test' independent of the location of the occurrence in the string like 'testApp', 'Apptest' or 'appTESTapp'
+            applicable only for the field types 'string'
+    [not]
+        matches not: receive a collection of entities where the target field value does not contain the submitted value
+            applicable only for the field types 'string'
+    [gt]
+        greater than : receive a collection of entities where the target field value is greater than the submitted value
+            applicable for field types 'integer' and 'datetime'
+    [gte]
+        greater than or equal: receive the same as [gt] inclusive the submitted value
+            applicable for field types 'integer' and 'datetime'
+    [lt]
+        lower than : receive a collection of entities where the target field value is lower than the submitted value
+            applicable for field types 'integer' and 'datetime'
+    [lte]
+        lower than or equal: receive the same as [gt] inclusive the submitted value
+            applicable for field types 'integer' and 'datetime'
+
+Syntax:
+
+GET /{collection}?filter.{target}[{operator}]={value}
+
+    Where {collection} is the route to the target collection, if we wanted to receive apps it would be just 'apps', for the config entities of that app it would be 'apps/:appId/configs'.
+    The 'filter.' keyword at the beginning of the query parameter is mandatory, indicating the filter intention to the API.
+    The {target} defines the field which is to be filtered. Find the available fields in the corresponding section of the call.
+    In the brackets follows the {operator} which is defining the mode of the filter (see operators list above).
+    The {value} is mandatory and needs to follow a '=' character. Just put here the plain value without any " or ', no matter integer or string.
+
+Example:
+
+1.) If we wanted to get apps which are not yet expired and will not expire today, the request would look like this (on the 25th of november in 2016, the date this was written):
+
+GET /apps?filter.expiryDate[gt]=2016-11-25
+
+2.) If we wanted to get all the config entities of app '1' where the 'type' field is 'input' the request would be
+
+GET /apps/1/configs?filter[eq]=input
+
+.. Note:: You can combine all the available query parameter with this filter, shaping your request as you want it.
 
 Response Formats
 ----------------
@@ -107,7 +186,7 @@ A complete list of HTTP response formats you can find here: HTTP-Statuscodes_
 The JSON output depends on the type of request and the data submitted. GET Requests will mostly output data in the HAL-format_,
 a format which provides links to the mentioned resources for easy resource browsing.
 As some of the requests are intended for listing items to the user, these requests will additionally output the data paginated.
-The data comes in chunks of an adjustable size for convenient item representation. PUT and POST requests however output
+It comes in chunks of adjustable size for convenient item representation. PUT and POST requests however output
 besides a status code the created/updated information without any links to the resources, as this information serves for
 verification and further processing.
 DELETE requests will always output a status and a message.
