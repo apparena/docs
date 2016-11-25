@@ -30,6 +30,12 @@ The app component consists of the following fields:
 
     .. include:: /partials/common_all.rst
 
+    **relations**
+
+    company*, template*, configs, translations, infos, languages*
+
+    * can be fetched via collection request
+
 GET /apps
 ~~~~~~~~~
 

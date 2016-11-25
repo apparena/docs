@@ -31,6 +31,12 @@ The template component consists of the following fields:
 
     .. include:: /partials/common_all.rst
 
+    **relations**
+
+    apps, company*, parentTemplate*, configs, translations, infos, versions*, languages*
+
+    * can be fetched via collection request
+
 GET /templates
 ~~~~~~~~~~~~~~
 

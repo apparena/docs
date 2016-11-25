@@ -221,25 +221,25 @@ There are no restrictions when fetching an entity. Add as much relations to the 
                         .
                         .
                         .
-                    "relation1": {                                                        //relation entity
-                        "relationProperty1": "relValue1",
-                        "relationProperty2": "relValue2",
+                    "relation1": {                              //relation entity
+                        "relationProperty1_1": "relValue1_1",
+                        "relationProperty1_1": "relValue1_2",
                             .
                             .
                             .
                     },
-                    "relation2": {                                                        //relation collection
-                        "relationIdentifier1": {
-                            "relationProperty1": "relValue1",
-                            "relationProperty2": "relValue2",
+                    "relation2": {                              //relation collection
+                        "relationIdentifier2_1": {
+                            "relationProperty2_1": "relValue2_1",
+                            "relationProperty2_1": "relValue2_1",
                                 .
                                 .
                                 .
                         },
-                        "relationIdentifier2": {
-                                .
-                                .
-                                .
+                        "relationIdentifier2_2": {
+                            .
+                            .
+                            .
                         },
                     },
                     "relation3": {
@@ -297,22 +297,22 @@ The response format of a collection request with relations looks something like 
                 "expiryDate":   "2017-08-04 00:00:00",
                 "companyId":    1,
                 "templateId":   10,
-                "relation1": {                                                        //relation entity
-                    "relationProperty1": "relValue1",
-                    "relationProperty2": "relValue2",
+                "relation1": {                              //relation entity
+                    "relationProperty1_1": "relValue1_1",
+                    "relationProperty1_2": "relValue1_1",
                         .
                         .
                         .
                 },
-                "relation2": {                                                        //relation collection
-                    "relationIdentifier1": {
-                        "relationProperty1": "relValue1",
-                        "relationProperty2": "relValue2",
+                "relation2": {                              //relation collection
+                    "relationIdentifier1_1": {
+                        "relationProperty2_1": "relValue2_1",
+                        "relationProperty2_2": "relValue2_2",
                             .
                             .
                             .
                     },
-                    "relationIdentifier2": {
+                    "relationIdentifier1_2": {
                             .
                             .
                             .
@@ -338,7 +338,30 @@ The response format of a collection request with relations looks something like 
                     .
                     .
                     .
-                }
+                "relation1": {                              //relation entity
+                    "relationProperty1": "relValue1",
+                    "relationProperty2": "relValue2",
+                        .
+                        .
+                        .
+                },
+                "relation2": {                              //relation collection
+                    "relationIdentifier1": {
+                        "relationProperty1": "relValue1",
+                        "relationProperty2": "relValue2",
+                            .
+                            .
+                            .
+                    },
+                    "relationIdentifier2": {
+                            .
+                            .
+                            .
+                    },
+                },
+                .
+                .
+                .
               },
               "102": {
                 "appId": 102,
@@ -359,6 +382,137 @@ The response format of a collection request with relations looks something like 
         }
 
 .. Note:: Relation entities/collection do not contain links in the `HAL-format <#response-formats>`_ style
+
+Example Requests
+~~~~~~~~~~~~~~~~
+
+Let's assume that we want to display the App with the Id = 1, including all details of it. That means we need the name of the template as well as
+the name of the company that owns it. Additionally we want to display the activated languages and wen need some information stored in the
+info entities. In this case the request would look like this:
+
+.. http:response:: GET /apps/1?rel=template,company,languages,infos
+
+The request output would be:
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "appId": 1,
+              "name": "App name",
+              "lang": "de_DE",
+              "activated": true,
+              "expiryDate": "2099-04-18 00:00:00",
+              "companyId": 1,
+              "templateId": 22,
+              "template": {
+                "templateId": 22,
+                "name": "Template name",
+                "lang": "de_DE",
+                "parentId": 22,
+                "versionId": 33,
+                "companyId": 1,
+                "public": true,
+                "created": "2016-04-20 13:51:44",
+                "updated": "2016-04-20 13:51:44",
+                "deletedAt": null,
+                "createdFromIp": "0.0.0.0",
+                "updatedFromIp": "0.0.0.0",
+                "createdBy": "some user",
+                "updatedBy": "some user"
+              },
+              "company": {
+                "companyId": 1,
+                "subdomain": "subdomain",
+                "name": "App-Arena GmbH",
+                "address1": "Moltkestr. 123",
+                "address2": "",
+                "zip": "50674",
+                "city": "Cologne",
+                "country": "DE",
+                "logo": "https://my.path.to/my/logo.png",
+                "color1": "#478AB8",
+                "color2": "#2D343D",
+                "parentId": 1,
+                "storeId": 1,
+                "created": "2016-04-20 13:46:50",
+                "updated": "2016-10-07 10:32:06",
+                "deletedAt": null,
+                "createdFromIp": "0.0.0.0",
+                "updatedFromIp": "0.0.0.0",
+                "createdBy": "some admin",
+                "updatedBy": "some admin"
+              },
+              "languages": {
+                "de_DE": {
+                  "lang": "de_DE",
+                  "activated": true,
+                  "appId": 1,
+                  "created": "2016-04-20 13:46:50",
+                  "updated": "2016-10-07 10:32:06",
+                  "createdFromIp": 0.0.0.0,
+                  "updatedFromIp": 0.0.0.0,
+                  "createdBy": "some user",
+                  "updatedBy": "some user"
+                },
+                "en_US": {
+                  "lang": "en_US",
+                  "activated": true,
+                  "appId": 1,
+                  "created": "2016-04-20 13:46:50",
+                  "updated": "2016-10-07 10:32:06",
+                  "createdFromIp": 0.0.0.0,
+                  "updatedFromIp": 0.0.0.0,
+                  "createdBy": "some user",
+                  "updatedBy": "some user"
+                }
+              },
+              "infos": {
+                "description": {
+                  "infoId": "description",
+                  "lang": "de_DE",
+                  "revision": 0,
+                  "value": "a nice description of this app",
+                  "meta": {},
+                  "appId": 1,
+                  "deletedAt": null,
+                  "createdBy": "some user",
+                  "createdFromIp": "0.0.0.0",
+                  "created": "2016-04-20 13:52:52"
+                }
+                "fb_page_url": {
+                  "infoId": "fb_page_url",
+                  "lang": "de_DE",
+                  "revision": 0,
+                  "value": "https://www.facebook.com/",
+                  "meta": {},
+                  "appId": 1,
+                  "deletedAt": null,
+                  "createdBy": "some user",
+                  "createdFromIp": "0.0.0.0",
+                  "created": "2016-04-20 13:52:55"
+                }
+              },
+              "_links": {
+                "app": {
+                  "href": "http://manager.local/api/v2/apps/1"
+                },
+                "language": {
+                  "href": "http://manager.local/api/v2/apps/1/languages"
+                },
+                "company": {
+                  "href": "http://manager.local/api/v2/companies/1"
+                },
+                "template": {
+                  "href": "http://manager.local/api/v2/templates/22"
+                }
+              }
+            }
+          }
+        }
 
 Response Formats
 ----------------

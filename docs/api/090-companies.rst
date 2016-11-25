@@ -6,6 +6,18 @@ API - Company/Customer requests
 /companies & /customers
 -----------------------
 
+The company component consists of the following fields:
+
+    **company fields**
+
+    //todo
+
+    **relations**
+
+    customers, apps, templates, projects, users, apikeys*, invitations, channels*
+
+    * can be fetched via collection request
+
 GET /companies & GET /customers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
