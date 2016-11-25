@@ -150,13 +150,18 @@ Syntax:
 
 .. http:response:: GET /{collection}?filter.{target}[{operator}]={value}
 
-    Where {collection} is the route to the target collection, if we wanted to receive apps it would be just 'apps', for the config entities of that app it would be 'apps/:appId/configs'.
-    The 'filter.' keyword at the beginning of the query parameter is mandatory, indicating the filter intention to the API.
-    The {target} defines the field which is to be filtered. Find the available fields in the corresponding section of the call.
-    In the brackets follows the {operator} which is defining the mode of the filter (see operators list above).
-    The {value} is mandatory and needs to follow a '=' character. Just put here the plain value without any " or ', no matter integer or string.
+    {collection}
+        Where {collection} is the route to the target collection, if we wanted to receive apps it would be just 'apps', for the config entities of that app it would be 'apps/:appId/configs'.
+    filter.
+        The 'filter.' keyword at the beginning of the query parameter is mandatory, indicating the filter intention to the API.
+    {target}
+        The {target} defines the field which is to be filtered. Find the available fields in the corresponding section of the call.
+    {operator}
+        In the brackets follows the {operator} which is defining the mode of the filter (see operators list above).
+    {value}
+        The {value} is mandatory and needs to follow a '=' character. Just put here the plain value without any " or ', no matter integer or string.
 
-Example:
+Examples:
 
 1.) If we wanted to get apps which are not yet expired and will not expire today, the request would look like this (on the 25th of november in 2016, the date this was written):
 
