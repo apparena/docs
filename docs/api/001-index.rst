@@ -109,11 +109,11 @@ The field types in use are:
         operators: [eq], [neq]
     ``integer``
         operators: [eq], [neq],[gt], [gte], [lt], [lte]
-    ``text``|br|
+    ``text`` |br|
     ``string``
         operators: [eq], [neq], [match], [not]
     ``datetime``
-        in the format Y-m-D (Year-Month-Day)|br|
+        in the format Y-m-D (Year-Month-Day) |br|
         operators: [eq], [neq], [gt], [gte], [lt], [lte]
 
 .. Note:: The filter is generally case insensitive.
