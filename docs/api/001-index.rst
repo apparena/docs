@@ -85,7 +85,7 @@ Available query options:
 |            |                          | `Filter section`_ below.                              |
 +------------+--------------------------+-------------------------------------------------------+
 | rel        | GET                      | receive additional related information in a single    |
-|            |                          | request,|br| explanation in the `Relation section`_   |
+|            |                          | request, |br| explanation in the `Relation section`_  |
 |            |                          | below                                                 |
 +------------+--------------------------+-------------------------------------------------------+
 
@@ -109,10 +109,11 @@ The field types in use are:
         operators: [eq], [neq]
     ``integer``
         operators: [eq], [neq],[gt], [gte], [lt], [lte]
-    ``text``
+    ``text``|br|
     ``string``
         operators: [eq], [neq], [match], [not]
-    ``datetime`` in the format Y-m-D (Year-Month-Day)
+    ``datetime``
+        in the format Y-m-D (Year-Month-Day)|br|
         operators: [eq], [neq], [gt], [gte], [lt], [lte]
 
 .. Note:: The filter is generally case insensitive.
