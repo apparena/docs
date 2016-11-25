@@ -120,30 +120,30 @@ The field types in use are:
 
 A field of an entity can be targeted for filtering with one of the following operators:
 
-    [eq]
-        equals : receive a collection of entities where the target field value equals the submitted value
+    [eq] equals :
+        receive a collection of entities where the target field value equals the submitted value
         applicable for all field types, in case of type ``datetime`` the filter returns all entities that match the day regardless of the time of the day
-    [neq]
-        equals not : receive a collection of entities where the target field value does not equal the submitted value
+    [neq] equals not :
+        receive a collection of entities where the target field value does not equal the submitted value
         applicable for all field types, in case of type ``datetime`` the filter returns all entities that do not match the day regardless of the time of the day
-    [match]
-        matches : receive a collection of entities where the target field value matches the submitted value partially
+    [match] matches :
+        receive a collection of entities where the target field value matches the submitted value partially
         e.g. : the match value 'test' for the target field 'name' returns all entities where the 'name' field contains the string 'test' independent of the location of the occurrence in the string like 'testApp', 'Apptest' or 'appTESTapp'
         applicable only for the field types 'string'
-    [not]
-        matches not: receive a collection of entities where the target field value does not contain the submitted value
+    [not] matches not:
+        receive a collection of entities where the target field value does not contain the submitted value
         applicable only for the field types 'string'
-    [gt]
-        greater than : receive a collection of entities where the target field value is greater than the submitted value
+    [gt] greater than :
+        receive a collection of entities where the target field value is greater than the submitted value
         applicable for field types 'integer' and 'datetime'
-    [gte]
-        greater than or equal: receive the same as [gt] inclusive the submitted value
+    [gte] greater than or equal:
+        receive the same as [gt] inclusive the submitted value
         applicable for field types 'integer' and 'datetime'
-    [lt]
-        lower than : receive a collection of entities where the target field value is lower than the submitted value
+    [lt] lower than :
+        receive a collection of entities where the target field value is lower than the submitted value
         applicable for field types 'integer' and 'datetime'
-    [lte]
-        lower than or equal: receive the same as [gt] inclusive the submitted value
+    [lte] lower than or equal:
+        receive the same as [gt] inclusive the submitted value
         applicable for field types 'integer' and 'datetime'
 
 Syntax:
