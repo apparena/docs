@@ -85,7 +85,8 @@ Available query options:
 |            |                          | `Filter section`_ below.                              |
 +------------+--------------------------+-------------------------------------------------------+
 | rel        | GET                      | receive additional related information in a single    |
-|            |                          | request,|br| explanation in the `Relation section`_ below |
+|            |                          | request,|br| explanation in the `Relation section`_   |
+|            |                          | below                                                 |
 +------------+--------------------------+-------------------------------------------------------+
 
 .. _Filter section: #the-filter-query-parameter
@@ -103,11 +104,13 @@ pagination query parameters, the filter function make a great search tool for th
 
 The filter distinguishes between the different field types and allows only certain operator types for each type. You can find the types of the fields in the respective section of the calls.
 The field types in use are:
+
     ``bool``
         operators: [eq], [neq]
     ``integer``
         operators: [eq], [neq],[gt], [gte], [lt], [lte]
-    ``text`` and ``string`` (which are treated the same)
+    ``text``
+    ``string``
         operators: [eq], [neq], [match], [not]
     ``datetime`` in the format Y-m-D (Year-Month-Day)
         operators: [eq], [neq], [gt], [gte], [lt], [lte]
@@ -115,6 +118,7 @@ The field types in use are:
 .. Note:: The filter is generally case insensitive.
 
 Any field of an entity can be targeted for filtering with one of the following operators:
+
     [eq]
         equals : receive a collection of entities where the target field value equals the submitted value
             applicable for all field types, in case of type ``datetime`` the filter returns all entities that match the day regardless of the time of the day
