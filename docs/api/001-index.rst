@@ -178,6 +178,188 @@ Examples:
 
 Combine these request with pagination, order- and field filters to make precise and lightweight requests!
 
+The Relation Query Parameter
+----------------------------
+
+As you can see in Chapter `Data Structure <040-structure.html>`_, there are quite a few connections between different entities. Every App is owned by a company,
+connected to a Template while having multiple configs, translations, infos, etc... . Sometimes the information stored in these connected resources is needed
+because they contain vital information for element description and presentation. To gather these details, multiple API calls are necessary. To avoid excessive
+requesting, the relation query parameter got introduced.
+
+With this request enhancement it is possible to gather any connected information in a single request for an entity. When fetching a collection this underlies a restriction.
+
+General Usage
+~~~~~~~~~~~~~
+
+The syntax for this enhancement is quite simple: just add the query parameter 'rel' to the request with a comma separated list of desired relations as its value.
+
+.. http:response:: GET /{entity/collection}?rel={relation1},{relation2}, ...
+
+    {entity/collection}
+        Request a single entity or a collection of entities. Valid targets are: |br|
+        'apps', 'templates', 'projects', 'projects/:projectId/versions', 'companies' and 'customers'
+    rel=
+        Mandatory keyword to indicate the relation intention to the API.
+    {relationX}
+        The relation identifier. You can find the valid relations in the corresponding section of the call.
+
+.. Note:: While you can combine this query parameter as usual with the other query modifiers, the field filter influences only the base entities while the relations will always
+be outputted completely. They will however never contain sensitive information like passwords when fetching user relations.
+
+Entity Relations
+~~~~~~~~~~~~~~~~
+
+There are no restrictions when fetching an entity. Add as much relations to the request as you want, the response format will look somewhat like this:
+
+    .. sourcecode:: js
+
+        {
+            "_embedded": {
+                "data": {
+                    "entityProperty1": "value1",
+                    "entityProperty2": "value2",
+                        .
+                        .
+                        .
+                    "relation1": {                                                        //relation entity
+                        "relationProperty1": "relValue1",
+                        "relationProperty2": "relValue2",
+                            .
+                            .
+                            .
+                    },
+                    "relation2": {                                                        //relation collection
+                        "relationIdentifier1": {
+                            "relationProperty1": "relValue1",
+                            "relationProperty2": "relValue2",
+                                .
+                                .
+                                .
+                        },
+                        "relationIdentifier2": {
+                                .
+                                .
+                                .
+                        },
+                    },
+                    "relation3": {
+                        .
+                        .
+                        .
+                    },
+                    .
+                    .
+                    .
+                }
+            }
+        }
+
+You will find the relation data under its identifier key (already used in the request) in the "_embedded" -> "data" object. Relation entities
+data is in the first level of the relation object while relation collections data is in objects with their identifier as keys.
+
+.. Warning:: The relation query parameter directly modifies the query to the database. Therefore you only receive properties directly connected to the base entity,
+no inheritance of entities from the App/Template/Version chain as you know it from the regular calls on those collections/entities takes place! Relation calls are not intended
+to substitute the regular calls, but rather to complete requests in order to save time and reduce server load.
+
+Collection Relations
+~~~~~~~~~~~~~~~~~~~~
+
+When fetching a collection the relation query parameter underlies the restriction that no relation collections may be fetched. A relation collection
+can easily consist of tens to hundreds of entities which have to be fetched for tens to hundreds of base entities. The result can cause memory issues as well as
+heavy workload on the server, which is to be avoided. For this reason only relation entities are allowed with the exception of some small collections
+which are expected to be small enough to avoid these issues. You can find the allowed relations for each call in the corresponding section.
+
+The response format of a collection request with relations looks something like this (exemplified by a request to 'apps'):
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "next": {
+              "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=3"
+            },
+            "previous": {
+              "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=1"
+            },
+            "self": {
+              "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=2"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "100": {
+                "appId":        100,
+                "name":         "example App",
+                "lang":         "en_US",
+                "activated":    true,
+                "expiryDate":   "2017-08-04 00:00:00",
+                "companyId":    1,
+                "templateId":   10,
+                "relation1": {                                                        //relation entity
+                    "relationProperty1": "relValue1",
+                    "relationProperty2": "relValue2",
+                        .
+                        .
+                        .
+                },
+                "relation2": {                                                        //relation collection
+                    "relationIdentifier1": {
+                        "relationProperty1": "relValue1",
+                        "relationProperty2": "relValue2",
+                            .
+                            .
+                            .
+                    },
+                    "relationIdentifier2": {
+                            .
+                            .
+                            .
+                    },
+                },
+                "_links": {
+                  "app": {
+                    "href":     "https://my.app-arena.com/api/v2/apps/100"
+                  },
+                  "language": {
+                    "href":     "https://my.app-arena.com/api/v2/apps/100/languages/en_US"
+                  },
+                  "company": {
+                    "href":     "https://my.app-arena.com/api/v2/companies/1"
+                  },
+                  "template": {
+                    "href":     "https://my.app-arena.com/api/v2/templates/10"
+                  }
+                }
+              },
+              "101": {
+                "appId": 101,
+                    .
+                    .
+                    .
+                }
+              },
+              "102": {
+                "appId": 102,
+                    .
+                    .
+                    .
+                }
+              },
+              .
+              .
+              .
+            }
+          },
+          "total_items": 10511,
+          "page_size": 5,
+          "page_count": 2103,
+          "page_number": 2
+        }
+
+.. Note:: Relation entities/collection do not contain links in the `HAL-format <#response-formats>`_ style
+
 Response Formats
 ----------------
 
@@ -201,7 +383,7 @@ A complete list of HTTP response formats you can find here: HTTP-Statuscodes_
 The JSON output depends on the type of request and the data submitted. GET Requests will mostly output data in the HAL-format_,
 a format which provides links to the mentioned resources for easy resource browsing.
 As some of the requests are intended for listing items to the user, these requests will additionally output the data paginated.
-It comes in chunks of adjustable size for convenient item representation. PUT and POST requests however output
+It comes in chunks of adjustable size for convenient item displaying. PUT and POST requests however output
 besides a status code the created/updated information without any links to the resources, as this information serves for
 verification and further processing.
 DELETE requests will always output a status and a message.
