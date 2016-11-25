@@ -116,7 +116,7 @@ The field types in use are:
         in the format Y-m-D (Year-Month-Day) |br|
         operators: [eq], [neq], [gt], [gte], [lt], [lte]
 
-.. Note:: The filter is generally case insensitive.
+.. Note:: The filter function is case insensitive.
 
 A field of an entity can be targeted for filtering with one of the following operators:
 
@@ -173,7 +173,7 @@ Examples:
 
 2.) If we wanted to get all the config entities of app '1' where the 'type' field is 'input' the request would be
 
-.. http:response:: GET /apps/1/configs?filter[eq]=input
+.. http:response:: GET /apps/1/configs?filter.type[eq]=input
 
 
 Combine these request with pagination, order- and field filters to make precise and lightweight requests!
@@ -380,7 +380,7 @@ A complete list of HTTP response formats you can find here: HTTP-Statuscodes_
 | DELETE     |    200 (OK)                  |
 +------------+------------------------------+
 
-The JSON output depends on the type of request and the data submitted. GET Requests will mostly output data in the HAL-format_,
+The JSON output depends on the type of request and the data submitted. GET collection requests will output data in the HAL-format_,
 a format which provides links to the mentioned resources for easy resource browsing.
 As some of the requests are intended for listing items to the user, these requests will additionally output the data paginated.
 It comes in chunks of adjustable size for convenient item displaying. PUT and POST requests however output
