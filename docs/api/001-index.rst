@@ -70,7 +70,7 @@ Available query options:
 | type       | GET                      | receive only media items of type image, audio or      |
 |            |                          | video                                                 |
 +------------+--------------------------+-------------------------------------------------------+
-| orderasc   | GET                      | order the response items ascending                    |
+| orderasc   | GET                      | order the response items ascending |br|               |
 |            |                          | example: orderasc=appId                               |
 +------------+--------------------------+-------------------------------------------------------+
 | orderdesc  | GET                      | order the response items descending                   |
