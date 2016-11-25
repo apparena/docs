@@ -85,7 +85,7 @@ Available query options:
 |            |                          | `Filter section`_ below.                              |
 +------------+--------------------------+-------------------------------------------------------+
 | rel        | GET                      | receive additional related information in a single    |
-|            |                          | request, explanation in the `Relation section`_ below |
+|            |                          | request,|br| explanation in the `Relation section`_ below |
 +------------+--------------------------+-------------------------------------------------------+
 
 .. _Filter section: #the-filter-query-parameter
