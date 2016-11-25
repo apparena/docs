@@ -16,7 +16,7 @@ The company component consists of the following fields:
 
     customers, apps, templates, projects, users, apikeys*, invitations, channels*
 
-    '*' can be fetched via collection request
+    \* can be fetched via collection request
 
 GET /companies & GET /customers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

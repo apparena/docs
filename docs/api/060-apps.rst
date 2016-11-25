@@ -34,7 +34,7 @@ The app component consists of the following fields:
 
     company*, template*, configs, translations, infos, languages*
 
-    '*' can be fetched via collection request
+    \* can be fetched via collection request
 
 GET /apps
 ~~~~~~~~~

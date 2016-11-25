@@ -58,7 +58,7 @@ The project component consists of the following fields:
 
     company*, project*, configs, translations, infos, languages*
 
-    '*' can be fetched via collection request
+    \* can be fetched via collection request
 
 GET /projects
 ~~~~~~~~~~~~~
