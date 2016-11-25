@@ -47,6 +47,7 @@ GET /apps
 |       fields
 |       exclude
 |       orderasc/orderdesc
+|       rel
 
 .. http:response:: Example response body
 
@@ -123,6 +124,7 @@ GET /apps/:appId
 |   *Query parameters*
 |       fields
 |       exclude
+|       rel
 
 .. http:response:: Example response body
 

@@ -71,6 +71,7 @@ GET /projects
 |       fields
 |       exclude
 |       orderasc/orderdesc
+|       rel
 
 .. http:response:: Example response body
 
@@ -131,6 +132,7 @@ GET /projects/:projectId
 |   *Query parameters*
 |       fields
 |       exclude
+|       rel
 
 .. http:response:: Example response body
 
@@ -369,6 +371,7 @@ GET /projects/:projectId/versions
 |       fields
 |       exclude
 |       orderasc/orderdesc
+|       rel
 
 .. http:response:: Example response body
 
@@ -438,6 +441,7 @@ GET /projects/:projectId/versions/:version
 |   *Query parameters*
 |       fields
 |       exclude
+|       rel
 
 .. http:response:: Example response body
 

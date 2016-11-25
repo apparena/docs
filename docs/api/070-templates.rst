@@ -48,6 +48,7 @@ GET /templates
 |       fields
 |       exclude
 |       orderasc/orderdesc
+|       rel
 
 .. http:response:: Example response body
 
@@ -121,6 +122,7 @@ GET /templates/:templateId
 |   *Query parameters*
 |       fields
 |       exclude
+|       rel
 
 .. http:response:: Example response body
 

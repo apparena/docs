@@ -31,6 +31,7 @@ GET /companies & GET /customers
 |       fields
 |       exclude
 |       orderasc/orderdesc
+|       rel
 
 .. http:response:: Example response body
 
@@ -100,6 +101,7 @@ GET /customers/:companyId & GET /companies/:companyId
 |       fields
 |       exclude
 |       orderasc/orderdesc
+|       rel
 
 .. http:response:: Example response body
 
