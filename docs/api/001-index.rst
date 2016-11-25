@@ -127,8 +127,8 @@ A field of an entity can be targeted for filtering with one of the following ope
         receive a collection of entities where the target field value does not equal the submitted value
         applicable for all field types, in case of type ``datetime`` the filter returns all entities that do not match the day regardless of the time of the day
     [match] matches :
-        receive a collection of entities where the target field value matches the submitted value partially
-        e.g. : the match value 'test' for the target field 'name' returns all entities where the 'name' field contains the string 'test' independent of the location of the occurrence in the string like 'testApp', 'Apptest' or 'appTESTapp'
+        receive a collection of entities where the target field value matches the submitted value partially |br|
+        e.g. : the match value 'test' for the target field 'name' returns all entities where the 'name' field contains the string 'test' independent of the location of the occurrence in the string like 'testApp', 'Apptest' or 'appTESTapp' |br|
         applicable only for the field types 'string'
     [not] matches not:
         receive a collection of entities where the target field value does not contain the submitted value
@@ -147,11 +147,13 @@ A field of an entity can be targeted for filtering with one of the following ope
         applicable for field types 'integer' and 'datetime'
 
 Syntax:
+~~~~~~~
 
 .. http:response:: GET /{collection}?filter.{target}[{operator}]={value}
 
+
     {collection}
-        Where {collection} is the route to the target collection, if we wanted to receive apps it would be just 'apps', for the config entities of that app it would be 'apps/:appId/configs'.
+        The {collection} is the route to the target collection, if we wanted to receive apps it would be just 'apps', for the config entities of that app it would be 'apps/:appId/configs'.
     filter.
         The 'filter.' keyword at the beginning of the query parameter is mandatory, indicating the filter intention to the API.
     {target}
@@ -162,14 +164,17 @@ Syntax:
         The {value} is mandatory and needs to follow a '=' character. Just put here the plain value without any " or ', no matter integer or string.
 
 Examples:
+~~~~~~~~~
 
 1.) If we wanted to get apps which are not yet expired and will not expire today, the request would look like this (on the 25th of november in 2016, the date this was written):
 
 .. http:response:: GET /apps?filter.expiryDate[gt]=2016-11-25
 
+
 2.) If we wanted to get all the config entities of app '1' where the 'type' field is 'input' the request would be
 
 .. http:response:: GET /apps/1/configs?filter[eq]=input
+
 
 Combine these request with pagination, order- and field filters to make precise and lightweight requests!
 
