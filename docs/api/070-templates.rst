@@ -35,7 +35,7 @@ The template component consists of the following fields:
 
     apps, company*, parentTemplate*, configs, translations, infos, versions*, languages*
 
-    * can be fetched via collection request
+    '*' can be fetched via collection request
 
 GET /templates
 ~~~~~~~~~~~~~~
