@@ -72,7 +72,7 @@ Available query options:
 +------------+--------------------------+-------------------------------------------------------+
 | orderBy    | GET                      | order the response items |br|                         |
 |            |                          | syntax: orderBy[dir]=target |br|                      |
-|            |                          | dir can be 'ASC' or 'DESC' (without '') |br|          |
+|            |                          | dir can be 'ASC' or 'DESC' (without ''), |br|         |
 |            |                          | target is the field to order e.g.: orderBy[DESC]=appId|
 +------------+--------------------------+-------------------------------------------------------+
 | page       | GET                      | sets the page of paginated results                    |
