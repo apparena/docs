@@ -32,7 +32,7 @@ The app component consists of the following fields:
 
     **relations**
 
-    company*, template*, configs, translations, infos, languages*
+    company*, template*, channels, configs, translations, infos, languages*
 
     \* can be fetched via collection request
 

@@ -70,10 +70,10 @@ Available query options:
 | type       | GET                      | receive only media items of type image, audio or      |
 |            |                          | video                                                 |
 +------------+--------------------------+-------------------------------------------------------+
-| orderasc   | GET                      | order the response items ascending |br|               |
-|            |                          | example: orderasc=appId                               |
-+------------+--------------------------+-------------------------------------------------------+
-| orderdesc  | GET                      | order the response items descending                   |
+| orderBy    | GET                      | order the response items |br|                         |
+|            |                          | syntax: orderBy[dir]=target |br|                      |
+|            |                          | dir can be 'ASC' or 'DESC' (without '')               |
+|            |                          | target is the field to order e.g.: orderBy[DESC]=appId|
 +------------+--------------------------+-------------------------------------------------------+
 | page       | GET                      | sets the page of paginated results                    |
 +------------+--------------------------+-------------------------------------------------------+
