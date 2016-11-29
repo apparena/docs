@@ -269,7 +269,7 @@ which are expected to be small enough to avoid these issues. You can find the al
 
 The response format of a collection request with relations looks something like this (exemplified by a request to 'apps'):
 
-.. Warning:: Fetching a lot of entities with relations can be very memory intensive. Even though we designed it the way these issues are unlikely, use collection fetching with entities with caution!
+.. Warning:: Fetching a lot of entities with relations can be very memory intensive. Even though we designed it the way these issues are unlikely, use collection fetching with entities restrictively and fetch only necessary relations!
 
 .. http:response:: Example request body
 
