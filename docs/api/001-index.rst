@@ -257,7 +257,7 @@ There are no restrictions when fetching an entity. Add as much relations to the 
 You will find the relation data under its identifier key (already used in the request) in the "_embedded" -> "data" object. Relation entities
 data is in the first level of the relation object while relation collections data is in objects with their identifier as keys.
 
-.. Warning:: The relation query parameter directly modifies the query to the database. Therefore you only receive properties directly connected to the base entity, no inheritance of entities from the App/Template/Version chain as you know it from the regular calls on those collections/entities takes place! Relation calls are not intended to substitute the regular calls, but rather to complete requests in order to save time and reduce server load.
+.. Warning:: The relation query parameter directly modifies the query to the database, therefore you only receive properties directly connected to the base entity. No inheritance of entities from the App/Template/Version chain as you know it from the regular calls on those collections/entities takes place! Relation calls are not intended to substitute the regular calls, but rather to compress multiple requests into a single one to save time and reduce server load.
 
 Collection Relations
 ~~~~~~~~~~~~~~~~~~~~
@@ -268,6 +268,8 @@ heavy workload on the server, which is to be avoided. For this reason only relat
 which are expected to be small enough to avoid these issues. You can find the allowed relations for each call in the corresponding section.
 
 The response format of a collection request with relations looks something like this (exemplified by a request to 'apps'):
+
+.. Warning:: Fetching a lot of entities with relations can be very memory intensive. Even though we designed it the way these issues are unlikely, use collection fetching with entities with caution!
 
 .. http:response:: Example request body
 
