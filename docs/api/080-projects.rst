@@ -50,6 +50,16 @@ The project component consists of the following fields:
 
     .. include:: /partials/common_all.rst
 
+    **relations** for project requests (/projects[/:projectId])
+
+    company*, versions*
+
+    **relations** for version requests (/projects/:projectId/versions[/:versionId])
+
+    company*, project*, configs, translations, infos, languages*
+
+    \* can be fetched via collection request
+
 GET /projects
 ~~~~~~~~~~~~~
 
@@ -61,6 +71,7 @@ GET /projects
 |       fields
 |       exclude
 |       orderasc/orderdesc
+|       rel
 
 .. http:response:: Example response body
 
@@ -121,6 +132,7 @@ GET /projects/:projectId
 |   *Query parameters*
 |       fields
 |       exclude
+|       rel
 
 .. http:response:: Example response body
 
@@ -359,6 +371,7 @@ GET /projects/:projectId/versions
 |       fields
 |       exclude
 |       orderasc/orderdesc
+|       rel
 
 .. http:response:: Example response body
 
@@ -428,6 +441,7 @@ GET /projects/:projectId/versions/:version
 |   *Query parameters*
 |       fields
 |       exclude
+|       rel
 
 .. http:response:: Example response body
 

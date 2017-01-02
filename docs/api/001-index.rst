@@ -70,10 +70,10 @@ Available query options:
 | type       | GET                      | receive only media items of type image, audio or      |
 |            |                          | video                                                 |
 +------------+--------------------------+-------------------------------------------------------+
-| orderasc   | GET                      | order the response items ascending                    |
-|            |                          | example: orderasc=appId                               |
-+------------+--------------------------+-------------------------------------------------------+
-| orderdesc  | GET                      | order the response items descending                   |
+| orderBy    | GET                      | order the response items |br|                         |
+|            |                          | syntax: orderBy[dir]=target |br|                      |
+|            |                          | dir can be 'ASC' or 'DESC' (without ''), |br|         |
+|            |                          | target is the field to order e.g.: orderBy[DESC]=appId|
 +------------+--------------------------+-------------------------------------------------------+
 | page       | GET                      | sets the page of paginated results                    |
 +------------+--------------------------+-------------------------------------------------------+
@@ -81,8 +81,438 @@ Available query options:
 +------------+--------------------------+-------------------------------------------------------+
 | version    | GET, POST, PUT, DELETE   |                                                       |
 +------------+--------------------------+-------------------------------------------------------+
+| filter     | GET                      | filter the results, explanation in the                |
+|            |                          | `Filter section`_ below.                              |
++------------+--------------------------+-------------------------------------------------------+
+| rel        | GET                      | receive additional related information in a single    |
+|            |                          | request, |br| explanation in the `Relation section`_  |
+|            |                          | below                                                 |
++------------+--------------------------+-------------------------------------------------------+
 
-.. Note:: There are no default values. When a query parameter is not defined, no action is performed.
+.. _Filter section: #the-filter-query-parameter
+.. _Relation section: #the-relation-query-parameter
+
+.. Note:: Only collection requests on 'Apps', 'Templates', 'Projects', 'Versions', 'Companies' and 'Customers' have default pagination values. Elsewhere, when a query parameter is not defined, no action is performed.
+
+The Filter Query Parameter
+--------------------------
+
+Requests can be refined with a filter query to shape the output exactly to what you want to receive. In combination with the
+pagination query parameters, the filter function make a great search tool for the data you want to display.
+
+.. Note:: The filter is applicable for all GET requests of collections and can be combined freely with the other available query parameter options.
+
+The filter distinguishes between the different field types and allows only certain operator types for each type. You can find the types of the fields in the respective section of the calls.
+The field types in use are:
+
+    ``bool``
+        operators: [eq], [neq]
+    ``integer``
+        operators: [eq], [neq],[gt], [gte], [lt], [lte]
+    ``text`` |br|
+    ``string``
+        operators: [eq], [neq], [match], [not]
+    ``datetime``
+        in the format Y-m-D (Year-Month-Day) |br|
+        operators: [eq], [neq], [gt], [gte], [lt], [lte]
+
+.. Note:: The filter function is case insensitive.
+
+A field of an entity can be targeted for filtering with one of the following operators:
+
+    [eq] equals :
+        receive a collection of entities where the target field value equals the submitted value
+        applicable for all field types, in case of type ``datetime`` the filter returns all entities that match the day regardless of the time of the day
+    [neq] equals not :
+        receive a collection of entities where the target field value does not equal the submitted value
+        applicable for all field types, in case of type ``datetime`` the filter returns all entities that do not match the day regardless of the time of the day
+    [match] matches :
+        receive a collection of entities where the target field value matches the submitted value partially |br|
+        e.g. : the match value 'test' for the target field 'name' returns all entities where the 'name' field contains the string 'test' independent of the location of the occurrence in the string like 'testApp', 'Apptest' or 'appTESTapp' |br|
+        applicable only for the field types 'string'
+    [not] matches not:
+        receive a collection of entities where the target field value does not contain the submitted value
+        applicable only for the field types 'string'
+    [gt] greater than :
+        receive a collection of entities where the target field value is greater than the submitted value
+        applicable for field types 'integer' and 'datetime'
+    [gte] greater than or equal:
+        receive the same as [gt] inclusive the submitted value
+        applicable for field types 'integer' and 'datetime'
+    [lt] lower than :
+        receive a collection of entities where the target field value is lower than the submitted value
+        applicable for field types 'integer' and 'datetime'
+    [lte] lower than or equal:
+        receive the same as [gt] inclusive the submitted value
+        applicable for field types 'integer' and 'datetime'
+
+Syntax:
+~~~~~~~
+
+.. http:response:: GET /{collection}?filter.{target}[{operator}]={value}
+
+
+    {collection}
+        The {collection} is the route to the target collection, if we wanted to receive apps it would be just 'apps', for the config entities of that app it would be 'apps/:appId/configs'.
+    filter.
+        The 'filter.' keyword at the beginning of the query parameter is mandatory, indicating the filter intention to the API.
+    {target}
+        The {target} defines the field which is to be filtered. Find the available fields in the corresponding section of the call.
+    {operator}
+        In the brackets follows the {operator} which is defining the mode of the filter (see operators list above).
+    {value}
+        The {value} is mandatory and needs to follow a '=' character. Just put here the plain value without any " or ', no matter integer or string.
+
+Examples:
+~~~~~~~~~
+
+1.) If we wanted to get apps which are not yet expired and will not expire today, the request would look like this (on the 25th of november in 2016, the date this was written):
+
+.. http:response:: GET /apps?filter.expiryDate[gt]=2016-11-25
+
+
+2.) If we wanted to get all the config entities of app '1' where the 'type' field is 'input' the request would be
+
+.. http:response:: GET /apps/1/configs?filter.type[eq]=input
+
+
+Combine these request with pagination, order- and field filters to make precise and lightweight requests!
+
+The Relation Query Parameter
+----------------------------
+
+As you can see in Chapter `Data Structure <040-structure.html>`_, there are quite a few connections between different entities. Every App is owned by a company,
+connected to a Template while having multiple configs, translations, infos, etc... . Sometimes the information stored in these connected resources is needed
+because they contain vital information for element description and presentation. To gather these details, multiple API calls are necessary. To avoid excessive
+requesting, the relation query parameter got introduced.
+
+With this request enhancement it is possible to gather any connected information in a single request for an entity. When fetching a collection this underlies a restriction.
+
+General Usage
+~~~~~~~~~~~~~
+
+The syntax for this enhancement is quite simple: just add the query parameter 'rel' to the request with a comma separated list of desired relations as its value.
+
+.. http:response:: GET /{entity/collection}?rel={relation1},{relation2}, ...
+
+    {entity/collection}
+        Request a single entity or a collection of entities. Valid targets are: |br|
+        'apps', 'templates', 'projects', 'projects/:projectId/versions', 'companies' and 'customers'
+    rel=
+        Mandatory keyword to indicate the relation intention to the API.
+    {relationX}
+        The relation identifier. You can find the valid relations in the corresponding section of the call.
+
+.. Note:: While you can combine this query parameter as usual with the other query modifiers, the field filter influences only the base entities while the relations will always
+be outputted completely. They will however never contain sensitive information like passwords when fetching user relations.
+
+Entity Relations
+~~~~~~~~~~~~~~~~
+
+There are no restrictions when fetching an entity. Add as much relations to the request as you want, the response format will look somewhat like this:
+
+    .. sourcecode:: js
+
+        {
+            "_embedded": {
+                "data": {
+                    "entityProperty1": "value1",
+                    "entityProperty2": "value2",
+                        .
+                        .
+                        .
+                    "relation1": {                              //relation entity
+                        "relationProperty1_1": "relValue1_1",
+                        "relationProperty1_1": "relValue1_2",
+                            .
+                            .
+                            .
+                    },
+                    "relation2": {                              //relation collection
+                        "relationIdentifier2_1": {
+                            "relationProperty2_1": "relValue2_1",
+                            "relationProperty2_1": "relValue2_1",
+                                .
+                                .
+                                .
+                        },
+                        "relationIdentifier2_2": {
+                            .
+                            .
+                            .
+                        },
+                    },
+                    "relation3": {
+                        .
+                        .
+                        .
+                    },
+                    .
+                    .
+                    .
+                }
+            }
+        }
+
+You will find the relation data under its identifier key (already used in the request) in the "_embedded" -> "data" object. Relation entities
+data is in the first level of the relation object while relation collections data is in objects with their identifier as keys.
+
+.. Warning:: The relation query parameter directly modifies the query to the database, therefore you only receive properties directly connected to the base entity. No inheritance of entities from the App/Template/Version chain as you know it from the regular calls on those collections/entities takes place! Relation calls are not intended to substitute the regular calls, but rather to compress multiple requests into a single one to save time and reduce server load.
+
+Collection Relations
+~~~~~~~~~~~~~~~~~~~~
+
+When fetching a collection the relation query parameter underlies the restriction that no relation collections may be fetched. A relation collection
+can easily consist of tens to hundreds of entities which have to be fetched for tens to hundreds of base entities. The result can cause memory issues as well as
+heavy workload on the server, which is to be avoided. For this reason only relation entities are allowed with the exception of some small collections
+which are expected to be small enough to avoid these issues. You can find the allowed relations for each call in the corresponding section.
+
+The response format of a collection request with relations looks something like this (exemplified by a request to 'apps'):
+
+.. Warning:: Fetching a lot of entities with relations can be very memory intensive. Even though we designed it the way these issues are unlikely, use collection fetching with entities restrictively and fetch only necessary relations!
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "next": {
+              "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=3"
+            },
+            "previous": {
+              "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=1"
+            },
+            "self": {
+              "href":   "https://my.app-arena.com/api/v2/apps?items=5&page=2"
+            }
+          },
+          "_embedded": {
+            "data": {
+              "100": {
+                "appId":        100,
+                "name":         "example App",
+                "lang":         "en_US",
+                "activated":    true,
+                "expiryDate":   "2017-08-04 00:00:00",
+                "companyId":    1,
+                "templateId":   10,
+                "relation1": {                              //relation entity
+                    "relationProperty1_1": "relValue1_1",
+                    "relationProperty1_2": "relValue1_1",
+                        .
+                        .
+                        .
+                },
+                "relation2": {                              //relation collection
+                    "relationIdentifier1_1": {
+                        "relationProperty2_1": "relValue2_1",
+                        "relationProperty2_2": "relValue2_2",
+                            .
+                            .
+                            .
+                    },
+                    "relationIdentifier1_2": {
+                            .
+                            .
+                            .
+                    },
+                },
+                "_links": {
+                  "app": {
+                    "href":     "https://my.app-arena.com/api/v2/apps/100"
+                  },
+                  "language": {
+                    "href":     "https://my.app-arena.com/api/v2/apps/100/languages/en_US"
+                  },
+                  "company": {
+                    "href":     "https://my.app-arena.com/api/v2/companies/1"
+                  },
+                  "template": {
+                    "href":     "https://my.app-arena.com/api/v2/templates/10"
+                  }
+                }
+              },
+              "101": {
+                "appId": 101,
+                    .
+                    .
+                    .
+                "relation1": {                              //relation entity
+                    "relationProperty1": "relValue1",
+                    "relationProperty2": "relValue2",
+                        .
+                        .
+                        .
+                },
+                "relation2": {                              //relation collection
+                    "relationIdentifier1": {
+                        "relationProperty1": "relValue1",
+                        "relationProperty2": "relValue2",
+                            .
+                            .
+                            .
+                    },
+                    "relationIdentifier2": {
+                            .
+                            .
+                            .
+                    },
+                },
+                .
+                .
+                .
+              },
+              "102": {
+                "appId": 102,
+                    .
+                    .
+                    .
+                }
+              },
+              .
+              .
+              .
+            }
+          },
+          "total_items": 10511,
+          "page_size": 5,
+          "page_count": 2103,
+          "page_number": 2
+        }
+
+.. Note:: Relation entities/collection do not contain links in the `HAL-format <#response-formats>`_ style
+
+Example Request
+~~~~~~~~~~~~~~~
+
+Let's assume that we want to display the App with the Id = 1, including all details of it. That means we need the name of the template as well as
+the name of the company that owns it. Additionally we want to display the activated languages and wen need some information stored in the
+info entities. In this case the request would look like this:
+
+.. http:response:: GET /apps/1?rel=template,company,languages,infos
+
+The request output would be:
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+          "_embedded": {
+            "data": {
+              "appId": 1,
+              "name": "App name",
+              "lang": "de_DE",
+              "activated": true,
+              "expiryDate": "2099-04-18 00:00:00",
+              "companyId": 1,
+              "templateId": 22,
+              "template": {
+                "templateId": 22,
+                "name": "Template name",
+                "lang": "de_DE",
+                "parentId": 22,
+                "versionId": 33,
+                "companyId": 1,
+                "public": true,
+                "created": "2016-04-20 13:51:44",
+                "updated": "2016-04-20 13:51:44",
+                "deletedAt": null,
+                "createdFromIp": "0.0.0.0",
+                "updatedFromIp": "0.0.0.0",
+                "createdBy": "some user",
+                "updatedBy": "some user"
+              },
+              "company": {
+                "companyId": 1,
+                "subdomain": "subdomain",
+                "name": "App-Arena GmbH",
+                "address1": "Moltkestr. 123",
+                "address2": "",
+                "zip": "50674",
+                "city": "Cologne",
+                "country": "DE",
+                "logo": "https://my.path.to/my/logo.png",
+                "color1": "#478AB8",
+                "color2": "#2D343D",
+                "parentId": 1,
+                "storeId": 1,
+                "created": "2016-04-20 13:46:50",
+                "updated": "2016-10-07 10:32:06",
+                "deletedAt": null,
+                "createdFromIp": "0.0.0.0",
+                "updatedFromIp": "0.0.0.0",
+                "createdBy": "some admin",
+                "updatedBy": "some admin"
+              },
+              "languages": {
+                "de_DE": {
+                  "lang": "de_DE",
+                  "activated": true,
+                  "appId": 1,
+                  "created": "2016-04-20 13:46:50",
+                  "updated": "2016-10-07 10:32:06",
+                  "createdFromIp": 0.0.0.0,
+                  "updatedFromIp": 0.0.0.0,
+                  "createdBy": "some user",
+                  "updatedBy": "some user"
+                },
+                "en_US": {
+                  "lang": "en_US",
+                  "activated": true,
+                  "appId": 1,
+                  "created": "2016-04-20 13:46:50",
+                  "updated": "2016-10-07 10:32:06",
+                  "createdFromIp": 0.0.0.0,
+                  "updatedFromIp": 0.0.0.0,
+                  "createdBy": "some user",
+                  "updatedBy": "some user"
+                }
+              },
+              "infos": {
+                "description": {
+                  "infoId": "description",
+                  "lang": "de_DE",
+                  "revision": 0,
+                  "value": "a nice description of this app",
+                  "meta": {},
+                  "appId": 1,
+                  "deletedAt": null,
+                  "createdBy": "some user",
+                  "createdFromIp": "0.0.0.0",
+                  "created": "2016-04-20 13:52:52"
+                }
+                "fb_page_url": {
+                  "infoId": "fb_page_url",
+                  "lang": "de_DE",
+                  "revision": 0,
+                  "value": "https://www.facebook.com/",
+                  "meta": {},
+                  "appId": 1,
+                  "deletedAt": null,
+                  "createdBy": "some user",
+                  "createdFromIp": "0.0.0.0",
+                  "created": "2016-04-20 13:52:55"
+                }
+              },
+              "_links": {
+                "app": {
+                  "href": "http://manager.local/api/v2/apps/1"
+                },
+                "language": {
+                  "href": "http://manager.local/api/v2/apps/1/languages"
+                },
+                "company": {
+                  "href": "http://manager.local/api/v2/companies/1"
+                },
+                "template": {
+                  "href": "http://manager.local/api/v2/templates/22"
+                }
+              }
+            }
+          }
+        }
 
 Response Formats
 ----------------
@@ -104,10 +534,10 @@ A complete list of HTTP response formats you can find here: HTTP-Statuscodes_
 | DELETE     |    200 (OK)                  |
 +------------+------------------------------+
 
-The JSON output depends on the type of request and the data submitted. GET Requests will mostly output data in the HAL-format_,
+The JSON output depends on the type of request and the data submitted. GET collection requests will output data in the HAL-format_,
 a format which provides links to the mentioned resources for easy resource browsing.
 As some of the requests are intended for listing items to the user, these requests will additionally output the data paginated.
-The data comes in chunks of an adjustable size for convenient item representation. PUT and POST requests however output
+It comes in chunks of adjustable size for convenient item displaying. PUT and POST requests however output
 besides a status code the created/updated information without any links to the resources, as this information serves for
 verification and further processing.
 DELETE requests will always output a status and a message.

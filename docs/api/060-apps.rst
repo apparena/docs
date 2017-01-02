@@ -30,6 +30,12 @@ The app component consists of the following fields:
 
     .. include:: /partials/common_all.rst
 
+    **relations**
+
+    company*, template*, channels, configs, translations, infos, languages*
+
+    \* can be fetched via collection request
+
 GET /apps
 ~~~~~~~~~
 
@@ -41,6 +47,7 @@ GET /apps
 |       fields
 |       exclude
 |       orderasc/orderdesc
+|       rel
 
 .. http:response:: Example response body
 
@@ -117,6 +124,7 @@ GET /apps/:appId
 |   *Query parameters*
 |       fields
 |       exclude
+|       rel
 
 .. http:response:: Example response body
 
@@ -922,6 +930,88 @@ DELETE /apps/:appId/translations/:translationId
         {
           "status": 200,
           "message": "Translation 'translation_1' deleted."
+        }
+
+/apps/:appId/channels
+---------------------
+
+.. Note:: A Channel needs to be connected to an App in order to publish that App through it
+
+GET /apps/:appId/channels
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Receive a collection of apps owned by your company.
+
+|   *Query parameters*
+|       none
+
+POST /apps/:appId/channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Connects an App with an existing channel of your company
+
+|   *Query parameters*
+|       none
+
+.. http:response:: Example request body
+
+    .. sourcecode:: js
+
+        {
+            "channelId": 1
+        }
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 201,
+          "data": {
+              "channelId": 1,
+              "companyId": 1,
+              "type": "domain",
+              "name": "my domain channel",
+              "value": "www.mydomain.com",
+              "meta": {}
+          }
+        }
+
+    **Required data**
+
+    channelId
+        ``integer`` the channel you want to connect this app to
+
+DELETE /apps/:appId/channels/:channelId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Removes a channel from an App
+
+|   *Query parameters*
+|       none
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+    [
+      {
+        "channelId": 1,
+        "companyId": 1,
+        "type": "domain",
+        "name": "my domain channel",
+        "value": "ww.mydomain.com",
+        "meta": {}
+      }
+    ]
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "status": 201,
+          "message": "Channel '10' of app '13784' removed"
         }
 
 .. _code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
