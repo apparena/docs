@@ -1,9 +1,6 @@
 App-Arena Developer documentation 2.0
 =====================================
 
-.. warning:: The documentation of the API 2.0 is still in beta. We are constantly improving it and we are glad for pull
-             requests.
-
 `App-Arena.com`_ provides an infrastructure to manage and scale web-apps.
 Developers can publish and sell own web-apps through our sales channels.
 Sales partners can integrate our Web-App-CMS in their third-party software solutions and sell all published
