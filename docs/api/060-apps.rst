@@ -940,10 +940,39 @@ DELETE /apps/:appId/translations/:translationId
 GET /apps/:appId/channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Receive a collection of apps owned by your company.
+Returns a list of channels, this app has been published on.
 
 |   *Query parameters*
 |       none
+
+.. http:response:: Example response body
+
+    .. sourcecode:: js
+
+        {
+          "_links": {
+            "self": {
+              "href": "https://my.app-arena.com/api/v2/apps/18560/channels"
+            }
+          },
+          "_embedded": {
+            "data": [
+              {
+                "channelId": 6753,
+                "companyId": 1,
+                "type": "facebook",
+                "name": "App-Arena Test Page 01",
+                "value": "254789607927209",
+                "_links": {
+                  "company": {
+                    "href": "https://my.app-arena.com/api/v2/companies/1"
+                  }
+                }
+              },
+              ...
+            ]
+          }
+        }
 
 POST /apps/:appId/channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
